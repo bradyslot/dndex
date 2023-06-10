@@ -1,3 +1,4 @@
+use stylist::yew::use_style;
 use yew::prelude::*;
 
 #[function_component]
@@ -11,9 +12,10 @@ fn App() -> Html {
         }
     };
 
+    let style = use_style!("color: green;");
     html! {
         <div>
-            <button {onclick}>{ "+1" }</button>
+            <button class={style} {onclick}>{ "+1" }</button>
             <p>{ *counter }</p>
         </div>
     }

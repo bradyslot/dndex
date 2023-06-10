@@ -7,3 +7,9 @@ edition = "2021"
 
 [dependencies]
 yew = { version = "0.20.0", features = ["csr"] }
+stylist = { version = "0.12.0", features = ["yew_integration"] }
+
+# linker error mitigation
+# issue being worked on here: https://github.com/futursolo/stylist-rs/pull/123
+[profile.dev.package.wasm-bindgen]
+debug-assertions = false
