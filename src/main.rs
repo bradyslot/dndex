@@ -14,15 +14,10 @@ struct Dimensions {
 #[function_component(BittenRectangle)]
 fn bitten_rectangle(props: &Dimensions) -> Html {
     let vars = format!("
-        --height: {}px;
-        --width: {}px;
-        --background: {};
-        --foreground: {};
-        "
-        , props.height
-        , props.width
-        , BACKGROUND
-        , FOREGROUND
+        --height: {}px; --width: {}px;
+        --background: {}; --foreground: {}; "
+        , props.height , props.width
+        , BACKGROUND , FOREGROUND
     );
 
     let style = use_style!("
@@ -68,32 +63,21 @@ fn bitten_rectangle(props: &Dimensions) -> Html {
 #[derive(Clone, Properties, PartialEq)]
 struct AbilityScoreProps {
     name: String,
-    ability: u8,
+    value: u8,
 }
 
 #[function_component(AbilityScore)]
 fn ability_score(props: &AbilityScoreProps) -> Html {
     let size = &Dimensions { height: 125, width: 125 };
     let vars = format!("
-        --height: {}px;
-        --width: {}px;
-        --foreground: {};
-        "
-        , size.height
-        , size.width
+        --height: {}px; --width: {}px;
+        --foreground: {}; "
+        , size.height , size.width
         , FOREGROUND
     );
-    let ability = use_state(|| {props.ability});
-    let modifier = props.ability as i8;
+    let ability = use_state(|| {props.value});
+    let modifier = props.value as i8;
     let modifier = use_state(|| {(modifier - 10) / 2});
-
-    // let onclick = {
-    //     let ability_score = ability_score.clone();
-    //     move |_| {
-    //         let value = *ability_score + 1;
-    //         ability_score.set(value);
-    //     }
-    // };
 
     let style = use_style!("
         display: flex;
@@ -122,7 +106,7 @@ fn ability_score(props: &AbilityScoreProps) -> Html {
             left: 0;
             height: var(--height);
             width: var(--width);
-            font-size: calc(var(--height) / 2);
+            font-size: 3rem;
         }
 
         .ability {
@@ -133,13 +117,13 @@ fn ability_score(props: &AbilityScoreProps) -> Html {
             border-radius: 100%;
             background-color: var(--foreground);
             border: 2px solid black;
-            font-size: calc(var(--height) / 6);
+            font-size: 1.5rem;
         }
 
         .label {
             width: var(--width);
             top: 5%;
-            font-size: calc(var(--height) / 8);
+            font-size: 1rem;
         }
 
         .overlay {
@@ -179,13 +163,90 @@ fn primary_abilities(props: &PrimaryAbilitiesProps) -> Html {
 
     html! {
         <div class={style}>
-            <AbilityScore ability={props.strength} name={"Strength"} />
-            <AbilityScore ability={props.dexterity} name={"Dexterity"} />
-            <AbilityScore ability={props.constitution} name={"Constitution"} />
-            <AbilityScore ability={props.intelligence} name={"Intelligence"} />
-            <AbilityScore ability={props.wisdom} name={"Wisdom"} />
-            <AbilityScore ability={props.charisma} name={"Charisma"} />
+            <AbilityScore value={props.strength} name={"Strength"} />
+            <AbilityScore value={props.dexterity} name={"Dexterity"} />
+            <AbilityScore value={props.constitution} name={"Constitution"} />
+            <AbilityScore value={props.intelligence} name={"Intelligence"} />
+            <AbilityScore value={props.wisdom} name={"Wisdom"} />
+            <AbilityScore value={props.charisma} name={"Charisma"} />
         </div>
+    }
+}
+
+#[derive(Clone, Properties, PartialEq)]
+struct LabeledValueProps {
+    value: i8,
+    label: String,
+}
+
+#[function_component(LabeledValue)]
+fn labeled_value(props: &LabeledValueProps) -> Html {
+    let vars = format!("--foreground: {};", FOREGROUND);
+    let style = use_style!("
+        display: flex;
+        flex-direction: row;
+        font-family: serif;
+
+        .value {
+            display: flex;
+            margin: 4px;
+            border-radius: 100%;
+            background-color: var(--foreground);
+            border: 2px solid black;
+            height: 40px;
+            width: 40px;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+        }
+        .label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+        }
+    ");
+
+    html! {
+        <div class={style} style={vars}>
+            <div class="value">{ &props.value }</div>
+            <div class="label">{ &props.label }</div>
+        </div>
+    }
+}
+
+
+#[derive(Clone, Properties, PartialEq)]
+struct CharacterLevelProps {
+    level: u8,
+}
+
+#[function_component(ProficiencyBonus)]
+fn proficiency_bonus(props: &CharacterLevelProps) -> Html {
+    let label = format!("Proficiency Bonus");
+
+    html! {
+        <LabeledValue value={2 + (props.level as i8 - 1) / 4} label={label} />
+    }
+}
+
+#[function_component(PassiveAbilities)]
+fn passive_abilities(props: &PrimaryAbilitiesProps) -> Html {
+    fn modifier(ability: u8) -> i8 {
+        (ability as i8 - 10) / 2
+    }
+
+    html! {
+        <>
+            <LabeledValue value={10 + modifier(props.wisdom)} label={"Perception (Passive)"} />
+            <LabeledValue value={10 + modifier(props.intelligence)} label={"Investigation (Passive)"} />
+            <LabeledValue value={10 + modifier(props.wisdom)} label={"Insight (Passive)"} />
+            <LabeledValue value={10 + modifier(props.intelligence)} label={"Arcana (Passive)"} />
+            <LabeledValue value={10 + modifier(props.intelligence)} label={"History (Passive)"} />
+            <LabeledValue value={10 + modifier(props.wisdom)} label={"Religion (Passive)"} />
+            <LabeledValue value={10 + modifier(props.wisdom)} label={"Nature (Passive)"} />
+            <LabeledValue value={10 + modifier(props.wisdom)} label={"Survival (Passive)"} />
+        </>
     }
 }
 
@@ -202,12 +263,26 @@ fn App() -> Html {
         charisma: 10,
     };
 
+    let character_level = CharacterLevelProps {
+        level: 5,
+    };
+
     let style = use_style!("
         display: flex;
+        flex-direction: column;
     ");
 
     html! {
         <div class={style}>
+            <ProficiencyBonus level={character_level.level} />
+            <PassiveAbilities 
+                strength={primary_abilities.strength}
+                dexterity={primary_abilities.dexterity}
+                constitution={primary_abilities.constitution}
+                intelligence={primary_abilities.intelligence}
+                wisdom={primary_abilities.wisdom}
+                charisma={primary_abilities.charisma}
+            />
             <PrimaryAbilities
                 strength={primary_abilities.strength}
                 dexterity={primary_abilities.dexterity}
