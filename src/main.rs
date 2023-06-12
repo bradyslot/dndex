@@ -4,6 +4,7 @@ use yew::prelude::*;
 
 const FOREGROUND: &str = "#F8F8F8";
 const BACKGROUND: &str = "#C8C8C8";
+const FONT: &str = "Serif";
 
 #[derive(Clone, Properties, PartialEq)]
 struct Dimensions {
@@ -81,6 +82,7 @@ fn ability_score(props: &AbilityScoreProps) -> Html {
 
     let style = use_style!("
         display: flex;
+        flex-grow: 1;
         justify-content: center;
         margin: 4px;
 
@@ -97,7 +99,6 @@ fn ability_score(props: &AbilityScoreProps) -> Html {
             justify-content: center;
             align-items: center;
             text-align: center;
-            font-family: serif;
             line-height: 1;
         }
 
@@ -184,8 +185,8 @@ fn labeled_value(props: &LabeledValueProps) -> Html {
     let vars = format!("--foreground: {};", FOREGROUND);
     let style = use_style!("
         display: flex;
-        flex-direction: row;
-        font-family: serif;
+        flex-grow: 1;
+        flex-basis: 0;
 
         .value {
             display: flex;
@@ -225,8 +226,15 @@ struct CharacterLevelProps {
 fn proficiency_bonus(props: &CharacterLevelProps) -> Html {
     let label = format!("Proficiency Bonus");
 
+    // let style = use_style!("
+    //     display: flex;
+    //     flex-grow: 1;
+    // ");
+
     html! {
+        // <div class={style}>
         <LabeledValue value={2 + (props.level as i8 - 1) / 4} label={label} />
+        // </div>
     }
 }
 
@@ -241,18 +249,24 @@ fn passive_abilities(props: &PrimaryAbilitiesProps) -> Html {
             <LabeledValue value={10 + modifier(props.wisdom)} label={"Perception (Passive)"} />
             <LabeledValue value={10 + modifier(props.intelligence)} label={"Investigation (Passive)"} />
             <LabeledValue value={10 + modifier(props.wisdom)} label={"Insight (Passive)"} />
-            <LabeledValue value={10 + modifier(props.intelligence)} label={"Arcana (Passive)"} />
-            <LabeledValue value={10 + modifier(props.intelligence)} label={"History (Passive)"} />
-            <LabeledValue value={10 + modifier(props.wisdom)} label={"Religion (Passive)"} />
-            <LabeledValue value={10 + modifier(props.wisdom)} label={"Nature (Passive)"} />
-            <LabeledValue value={10 + modifier(props.wisdom)} label={"Survival (Passive)"} />
+            // <LabeledValue value={10 + modifier(props.intelligence)} label={"Arcana (Passive)"} />
+            // <LabeledValue value={10 + modifier(props.intelligence)} label={"History (Passive)"} />
+            // <LabeledValue value={10 + modifier(props.wisdom)} label={"Religion (Passive)"} />
+            // <LabeledValue value={10 + modifier(props.wisdom)} label={"Nature (Passive)"} />
+            // <LabeledValue value={10 + modifier(props.wisdom)} label={"Survival (Passive)"} />
         </>
     }
 }
 
 #[function_component]
 fn App() -> Html {
-    let _global_style = GlobalStyle::new(format!("background: {};", BACKGROUND));
+    let _global_style = GlobalStyle::new(format!("
+        background: {};
+        font-family: {};
+        "
+        , BACKGROUND
+        , FONT
+    ));
 
     let primary_abilities = PrimaryAbilitiesProps {
         strength: 8,
@@ -270,27 +284,38 @@ fn App() -> Html {
     let style = use_style!("
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+        }
     ");
 
     html! {
         <div class={style}>
-            <ProficiencyBonus level={character_level.level} />
-            <PassiveAbilities 
-                strength={primary_abilities.strength}
-                dexterity={primary_abilities.dexterity}
-                constitution={primary_abilities.constitution}
-                intelligence={primary_abilities.intelligence}
-                wisdom={primary_abilities.wisdom}
-                charisma={primary_abilities.charisma}
-            />
-            <PrimaryAbilities
-                strength={primary_abilities.strength}
-                dexterity={primary_abilities.dexterity}
-                constitution={primary_abilities.constitution}
-                intelligence={primary_abilities.intelligence}
-                wisdom={primary_abilities.wisdom}
-                charisma={primary_abilities.charisma}
-            />
+            <div class="row">
+                <ProficiencyBonus level={character_level.level} />
+                <PassiveAbilities 
+                    strength={primary_abilities.strength}
+                    dexterity={primary_abilities.dexterity}
+                    constitution={primary_abilities.constitution}
+                    intelligence={primary_abilities.intelligence}
+                    wisdom={primary_abilities.wisdom}
+                    charisma={primary_abilities.charisma}
+                />
+            </div>
+            <div class="row">
+                <PrimaryAbilities
+                    strength={primary_abilities.strength}
+                    dexterity={primary_abilities.dexterity}
+                    constitution={primary_abilities.constitution}
+                    intelligence={primary_abilities.intelligence}
+                    wisdom={primary_abilities.wisdom}
+                    charisma={primary_abilities.charisma}
+                />
+            </div>
         </div>
     }
 }
