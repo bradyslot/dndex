@@ -67,12 +67,13 @@ fn bitten_rectangle(props: &Dimensions) -> Html {
 
 #[derive(Clone, Properties, PartialEq)]
 struct AbilityScoreProps {
+    name: String,
     ability: u8,
 }
 
 #[function_component(AbilityScore)]
 fn ability_score(props: &AbilityScoreProps) -> Html {
-    let size = &Dimensions { height: 100, width: 100 };
+    let size = &Dimensions { height: 125, width: 125 };
     let vars = format!("
         --height: {}px;
         --width: {}px;
@@ -135,6 +136,12 @@ fn ability_score(props: &AbilityScoreProps) -> Html {
             font-size: calc(var(--height) / 6);
         }
 
+        .label {
+            width: var(--width);
+            top: 5%;
+            font-size: calc(var(--height) / 8);
+        }
+
         .overlay {
             z-index: 9;
         }
@@ -146,6 +153,7 @@ fn ability_score(props: &AbilityScoreProps) -> Html {
                 <BittenRectangle height={size.height} width={size.width} />
                 <div class="text modifier overlay">{ *modifier }</div>
                 <div class="text ability overlay">{ *ability }</div>
+                <div class="label text overlay">{ &props.name }</div>
             </div>
         </div>
     }
@@ -171,12 +179,12 @@ fn primary_abilities(props: &PrimaryAbilitiesProps) -> Html {
 
     html! {
         <div class={style}>
-            <AbilityScore ability={props.strength} />
-            <AbilityScore ability={props.dexterity} />
-            <AbilityScore ability={props.constitution} />
-            <AbilityScore ability={props.intelligence} />
-            <AbilityScore ability={props.wisdom} />
-            <AbilityScore ability={props.charisma} />
+            <AbilityScore ability={props.strength} name={"Strength"} />
+            <AbilityScore ability={props.dexterity} name={"Dexterity"} />
+            <AbilityScore ability={props.constitution} name={"Constitution"} />
+            <AbilityScore ability={props.intelligence} name={"Intelligence"} />
+            <AbilityScore ability={props.wisdom} name={"Wisdom"} />
+            <AbilityScore ability={props.charisma} name={"Charisma"} />
         </div>
     }
 }
@@ -194,8 +202,12 @@ fn App() -> Html {
         charisma: 10,
     };
 
+    let style = use_style!("
+        display: flex;
+    ");
+
     html! {
-        <div>
+        <div class={style}>
             <PrimaryAbilities
                 strength={primary_abilities.strength}
                 dexterity={primary_abilities.dexterity}
