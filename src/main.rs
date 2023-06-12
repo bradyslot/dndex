@@ -116,7 +116,7 @@ fn ability_score(props: &AbilityScoreProps) -> Html {
             line-height: 1;
         }
 
-        .ability {
+        .modifier {
             top: 0;
             left: 0;
             height: var(--height);
@@ -124,7 +124,7 @@ fn ability_score(props: &AbilityScoreProps) -> Html {
             font-size: calc(var(--height) / 2);
         }
 
-        .modifier {
+        .ability {
             bottom: -20%;
             left: 27.5%;
             height: 40%;
@@ -144,8 +144,8 @@ fn ability_score(props: &AbilityScoreProps) -> Html {
         <div class={style} style={vars}>
             <div class="container">
                 <BittenRectangle height={size.height} width={size.width} />
-                <div class="text ability overlay">{ *ability }</div>
                 <div class="text modifier overlay">{ *modifier }</div>
+                <div class="text ability overlay">{ *ability }</div>
             </div>
         </div>
     }
@@ -166,6 +166,7 @@ fn primary_abilities(props: &PrimaryAbilitiesProps) -> Html {
     let style = use_style!("
         display: flex;
         flex-direction: row;
+        flex-grow: 1;
     ");
 
     html! {
