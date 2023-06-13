@@ -24,8 +24,8 @@ fn calc_base_modifier(ability: u8) -> i8 {
 
 #[derive(Clone, Properties, PartialEq)]
 struct Dimensions {
-    height: String,
-    width: String,
+    height: AttrValue,
+    width: AttrValue,
 }
 
 #[function_component(BittenRectangle)]
@@ -79,13 +79,13 @@ fn bitten_rectangle(props: &Dimensions) -> Html {
 
 #[derive(Clone, Properties, PartialEq)]
 struct AbilityScoreProps {
-    name: String,
+    name: AttrValue,
     value: u8,
 }
 
 #[function_component(AbilityScore)]
 fn ability_score(props: &AbilityScoreProps) -> Html {
-    let size = &Dimensions { height: "15rem".to_string(), width: "15rem".to_string() };
+    let size = &Dimensions { height: "15rem".into(), width: "15rem".into() };
     let vars = format!("
         --height: {}; --width: {};
         --foreground: {}; "
@@ -162,7 +162,7 @@ fn ability_score(props: &AbilityScoreProps) -> Html {
 
 #[derive(Clone, Properties, PartialEq)]
 struct AbilityProps {
-    name: String,
+    name: AttrValue,
     value: u8,
 }
 
@@ -200,7 +200,7 @@ fn primary_abilities(props: &PrimaryAbilitiesProps) -> Html {
 #[derive(Clone, Properties, PartialEq)]
 struct LabeledValueProps {
     value: i8,
-    label: String,
+    label: AttrValue,
 }
 
 #[function_component(LabeledValue)]
@@ -297,7 +297,7 @@ fn passive_abilities(props: &PrimaryAbilitiesProps) -> Html {
 #[derive(Clone, Properties, PartialEq)]
 struct LabeledValueCheckboxProps {
     value: i8,
-    label: String,
+    label: AttrValue,
     checked: bool,
 }
 
@@ -362,7 +362,7 @@ fn labeled_value_checkbox(props: &LabeledValueCheckboxProps) -> Html {
 
 #[derive(Clone, Properties, PartialEq)]
 struct SkillProps {
-    name: String,
+    name: AttrValue,
     proficiency: bool,
     parent: AbilityProps,
 }
@@ -457,27 +457,27 @@ fn App() -> Html {
 
     let primary_abilities = PrimaryAbilitiesProps {
         strength: AbilityProps {
-            name: "Strength".to_string(),
+            name: "Strength".into(),
             value: 8,
         },
         dexterity: AbilityProps {
-            name: "Dexterity".to_string(),
+            name: "Dexterity".into(),
             value: 13,
         },
         constitution: AbilityProps {
-            name: "Constitution".to_string(),
+            name: "Constitution".into(),
             value: 15,
         },
         intelligence: AbilityProps {
-            name: "Intelligence".to_string(),
+            name: "Intelligence".into(),
             value: 19,
         },
         wisdom: AbilityProps {
-            name: "Wisdom".to_string(),
+            name: "Wisdom".into(),
             value: 12,
         },
         charisma: AbilityProps {
-            name: "Charisma".to_string(),
+            name: "Charisma".into(),
             value: 10,
         },
     };
@@ -489,92 +489,92 @@ fn App() -> Html {
     let skills = SkillListProps {
         character: character.clone(),
         acrobatics: SkillProps {
-            name: "Acrobatics (Dex)".to_string(),
+            name: "Acrobatics (Dex)".into(),
             proficiency: false,
             parent: primary_abilities.dexterity.clone(),
         },
         animalhandling: SkillProps {
-            name: "Animal Handling (Wis)".to_string(),
+            name: "Animal Handling (Wis)".into(),
             proficiency: false,
             parent: primary_abilities.wisdom.clone(),
         },
         arcana: SkillProps {
-            name: "Arcana (Int)".to_string(),
+            name: "Arcana (Int)".into(),
             proficiency: true,
             parent: primary_abilities.intelligence.clone(),
         },
         athletics: SkillProps {
-            name: "Athletics (Str)".to_string(),
+            name: "Athletics (Str)".into(),
             proficiency: false,
             parent: primary_abilities.strength.clone(),
         },
         deception: SkillProps {
-            name: "Deception (Cha)".to_string(),
+            name: "Deception (Cha)".into(),
             proficiency: false,
             parent: primary_abilities.charisma.clone(),
         },
         history: SkillProps {
-            name: "History (Int)".to_string(),
+            name: "History (Int)".into(),
             proficiency: false,
             parent: primary_abilities.intelligence.clone(),
         },
         insight: SkillProps {
-            name: "Insight (Wis)".to_string(),
+            name: "Insight (Wis)".into(),
             proficiency: true,
             parent: primary_abilities.wisdom.clone(),
         },
         intimidation: SkillProps {
-            name: "Intimidation (Cha)".to_string(),
+            name: "Intimidation (Cha)".into(),
             proficiency: false,
             parent: primary_abilities.charisma.clone(),
         },
         investigation: SkillProps {
-            name: "Investigation (Int)".to_string(),
+            name: "Investigation (Int)".into(),
             proficiency: false,
             parent: primary_abilities.intelligence.clone(),
         },
         medicine: SkillProps {
-            name: "Medicine (Wis)".to_string(),
+            name: "Medicine (Wis)".into(),
             proficiency: false,
             parent: primary_abilities.wisdom.clone(),
         },
         nature: SkillProps {
-            name: "Nature (Int)".to_string(),
+            name: "Nature (Int)".into(),
             proficiency: true,
             parent: primary_abilities.intelligence.clone(),
         },
         perception: SkillProps {
-            name: "Perception (Wis)".to_string(),
+            name: "Perception (Wis)".into(),
             proficiency: false,
             parent: primary_abilities.wisdom.clone(),
         },
         performance: SkillProps {
-            name: "Performance (Cha)".to_string(),
+            name: "Performance (Cha)".into(),
             proficiency: false,
             parent: primary_abilities.charisma.clone(),
         },
         persuasion: SkillProps {
-            name: "Persuasion (Cha)".to_string(),
+            name: "Persuasion (Cha)".into(),
             proficiency: true,
             parent: primary_abilities.charisma.clone(),
         },
         religion: SkillProps {
-            name: "Religion (Int)".to_string(),
+            name: "Religion (Int)".into(),
             proficiency: false,
             parent: primary_abilities.intelligence.clone(),
         },
         sleightofhand: SkillProps {
-            name: "Sleight of Hand (Dex)".to_string(),
+            name: "Sleight of Hand (Dex)".into(),
             proficiency: false,
             parent: primary_abilities.dexterity.clone(),
         },
         stealth: SkillProps {
-            name: "Stealth (Dex)".to_string(),
+            name: "Stealth (Dex)".into(),
             proficiency: false,
             parent: primary_abilities.dexterity.clone(),
         },
         survival: SkillProps {
-            name: "Survival (Wis)".to_string(),
+            name: "Survival (Wis)".into(),
             proficiency: false,
             parent: primary_abilities.wisdom.clone(),
         },
