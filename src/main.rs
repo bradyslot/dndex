@@ -30,41 +30,43 @@ struct Dimensions {
 
 #[function_component(BittenRectangle)]
 fn bitten_rectangle(props: &Dimensions) -> Html {
-    let vars = format!("
+    let vars = format!(r#"
         --height: {}; --width: {};
-        --background: {}; --foreground: {}; "
+        --background: {}; --foreground: {}; "#
         , props.height , props.width
         , BACKGROUND , FOREGROUND
     );
 
-    let style = use_style!("
-        height: var(--height);
-        width: var(--width);
-        background-color: var(--foreground);
-        position: relative;
-        overflow: hidden;
+    let style = use_style!(
+        r#"
+            height: var(--height);
+            width: var(--width);
+            background-color: var(--foreground);
+            position: relative;
+            overflow: hidden;
 
-        .border {
-            position: absolute;
-            width: calc(var(--width) - 4px);
-            height: calc(var(--height) - 4px);
-            border: 2px solid black;
-        }
+            .border {
+                position: absolute;
+                width: calc(var(--width) - 4px);
+                height: calc(var(--height) - 4px);
+                border: 2px solid black;
+            }
 
-        .radius {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 100%;
-            background-color: var(--background);
-            border: 2px solid black;
-        }
+            .radius {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-radius: 100%;
+                background-color: var(--background);
+                border: 2px solid black;
+            }
 
-        .top { top: -10px; }
-        .bottom { bottom: -10px; }
-        .left { left: -10px; }
-        .right { right: -10px; }
-    ");
+            .top { top: -10px; }
+            .bottom { bottom: -10px; }
+            .left { left: -10px; }
+            .right { right: -10px; }
+        "#
+    );
 
     html! {
         <div class={style} style={vars}>
@@ -86,9 +88,9 @@ struct AbilityScoreProps {
 #[function_component(AbilityScore)]
 fn ability_score(props: &AbilityScoreProps) -> Html {
     let size = &Dimensions { height: "15rem".into(), width: "15rem".into() };
-    let vars = format!("
+    let vars = format!(r#"
         --height: {}; --width: {};
-        --foreground: {}; "
+        --foreground: {}; "#
         , size.height , size.width
         , FOREGROUND
     );
@@ -96,57 +98,59 @@ fn ability_score(props: &AbilityScoreProps) -> Html {
     let modifier = props.value as i8;
     let modifier = use_state(|| {(modifier - 10) / 2});
 
-    let style = use_style!("
-        display: flex;
-        flex-grow: 1;
-        justify-content: center;
-        padding: 4px;
-
-        .container {
+    let style = use_style!(
+        r#"
             display: flex;
-            height: var(--height);
-            width: var(--width);
-            position: relative;
-        }
-        
-        .text {
-            display: flex;
-            position: absolute;
+            flex-grow: 1;
             justify-content: center;
-            align-items: center;
-            text-align: center;
-            line-height: 1;
-        }
+            padding: 4px;
 
-        .modifier {
-            top: 0;
-            left: 0;
-            height: var(--height);
-            width: var(--width);
-            font-size: calc(var(--height) / 3);
-        }
+            .container {
+                display: flex;
+                height: var(--height);
+                width: var(--width);
+                position: relative;
+            }
+            
+            .text {
+                display: flex;
+                position: absolute;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                line-height: 1;
+            }
 
-        .ability {
-            bottom: -20%;
-            left: 27.5%;
-            height: 40%;
-            width: 40%;
-            border-radius: 100%;
-            background-color: var(--foreground);
-            border: 2px solid black;
-            font-size: calc(var(--height) / 5);
-        }
+            .modifier {
+                top: 0;
+                left: 0;
+                height: var(--height);
+                width: var(--width);
+                font-size: calc(var(--height) / 3);
+            }
 
-        .label {
-            width: var(--width);
-            top: 5%;
-            font-size: calc(var(--height) / 8);
-        }
+            .ability {
+                bottom: -20%;
+                left: 27.5%;
+                height: 40%;
+                width: 40%;
+                border-radius: 100%;
+                background-color: var(--foreground);
+                border: 2px solid black;
+                font-size: calc(var(--height) / 5);
+            }
 
-        .overlay {
-            z-index: 9;
-        }
-    ");
+            .label {
+                width: var(--width);
+                top: 5%;
+                font-size: calc(var(--height) / 8);
+            }
+
+            .overlay {
+                z-index: 9;
+            }
+        "#
+    );
 
     html! {
         <div class={style} style={vars}>
@@ -178,12 +182,14 @@ struct PrimaryAbilitiesProps {
 
 #[function_component(PrimaryAbilities)]
 fn primary_abilities(props: &PrimaryAbilitiesProps) -> Html {
-    let style = use_style!("
-        display: flex;
-        flex-direction: row;
-        flex-grow: 1;
-        margin-bottom: 3rem;
-    ");
+    let style = use_style!(
+        r#"
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+            margin-bottom: 3rem;
+        "#
+    );
 
     html! {
         <div class={style}>
@@ -205,47 +211,49 @@ struct LabeledValueProps {
 
 #[function_component(LabeledValue)]
 fn labeled_value(props: &LabeledValueProps) -> Html {
-    let vars = format!("
+    let vars = format!(r#"
         --foreground: {};
-        --size: 5rem; "
+        --size: 5rem; "#
         ,
         FOREGROUND
     );
-    let style = use_style!("
-        display: flex;
-        flex-direction: row;
-        flex-grow: 1;
-        justify-content: flex-start;
-        text-align: center;
-        padding: 4px;
-
-        .container {
+    let style = use_style!(
+        r#"
             display: flex;
-            flex-grow: 1;
-        }
-        .circle {
-            display: flex;
-            border-radius: 50%;
-            height: var(--size);
-            width: var(--size);
-            background-color: var(--foreground);
-            border: 2px solid black;
-        }
-        .value {
-            height: var(--size);
-            width: var(--size);
-            font-size: calc(var(--size) / 2);
-            line-height: 2;
-        }
-        .label {
-            display: flex;
+            flex-direction: row;
             flex-grow: 1;
             justify-content: flex-start;
-            align-items: center;
-            font-size: calc(var(--size) / 2.5);
+            text-align: center;
             padding: 4px;
-        }
-    ");
+
+            .container {
+                display: flex;
+                flex-grow: 1;
+            }
+            .circle {
+                display: flex;
+                border-radius: 50%;
+                height: var(--size);
+                width: var(--size);
+                background-color: var(--foreground);
+                border: 2px solid black;
+            }
+            .value {
+                height: var(--size);
+                width: var(--size);
+                font-size: calc(var(--size) / 2);
+                line-height: 2;
+            }
+            .label {
+                display: flex;
+                flex-grow: 1;
+                justify-content: flex-start;
+                align-items: center;
+                font-size: calc(var(--size) / 2.5);
+                padding: 4px;
+            }
+        "#
+    );
 
     html! {
         <div class={style} style={vars}>
@@ -303,58 +311,67 @@ struct LabeledValueCheckboxProps {
 
 #[function_component(LabeledValueCheckbox)]
 fn labeled_value_checkbox(props: &LabeledValueCheckboxProps) -> Html {
-    let vars = format!("
+    let vars = format!(r#"
         --foreground: {};
-        --size: 4rem; "
+        --size: 4rem; "#
         ,
         FOREGROUND
     );
-    let style = use_style!("
-        display: flex;
-        flex-direction: row;
-        flex-grow: 1;
-        justify-content: flex-start;
-        text-align: center;
-        padding: 4px;
-
-        .container {
+    let style = use_style!(
+        r#"
             display: flex;
-            flex-grow: 1;
-        }
-        .checkbox {
-            display: flex;
-            border-radius: 50%;
-            height: var(--size);
-            width: var(--size);
-            background-color: var(--foreground);
-            border: 2px solid black;
-        }
-        .checked {
-
-        }
-        .value {
-            height: var(--size);
-            width: var(--size);
-            font-size: calc(var(--size) / 2);
-            line-height: 2;
-            border-bottom: 2px solid black;
-        }
-        .label {
-            display: flex;
+            flex-direction: row;
             flex-grow: 1;
             justify-content: flex-start;
-            align-items: center;
-            font-size: calc(var(--size) / 2.5);
+            text-align: center;
             padding: 4px;
-        }
-    ");
+
+            .container {
+                display: flex;
+                flex-grow: 1;
+            }
+            .checkbox {
+                display: flex;
+                border-radius: 50%;
+                height: calc(var(--size) / 1.5);
+                width: calc(var(--size) / 1.5);
+                background-color: var(--foreground);
+                border: 2px solid black;
+                margin: 1rem;
+            }
+            .checked {
+                background-color: black;
+            }
+            .value {
+                height: var(--size);
+                width: var(--size);
+                font-size: calc(var(--size) / 2);
+                line-height: 2;
+                border-bottom: 2px solid black;
+            }
+            .label {
+                display: flex;
+                flex-grow: 1;
+                justify-content: flex-start;
+                align-items: center;
+                font-size: calc(var(--size) / 2.5);
+                padding: 4px;
+            }
+        "#
+    );
+
+    let checkbox_class = if props.checked {
+        classes!("checkbox", "checked")
+    } else {
+        classes!("checkbox")
+    };
 
     html! {
         <div class={style} style={vars}>
             <div class="container">
                 <div class="label">{ &props.label }</div>
                 <div class="value">{ &props.value }</div>
-                <div class="checkbox">{ &props.checked }</div>
+                <div class={checkbox_class} />
             </div>
         </div>
     }
@@ -403,19 +420,23 @@ fn skills(props: &SkillListProps) -> Html {
         } else { base_modifier }
     };
 
-    let style = use_style!("
-        display: flex;
-        flex-direction: row;
-        margin: 4px;
-        border: 2px solid black;
-
-        .column {
+    let style = use_style!(
+        r#"
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             margin: 4px;
             border: 2px solid black;
-        }
-    ");
+            flex-grow: 1;
+
+            .column {
+                display: flex;
+                flex-direction: column;
+                margin: 4px;
+                border: 2px solid black;
+                flex-grow: 1;
+            }
+        "#
+    );
 
     html! {
         <div class={style}>
@@ -447,10 +468,9 @@ fn skills(props: &SkillListProps) -> Html {
 
 #[function_component]
 fn App() -> Html {
-    let _global_style = GlobalStyle::new(format!("
+    let _global_style = GlobalStyle::new(format!(r#"
         background: {};
-        font-family: {};
-        "
+        font-family: {}; "#
         , BACKGROUND
         , FONT
     ));
@@ -580,17 +600,19 @@ fn App() -> Html {
         },
     };
 
-    let style = use_style!("
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-
-        .row {
+    let style = use_style!(
+        r#"
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             flex-grow: 1;
-        }
-    ");
+
+            .row {
+                display: flex;
+                flex-direction: row;
+                flex-grow: 1;
+            }
+        "#
+    );
 
     html! {
         <div class={style}>
