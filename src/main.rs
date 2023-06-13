@@ -3,19 +3,19 @@ use stylist::GlobalStyle;
 use yew::prelude::*;
 
 const FOREGROUND: &str = "#F8F8F8";
-const BACKGROUND: &str = "#C8C8C8";
+const BACKGROUND: &str = "#F8F8F8";
 const FONT: &str = "Serif";
 
 #[derive(Clone, Properties, PartialEq)]
 struct Dimensions {
-    height: u16,
-    width: u16,
+    height: String,
+    width: String,
 }
 
 #[function_component(BittenRectangle)]
 fn bitten_rectangle(props: &Dimensions) -> Html {
     let vars = format!("
-        --height: {}px; --width: {}px;
+        --height: {}; --width: {};
         --background: {}; --foreground: {}; "
         , props.height , props.width
         , BACKGROUND , FOREGROUND
@@ -69,14 +69,14 @@ struct AbilityScoreProps {
 
 #[function_component(AbilityScore)]
 fn ability_score(props: &AbilityScoreProps) -> Html {
-    let size = &Dimensions { height: 125, width: 125 };
+    let size = &Dimensions { height: "15rem".to_string(), width: "15rem".to_string() };
     let vars = format!("
-        --height: {}px; --width: {}px;
+        --height: {}; --width: {};
         --foreground: {}; "
         , size.height , size.width
         , FOREGROUND
     );
-    let ability = use_state(|| {props.value});
+    // let ability = use_state(|| {props.value});
     let modifier = props.value as i8;
     let modifier = use_state(|| {(modifier - 10) / 2});
 
@@ -84,7 +84,6 @@ fn ability_score(props: &AbilityScoreProps) -> Html {
         display: flex;
         flex-grow: 1;
         justify-content: center;
-        margin: 4px;
 
         .container {
             display: flex;
@@ -107,7 +106,7 @@ fn ability_score(props: &AbilityScoreProps) -> Html {
             left: 0;
             height: var(--height);
             width: var(--width);
-            font-size: 3rem;
+            font-size: calc(var(--height) / 3);
         }
 
         .ability {
@@ -118,13 +117,13 @@ fn ability_score(props: &AbilityScoreProps) -> Html {
             border-radius: 100%;
             background-color: var(--foreground);
             border: 2px solid black;
-            font-size: 1.5rem;
+            font-size: calc(var(--height) / 5);
         }
 
         .label {
             width: var(--width);
             top: 5%;
-            font-size: 1rem;
+            font-size: calc(var(--height) / 8);
         }
 
         .overlay {
@@ -135,9 +134,9 @@ fn ability_score(props: &AbilityScoreProps) -> Html {
     html! {
         <div class={style} style={vars}>
             <div class="container">
-                <BittenRectangle height={size.height} width={size.width} />
+                <BittenRectangle height={size.height.clone()} width={size.width.clone()} />
                 <div class="text modifier overlay">{ *modifier }</div>
-                <div class="text ability overlay">{ *ability }</div>
+                <div class="text ability overlay">{ &props.value }</div>
                 <div class="label text overlay">{ &props.name }</div>
             </div>
         </div>
@@ -182,36 +181,56 @@ struct LabeledValueProps {
 
 #[function_component(LabeledValue)]
 fn labeled_value(props: &LabeledValueProps) -> Html {
-    let vars = format!("--foreground: {};", FOREGROUND);
+    let vars = format!("
+        --foreground: {};
+        --size: 5rem; "
+        ,
+        FOREGROUND
+    );
     let style = use_style!("
         display: flex;
+        flex-direction: row;
         flex-grow: 1;
-        flex-basis: 0;
+        justify-content: flex-start;
+        text-align: center;
+        padding: 4px;
 
-        .value {
+        .container {
             display: flex;
-            margin: 4px;
-            border-radius: 100%;
+            flex-grow: 1;
+        }
+        .circle {
+            display: flex;
+            border-radius: 50%;
+            height: var(--size);
+            width: var(--size);
             background-color: var(--foreground);
             border: 2px solid black;
-            height: 40px;
-            width: 40px;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
+        }
+        .value {
+            height: var(--size);
+            width: var(--size);
+            font-size: calc(var(--size) / 2);
+            line-height: 2;
         }
         .label {
             display: flex;
-            justify-content: center;
+            flex-grow: 1;
+            justify-content: flex-start;
             align-items: center;
-            font-size: 1rem;
+            font-size: calc(var(--size) / 2.5);
+            padding: 4px;
         }
     ");
 
     html! {
         <div class={style} style={vars}>
-            <div class="value">{ &props.value }</div>
-            <div class="label">{ &props.label }</div>
+            <div class="container">
+                <div class="circle">
+                    <div class="value">{ &props.value }</div>
+                </div>
+                <div class="label">{ &props.label }</div>
+            </div>
         </div>
     }
 }
