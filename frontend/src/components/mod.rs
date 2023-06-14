@@ -1,6 +1,7 @@
 pub mod shared;
 
 pub mod ability_score;
+pub mod hit_points;
 pub mod labeled_divider;
 pub mod labeled_value;
 pub mod labeled_value_checkbox;

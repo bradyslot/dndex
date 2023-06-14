@@ -1,6 +1,14 @@
 use yew::prelude::*;
 
 #[derive(Clone, Properties, PartialEq)]
+pub struct HitPointProps {
+    pub current: i8,
+    pub max: i8,
+    pub temp: i8,
+    pub inspiration: bool,
+}
+
+#[derive(Clone, Properties, PartialEq)]
 pub struct Label {
     pub text: AttrValue,
 }

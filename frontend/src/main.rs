@@ -1,7 +1,7 @@
 use stylist::yew::use_style;
 use stylist::GlobalStyle;
 use yew::prelude::*;
-use wasm_bindgen::prelude::*;
+// use wasm_bindgen::prelude::*;
 
 mod components;
 use components::shared::models::*;
@@ -10,15 +10,16 @@ use components::passive_abilities::*;
 use components::primary_abilities::*;
 use components::proficiency_bonus::*;
 use components::skills::*;
+use components::hit_points::*;
 
 mod constants;
 use constants::*;
 
-#[wasm_bindgen]
-extern "C" {
-    #[wasm_bindgen(js_namespace = console)]
-    fn log(s: &str);
-}
+// #[wasm_bindgen]
+// extern "C" {
+//     #[wasm_bindgen(js_namespace = console)]
+//     fn log(s: &str);
+// }
 
 #[function_component]
 fn App() -> Html {
@@ -154,6 +155,13 @@ fn App() -> Html {
         },
     };
 
+    let hp = HitPointProps {
+        current: 37,
+        max: 52,
+        temp: 0,
+        inspiration: false,
+    };
+
     let style = use_style!(
         r#"
             display: flex;
@@ -212,6 +220,14 @@ fn App() -> Html {
                     sleightofhand={skills.sleightofhand.clone()}
                     stealth={skills.stealth.clone()}
                     survival={skills.survival.clone()}
+                />
+            </div>
+            <div class="row">
+                <HitPoints 
+                    current={hp.current.clone()}
+                    max={hp.max.clone()}
+                    temp={hp.temp.clone()}
+                    inspiration={hp.inspiration.clone()}
                 />
             </div>
         </div>
