@@ -3,7 +3,7 @@ use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
 use super::labeled_value_checkbox::*;
-use super::labeled_devider::*;
+use super::labeled_divider::*;
 
 #[function_component(Skills)]
 pub fn skills(props: &SkillListProps) -> Html {
@@ -33,7 +33,7 @@ pub fn skills(props: &SkillListProps) -> Html {
     html! {
         <div class={style}>
             <div class="top-row">
-                <LabeledDevider text={label.text}/>
+                <LabeledDivider text={label.text}/>
             </div>
             <div>
                 <LabeledValueCheckbox checked={props.acrobatics.proficiency.clone()} value={modifier(props.acrobatics.clone())} label={props.acrobatics.name.clone()} />

@@ -2,8 +2,8 @@ use stylist::yew::use_style;
 use yew::prelude::*;
 use super::shared::models::*;
 
-#[function_component(LabeledDevider)]
-pub fn labeled_devider(props: &Label) -> Html {
+#[function_component(LabeledDivider)]
+pub fn labeled_divider(props: &Label) -> Html {
     let style = use_style!(
         r#"
             display: flex;
