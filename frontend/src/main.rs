@@ -30,27 +30,27 @@ fn App() -> Html {
     ));
 
     let primary_abilities = PrimaryAbilitiesProps {
-        strength: AbilityProps {
+        strength: AbilityScoreProps {
             name: "Strength".into(),
             value: 8,
         },
-        dexterity: AbilityProps {
+        dexterity: AbilityScoreProps {
             name: "Dexterity".into(),
             value: 13,
         },
-        constitution: AbilityProps {
+        constitution: AbilityScoreProps {
             name: "Constitution".into(),
             value: 15,
         },
-        intelligence: AbilityProps {
+        intelligence: AbilityScoreProps {
             name: "Intelligence".into(),
             value: 19,
         },
-        wisdom: AbilityProps {
+        wisdom: AbilityScoreProps {
             name: "Wisdom".into(),
             value: 12,
         },
-        charisma: AbilityProps {
+        charisma: AbilityScoreProps {
             name: "Charisma".into(),
             value: 10,
         },

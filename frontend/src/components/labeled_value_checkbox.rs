@@ -18,7 +18,6 @@ pub fn labeled_value_checkbox(props: &LabeledValueCheckboxProps) -> Html {
             flex-grow: 1;
             justify-content: flex-start;
             text-align: center;
-            padding: 4px;
 
             .container {
                 display: flex;

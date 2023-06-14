@@ -3,6 +3,7 @@ use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
 use super::labeled_value_checkbox::*;
+use super::labeled_devider::*;
 
 #[function_component(Skills)]
 pub fn skills(props: &SkillListProps) -> Html {
@@ -16,25 +17,25 @@ pub fn skills(props: &SkillListProps) -> Html {
 
     let style = use_style!(
         r#"
-            display: flex;
-            flex-direction: row;
-            margin: 4px;
-            border: 2px solid black;
-            flex-grow: 1;
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: 1fr 1fr;
+            width: 100%;
 
-            .column {
-                display: flex;
-                flex-direction: column;
-                margin: 4px;
-                border: 2px solid black;
-                flex-grow: 1;
+            .top-row {
+                grid-column: 1 / span 2;
             }
         "#
     );
 
+    let label = Label { text: "Skills".into() };
+
     html! {
         <div class={style}>
-            <div class="column">
+            <div class="top-row">
+                <LabeledDevider text={label.text}/>
+            </div>
+            <div>
                 <LabeledValueCheckbox checked={props.acrobatics.proficiency.clone()} value={modifier(props.acrobatics.clone())} label={props.acrobatics.name.clone()} />
                 <LabeledValueCheckbox checked={props.animalhandling.proficiency.clone()} value={modifier(props.animalhandling.clone())} label={props.animalhandling.name.clone()} />
                 <LabeledValueCheckbox checked={props.arcana.proficiency.clone()} value={modifier(props.arcana.clone())} label={props.arcana.name.clone()} />
@@ -45,7 +46,7 @@ pub fn skills(props: &SkillListProps) -> Html {
                 <LabeledValueCheckbox checked={props.intimidation.proficiency.clone()} value={modifier(props.intimidation.clone())} label={props.intimidation.name.clone()} />
                 <LabeledValueCheckbox checked={props.investigation.proficiency.clone()} value={modifier(props.investigation.clone())} label={props.investigation.name.clone()} />
             </div>
-            <div class="column">
+            <div>
                 <LabeledValueCheckbox checked={props.medicine.proficiency.clone()} value={modifier(props.medicine.clone())} label={props.medicine.name.clone()} />
                 <LabeledValueCheckbox checked={props.nature.proficiency.clone()} value={modifier(props.nature.clone())} label={props.nature.name.clone()} />
                 <LabeledValueCheckbox checked={props.perception.proficiency.clone()} value={modifier(props.perception.clone())} label={props.perception.name.clone()} />

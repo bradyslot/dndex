@@ -1,6 +1,7 @@
 pub mod shared;
 
 pub mod ability_score;
+pub mod labeled_devider;
 pub mod labeled_value;
 pub mod labeled_value_checkbox;
 pub mod passive_abilities;
