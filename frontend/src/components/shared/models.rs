@@ -39,18 +39,19 @@ pub struct AbilityScoreProps {
 }
 
 #[derive(Clone, Properties, PartialEq)]
+pub struct CharacterProps {
+    pub level: u8,
+}
+
+#[derive(Clone, Properties, PartialEq)]
 pub struct PrimaryAbilitiesProps {
+    pub character: CharacterProps,
     pub strength: AbilityScoreProps,
     pub dexterity: AbilityScoreProps,
     pub constitution: AbilityScoreProps,
     pub intelligence: AbilityScoreProps,
     pub wisdom: AbilityScoreProps,
     pub charisma: AbilityScoreProps,
-}
-
-#[derive(Clone, Properties, PartialEq)]
-pub struct CharacterProps {
-    pub level: u8,
 }
 
 #[derive(Clone, Properties, PartialEq)]

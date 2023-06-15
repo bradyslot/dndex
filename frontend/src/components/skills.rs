@@ -18,9 +18,9 @@ pub fn skills(props: &SkillListProps) -> Html {
     let style = use_style!(
         r#"
             display: grid;
-            grid-template-rows: auto;
             grid-template-columns: 1fr 1fr;
-            width: 100%;
+            grid-gap: 1rem;
+            flex-grow: 1;
 
             .top-row {
                 grid-column: 1 / span 2;

@@ -3,70 +3,60 @@ use yew::prelude::*;
 use super::shared::models::*;
 use super::rectangle::*;
 use super::super::constants::*;
+use super::shared::utils::*;
 
 #[function_component(AbilityScore)]
 pub fn ability_score(props: &AbilityScoreProps) -> Html {
-    let size = &Dimensions { height: "15rem".into(), width: "15rem".into() };
     let vars = format!(r#"
-        --height: {}; --width: {};
         --foreground: {}; "#
-        , size.height , size.width
         , FOREGROUND
     );
-    // let ability = use_state(|| {props.value});
-    let modifier = props.value as i8;
-    let modifier = use_state(|| {(modifier - 10) / 2});
 
     let style = use_style!(
         r#"
             display: flex;
-            flex-grow: 1;
-            justify-content: center;
-            padding: 4px;
+            padding-bottom: 2rem;
+            height: 15rem;
+            width: 15rem;
 
             .container {
                 display: flex;
-                height: var(--height);
-                width: var(--width);
                 position: relative;
+                height: 100%;
+                width: 100%;
             }
             
-            .text {
+            .center {
                 display: flex;
                 position: absolute;
+                width: 100%;
                 justify-content: center;
                 align-items: center;
                 text-align: center;
-                line-height: 1;
             }
 
-            .modifier {
-                top: 0;
-                left: 0;
-                height: var(--height);
-                width: var(--width);
-                font-size: calc(var(--height) / 3);
+            .top {
+                top: 0.5rem;
+                font-size: 1.5rem;
             }
 
-            .ability {
-                bottom: -20%;
-                left: 27.5%;
-                height: 40%;
-                width: 40%;
-                border-radius: 100%;
-                background-color: var(--foreground);
+            .bottom {
+                bottom: -2rem;
+            }
+
+            .middle {
+                align-self: center;
+                font-size: 4rem;
+            }
+
+            .circle {
+                transform: translate(0, -2rem);
+                font-size: 2rem;
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
                 border: 2px solid black;
-                font-size: calc(var(--height) / 5);
-            }
-
-            .label {
-                width: var(--width);
-                top: 5%;
-                font-size: calc(var(--height) / 8);
-            }
-
-            .overlay {
-                z-index: 9;
+                background-color: var(--foreground);
             }
         "#
     );
@@ -74,10 +64,12 @@ pub fn ability_score(props: &AbilityScoreProps) -> Html {
     html! {
         <div class={style} style={vars}>
             <div class="container">
-                <Rectangle height={size.height.clone()} width={size.width.clone()} />
-                <div class="text modifier overlay">{ *modifier }</div>
-                <div class="text ability overlay">{ &props.value }</div>
-                <div class="label text overlay">{ &props.name }</div>
+                <Rectangle />
+                <div class="middle center">{ calc_base_modifier(props.value) }</div>
+                <div class="top center">{ &props.name }</div>
+                <div class="bottom center">
+                    <div class="circle center">{ &props.value }</div>
+                </div>
             </div>
         </div>
     }

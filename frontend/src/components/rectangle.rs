@@ -1,29 +1,27 @@
 use stylist::yew::use_style;
 use yew::prelude::*;
-use super::shared::models::*;
+// use super::shared::models::*;
 use super::super::constants::*;
 
 #[function_component(Rectangle)]
-pub fn rectangle(props: &Dimensions) -> Html {
+pub fn rectangle() -> Html {
     let vars = format!(r#"
-        --height: {}; --width: {};
         --background: {}; --foreground: {}; "#
-        , props.height , props.width
         , BACKGROUND , FOREGROUND
     );
 
     let style = use_style!(
         r#"
-            height: var(--height);
-            width: var(--width);
+            display: flex;
+            flex-grow: 1;
             background-color: var(--foreground);
             position: relative;
             overflow: hidden;
 
             .border {
                 position: absolute;
-                width: calc(var(--width) - 4px);
-                height: calc(var(--height) - 4px);
+                width: calc(100% - 4px);
+                height: calc(100% - 4px);
                 border: 2px solid black;
             }
 

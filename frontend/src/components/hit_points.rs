@@ -16,7 +16,7 @@ pub fn hit_points(props: &HitPointProps) -> Html {
 
     html! {
         <div class={style}>
-            <Rectangle height={"100%"} width={"100%"} />
+            <Rectangle />
             <div> {props.current} </div>
             <div> {props.max} </div>
             <div> {props.temp} </div>

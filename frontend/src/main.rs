@@ -8,9 +8,9 @@ use components::shared::models::*;
 
 use components::passive_abilities::*;
 use components::primary_abilities::*;
-use components::proficiency_bonus::*;
+// use components::proficiency_bonus::*;
 use components::skills::*;
-use components::hit_points::*;
+// use components::hit_points::*;
 
 mod constants;
 use constants::*;
@@ -30,7 +30,12 @@ fn App() -> Html {
         , FONT
     ));
 
+    let character = CharacterProps {
+        level: 5,
+    };
+
     let primary_abilities = PrimaryAbilitiesProps {
+        character: character.clone(),
         strength: AbilityScoreProps {
             name: "Strength".into(),
             value: 8,
@@ -57,12 +62,8 @@ fn App() -> Html {
         },
     };
 
-    let character = CharacterProps {
-        level: 5,
-    };
-
     let skills = SkillListProps {
-        character: character.clone(),
+        character: primary_abilities.character.clone(),
         acrobatics: SkillProps {
             name: "Acrobatics (Dex)".into(),
             proficiency: false,
@@ -155,7 +156,7 @@ fn App() -> Html {
         },
     };
 
-    let hp = HitPointProps {
+    let _hp = HitPointProps {
         current: 37,
         max: 52,
         temp: 0,
@@ -179,8 +180,8 @@ fn App() -> Html {
     html! {
         <div class={style}>
             <div class="row">
-                <ProficiencyBonus level={character.level} />
                 <PassiveAbilities 
+                    character={primary_abilities.character.clone()}
                     strength={primary_abilities.strength.clone()}
                     dexterity={primary_abilities.dexterity.clone()}
                     constitution={primary_abilities.constitution.clone()}
@@ -191,6 +192,7 @@ fn App() -> Html {
             </div>
             <div class="row">
                 <PrimaryAbilities
+                    character={primary_abilities.character.clone()}
                     strength={primary_abilities.strength.clone()}
                     dexterity={primary_abilities.dexterity.clone()}
                     constitution={primary_abilities.constitution.clone()}
@@ -201,7 +203,7 @@ fn App() -> Html {
             </div>
             <div class="row">
                 <Skills
-                    character={character.clone()}
+                    character={primary_abilities.character.clone()}
                     acrobatics={skills.acrobatics.clone()}
                     animalhandling={skills.animalhandling.clone()}
                     arcana={skills.arcana.clone()}
@@ -222,14 +224,14 @@ fn App() -> Html {
                     survival={skills.survival.clone()}
                 />
             </div>
-            <div class="row">
-                <HitPoints 
-                    current={hp.current.clone()}
-                    max={hp.max.clone()}
-                    temp={hp.temp.clone()}
-                    inspiration={hp.inspiration.clone()}
-                />
-            </div>
+            // <div class="row">
+            //     <HitPoints 
+            //         current={hp.current.clone()}
+            //         max={hp.max.clone()}
+            //         temp={hp.temp.clone()}
+            //         inspiration={hp.inspiration.clone()}
+            //     />
+            // </div>
         </div>
     }
 }
