@@ -10,7 +10,7 @@ use components::passive_abilities::*;
 use components::primary_abilities::*;
 // use components::proficiency_bonus::*;
 use components::skills::*;
-// use components::hit_points::*;
+use components::hit_points::*;
 
 mod constants;
 use constants::*;
@@ -32,6 +32,12 @@ fn App() -> Html {
 
     let character = CharacterProps {
         level: 5,
+        hp: HitPointProps {
+            max: 52,
+            current: 37,
+            temp: 0,
+            inspiration: false,
+        },
     };
 
     let primary_abilities = PrimaryAbilitiesProps {
@@ -156,13 +162,6 @@ fn App() -> Html {
         },
     };
 
-    let _hp = HitPointProps {
-        current: 37,
-        max: 52,
-        temp: 0,
-        inspiration: false,
-    };
-
     let style = use_style!(
         r#"
             display: flex;
@@ -179,6 +178,14 @@ fn App() -> Html {
 
     html! {
         <div class={style}>
+            <div class="row">
+                <HitPoints 
+                    current={character.hp.current.clone()}
+                    max={character.hp.max.clone()}
+                    temp={character.hp.temp.clone()}
+                    inspiration={character.hp.inspiration.clone()}
+                />
+            </div>
             <div class="row">
                 <PassiveAbilities 
                     character={primary_abilities.character.clone()}
@@ -224,14 +231,6 @@ fn App() -> Html {
                     survival={skills.survival.clone()}
                 />
             </div>
-            // <div class="row">
-            //     <HitPoints 
-            //         current={hp.current.clone()}
-            //         max={hp.max.clone()}
-            //         temp={hp.temp.clone()}
-            //         inspiration={hp.inspiration.clone()}
-            //     />
-            // </div>
         </div>
     }
 }

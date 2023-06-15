@@ -40,13 +40,13 @@ pub fn ability_score(props: &AbilityScoreProps) -> Html {
                 font-size: 1.5rem;
             }
 
-            .bottom {
-                bottom: -2rem;
-            }
-
             .middle {
                 align-self: center;
-                font-size: 4rem;
+                font-size: 5rem;
+            }
+
+            .bottom {
+                bottom: -2rem;
             }
 
             .circle {
@@ -65,10 +65,10 @@ pub fn ability_score(props: &AbilityScoreProps) -> Html {
         <div class={style} style={vars}>
             <div class="container">
                 <Rectangle />
-                <div class="middle center">{ calc_base_modifier(props.value) }</div>
-                <div class="top center">{ &props.name }</div>
-                <div class="bottom center">
-                    <div class="circle center">{ &props.value }</div>
+                <div class="center top">{ &props.name }</div>
+                <div class="center middle">{ calc_base_modifier(props.value) }</div>
+                <div class="center bottom">
+                    <div class="center circle">{ &props.value }</div>
                 </div>
             </div>
         </div>

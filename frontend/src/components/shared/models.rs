@@ -41,6 +41,7 @@ pub struct AbilityScoreProps {
 #[derive(Clone, Properties, PartialEq)]
 pub struct CharacterProps {
     pub level: u8,
+    pub hp: HitPointProps,
 }
 
 #[derive(Clone, Properties, PartialEq)]
