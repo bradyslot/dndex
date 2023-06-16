@@ -17,6 +17,8 @@ pub fn rectangle(props: &RectangleProps) -> Html {
             background-color: var(--foreground);
             position: relative;
             overflow: hidden;
+            width: 100%;
+            height: 100%;
 
             .border {
                 position: absolute;
@@ -27,23 +29,24 @@ pub fn rectangle(props: &RectangleProps) -> Html {
 
             .radius {
                 position: absolute;
-                width: 20px;
-                height: 20px;
+                width: 1rem;
+                height: 1rem;
                 border-radius: 100%;
                 background-color: var(--background);
                 border: 2px solid black;
             }
 
-            .top { top: -10px; }
-            .bottom { bottom: -10px; }
-            .left { left: -10px; }
-            .right { right: -10px; }
+            .top { top: -0.5rem; }
+            .bottom { bottom: -0.5rem; }
+            .left { left: -0.5rem; }
+            .right { right: -0.5rem; }
 
-            .container {
+            .children {
                 display: flex;
                 position: relative;
-                height: 100%;
+                overflow: visible;
                 width: 100%;
+                height: 100%;
             }
         "#
     );
@@ -55,7 +58,7 @@ pub fn rectangle(props: &RectangleProps) -> Html {
             <div class="radius top right" />
             <div class="radius bottom left" />
             <div class="radius bottom right" />
-            <div class="container">{for props.children.iter()}</div>
+            <div class="children">{for props.children.iter()}</div>
         </div>
     }
 }

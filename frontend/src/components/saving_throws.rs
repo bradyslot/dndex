@@ -34,7 +34,7 @@ pub fn saving_throws(props: &PrimaryAbilitiesProps) -> Html {
                 display: grid;
                 grid-template-rows: repeat(6, 1fr);
                 margin-left: 1rem;
-                margin-top: 1rem;
+                margin-top: 1.5rem;
             }
         "#
     );

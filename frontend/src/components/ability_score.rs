@@ -19,33 +19,29 @@ pub fn ability_score(props: &AbilityScoreProps) -> Html {
             height: 15rem;
             width: 15rem;
 
-            .container {
-                display: flex;
-                position: relative;
-                height: 100%;
-                width: 100%;
-            }
-            
-            .center {
+            .absolute {
                 display: flex;
                 position: absolute;
                 width: 100%;
+            }
+
+            .center {
                 justify-content: center;
                 align-items: center;
                 text-align: center;
             }
 
-            .top {
+            .label {
                 top: 0.5rem;
                 font-size: 1.5rem;
             }
 
-            .middle {
+            .modifier {
                 align-self: center;
                 font-size: 5rem;
             }
 
-            .bottom {
+            .score {
                 bottom: -2rem;
             }
 
@@ -64,10 +60,10 @@ pub fn ability_score(props: &AbilityScoreProps) -> Html {
     html! {
         <div class={style} style={vars}>
             <Rectangle>
-                <div class="center top">{ &props.name }</div>
-                <div class="center middle">{ calc_base_modifier(props.value) }</div>
-                <div class="center bottom">
-                    <div class="center circle">{ &props.value }</div>
+                <div class="absolute center label">{ &props.name }</div>
+                <div class="absolute center modifier">{ calc_base_modifier(props.value) }</div>
+                <div class="absolute center score">
+                    <div class="absolute center circle">{ &props.value }</div>
                 </div>
             </Rectangle>
         </div>
