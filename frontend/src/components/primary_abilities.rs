@@ -28,12 +28,12 @@ pub fn primary_abilities(props: &PrimaryAbilitiesProps) -> Html {
             <div class="top-row">
                 <LabeledDivider text={"Primary Abilities"} />
             </div>
-            <AbilityScore value={props.strength.value.clone()} name={props.strength.name.clone()} />
-            <AbilityScore value={props.dexterity.value.clone()} name={props.dexterity.name.clone()} />
-            <AbilityScore value={props.constitution.value.clone()} name={props.constitution.name.clone()} />
-            <AbilityScore value={props.intelligence.value.clone()} name={props.intelligence.name.clone()} />
-            <AbilityScore value={props.wisdom.value.clone()} name={props.wisdom.name.clone()} />
-            <AbilityScore value={props.charisma.value.clone()} name={props.charisma.name.clone()} />
+            <AbilityScore saving={false} value={props.strength.value.clone()} name={props.strength.name.clone()} />
+            <AbilityScore saving={false} value={props.dexterity.value.clone()} name={props.dexterity.name.clone()} />
+            <AbilityScore saving={false} value={props.constitution.value.clone()} name={props.constitution.name.clone()} />
+            <AbilityScore saving={false} value={props.intelligence.value.clone()} name={props.intelligence.name.clone()} />
+            <AbilityScore saving={false} value={props.wisdom.value.clone()} name={props.wisdom.name.clone()} />
+            <AbilityScore saving={false} value={props.charisma.value.clone()} name={props.charisma.name.clone()} />
         </div>
     }
 }

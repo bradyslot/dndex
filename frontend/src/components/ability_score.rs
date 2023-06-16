@@ -63,14 +63,13 @@ pub fn ability_score(props: &AbilityScoreProps) -> Html {
 
     html! {
         <div class={style} style={vars}>
-            <div class="container">
-                <Rectangle />
+            <Rectangle>
                 <div class="center top">{ &props.name }</div>
                 <div class="center middle">{ calc_base_modifier(props.value) }</div>
                 <div class="center bottom">
                     <div class="center circle">{ &props.value }</div>
                 </div>
-            </div>
+            </Rectangle>
         </div>
     }
 }

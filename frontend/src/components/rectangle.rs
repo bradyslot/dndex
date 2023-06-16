@@ -1,10 +1,10 @@
 use stylist::yew::use_style;
 use yew::prelude::*;
-// use super::shared::models::*;
+use super::shared::models::*;
 use super::super::constants::*;
 
 #[function_component(Rectangle)]
-pub fn rectangle() -> Html {
+pub fn rectangle(props: &RectangleProps) -> Html {
     let vars = format!(r#"
         --background: {}; --foreground: {}; "#
         , BACKGROUND , FOREGROUND
@@ -38,6 +38,13 @@ pub fn rectangle() -> Html {
             .bottom { bottom: -10px; }
             .left { left: -10px; }
             .right { right: -10px; }
+
+            .container {
+                display: flex;
+                position: relative;
+                height: 100%;
+                width: 100%;
+            }
         "#
     );
 
@@ -48,6 +55,7 @@ pub fn rectangle() -> Html {
             <div class="radius top right" />
             <div class="radius bottom left" />
             <div class="radius bottom right" />
+            <div class="container">{for props.children.iter()}</div>
         </div>
     }
 }

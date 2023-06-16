@@ -1,6 +1,11 @@
 use yew::prelude::*;
 
 #[derive(Clone, Properties, PartialEq)]
+pub struct RectangleProps {
+    pub children: Children,
+}
+
+#[derive(Clone, Properties, PartialEq)]
 pub struct HitPointProps {
     pub current: i8,
     pub max: i8,
@@ -36,6 +41,7 @@ pub struct LabeledValueCheckboxProps {
 pub struct AbilityScoreProps {
     pub name: AttrValue,
     pub value: u8,
+    pub saving: bool,
 }
 
 #[derive(Clone, Properties, PartialEq)]

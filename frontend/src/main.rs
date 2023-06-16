@@ -11,6 +11,7 @@ use components::primary_abilities::*;
 // use components::proficiency_bonus::*;
 use components::skills::*;
 use components::hit_points::*;
+use components::saving_throws::*;
 
 mod constants;
 use constants::*;
@@ -45,26 +46,32 @@ fn App() -> Html {
         strength: AbilityScoreProps {
             name: "Strength".into(),
             value: 8,
+            saving: false,
         },
         dexterity: AbilityScoreProps {
             name: "Dexterity".into(),
             value: 13,
+            saving: false,
         },
         constitution: AbilityScoreProps {
             name: "Constitution".into(),
             value: 15,
+            saving: true,
         },
         intelligence: AbilityScoreProps {
             name: "Intelligence".into(),
             value: 19,
+            saving: true,
         },
         wisdom: AbilityScoreProps {
             name: "Wisdom".into(),
             value: 12,
+            saving: false,
         },
         charisma: AbilityScoreProps {
             name: "Charisma".into(),
             value: 10,
+            saving: false,
         },
     };
 
@@ -179,6 +186,15 @@ fn App() -> Html {
     html! {
         <div class={style}>
             <div class="row">
+                <SavingThrows 
+                    character={primary_abilities.character.clone()}
+                    strength={primary_abilities.strength.clone()}
+                    dexterity={primary_abilities.dexterity.clone()}
+                    constitution={primary_abilities.constitution.clone()}
+                    intelligence={primary_abilities.intelligence.clone()}
+                    wisdom={primary_abilities.wisdom.clone()}
+                    charisma={primary_abilities.charisma.clone()}
+                />
                 <HitPoints 
                     current={character.hp.current.clone()}
                     max={character.hp.max.clone()}
