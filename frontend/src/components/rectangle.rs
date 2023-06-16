@@ -1,15 +1,9 @@
 use stylist::yew::use_style;
 use yew::prelude::*;
 use super::shared::models::*;
-use super::super::constants::*;
 
 #[function_component(Rectangle)]
 pub fn rectangle(props: &RectangleProps) -> Html {
-    let vars = format!(r#"
-        --background: {}; --foreground: {}; "#
-        , BACKGROUND , FOREGROUND
-    );
-
     let style = use_style!(
         r#"
             display: flex;
@@ -52,7 +46,7 @@ pub fn rectangle(props: &RectangleProps) -> Html {
     );
 
     html! {
-        <div class={style} style={vars}>
+        <div class={style}>
             <div class="border" />
             <div class="radius top left" />
             <div class="radius top right" />

@@ -2,16 +2,10 @@ use stylist::yew::use_style;
 use yew::prelude::*;
 use super::shared::models::*;
 use super::rectangle::*;
-use super::super::constants::*;
 use super::shared::utils::*;
 
 #[function_component(AbilityScore)]
 pub fn ability_score(props: &AbilityScoreProps) -> Html {
-    let vars = format!(r#"
-        --foreground: {}; "#
-        , FOREGROUND
-    );
-
     let style = use_style!(
         r#"
             display: flex;
@@ -58,7 +52,7 @@ pub fn ability_score(props: &AbilityScoreProps) -> Html {
     );
 
     html! {
-        <div class={style} style={vars}>
+        <div class={style}>
             <Rectangle>
                 <div class="absolute center label">{ &props.name }</div>
                 <div class="absolute center modifier">{ calc_base_modifier(props.value) }</div>

@@ -25,9 +25,12 @@ use constants::*;
 #[function_component]
 fn App() -> Html {
     let _global_style = GlobalStyle::new(format!(r#"
-        background: {};
+        --background: {};
+        --foreground: {};
+        background: var(--background);
         font-family: {}; "#
         , BACKGROUND
+        , FOREGROUND
         , FONT
     ));
 

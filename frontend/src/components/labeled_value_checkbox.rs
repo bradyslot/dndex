@@ -1,16 +1,9 @@
 use stylist::yew::use_style;
 use yew::prelude::*;
 use super::shared::models::*;
-use super::super::constants::*;
 
 #[function_component(LabeledValueCheckbox)]
 pub fn labeled_value_checkbox(props: &LabeledValueCheckboxProps) -> Html {
-    let vars = format!(r#"
-        --foreground: {};
-        --size: 4rem; "#
-        ,
-        FOREGROUND
-    );
     let style = use_style!(
         r#"
             display: flex;
@@ -18,6 +11,7 @@ pub fn labeled_value_checkbox(props: &LabeledValueCheckboxProps) -> Html {
             flex-grow: 1;
             justify-content: flex-start;
             text-align: center;
+            --size: 4rem;
 
             .container {
                 display: flex;
@@ -60,7 +54,7 @@ pub fn labeled_value_checkbox(props: &LabeledValueCheckboxProps) -> Html {
     };
 
     html! {
-        <div class={style} style={vars}>
+        <div class={style}>
             <div class="container">
                 <div class="label">{ &props.label }</div>
                 <div class="value">{ &props.value }</div>

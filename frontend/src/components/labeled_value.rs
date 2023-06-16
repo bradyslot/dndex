@@ -1,16 +1,9 @@
 use stylist::yew::use_style;
 use yew::prelude::*;
 use super::shared::models::*;
-use super::super::constants::*;
 
 #[function_component(LabeledValue)]
 pub fn labeled_value(props: &LabeledValueProps) -> Html {
-    let vars = format!(r#"
-        --foreground: {};
-        --size: 5rem; "#
-        ,
-        FOREGROUND
-    );
     let style = use_style!(
         r#"
             display: flex;
@@ -19,6 +12,7 @@ pub fn labeled_value(props: &LabeledValueProps) -> Html {
             justify-content: flex-start;
             text-align: center;
             padding: 4px;
+            --size: 5rem;
 
             .container {
                 display: flex;
@@ -50,7 +44,7 @@ pub fn labeled_value(props: &LabeledValueProps) -> Html {
     );
 
     html! {
-        <div class={style} style={vars}>
+        <div class={style}>
             <div class="container">
                 <div class="circle">
                     <div class="value">{ &props.value }</div>

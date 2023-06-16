@@ -2,15 +2,9 @@ use stylist::yew::use_style;
 use yew::prelude::*;
 use super::shared::models::*;
 use super::rectangle::*;
-use super::super::constants::*;
 
 #[function_component(HitPoints)]
 pub fn hit_points(props: &HitPointProps) -> Html {
-    let vars = format!(r#"
-        --foreground: {}; "#
-        , FOREGROUND
-    );
-
     // grid-area: (row start) / (column start) / (row end) / (column end)
     let style = use_style!(
         r#"
@@ -78,7 +72,7 @@ pub fn hit_points(props: &HitPointProps) -> Html {
     );
 
     html! {
-        <div class={style} style={vars}>
+        <div class={style}>
             <div class="grid-left">
                 <Rectangle>
                     <div class="absolute center label"> {"Current Hit Points"} </div>
