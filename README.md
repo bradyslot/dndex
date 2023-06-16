@@ -7,5 +7,4 @@ It's a good excuse to learn D&D and Rust at the same time.
 This project will use the following stack:  
 
 - Yew frontend
-- Rocket backend
-- SurrealDB database
+- SurrealDB backend
