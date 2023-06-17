@@ -14,7 +14,6 @@ pub fn passive_abilities(props: &PrimaryAbilitiesProps) -> Html {
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 0.5rem;
             padding: 0.5rem;
-            flex-grow: 1;
 
             .top-row {
                 grid-column: 1 / span 3;

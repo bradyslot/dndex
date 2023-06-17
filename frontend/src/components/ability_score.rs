@@ -6,12 +6,24 @@ use super::shared::utils::*;
 
 #[function_component(AbilityScore)]
 pub fn ability_score(props: &AbilityScoreProps) -> Html {
+    // grid-area: (row start) / (column start) / (row end) / (column end)
     let style = use_style!(
         r#"
-            display: flex;
-            padding-bottom: 2rem;
-            height: 15rem;
+            display: grid;
+            padding: 0.5rem;
+            grid-template-rows: 1fr;
             width: 15rem;
+            height: 15rem;
+
+            .grid-upper {
+                grid-area: 1 / 1 / 3 / 1;
+            }
+
+            .grid-lower {
+                grid-area: 2 / 1 / 4 / 1;
+                z-index: 1;
+                margin-left: calc(50% - 2rem);
+            }
 
             .absolute {
                 display: flex;
@@ -35,31 +47,29 @@ pub fn ability_score(props: &AbilityScoreProps) -> Html {
                 font-size: 5rem;
             }
 
-            .score {
-                bottom: -2rem;
-            }
-
             .circle {
-                transform: translate(0, -2rem);
                 font-size: 2rem;
                 width: 4rem;
                 height: 4rem;
                 border-radius: 50%;
                 border: 2px solid black;
                 background-color: var(--foreground);
+                line-height: 4rem;
             }
         "#
     );
 
     html! {
         <div class={style}>
-            <Rectangle>
-                <div class="absolute center label">{ &props.name }</div>
-                <div class="absolute center modifier">{ calc_base_modifier(props.value) }</div>
-                <div class="absolute center score">
-                    <div class="absolute center circle">{ &props.value }</div>
-                </div>
-            </Rectangle>
+            <div class="grid-upper">
+                <Rectangle>
+                    <div class="absolute center label">{ &props.name }</div>
+                    <div class="absolute center modifier">{ calc_base_modifier(props.value) }</div>
+                </Rectangle>
+            </div>
+            <div class="grid-lower">
+                <div class="center circle">{ &props.value }</div>
+            </div>
         </div>
     }
 }

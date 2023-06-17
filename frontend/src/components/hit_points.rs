@@ -48,6 +48,7 @@ pub fn hit_points(props: &HitPointProps) -> Html {
             .label { 
                 top: 0.5rem;
                 font-size: 1.5rem;
+                line-height: 2rem;
             }
 
             .middle {
