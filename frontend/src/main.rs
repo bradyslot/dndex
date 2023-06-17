@@ -13,6 +13,7 @@ use components::primary_abilities::*;
 use components::skills::*;
 use components::hit_points::*;
 use components::saving_throws::*;
+use components::death_saves::*;
 
 mod constants;
 use constants::*;
@@ -168,6 +169,22 @@ fn App() -> Html {
         },
     };
 
+    let saves = Saves {
+        success: [false, false, false],
+        failure: [false, false, false],
+    };
+
+    let props = props! {
+        Character { 
+            level: 5,
+            hp: hp,
+            abilities: abilities,
+            skills: skills,
+            saves: saves,
+        }
+    };
+
+    // grid-area: (row start) / (column start) / (row end) / (column end)
     let style = use_style!(
         r#"
             display: flex;
@@ -182,17 +199,11 @@ fn App() -> Html {
         "#
     );
 
-    let props = props! {
-        Character { 
-            level: 5,
-            hp: hp,
-            abilities: abilities,
-            skills: skills,
-        }
-    };
-
     html! {
         <div class={style}>
+            <div class="row">
+                <DeathSaves ..props.clone() />
+            </div>
             <div class="row">
                 <SavingThrows ..props.clone() />
                 <HitPoints ..props.clone() />

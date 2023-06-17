@@ -54,6 +54,7 @@ pub fn hit_points(props: &Character) -> Html {
             .middle {
                 align-self: center;
                 font-size: 4rem;
+                height: 100%;
             }
 
             .inspiration {
@@ -67,7 +68,7 @@ pub fn hit_points(props: &Character) -> Html {
             }
 
             .adjust {
-                transform: translate(0, 50%);
+                transform: translate(0, 15%);
             }
         "#
     );

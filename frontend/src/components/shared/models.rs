@@ -6,6 +6,13 @@ pub struct Character {
     pub hp: Health,
     pub abilities: Abilities,
     pub skills: SkillList,
+    pub saves: Saves,
+}
+
+#[derive(Clone, Properties, PartialEq)]
+pub struct Saves {
+    pub success: [bool; 3],
+    pub failure: [bool; 3],
 }
 
 #[derive(Clone, Properties, PartialEq)]

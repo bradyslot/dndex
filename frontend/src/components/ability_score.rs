@@ -45,6 +45,7 @@ pub fn ability_score(props: &Ability) -> Html {
             .modifier {
                 align-self: center;
                 font-size: 5rem;
+                height: 100%;
             }
 
             .circle {

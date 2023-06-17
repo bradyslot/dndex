@@ -36,7 +36,8 @@ pub fn rectangle(props: &Child) -> Html {
             .right { right: -0.5rem; }
 
             .children {
-                display: flex;
+                height: 100%;
+                width: 100%;
             }
         "#
     );

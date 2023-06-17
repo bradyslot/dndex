@@ -24,7 +24,7 @@ pub fn saving_throws(props: &Character) -> Html {
                 align-items: center;
                 text-align: center;
             }
-            
+
             .label { 
                 top: 0.5rem;
                 font-size: 1.5rem;
@@ -45,7 +45,6 @@ pub fn saving_throws(props: &Character) -> Html {
             base_modifier + calc_proficiency_bonus(props.level)
         } else { base_modifier }
     };
-
 
     html! {
         <div class={style}>
