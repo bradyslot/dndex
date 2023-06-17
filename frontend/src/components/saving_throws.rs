@@ -52,12 +52,12 @@ pub fn saving_throws(props: &Character) -> Html {
             <Rectangle>
                 <div class="absolute center label">{"Saving Throws"}</div>
                 <div class="grid">
-                    <LabeledValueCheckbox checked={props.abilities.strength.saving.clone()} label="Strength" value={modifier(props.abilities.strength.clone())} />
-                    <LabeledValueCheckbox checked={props.abilities.dexterity.saving.clone()} label="Dexterity" value={modifier(props.abilities.dexterity.clone())} />
-                    <LabeledValueCheckbox checked={props.abilities.constitution.saving.clone()} label="Constitution" value={modifier(props.abilities.constitution.clone())} />
-                    <LabeledValueCheckbox checked={props.abilities.intelligence.saving.clone()} label="Intelligence" value={modifier(props.abilities.intelligence.clone())} />
-                    <LabeledValueCheckbox checked={props.abilities.wisdom.saving.clone()} label="Wisdom" value={modifier(props.abilities.wisdom.clone())} />
-                    <LabeledValueCheckbox checked={props.abilities.charisma.saving.clone()} label="Charisma" value={modifier(props.abilities.charisma.clone())} />
+                    <LabeledValueCheckbox checked={props.abilities.strength.saving} label="Strength" value={modifier(props.abilities.strength.clone())} />
+                    <LabeledValueCheckbox checked={props.abilities.dexterity.saving} label="Dexterity" value={modifier(props.abilities.dexterity.clone())} />
+                    <LabeledValueCheckbox checked={props.abilities.constitution.saving} label="Constitution" value={modifier(props.abilities.constitution.clone())} />
+                    <LabeledValueCheckbox checked={props.abilities.intelligence.saving} label="Intelligence" value={modifier(props.abilities.intelligence.clone())} />
+                    <LabeledValueCheckbox checked={props.abilities.wisdom.saving} label="Wisdom" value={modifier(props.abilities.wisdom.clone())} />
+                    <LabeledValueCheckbox checked={props.abilities.charisma.saving} label="Charisma" value={modifier(props.abilities.charisma.clone())} />
                 </div>
             </Rectangle>
         </div>

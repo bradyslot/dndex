@@ -185,9 +185,9 @@ fn App() -> Html {
     let props = props! {
         Character { 
             level: 5,
-            hp: hp.clone(),
-            abilities: abilities.clone(),
-            skills: skills.clone(),
+            hp: hp,
+            abilities: abilities,
+            skills: skills,
         }
     };
 
