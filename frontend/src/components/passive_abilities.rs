@@ -6,7 +6,7 @@ use super::labeled_value::*;
 use super::labeled_divider::*;
 
 #[function_component(PassiveAbilities)]
-pub fn passive_abilities(props: &PrimaryAbilitiesProps) -> Html {
+pub fn passive_abilities(props: &Character) -> Html {
 
     let style = use_style! {
         r#"
@@ -26,15 +26,15 @@ pub fn passive_abilities(props: &PrimaryAbilitiesProps) -> Html {
             <div class="top-row">
                 <LabeledDivider text={"Passive Abilities"} />
             </div>
-            <LabeledValue value={calc_proficiency_bonus(props.character.level)} label={"Proficiency Bonus"} />
-            <LabeledValue value={10 + calc_base_modifier(props.wisdom.value)} label={"Perception (Passive)"} />
-            <LabeledValue value={10 + calc_base_modifier(props.intelligence.value)} label={"Investigation (Passive)"} />
-            <LabeledValue value={10 + calc_base_modifier(props.wisdom.value)} label={"Insight (Passive)"} />
-            <LabeledValue value={10 + calc_base_modifier(props.intelligence.value)} label={"Arcana (Passive)"} />
-            <LabeledValue value={10 + calc_base_modifier(props.intelligence.value)} label={"History (Passive)"} />
-            <LabeledValue value={10 + calc_base_modifier(props.wisdom.value)} label={"Religion (Passive)"} />
-            <LabeledValue value={10 + calc_base_modifier(props.wisdom.value)} label={"Nature (Passive)"} />
-            <LabeledValue value={10 + calc_base_modifier(props.wisdom.value)} label={"Survival (Passive)"} />
+            <LabeledValue value={calc_proficiency_bonus(props.level)} label={"Proficiency Bonus"} />
+            <LabeledValue value={10 + calc_base_modifier(props.abilities.wisdom.value)} label={"Perception (Passive)"} />
+            <LabeledValue value={10 + calc_base_modifier(props.abilities.intelligence.value)} label={"Investigation (Passive)"} />
+            <LabeledValue value={10 + calc_base_modifier(props.abilities.wisdom.value)} label={"Insight (Passive)"} />
+            <LabeledValue value={10 + calc_base_modifier(props.abilities.intelligence.value)} label={"Arcana (Passive)"} />
+            <LabeledValue value={10 + calc_base_modifier(props.abilities.intelligence.value)} label={"History (Passive)"} />
+            <LabeledValue value={10 + calc_base_modifier(props.abilities.wisdom.value)} label={"Religion (Passive)"} />
+            <LabeledValue value={10 + calc_base_modifier(props.abilities.wisdom.value)} label={"Nature (Passive)"} />
+            <LabeledValue value={10 + calc_base_modifier(props.abilities.wisdom.value)} label={"Survival (Passive)"} />
         </div>
     }
 }

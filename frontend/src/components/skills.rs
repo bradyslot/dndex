@@ -6,12 +6,12 @@ use super::labeled_value_checkbox::*;
 use super::labeled_divider::*;
 
 #[function_component(Skills)]
-pub fn skills(props: &SkillListProps) -> Html {
+pub fn skills(props: &Character) -> Html {
 
-    let modifier = |skill: SkillProps| -> i8 {
-        let base_modifier = calc_base_modifier(skill.parent.value);
+    let modifier = |skill: Skill| -> i8 {
+        let base_modifier = calc_base_modifier(skill.primary.value);
         if skill.proficiency {
-            base_modifier + calc_proficiency_bonus(props.character.level)
+            base_modifier + calc_proficiency_bonus(props.level)
         } else { base_modifier }
     };
 
@@ -36,26 +36,26 @@ pub fn skills(props: &SkillListProps) -> Html {
                 <LabeledDivider text={label.text}/>
             </div>
             <div>
-                <LabeledValueCheckbox checked={props.acrobatics.proficiency.clone()} value={modifier(props.acrobatics.clone())} label={props.acrobatics.name.clone()} />
-                <LabeledValueCheckbox checked={props.animalhandling.proficiency.clone()} value={modifier(props.animalhandling.clone())} label={props.animalhandling.name.clone()} />
-                <LabeledValueCheckbox checked={props.arcana.proficiency.clone()} value={modifier(props.arcana.clone())} label={props.arcana.name.clone()} />
-                <LabeledValueCheckbox checked={props.athletics.proficiency.clone()} value={modifier(props.athletics.clone())} label={props.athletics.name.clone()} />
-                <LabeledValueCheckbox checked={props.deception.proficiency.clone()} value={modifier(props.deception.clone())} label={props.deception.name.clone()} />
-                <LabeledValueCheckbox checked={props.history.proficiency.clone()} value={modifier(props.history.clone())} label={props.history.name.clone()} />
-                <LabeledValueCheckbox checked={props.insight.proficiency.clone()} value={modifier(props.insight.clone())} label={props.insight.name.clone()} />
-                <LabeledValueCheckbox checked={props.intimidation.proficiency.clone()} value={modifier(props.intimidation.clone())} label={props.intimidation.name.clone()} />
-                <LabeledValueCheckbox checked={props.investigation.proficiency.clone()} value={modifier(props.investigation.clone())} label={props.investigation.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.acrobatics.proficiency.clone()} value={modifier(props.skills.acrobatics.clone())} label={props.skills.acrobatics.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.animalhandling.proficiency.clone()} value={modifier(props.skills.animalhandling.clone())} label={props.skills.animalhandling.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.arcana.proficiency.clone()} value={modifier(props.skills.arcana.clone())} label={props.skills.arcana.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.athletics.proficiency.clone()} value={modifier(props.skills.athletics.clone())} label={props.skills.athletics.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.deception.proficiency.clone()} value={modifier(props.skills.deception.clone())} label={props.skills.deception.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.history.proficiency.clone()} value={modifier(props.skills.history.clone())} label={props.skills.history.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.insight.proficiency.clone()} value={modifier(props.skills.insight.clone())} label={props.skills.insight.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.intimidation.proficiency.clone()} value={modifier(props.skills.intimidation.clone())} label={props.skills.intimidation.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.investigation.proficiency.clone()} value={modifier(props.skills.investigation.clone())} label={props.skills.investigation.name.clone()} />
             </div>
             <div>
-                <LabeledValueCheckbox checked={props.medicine.proficiency.clone()} value={modifier(props.medicine.clone())} label={props.medicine.name.clone()} />
-                <LabeledValueCheckbox checked={props.nature.proficiency.clone()} value={modifier(props.nature.clone())} label={props.nature.name.clone()} />
-                <LabeledValueCheckbox checked={props.perception.proficiency.clone()} value={modifier(props.perception.clone())} label={props.perception.name.clone()} />
-                <LabeledValueCheckbox checked={props.performance.proficiency.clone()} value={modifier(props.performance.clone())} label={props.performance.name.clone()} />
-                <LabeledValueCheckbox checked={props.persuasion.proficiency.clone()} value={modifier(props.persuasion.clone())} label={props.persuasion.name.clone()} />
-                <LabeledValueCheckbox checked={props.religion.proficiency.clone()} value={modifier(props.religion.clone())} label={props.religion.name.clone()} />
-                <LabeledValueCheckbox checked={props.sleightofhand.proficiency.clone()} value={modifier(props.sleightofhand.clone())} label={props.sleightofhand.name.clone()} />
-                <LabeledValueCheckbox checked={props.stealth.proficiency.clone()} value={modifier(props.stealth.clone())} label={props.stealth.name.clone()} />
-                <LabeledValueCheckbox checked={props.survival.proficiency.clone()} value={modifier(props.survival.clone())} label={props.survival.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.medicine.proficiency.clone()} value={modifier(props.skills.medicine.clone())} label={props.skills.medicine.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.nature.proficiency.clone()} value={modifier(props.skills.nature.clone())} label={props.skills.nature.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.perception.proficiency.clone()} value={modifier(props.skills.perception.clone())} label={props.skills.perception.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.performance.proficiency.clone()} value={modifier(props.skills.performance.clone())} label={props.skills.performance.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.persuasion.proficiency.clone()} value={modifier(props.skills.persuasion.clone())} label={props.skills.persuasion.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.religion.proficiency.clone()} value={modifier(props.skills.religion.clone())} label={props.skills.religion.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.sleightofhand.proficiency.clone()} value={modifier(props.skills.sleightofhand.clone())} label={props.skills.sleightofhand.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.stealth.proficiency.clone()} value={modifier(props.skills.stealth.clone())} label={props.skills.stealth.name.clone()} />
+                <LabeledValueCheckbox checked={props.skills.survival.proficiency.clone()} value={modifier(props.skills.survival.clone())} label={props.skills.survival.name.clone()} />
             </div>
         </div>
     }

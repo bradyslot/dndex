@@ -1,12 +1,15 @@
 use yew::prelude::*;
 
 #[derive(Clone, Properties, PartialEq)]
-pub struct RectangleProps {
-    pub children: Children,
+pub struct Character {
+    pub level: u8,
+    pub hp: Health,
+    pub abilities: Abilities,
+    pub skills: SkillList,
 }
 
 #[derive(Clone, Properties, PartialEq)]
-pub struct HitPointProps {
+pub struct Health {
     pub current: i8,
     pub max: i8,
     pub temp: i8,
@@ -14,14 +17,60 @@ pub struct HitPointProps {
 }
 
 #[derive(Clone, Properties, PartialEq)]
-pub struct Label {
-    pub text: AttrValue,
+pub struct Ability {
+    pub name: AttrValue,
+    pub value: u8,
+    pub saving: bool,
 }
 
 #[derive(Clone, Properties, PartialEq)]
-pub struct Dimensions {
-    pub height: AttrValue,
-    pub width: AttrValue,
+pub struct Abilities {
+    pub strength: Ability,
+    pub dexterity: Ability,
+    pub constitution: Ability,
+    pub intelligence: Ability,
+    pub wisdom: Ability,
+    pub charisma: Ability,
+}
+
+#[derive(Clone, Properties, PartialEq)]
+pub struct Skill {
+    pub name: AttrValue,
+    pub proficiency: bool,
+    pub primary: Ability,
+}
+
+#[derive(Clone, Properties, PartialEq)]
+pub struct SkillList {
+    pub acrobatics: Skill,
+    pub animalhandling: Skill,
+    pub arcana: Skill,
+    pub athletics: Skill,
+    pub deception: Skill,
+    pub history: Skill,
+    pub insight: Skill,
+    pub intimidation: Skill,
+    pub investigation: Skill,
+    pub medicine: Skill,
+    pub nature: Skill,
+    pub perception: Skill,
+    pub performance: Skill,
+    pub persuasion: Skill,
+    pub religion: Skill,
+    pub sleightofhand: Skill,
+    pub stealth: Skill,
+    pub survival: Skill,
+}
+
+// generic component props
+#[derive(Clone, Properties, PartialEq)]
+pub struct Child {
+    pub children: Children,
+}
+
+#[derive(Clone, Properties, PartialEq)]
+pub struct Label {
+    pub text: AttrValue,
 }
 
 #[derive(Clone, Properties, PartialEq)]
@@ -36,58 +85,3 @@ pub struct LabeledValueCheckboxProps {
     pub label: AttrValue,
     pub checked: bool,
 }
-
-#[derive(Clone, Properties, PartialEq)]
-pub struct AbilityScoreProps {
-    pub name: AttrValue,
-    pub value: u8,
-    pub saving: bool,
-}
-
-#[derive(Clone, Properties, PartialEq)]
-pub struct CharacterProps {
-    pub level: u8,
-    pub hp: HitPointProps,
-}
-
-#[derive(Clone, Properties, PartialEq)]
-pub struct PrimaryAbilitiesProps {
-    pub character: CharacterProps,
-    pub strength: AbilityScoreProps,
-    pub dexterity: AbilityScoreProps,
-    pub constitution: AbilityScoreProps,
-    pub intelligence: AbilityScoreProps,
-    pub wisdom: AbilityScoreProps,
-    pub charisma: AbilityScoreProps,
-}
-
-#[derive(Clone, Properties, PartialEq)]
-pub struct SkillProps {
-    pub name: AttrValue,
-    pub proficiency: bool,
-    pub parent: AbilityScoreProps,
-}
-
-#[derive(Clone, Properties, PartialEq)]
-pub struct SkillListProps {
-    pub character: CharacterProps,
-    pub acrobatics: SkillProps,
-    pub animalhandling: SkillProps,
-    pub arcana: SkillProps,
-    pub athletics: SkillProps,
-    pub deception: SkillProps,
-    pub history: SkillProps,
-    pub insight: SkillProps,
-    pub intimidation: SkillProps,
-    pub investigation: SkillProps,
-    pub medicine: SkillProps,
-    pub nature: SkillProps,
-    pub perception: SkillProps,
-    pub performance: SkillProps,
-    pub persuasion: SkillProps,
-    pub religion: SkillProps,
-    pub sleightofhand: SkillProps,
-    pub stealth: SkillProps,
-    pub survival: SkillProps,
-}
-

@@ -4,7 +4,7 @@ use super::shared::models::*;
 use super::rectangle::*;
 
 #[function_component(HitPoints)]
-pub fn hit_points(props: &HitPointProps) -> Html {
+pub fn hit_points(props: &Character) -> Html {
     // grid-area: (row start) / (column start) / (row end) / (column end)
     let style = use_style!(
         r#"
@@ -77,19 +77,19 @@ pub fn hit_points(props: &HitPointProps) -> Html {
             <div class="grid-left">
                 <Rectangle>
                     <div class="absolute center label"> {"Current Hit Points"} </div>
-                    <div class="absolute center middle"> {props.current} </div>
+                    <div class="absolute center middle"> {props.hp.current} </div>
                     <div class="absolute center inspiration">
-                        {"Inspiration: "}{props.inspiration}
+                        {"Inspiration: "}{props.hp.inspiration}
                     </div>
                 </Rectangle>
             </div>
             <div class="grid-right-top"> 
                 <div class="center label"> {"Maximum"} </div>
-                <div class="center middle adjust"> {props.max} </div>
+                <div class="center middle adjust"> {props.hp.max} </div>
             </div>
             <div class="grid-right-bottom">
                 <div class="center label"> {"Temporary"} </div>
-                <div class="center middle adjust"> {props.temp} </div>
+                <div class="center middle adjust"> {props.hp.temp} </div>
             </div>
         </div>
     }

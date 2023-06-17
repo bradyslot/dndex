@@ -5,7 +5,7 @@ use super::rectangle::*;
 use super::shared::utils::*;
 
 #[function_component(AbilityScore)]
-pub fn ability_score(props: &AbilityScoreProps) -> Html {
+pub fn ability_score(props: &Ability) -> Html {
     // grid-area: (row start) / (column start) / (row end) / (column end)
     let style = use_style!(
         r#"

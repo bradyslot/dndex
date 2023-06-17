@@ -3,7 +3,7 @@ use yew::prelude::*;
 use super::shared::models::*;
 
 #[function_component(Rectangle)]
-pub fn rectangle(props: &RectangleProps) -> Html {
+pub fn rectangle(props: &Child) -> Html {
     let style = use_style!(
         r#"
             display: flex;

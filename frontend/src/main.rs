@@ -1,6 +1,8 @@
 use stylist::yew::use_style;
 use stylist::GlobalStyle;
 use yew::prelude::*;
+use yew::props;
+// use yew::Properties;
 // use wasm_bindgen::prelude::*;
 
 mod components;
@@ -8,7 +10,6 @@ use components::shared::models::*;
 
 use components::passive_abilities::*;
 use components::primary_abilities::*;
-// use components::proficiency_bonus::*;
 use components::skills::*;
 use components::hit_points::*;
 use components::saving_throws::*;
@@ -34,141 +35,136 @@ fn App() -> Html {
         , FONT
     ));
 
-    let character = CharacterProps {
-        level: 5,
-        hp: HitPointProps {
-            max: 52,
-            current: 37,
-            temp: 0,
-            inspiration: false,
-        },
-    };
-
-    let primary_abilities = PrimaryAbilitiesProps {
-        character: character.clone(),
-        strength: AbilityScoreProps {
+    let abilities = Abilities {
+        strength: Ability {
             name: "Strength".into(),
             value: 8,
             saving: false,
         },
-        dexterity: AbilityScoreProps {
+        dexterity: Ability {
             name: "Dexterity".into(),
             value: 13,
             saving: false,
         },
-        constitution: AbilityScoreProps {
+        constitution: Ability {
             name: "Constitution".into(),
             value: 15,
             saving: true,
         },
-        intelligence: AbilityScoreProps {
+        intelligence: Ability {
             name: "Intelligence".into(),
             value: 19,
             saving: true,
         },
-        wisdom: AbilityScoreProps {
+        wisdom: Ability {
             name: "Wisdom".into(),
             value: 12,
             saving: false,
         },
-        charisma: AbilityScoreProps {
+        charisma: Ability {
             name: "Charisma".into(),
             value: 10,
             saving: false,
         },
     };
 
-    let skills = SkillListProps {
-        character: primary_abilities.character.clone(),
-        acrobatics: SkillProps {
+    let hp = Health {
+        max: 52,
+        current: 37,
+        temp: 0,
+        inspiration: false,
+    };
+
+    let skills = SkillList {
+        acrobatics: Skill {
             name: "Acrobatics (Dex)".into(),
             proficiency: false,
-            parent: primary_abilities.dexterity.clone(),
+            primary: abilities.dexterity.clone(),
         },
-        animalhandling: SkillProps {
+        animalhandling: Skill {
             name: "Animal Handling (Wis)".into(),
             proficiency: false,
-            parent: primary_abilities.wisdom.clone(),
+            primary: abilities.wisdom.clone(),
         },
-        arcana: SkillProps {
+        arcana: Skill {
             name: "Arcana (Int)".into(),
             proficiency: true,
-            parent: primary_abilities.intelligence.clone(),
+            primary: abilities.intelligence.clone(),
         },
-        athletics: SkillProps {
+        athletics: Skill {
             name: "Athletics (Str)".into(),
             proficiency: false,
-            parent: primary_abilities.strength.clone(),
+            primary: abilities.strength.clone(),
         },
-        deception: SkillProps {
+        deception: Skill {
             name: "Deception (Cha)".into(),
             proficiency: false,
-            parent: primary_abilities.charisma.clone(),
+            primary: abilities.charisma.clone(),
         },
-        history: SkillProps {
+        history: Skill {
             name: "History (Int)".into(),
             proficiency: false,
-            parent: primary_abilities.intelligence.clone(),
+            primary: abilities.intelligence.clone(),
         },
-        insight: SkillProps {
+        insight: Skill {
             name: "Insight (Wis)".into(),
             proficiency: true,
-            parent: primary_abilities.wisdom.clone(),
+            primary: abilities.wisdom.clone(),
         },
-        intimidation: SkillProps {
+        intimidation: Skill {
             name: "Intimidation (Cha)".into(),
             proficiency: false,
-            parent: primary_abilities.charisma.clone(),
+            primary: abilities.charisma.clone(),
         },
-        investigation: SkillProps {
+        investigation: Skill {
             name: "Investigation (Int)".into(),
             proficiency: false,
-            parent: primary_abilities.intelligence.clone(),
+            primary: abilities.intelligence.clone(),
         },
-        medicine: SkillProps {
+        medicine: Skill {
             name: "Medicine (Wis)".into(),
             proficiency: false,
-            parent: primary_abilities.wisdom.clone(),
+            primary: abilities.wisdom.clone(),
         },
-        nature: SkillProps {
+        nature: Skill {
             name: "Nature (Int)".into(),
             proficiency: true,
-            parent: primary_abilities.intelligence.clone(),
+            primary: abilities.intelligence.clone(),
         },
-        perception: SkillProps {
+        perception: Skill {
             name: "Perception (Wis)".into(),
             proficiency: false,
-            parent: primary_abilities.wisdom.clone(),
+            primary: abilities.wisdom.clone(),
         },
-        performance: SkillProps {
+        performance: Skill {
             name: "Performance (Cha)".into(),
             proficiency: false,
-            parent: primary_abilities.charisma.clone(),
+            primary: abilities.charisma.clone(),
         },
-        persuasion: SkillProps {
+        persuasion: Skill {
             name: "Persuasion (Cha)".into(),
             proficiency: true,
-            parent: primary_abilities.charisma.clone(),
+            primary: abilities.charisma.clone(),
         },
-        religion: SkillProps {
+        religion: Skill {
             name: "Religion (Int)".into(),
             proficiency: false,
-            parent: primary_abilities.intelligence.clone(),
+            primary: abilities.intelligence.clone(),
         },
-        sleightofhand: SkillProps {
+        sleightofhand: Skill {
             name: "Sleight of Hand (Dex)".into(),
             proficiency: false,
-            parent: primary_abilities.dexterity.clone(),
+            primary: abilities.dexterity.clone(),
         },
-        stealth: SkillProps {
+        stealth: Skill {
             name: "Stealth (Dex)".into(),
             proficiency: false,
-            parent: primary_abilities.dexterity.clone(),
+            primary: abilities.dexterity.clone(),
         },
-        survival: SkillProps {
+        survival: Skill {
             name: "Survival (Wis)".into(),
             proficiency: false,
-            parent: primary_abilities.wisdom.clone(),
+            primary: abilities.wisdom.clone(),
         },
     };
 
@@ -186,69 +182,29 @@ fn App() -> Html {
         "#
     );
 
+    let props = props! {
+        Character { 
+            level: 5,
+            hp: hp.clone(),
+            abilities: abilities.clone(),
+            skills: skills.clone(),
+        }
+    };
+
     html! {
         <div class={style}>
             <div class="row">
-                <SavingThrows 
-                    character={primary_abilities.character.clone()}
-                    strength={primary_abilities.strength.clone()}
-                    dexterity={primary_abilities.dexterity.clone()}
-                    constitution={primary_abilities.constitution.clone()}
-                    intelligence={primary_abilities.intelligence.clone()}
-                    wisdom={primary_abilities.wisdom.clone()}
-                    charisma={primary_abilities.charisma.clone()}
-                />
-                <HitPoints 
-                    current={character.hp.current.clone()}
-                    max={character.hp.max.clone()}
-                    temp={character.hp.temp.clone()}
-                    inspiration={character.hp.inspiration.clone()}
-                />
+                <SavingThrows ..props.clone() />
+                <HitPoints ..props.clone() />
             </div>
             <div class="row">
-                <PassiveAbilities 
-                    character={primary_abilities.character.clone()}
-                    strength={primary_abilities.strength.clone()}
-                    dexterity={primary_abilities.dexterity.clone()}
-                    constitution={primary_abilities.constitution.clone()}
-                    intelligence={primary_abilities.intelligence.clone()}
-                    wisdom={primary_abilities.wisdom.clone()}
-                    charisma={primary_abilities.charisma.clone()}
-                />
+                <PassiveAbilities ..props.clone() />
             </div>
             <div class="row">
-                <PrimaryAbilities
-                    character={primary_abilities.character.clone()}
-                    strength={primary_abilities.strength.clone()}
-                    dexterity={primary_abilities.dexterity.clone()}
-                    constitution={primary_abilities.constitution.clone()}
-                    intelligence={primary_abilities.intelligence.clone()}
-                    wisdom={primary_abilities.wisdom.clone()}
-                    charisma={primary_abilities.charisma.clone()}
-                />
+                <PrimaryAbilities ..props.clone() />
             </div>
             <div class="row">
-                <Skills
-                    character={primary_abilities.character.clone()}
-                    acrobatics={skills.acrobatics.clone()}
-                    animalhandling={skills.animalhandling.clone()}
-                    arcana={skills.arcana.clone()}
-                    athletics={skills.athletics.clone()}
-                    deception={skills.deception.clone()}
-                    history={skills.history.clone()}
-                    insight={skills.insight.clone()}
-                    intimidation={skills.intimidation.clone()}
-                    investigation={skills.investigation.clone()}
-                    medicine={skills.medicine.clone()}
-                    nature={skills.nature.clone()}
-                    perception={skills.perception.clone()}
-                    performance={skills.performance.clone()}
-                    persuasion={skills.persuasion.clone()}
-                    religion={skills.religion.clone()}
-                    sleightofhand={skills.sleightofhand.clone()}
-                    stealth={skills.stealth.clone()}
-                    survival={skills.survival.clone()}
-                />
+                <Skills ..props.clone() />
             </div>
         </div>
     }

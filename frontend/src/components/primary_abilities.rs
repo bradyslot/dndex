@@ -5,7 +5,7 @@ use super::ability_score::*;
 use super::labeled_divider::*;
 
 #[function_component(PrimaryAbilities)]
-pub fn primary_abilities(props: &PrimaryAbilitiesProps) -> Html {
+pub fn primary_abilities(props: &Character) -> Html {
     let style = use_style!(
         r#"
             display: grid;
@@ -28,13 +28,12 @@ pub fn primary_abilities(props: &PrimaryAbilitiesProps) -> Html {
             <div class="top-row">
                 <LabeledDivider text={"Primary Abilities"} />
             </div>
-            <AbilityScore saving={false} value={props.strength.value.clone()} name={props.strength.name.clone()} />
-            <AbilityScore saving={false} value={props.dexterity.value.clone()} name={props.dexterity.name.clone()} />
-            <AbilityScore saving={false} value={props.constitution.value.clone()} name={props.constitution.name.clone()} />
-            <AbilityScore saving={false} value={props.intelligence.value.clone()} name={props.intelligence.name.clone()} />
-            <AbilityScore saving={false} value={props.wisdom.value.clone()} name={props.wisdom.name.clone()} />
-            <AbilityScore saving={false} value={props.charisma.value.clone()} name={props.charisma.name.clone()} />
+            <AbilityScore saving={false} value={props.abilities.strength.value.clone()} name={props.abilities.strength.name.clone()} />
+            <AbilityScore saving={false} value={props.abilities.dexterity.value.clone()} name={props.abilities.dexterity.name.clone()} />
+            <AbilityScore saving={false} value={props.abilities.constitution.value.clone()} name={props.abilities.constitution.name.clone()} />
+            <AbilityScore saving={false} value={props.abilities.intelligence.value.clone()} name={props.abilities.intelligence.name.clone()} />
+            <AbilityScore saving={false} value={props.abilities.wisdom.value.clone()} name={props.abilities.wisdom.name.clone()} />
+            <AbilityScore saving={false} value={props.abilities.charisma.value.clone()} name={props.abilities.charisma.name.clone()} />
         </div>
     }
 }
-

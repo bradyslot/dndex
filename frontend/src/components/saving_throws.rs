@@ -6,7 +6,7 @@ use super::rectangle::*;
 use super::labeled_value_checkbox::*;
 
 #[function_component(SavingThrows)]
-pub fn saving_throws(props: &PrimaryAbilitiesProps) -> Html {
+pub fn saving_throws(props: &Character) -> Html {
     let style = use_style!(
         r#"
             display: flex;
@@ -39,10 +39,10 @@ pub fn saving_throws(props: &PrimaryAbilitiesProps) -> Html {
         "#
     );
 
-    let modifier = |ability: AbilityScoreProps| -> i8 {
+    let modifier = |ability: Ability| -> i8 {
         let base_modifier = calc_base_modifier(ability.value);
         if ability.saving {
-            base_modifier + calc_proficiency_bonus(props.character.level)
+            base_modifier + calc_proficiency_bonus(props.level)
         } else { base_modifier }
     };
 
@@ -52,12 +52,12 @@ pub fn saving_throws(props: &PrimaryAbilitiesProps) -> Html {
             <Rectangle>
                 <div class="absolute center label">{"Saving Throws"}</div>
                 <div class="grid">
-                    <LabeledValueCheckbox checked={props.strength.saving.clone()} label="Strength" value={modifier(props.strength.clone())} />
-                    <LabeledValueCheckbox checked={props.dexterity.saving.clone()} label="Dexterity" value={modifier(props.dexterity.clone())} />
-                    <LabeledValueCheckbox checked={props.constitution.saving.clone()} label="Constitution" value={modifier(props.constitution.clone())} />
-                    <LabeledValueCheckbox checked={props.intelligence.saving.clone()} label="Intelligence" value={modifier(props.intelligence.clone())} />
-                    <LabeledValueCheckbox checked={props.wisdom.saving.clone()} label="Wisdom" value={modifier(props.wisdom.clone())} />
-                    <LabeledValueCheckbox checked={props.charisma.saving.clone()} label="Charisma" value={modifier(props.charisma.clone())} />
+                    <LabeledValueCheckbox checked={props.abilities.strength.saving.clone()} label="Strength" value={modifier(props.abilities.strength.clone())} />
+                    <LabeledValueCheckbox checked={props.abilities.dexterity.saving.clone()} label="Dexterity" value={modifier(props.abilities.dexterity.clone())} />
+                    <LabeledValueCheckbox checked={props.abilities.constitution.saving.clone()} label="Constitution" value={modifier(props.abilities.constitution.clone())} />
+                    <LabeledValueCheckbox checked={props.abilities.intelligence.saving.clone()} label="Intelligence" value={modifier(props.abilities.intelligence.clone())} />
+                    <LabeledValueCheckbox checked={props.abilities.wisdom.saving.clone()} label="Wisdom" value={modifier(props.abilities.wisdom.clone())} />
+                    <LabeledValueCheckbox checked={props.abilities.charisma.saving.clone()} label="Charisma" value={modifier(props.abilities.charisma.clone())} />
                 </div>
             </Rectangle>
         </div>
