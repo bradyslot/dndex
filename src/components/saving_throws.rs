@@ -10,7 +10,6 @@ pub fn saving_throws(props: &Character) -> Html {
     let s = random_alpha_string(8);
     let css = css!(
         display: flex;
-        padding: 0.5rem;
 
         .absolute-${s} {
             display: flex;

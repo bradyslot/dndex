@@ -5,9 +5,16 @@ pub struct Character {
     pub level: u8,
     pub hp: Health,
     pub abilities: Abilities,
-    pub skills: AllSkills,
+    pub skills: SkillList,
     pub saves: Saves,
     pub inspiration: bool,
+    pub speed: Movement,
+}
+
+#[derive(Clone, Properties, PartialEq)]
+pub struct Movement {
+    pub base: u8,
+    pub modifier: i8,
 }
 
 #[derive(Clone, Properties, PartialEq)]
@@ -48,25 +55,8 @@ pub struct Skill {
 }
 
 #[derive(Clone, Properties, PartialEq)]
-pub struct AllSkills {
-    pub acrobatics: Skill,
-    pub animalhandling: Skill,
-    pub arcana: Skill,
-    pub athletics: Skill,
-    pub deception: Skill,
-    pub history: Skill,
-    pub insight: Skill,
-    pub intimidation: Skill,
-    pub investigation: Skill,
-    pub medicine: Skill,
-    pub nature: Skill,
-    pub perception: Skill,
-    pub performance: Skill,
-    pub persuasion: Skill,
-    pub religion: Skill,
-    pub sleightofhand: Skill,
-    pub stealth: Skill,
-    pub survival: Skill,
+pub struct SkillList {
+    pub skill: Vec<Skill>,
 }
 
 // generic component props

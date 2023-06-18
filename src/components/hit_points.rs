@@ -12,7 +12,6 @@ pub fn hit_points(props: &Character) -> Html {
     let css = css!(
         display: grid;
         width: 100%;
-        padding: 0.5rem;
         grid-template-columns: 1fr;
 
         .grid-left-${s} {
@@ -55,7 +54,7 @@ pub fn hit_points(props: &Character) -> Html {
 
         .middle-${s} {
             align-self: center;
-            font-size: 4rem;
+            font-size: 5rem;
             height: 100%;
         }
 

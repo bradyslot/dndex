@@ -13,6 +13,7 @@ use components::primary_abilities::*;
 use components::skills::*;
 use components::hit_points::*;
 use components::saving_throws::*;
+use components::speed::*;
 use components::death_saves::*;
 
 mod constants;
@@ -75,102 +76,109 @@ fn App() -> Html {
         temp: 0,
     };
 
-    let skills = AllSkills {
-        acrobatics: Skill {
-            name: "Acrobatics (Dex)".into(),
-            proficiency: false,
-            primary: abilities.dexterity.clone(),
-        },
-        animalhandling: Skill {
-            name: "Animal Handling (Wis)".into(),
-            proficiency: false,
-            primary: abilities.wisdom.clone(),
-        },
-        arcana: Skill {
-            name: "Arcana (Int)".into(),
-            proficiency: true,
-            primary: abilities.intelligence.clone(),
-        },
-        athletics: Skill {
-            name: "Athletics (Str)".into(),
-            proficiency: false,
-            primary: abilities.strength.clone(),
-        },
-        deception: Skill {
-            name: "Deception (Cha)".into(),
-            proficiency: false,
-            primary: abilities.charisma.clone(),
-        },
-        history: Skill {
-            name: "History (Int)".into(),
-            proficiency: false,
-            primary: abilities.intelligence.clone(),
-        },
-        insight: Skill {
-            name: "Insight (Wis)".into(),
-            proficiency: true,
-            primary: abilities.wisdom.clone(),
-        },
-        intimidation: Skill {
-            name: "Intimidation (Cha)".into(),
-            proficiency: false,
-            primary: abilities.charisma.clone(),
-        },
-        investigation: Skill {
-            name: "Investigation (Int)".into(),
-            proficiency: false,
-            primary: abilities.intelligence.clone(),
-        },
-        medicine: Skill {
-            name: "Medicine (Wis)".into(),
-            proficiency: false,
-            primary: abilities.wisdom.clone(),
-        },
-        nature: Skill {
-            name: "Nature (Int)".into(),
-            proficiency: true,
-            primary: abilities.intelligence.clone(),
-        },
-        perception: Skill {
-            name: "Perception (Wis)".into(),
-            proficiency: false,
-            primary: abilities.wisdom.clone(),
-        },
-        performance: Skill {
-            name: "Performance (Cha)".into(),
-            proficiency: false,
-            primary: abilities.charisma.clone(),
-        },
-        persuasion: Skill {
-            name: "Persuasion (Cha)".into(),
-            proficiency: true,
-            primary: abilities.charisma.clone(),
-        },
-        religion: Skill {
-            name: "Religion (Int)".into(),
-            proficiency: false,
-            primary: abilities.intelligence.clone(),
-        },
-        sleightofhand: Skill {
-            name: "Sleight of Hand (Dex)".into(),
-            proficiency: false,
-            primary: abilities.dexterity.clone(),
-        },
-        stealth: Skill {
-            name: "Stealth (Dex)".into(),
-            proficiency: false,
-            primary: abilities.dexterity.clone(),
-        },
-        survival: Skill {
-            name: "Survival (Wis)".into(),
-            proficiency: false,
-            primary: abilities.wisdom.clone(),
-        },
+    let skills = SkillList {
+        skill: vec![
+            Skill {
+                name: "Acrobatics (Dex)".into(),
+                proficiency: false,
+                primary: abilities.dexterity.clone(),
+            },
+            Skill {
+                name: "Animal Handling (Wis)".into(),
+                proficiency: false,
+                primary: abilities.wisdom.clone(),
+            },
+            Skill {
+                name: "Arcana (Int)".into(),
+                proficiency: true,
+                primary: abilities.intelligence.clone(),
+            },
+            Skill {
+                name: "Athletics (Str)".into(),
+                proficiency: false,
+                primary: abilities.strength.clone(),
+            },
+            Skill {
+                name: "Deception (Cha)".into(),
+                proficiency: false,
+                primary: abilities.charisma.clone(),
+            },
+            Skill {
+                name: "History (Int)".into(),
+                proficiency: false,
+                primary: abilities.intelligence.clone(),
+            },
+            Skill {
+                name: "Insight (Wis)".into(),
+                proficiency: true,
+                primary: abilities.wisdom.clone(),
+            },
+            Skill {
+                name: "Intimidation (Cha)".into(),
+                proficiency: false,
+                primary: abilities.charisma.clone(),
+            },
+            Skill {
+                name: "Investigation (Int)".into(),
+                proficiency: false,
+                primary: abilities.intelligence.clone(),
+            },
+            Skill {
+                name: "Medicine (Wis)".into(),
+                proficiency: false,
+                primary: abilities.wisdom.clone(),
+            },
+            Skill {
+                name: "Nature (Int)".into(),
+                proficiency: true,
+                primary: abilities.intelligence.clone(),
+            },
+            Skill {
+                name: "Perception (Wis)".into(),
+                proficiency: false,
+                primary: abilities.wisdom.clone(),
+            },
+            Skill {
+                name: "Performance (Cha)".into(),
+                proficiency: false,
+                primary: abilities.charisma.clone(),
+            },
+            Skill {
+                name: "Persuasion (Cha)".into(),
+                proficiency: false,
+                primary: abilities.charisma.clone(),
+            },
+            Skill {
+                name: "Religion (Int)".into(),
+                proficiency: false,
+                primary: abilities.intelligence.clone(),
+            },
+            Skill {
+                name: "Sleight of Hand (Dex)".into(),
+                proficiency: false,
+                primary: abilities.dexterity.clone(),
+            },
+            Skill {
+                name: "Stealth (Dex)".into(),
+                proficiency: false,
+                primary: abilities.dexterity.clone(),
+            },
+            Skill {
+                name: "Survival (Wis)".into(),
+                proficiency: false,
+                primary: abilities.wisdom.clone(),
+            },
+        ],
     };
 
     let saves = Saves {
         success: [false, false, false],
         failure: [false, false, false],
+    };
+
+    let speed = Movement {
+        base: 25,
+        modifier: -5,
     };
 
     let props = props! {
@@ -181,6 +189,7 @@ fn App() -> Html {
             skills: skills,
             saves: saves,
             inspiration: false,
+            speed: speed,
         }
     };
 
@@ -202,6 +211,7 @@ fn App() -> Html {
     html! {
         <div class={style}>
             <div class="row">
+                <Speed ..props.clone() />
                 <DeathSaves ..props.clone() />
             </div>
             <div class="row">

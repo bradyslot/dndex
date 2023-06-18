@@ -10,4 +10,5 @@ pub mod passive_abilities;
 pub mod primary_abilities;
 pub mod rectangle;
 pub mod saving_throws;
+pub mod speed;
 pub mod skills;
