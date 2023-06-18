@@ -44,8 +44,7 @@ pub fn rectangle(props: &Child) -> Html {
             }
         "#, s = s,
     );
-
-    let style = Style::new(css).expect("Failed to create style");
+    let style = Style::new(css).expect("css no good");
 
     html! {
         <div class={style}>

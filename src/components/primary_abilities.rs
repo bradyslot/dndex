@@ -1,12 +1,14 @@
-use stylist::yew::use_style;
+use stylist::{css, Style};
 use yew::prelude::*;
 use super::shared::models::*;
+use super::shared::utils::*;
 use super::ability_score::*;
 use super::labeled_divider::*;
 
 #[function_component(PrimaryAbilities)]
 pub fn primary_abilities(props: &Character) -> Html {
-    let style = use_style!(
+    let s = random_alpha_string(8);
+    let css = css!(
         r#"
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -16,16 +18,17 @@ pub fn primary_abilities(props: &Character) -> Html {
             flex-grow: 1;
             margin-bottom: 1rem;
 
-            .top-row {
+            .top-${s} {
                 grid-column: 1 / span 3;
                 width: 100%;
             }
-        "#
+        "#, s = s,
     );
+    let style = Style::new(css).expect("css no good");
 
     html! {
         <div class={style}>
-            <div class="top-row">
+            <div class={format!("top-{}", s)}>
                 <LabeledDivider text={"Primary Abilities"} />
             </div>
             <AbilityScore saving={false} value={props.abilities.strength.value} name={props.abilities.strength.name.clone()} />

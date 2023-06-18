@@ -1,13 +1,14 @@
-use stylist::yew::use_style;
+use stylist::{css, Style};
 use yew::prelude::*;
 use super::shared::models::*;
-use super::rectangle::*;
 use super::shared::utils::*;
+use super::rectangle::*;
 
 #[function_component(AbilityScore)]
 pub fn ability_score(props: &Ability) -> Html {
     // grid-area: (row start) / (column start) / (row end) / (column end)
-    let style = use_style!(
+    let s = random_alpha_string(8);
+    let css = css!(
         r#"
             display: grid;
             padding: 0.5rem;
@@ -15,40 +16,40 @@ pub fn ability_score(props: &Ability) -> Html {
             width: 15rem;
             height: 15rem;
 
-            .grid-upper {
+            .upper-${s} {
                 grid-area: 1 / 1 / 3 / 1;
             }
 
-            .grid-lower {
+            .lower-${s} {
                 grid-area: 2 / 1 / 4 / 1;
                 z-index: 1;
                 margin-left: calc(50% - 2rem);
             }
 
-            .absolute {
+            .absolute-${s} {
                 display: flex;
                 position: absolute;
                 width: 100%;
             }
 
-            .center {
+            .center-${s} {
                 justify-content: center;
                 align-items: center;
                 text-align: center;
             }
 
-            .label {
+            .label-${s} {
                 top: 0.5rem;
                 font-size: 1.5rem;
             }
 
-            .modifier {
+            .modifier-${s} {
                 align-self: center;
                 font-size: 5rem;
                 height: 100%;
             }
 
-            .circle {
+            .circle-${s} {
                 font-size: 2rem;
                 width: 4rem;
                 height: 4rem;
@@ -57,21 +58,21 @@ pub fn ability_score(props: &Ability) -> Html {
                 background-color: var(--foreground);
                 line-height: 4rem;
             }
-        "#
+        "#, s = s,
     );
+    let style = Style::new(css).expect("css no good");
 
     html! {
         <div class={style}>
-            <div class="grid-upper">
+            <div class={format!("upper-{}", s)}>
                 <Rectangle>
-                    <div class="absolute center label">{ &props.name }</div>
-                    <div class="absolute center modifier">{ calc_base_modifier(props.value) }</div>
+                    <div class={format!("absolute-{} center-{} label-{}", s, s, s)}>{ &props.name }</div>
+                    <div class={format!("absolute-{} center-{} modifier-{}", s, s, s)}>{ calc_base_modifier(props.value) }</div>
                 </Rectangle>
             </div>
-            <div class="grid-lower">
-                <div class="center circle">{ &props.value }</div>
+            <div class={format!("lower-{}", s)}>
+                <div class={format!("center-{} circle-{}", s, s)}>{ &props.value }</div>
             </div>
         </div>
     }
 }
-

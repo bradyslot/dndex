@@ -5,7 +5,7 @@ pub struct Character {
     pub level: u8,
     pub hp: Health,
     pub abilities: Abilities,
-    pub skills: SkillList,
+    pub skills: AllSkills,
     pub saves: Saves,
 }
 
@@ -48,7 +48,7 @@ pub struct Skill {
 }
 
 #[derive(Clone, Properties, PartialEq)]
-pub struct SkillList {
+pub struct AllSkills {
     pub acrobatics: Skill,
     pub animalhandling: Skill,
     pub arcana: Skill,

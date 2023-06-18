@@ -1,5 +1,5 @@
+use stylist::{css, Style};
 use yew::prelude::*;
-use stylist::yew::use_style;
 use super::shared::models::*;
 use super::shared::utils::*;
 use super::labeled_value::*;
@@ -7,23 +7,24 @@ use super::labeled_divider::*;
 
 #[function_component(PassiveAbilities)]
 pub fn passive_abilities(props: &Character) -> Html {
-
-    let style = use_style! {
+    let s = random_alpha_string(8);
+    let css = css! {
         r#"
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 0.5rem;
             padding: 0.5rem;
 
-            .top-row {
+            .top-${s} {
                 grid-column: 1 / span 3;
             }
-        "#
+        "#, s = s,
     };
+    let style = Style::new(css).expect("css no good");
 
     html! {
         <div class={style}>
-            <div class="top-row">
+            <div class={format!("top-{}", s)}>
                 <LabeledDivider text={"Passive Abilities"} />
             </div>
             <LabeledValue value={calc_proficiency_bonus(props.level)} label={"Proficiency Bonus"} />

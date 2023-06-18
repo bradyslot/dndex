@@ -1,10 +1,13 @@
-use stylist::yew::use_style;
+use stylist::css;
+use stylist::Style;
 use yew::prelude::*;
 use super::shared::models::*;
+use super::shared::utils::*;
 
 #[function_component(LabeledValue)]
 pub fn labeled_value(props: &LabeledValueProps) -> Html {
-    let style = use_style!(
+    let s = random_alpha_string(8);
+    let css = css!(
         r#"
             display: flex;
             flex-direction: row;
@@ -14,11 +17,11 @@ pub fn labeled_value(props: &LabeledValueProps) -> Html {
             padding: 4px;
             --size: 5rem;
 
-            .container {
+            .container-${s} {
                 display: flex;
                 flex-grow: 1;
             }
-            .circle {
+            .circle-${s} {
                 display: flex;
                 border-radius: 50%;
                 height: var(--size);
@@ -26,13 +29,13 @@ pub fn labeled_value(props: &LabeledValueProps) -> Html {
                 background-color: var(--foreground);
                 border: 2px solid black;
             }
-            .value {
+            .value-${s} {
                 height: var(--size);
                 width: var(--size);
                 font-size: calc(var(--size) / 2);
                 line-height: 2;
             }
-            .label {
+            .label-${s} {
                 display: flex;
                 flex-grow: 1;
                 justify-content: flex-start;
@@ -40,16 +43,17 @@ pub fn labeled_value(props: &LabeledValueProps) -> Html {
                 font-size: calc(var(--size) / 2.5);
                 padding: 4px;
             }
-        "#
+        "#, s = s,
     );
+    let style = Style::new(css).expect("Failed to create style");
 
     html! {
         <div class={style}>
-            <div class="container">
-                <div class="circle">
-                    <div class="value">{ &props.value }</div>
+            <div class={format!("container-{}", s)}>
+                <div class={format!("circle-{}", s)}>
+                    <div class={format!("value-{}", s)}>{ &props.value }</div>
                 </div>
-                <div class="label">{ &props.label }</div>
+                <div class={format!("label-{}", s)}>{ &props.label }</div>
             </div>
         </div>
     }

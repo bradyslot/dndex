@@ -1,10 +1,13 @@
-use stylist::yew::use_style;
+use stylist::css;
+use stylist::Style;
 use yew::prelude::*;
 use super::shared::models::*;
+use super::shared::utils::*;
 
 #[function_component(LabeledValueCheckbox)]
 pub fn labeled_value_checkbox(props: &LabeledValueCheckboxProps) -> Html {
-    let style = use_style!(
+    let s = random_alpha_string(8);
+    let css = css!(
         r#"
             display: flex;
             flex-direction: row;
@@ -13,11 +16,11 @@ pub fn labeled_value_checkbox(props: &LabeledValueCheckboxProps) -> Html {
             text-align: center;
             --size: 4rem;
 
-            .container {
+            .container-${s} {
                 display: flex;
                 flex-grow: 1;
             }
-            .checkbox {
+            .checkbox-${s} {
                 display: flex;
                 border-radius: 50%;
                 height: calc(var(--size) / 1.5);
@@ -26,17 +29,17 @@ pub fn labeled_value_checkbox(props: &LabeledValueCheckboxProps) -> Html {
                 border: 2px solid black;
                 margin: 1rem;
             }
-            .checked {
+            .checked-${s} {
                 background-color: black;
             }
-            .value {
+            .value-${s} {
                 height: var(--size);
                 width: var(--size);
                 font-size: calc(var(--size) / 2);
                 line-height: 2;
                 border-bottom: 2px solid black;
             }
-            .label {
+            .label-${s} {
                 display: flex;
                 flex-grow: 1;
                 justify-content: flex-start;
@@ -44,21 +47,22 @@ pub fn labeled_value_checkbox(props: &LabeledValueCheckboxProps) -> Html {
                 font-size: calc(var(--size) / 2.5);
                 padding: 4px;
             }
-        "#
+        "#, s = s,
     );
+    let style = Style::new(css).expect("Failed to create style");
 
-    let checkbox_class = if props.checked {
-        classes!("checkbox", "checked")
+    let checkbox = if props.checked {
+        classes!(format!("checkbox-{}", s), format!("checked-{}", s))
     } else {
-        classes!("checkbox")
+        classes!(format!("checkbox-{}", s))
     };
 
     html! {
         <div class={style}>
-            <div class="container">
-                <div class="label">{ &props.label }</div>
-                <div class="value">{ &props.value }</div>
-                <div class={checkbox_class} />
+            <div class={format!("container-{}", s)}>
+                <div class={format!("label-{}", s)}>{ &props.label }</div>
+                <div class={format!("value-{}", s)}>{ &props.value }</div>
+                <div class={checkbox} />
             </div>
         </div>
     }

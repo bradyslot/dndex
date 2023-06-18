@@ -76,7 +76,7 @@ fn App() -> Html {
         inspiration: false,
     };
 
-    let skills = SkillList {
+    let skills = AllSkills {
         acrobatics: Skill {
             name: "Acrobatics (Dex)".into(),
             proficiency: false,
