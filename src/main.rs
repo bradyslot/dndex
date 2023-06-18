@@ -73,7 +73,6 @@ fn App() -> Html {
         max: 52,
         current: 37,
         temp: 0,
-        inspiration: false,
     };
 
     let skills = AllSkills {
@@ -181,6 +180,7 @@ fn App() -> Html {
             abilities: abilities,
             skills: skills,
             saves: saves,
+            inspiration: false,
         }
     };
 

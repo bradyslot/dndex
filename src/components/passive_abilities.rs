@@ -8,18 +8,16 @@ use super::labeled_divider::*;
 #[function_component(PassiveAbilities)]
 pub fn passive_abilities(props: &Character) -> Html {
     let s = random_alpha_string(8);
-    let css = css! {
-        r#"
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 0.5rem;
-            padding: 0.5rem;
+    let css = css!(
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 0.5rem;
+        padding: 0.5rem;
 
-            .top-${s} {
-                grid-column: 1 / span 3;
-            }
-        "#, s = s,
-    };
+        .top-${s} {
+            grid-column: 1 / span 3;
+        }
+    );
     let style = Style::new(css).expect("css no good");
 
     html! {

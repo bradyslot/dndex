@@ -9,35 +9,33 @@ use super::labeled_value_checkbox::*;
 pub fn saving_throws(props: &Character) -> Html {
     let s = random_alpha_string(8);
     let css = css!(
-        r#"
+        display: flex;
+        padding: 0.5rem;
+        height: 100%;
+
+        .absolute-${s} {
             display: flex;
-            padding: 0.5rem;
-            height: 100%;
+            position: absolute;
+            width: 100%;
+        }
 
-            .absolute-${s} {
-                display: flex;
-                position: absolute;
-                width: 100%;
-            }
+        .center-${s} {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
 
-            .center-${s} {
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-            }
+        .label-${s} { 
+            top: 0.5rem;
+            font-size: 1.5rem;
+        }
 
-            .label-${s} { 
-                top: 0.5rem;
-                font-size: 1.5rem;
-            }
-
-            .grid-${s} {
-                display: grid;
-                grid-template-rows: repeat(6, 1fr);
-                margin-left: 1rem;
-                margin-top: 1.5rem;
-            }
-        "#, s = s,
+        .grid-${s} {
+            display: grid;
+            grid-template-rows: repeat(6, 1fr);
+            margin-left: 1rem;
+            margin-top: 1.5rem;
+        }
     );
     let style = Style::new(css).expect("css no good");
 

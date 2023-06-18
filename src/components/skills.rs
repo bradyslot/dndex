@@ -9,17 +9,15 @@ use super::labeled_divider::*;
 pub fn skills(props: &Character) -> Html {
     let s = random_alpha_string(8);
     let css = css!(
-        r#"
-            display: grid;
-            grid-gap: 1rem;
-            flex-grow: 1;
-            grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        grid-gap: 1rem;
+        flex-grow: 1;
+        grid-template-columns: repeat(2, 1fr);
 
-            .top-${s} {
-                grid-column: 1 / span 2;
-                width: 100%;
-            }
-        "#, s = s,
+        .top-${s} {
+            grid-column: 1 / span 2;
+            width: 100%;
+        }
     );
     let style = Style::new(css).expect("css no good");
 

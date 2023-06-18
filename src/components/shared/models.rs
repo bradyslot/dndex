@@ -7,6 +7,7 @@ pub struct Character {
     pub abilities: Abilities,
     pub skills: AllSkills,
     pub saves: Saves,
+    pub inspiration: bool,
 }
 
 #[derive(Clone, Properties, PartialEq)]
@@ -20,7 +21,6 @@ pub struct Health {
     pub current: i8,
     pub max: i8,
     pub temp: i8,
-    pub inspiration: bool,
 }
 
 #[derive(Clone, Properties, PartialEq)]

@@ -9,20 +9,18 @@ use super::labeled_divider::*;
 pub fn primary_abilities(props: &Character) -> Html {
     let s = random_alpha_string(8);
     let css = css!(
-        r#"
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 1rem;
-            padding: 0.5rem;
-            justify-items: center;
-            flex-grow: 1;
-            margin-bottom: 1rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+        padding: 0.5rem;
+        justify-items: center;
+        flex-grow: 1;
+        margin-bottom: 1rem;
 
-            .top-${s} {
-                grid-column: 1 / span 3;
-                width: 100%;
-            }
-        "#, s = s,
+        .top-${s} {
+            grid-column: 1 / span 3;
+            width: 100%;
+        }
     );
     let style = Style::new(css).expect("css no good");
 

@@ -7,30 +7,28 @@ use super::shared::utils::*;
 pub fn labeled_divider(props: &Label) -> Html {
     let s = random_alpha_string(8);
     let css = css!(
-        r#"
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+
+        .line-${s} {
             display: flex;
+            flex-grow: 1;
             align-items: center;
-            justify-content: center;
-            font-size: 2em;
+        }
 
-            .line-${s} {
-                display: flex;
-                flex-grow: 1;
-                align-items: center;
-            }
+        .line-${s}::before,
+        .line-${s}::after {
+            content: "";
+            flex-grow: 1;
+            height: 2px;
+            background-color: black;
+        }
 
-            .line-${s}::before,
-            .line-${s}::after {
-                content: "";
-                flex-grow: 1;
-                height: 2px;
-                background-color: black;
-            }
-
-            .label-${s} {
-                margin: 0 1em;
-            }
-        "#, s = s,
+        .label-${s} {
+            margin: 0 1rem;
+        }
     );
     let style = Style::new(css).expect("css no good");
 
