@@ -11,7 +11,6 @@ pub fn saving_throws(props: &Character) -> Html {
     let css = css!(
         display: flex;
         padding: 0.5rem;
-        height: 100%;
 
         .absolute-${s} {
             display: flex;
@@ -33,8 +32,7 @@ pub fn saving_throws(props: &Character) -> Html {
         .grid-${s} {
             display: grid;
             grid-template-rows: repeat(6, 1fr);
-            margin-left: 1rem;
-            margin-top: 1.5rem;
+            margin: 1rem;
         }
     );
     let style = Style::new(css).expect("css no good");

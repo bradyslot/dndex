@@ -21,9 +21,9 @@ pub fn labeled_value_checkbox(props: &LabeledValueCheckboxProps) -> Html {
         }
 
         .value-${s} {
-            height: var(--size);
-            width: var(--size);
-            font-size: calc(var(--size) / 2);
+            height: 4rem;
+            width: 4rem;
+            font-size: 2rem;
             border-bottom: 2px solid black;
             line-height: 2.5;
         }
@@ -33,15 +33,16 @@ pub fn labeled_value_checkbox(props: &LabeledValueCheckboxProps) -> Html {
             flex-grow: 1;
             justify-content: flex-start;
             align-items: end;
-            font-size: calc(var(--size) / 2.5);
-            padding: 4px;
+            font-size: 1.5rem;
+            transform: translate(0, -0.5rem);
         }
 
         .svg-${s} {
             display: block;
-            margin: 1rem;
+            margin: auto;
             width: 2rem;
             height: 2rem;
+            transform: translate(0, 0.25rem);
         }
     );
     let style = Style::new(css).expect("Failed to create style");

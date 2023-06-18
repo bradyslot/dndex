@@ -10,9 +10,10 @@ pub fn skills(props: &Character) -> Html {
     let s = random_alpha_string(8);
     let css = css!(
         display: grid;
-        grid-gap: 1rem;
         flex-grow: 1;
         grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+        margin: 1rem;
 
         .top-${s} {
             grid-column: 1 / span 2;

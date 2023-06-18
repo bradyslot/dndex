@@ -12,7 +12,7 @@ pub fn passive_abilities(props: &Character) -> Html {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 0.5rem;
-        padding: 0.5rem;
+        margin: 1rem;
 
         .top-${s} {
             grid-column: 1 / span 3;

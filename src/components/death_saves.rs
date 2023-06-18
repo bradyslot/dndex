@@ -41,8 +41,8 @@ pub fn death_saves(props: &Character) -> Html {
         .svg-${s} {
             display: block;
             margin: auto;
-            width: 1.5rem;
-            height: 1.5rem;
+            width: 2rem;
+            height: 2rem;
         }
     );
     let style = Style::new(css).expect("css no good");

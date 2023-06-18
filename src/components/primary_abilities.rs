@@ -12,10 +12,9 @@ pub fn primary_abilities(props: &Character) -> Html {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 1rem;
-        padding: 0.5rem;
         justify-items: center;
         flex-grow: 1;
-        margin-bottom: 1rem;
+        margin: 1rem;
 
         .top-${s} {
             grid-column: 1 / span 3;

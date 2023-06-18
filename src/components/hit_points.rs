@@ -11,7 +11,6 @@ pub fn hit_points(props: &Character) -> Html {
     let s = random_alpha_string(8);
     let css = css!(
         display: grid;
-        height: 100%;
         width: 100%;
         padding: 0.5rem;
         grid-template-columns: 1fr;
