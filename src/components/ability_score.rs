@@ -12,10 +12,10 @@ pub fn ability_score(props: &Ability) -> Html {
         display: grid;
         padding: 0.5rem;
         grid-template-rows: 1fr;
-        width: 15rem;
-        height: 15rem;
 
         .upper-${s} {
+            width: 15rem;
+            height: 15rem;
             grid-area: 1 / 1 / 3 / 1;
         }
 
