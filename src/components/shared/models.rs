@@ -82,3 +82,10 @@ pub struct LabeledValueCheckboxProps {
     pub label: AttrValue,
     pub checked: bool,
 }
+
+#[derive(Clone, Properties, PartialEq)]
+pub struct LabeledValueModiferBoxProps {
+    pub label: AttrValue,
+    pub value: u8,
+    pub modifier: i8,
+}
