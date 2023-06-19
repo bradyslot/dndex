@@ -52,7 +52,7 @@ pub fn labeled_value_checkbox(props: &LabeledValueCheckboxProps) -> Html {
             <div class={format!("container-{}", s)}>
                 <div class={format!("label-{}", s)}>{ &props.label }</div>
                 <div class={format!("value-{}", s)}>{ &props.value }</div>
-                <div class={format!("svg-{}", s)}>{icon_checkbox(props.checked)}</div>
+                <div class={format!("svg-{}", s)}>{icon_shield(props.checked)}</div>
             </div>
         </div>
     }

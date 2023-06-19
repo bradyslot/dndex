@@ -172,8 +172,8 @@ fn App() -> Html {
     };
 
     let saves = Saves {
-        success: [false, false, false],
-        failure: [false, false, false],
+        success: [true, false, false],
+        failure: [true, false, false],
     };
 
     let speed = Movement {
