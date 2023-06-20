@@ -1,4 +1,4 @@
-use stylist::{css, Style};
+use stylist::css;
 use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
@@ -7,7 +7,7 @@ use super::shared::utils::*;
 pub fn labeled_value_modifier_box(props: &LabeledValueModiferBoxProps) -> Html {
     // grid-area: (row start) / (column start) / (row end) / (column end)
     let s = random_alpha_string(8);
-    let css = css!(
+    let style = css!(
         display: grid;
 
         .upper-${s} {
@@ -52,7 +52,6 @@ pub fn labeled_value_modifier_box(props: &LabeledValueModiferBoxProps) -> Html {
             height: 50%;
         }
     );
-    let style = Style::new(css).expect("css no good");
 
     html! {
         <div class={style}>

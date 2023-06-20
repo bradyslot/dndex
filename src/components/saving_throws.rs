@@ -1,4 +1,4 @@
-use stylist::{css, Style};
+use stylist::css;
 use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
@@ -8,7 +8,7 @@ use super::labeled_value_checkbox::*;
 #[function_component(SavingThrows)]
 pub fn saving_throws(props: &Character) -> Html {
     let s = random_alpha_string(8);
-    let css = css!(
+    let style = css!(
         display: flex;
 
         .absolute-${s} {
@@ -34,7 +34,6 @@ pub fn saving_throws(props: &Character) -> Html {
             margin: 1rem;
         }
     );
-    let style = Style::new(css).expect("css no good");
 
     let modifier = |ability: Ability| -> i8 {
         let base_modifier = calc_base_modifier(ability.value);

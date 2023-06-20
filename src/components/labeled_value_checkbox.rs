@@ -1,4 +1,4 @@
-use stylist::{css, Style};
+use stylist::css;
 use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
@@ -7,7 +7,7 @@ use super::shared::icons::*;
 #[function_component(LabeledValueCheckbox)]
 pub fn labeled_value_checkbox(props: &LabeledValueCheckboxProps) -> Html {
     let s = random_alpha_string(8);
-    let css = css!(
+    let style = css!(
         display: flex;
         flex-direction: row;
         flex-grow: 1;
@@ -45,7 +45,6 @@ pub fn labeled_value_checkbox(props: &LabeledValueCheckboxProps) -> Html {
             transform: translate(0, 0.25rem);
         }
     );
-    let style = Style::new(css).expect("Failed to create style");
 
     html! {
         <div class={style}>

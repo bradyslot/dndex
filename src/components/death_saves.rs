@@ -1,4 +1,4 @@
-use stylist::{css, Style};
+use stylist::css;
 use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
@@ -9,16 +9,16 @@ use super::rectangle::*;
 pub fn death_saves(props: &Character) -> Html {
     // grid-area: (row start) / (column start) / (row end) / (column end)
     let s = random_alpha_string(8);
-    let css = css!(
+    let style = css!(
         display: flex;
         flex-grow: 1;
         font-size: 1.5rem;
 
         .grid-${s} {
-            margin-top: 1.5rem;
             display: grid;
-            padding: 0.5rem;
             grid-template-columns: repeat(4, auto);
+            height: 100%;
+            width: 100%;
         }
 
         .absolute-${s} {
@@ -41,7 +41,6 @@ pub fn death_saves(props: &Character) -> Html {
             height: 2rem;
         }
     );
-    let style = Style::new(css).expect("css no good");
 
     html! {
         <div class={style}>

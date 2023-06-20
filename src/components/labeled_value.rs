@@ -1,4 +1,4 @@
-use stylist::{css, Style};
+use stylist::css;
 use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
@@ -6,7 +6,7 @@ use super::shared::utils::*;
 #[function_component(LabeledValue)]
 pub fn labeled_value(props: &LabeledValueProps) -> Html {
     let s = random_alpha_string(8);
-    let css = css!(
+    let style = css!(
         display: flex;
         flex-direction: row;
         padding: 0.5rem;
@@ -41,7 +41,6 @@ pub fn labeled_value(props: &LabeledValueProps) -> Html {
             margin-left: 1rem;
         }
     );
-    let style = Style::new(css).expect("Failed to create style");
 
     html! {
         <div class={style}>

@@ -1,4 +1,4 @@
-use stylist::{css, Style};
+use stylist::css;
 use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
@@ -8,14 +8,14 @@ use super::rectangle::*;
 pub fn ability_score(props: &Ability) -> Html {
     // grid-area: (row start) / (column start) / (row end) / (column end)
     let s = random_alpha_string(8);
-    let css = css!(
+    let style = css!(
         display: grid;
         padding: 0.5rem;
         grid-template-rows: 1fr;
 
         .upper-${s} {
-            width: 15rem;
-            height: 15rem;
+            width: 14rem;
+            height: 14rem;
             grid-area: 1 / 1 / 3 / 1;
         }
 
@@ -43,18 +43,17 @@ pub fn ability_score(props: &Ability) -> Html {
         }
 
         .circle-${s} {
-            font-size: 2rem;
-            width: 4rem;
-            height: 4rem;
+            font-size: 3rem;
+            width: 5rem;
+            height: 5rem;
             border-radius: 50%;
             border: 2px solid black;
             background-color: var(--foreground);
-            line-height: 4rem;
+            line-height: 5rem;
             display: block;
             margin: auto;
         }
     );
-    let style = Style::new(css).expect("css no good");
 
     html! {
         <div class={style}>

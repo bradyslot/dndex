@@ -1,4 +1,4 @@
-use stylist::{css, Style};
+use stylist::css;
 use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
@@ -8,7 +8,7 @@ use super::labeled_divider::*;
 #[function_component(Skills)]
 pub fn skills(props: &Character) -> Html {
     let s = random_alpha_string(8);
-    let css = css!(
+    let style = css!(
         display: grid;
         flex-grow: 1;
         grid-template-columns: repeat(2, 1fr);
@@ -20,7 +20,6 @@ pub fn skills(props: &Character) -> Html {
             width: 100%;
         }
     );
-    let style = Style::new(css).expect("css no good");
 
     let modifier = |skill: Skill| -> i8 {
         let base_modifier = calc_base_modifier(skill.primary.value);

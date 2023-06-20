@@ -1,4 +1,4 @@
-use stylist::{css, Style};
+use stylist::css;
 use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
@@ -6,7 +6,7 @@ use super::shared::utils::*;
 #[function_component(LabeledDivider)]
 pub fn labeled_divider(props: &Label) -> Html {
     let s = random_alpha_string(8);
-    let css = css!(
+    let style = css!(
         display: flex;
         align-items: center;
         justify-content: center;
@@ -30,7 +30,6 @@ pub fn labeled_divider(props: &Label) -> Html {
             margin: 0 1rem;
         }
     );
-    let style = Style::new(css).expect("css no good");
 
     html! {
         <div class={style}>

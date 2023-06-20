@@ -1,4 +1,4 @@
-use stylist::{css, Style};
+use stylist::css;
 use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
@@ -9,7 +9,7 @@ use super::rectangle::*;
 pub fn hit_points(props: &Character) -> Html {
     // grid-area: (row start) / (column start) / (row end) / (column end)
     let s = random_alpha_string(8);
-    let css = css!(
+    let style = css!(
         display: grid;
         width: 100%;
         grid-template-columns: 1fr;
@@ -84,7 +84,6 @@ pub fn hit_points(props: &Character) -> Html {
             height: 2rem;
         }
     );
-    let style = Style::new(css).expect("css no good");
 
     html! {
         <div class={style}>

@@ -1,4 +1,4 @@
-use stylist::{css, Style};
+use stylist::css;
 use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
@@ -8,7 +8,7 @@ use super::labeled_divider::*;
 #[function_component(PassiveAbilities)]
 pub fn passive_abilities(props: &Character) -> Html {
     let s = random_alpha_string(8);
-    let css = css!(
+    let style = css!(
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 0.5rem;
@@ -18,7 +18,6 @@ pub fn passive_abilities(props: &Character) -> Html {
             grid-column: 1 / span 3;
         }
     );
-    let style = Style::new(css).expect("css no good");
 
     html! {
         <div class={style}>

@@ -1,9 +1,6 @@
-use stylist::yew::use_style;
-use stylist::GlobalStyle;
+use stylist::{css, global_style};
 use yew::prelude::*;
 use yew::props;
-// use yew::Properties;
-// use wasm_bindgen::prelude::*;
 
 mod components;
 use components::shared::models::*;
@@ -20,25 +17,8 @@ use components::death_saves::*;
 mod constants;
 use constants::*;
 
-
-// #[wasm_bindgen]
-// extern "C" {
-//     #[wasm_bindgen(js_namespace = console)]
-//     fn log(s: &str);
-// }
-
 #[function_component]
 fn App() -> Html {
-    let _global_style = GlobalStyle::new(format!(r#"
-        --background: {};
-        --foreground: {};
-        background: var(--background);
-        font-family: {}; "#
-        , BACKGROUND
-        , FOREGROUND
-        , FONT
-    ));
-
     let abilities = vec![
         Ability { name: "Strength".into(),     value: 8,  saving: false },
         Ability { name: "Dexterity".into(),    value: 13, saving: false },
@@ -50,8 +30,6 @@ fn App() -> Html {
 
     let hp = Health { max: 52, current: 37, temp: 0 };
 
-    // str, dex, con, int, wis, cha
-    // 0  , 1  , 2  , 3  , 4  , 5
     let skills = vec![
         Skill { name: "Acrobatics (Dex)".into(),      proficiency: false, primary: abilities[1].clone() },
         Skill { name: "Animal Handling (Wis)".into(), proficiency: false, primary: abilities[4].clone() },
@@ -100,19 +78,23 @@ fn App() -> Html {
         }
     };
 
-    // grid-area: (row start) / (column start) / (row end) / (column end)
-    let style = use_style!(
-        r#"
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
+    let _global_style = global_style!(
+        --background: ${BACKGROUND};
+        --foreground: ${FOREGROUND};
+        background: ${BACKGROUND};
+        font-family: ${FONT};
+    );
 
-            .row {
-                display: flex;
-                flex-direction: row;
-                flex-grow: 1;
-            }
-        "#
+    let style = css!(
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            flex-grow: 1;
+        }
     );
 
     html! {
@@ -141,4 +123,3 @@ fn App() -> Html {
 fn main() {
     yew::Renderer::<App>::new().render();
 }
-

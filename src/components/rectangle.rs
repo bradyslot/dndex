@@ -1,4 +1,4 @@
-use stylist::{css, Style};
+use stylist::css;
 use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
@@ -6,27 +6,12 @@ use super::shared::utils::*;
 #[function_component(Rectangle)]
 pub fn rectangle(props: &Child) -> Html {
     let s = random_alpha_string(8);
-    let css = css!(
+    let style = css!(
         background-color: var(--foreground);
         position: relative;
         overflow: hidden;
         width: 100%;
         height: 100%;
-
-        .flex-center-${s} {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .label-${s} {
-            position: absolute;
-            top: 0.5rem;
-            width: 100%;
-            font-size: 1.5rem;
-            line-height: 2rem;
-        }
 
         .border-${s} {
             position: absolute;
@@ -55,8 +40,22 @@ pub fn rectangle(props: &Child) -> Html {
             height: 100%;
             width: 100%;
         }
+
+        .label-${s} {
+            position: absolute;
+            top: 0.5rem;
+            width: 100%;
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+
+        .flex-center-${s} {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
     );
-    let style = Style::new(css).expect("css no good");
 
     html! {
         <div class={style}>
