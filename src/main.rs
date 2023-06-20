@@ -37,38 +37,38 @@ fn App() -> Html {
         , FONT
     ));
 
-    let abilities = Abilities {
-        strength: Ability {
+    let abilities = vec![
+        Ability {
             name: "Strength".into(),
             value: 8,
             saving: false,
         },
-        dexterity: Ability {
+        Ability {
             name: "Dexterity".into(),
             value: 13,
             saving: false,
         },
-        constitution: Ability {
+        Ability {
             name: "Constitution".into(),
             value: 15,
             saving: true,
         },
-        intelligence: Ability {
+        Ability {
             name: "Intelligence".into(),
             value: 19,
             saving: true,
         },
-        wisdom: Ability {
+        Ability {
             name: "Wisdom".into(),
             value: 12,
             saving: false,
         },
-        charisma: Ability {
+        Ability {
             name: "Charisma".into(),
             value: 10,
             saving: false,
         },
-    };
+    ];
 
     let hp = Health {
         max: 52,
@@ -76,100 +76,98 @@ fn App() -> Html {
         temp: 0,
     };
 
-    let skills = SkillList {
-        skill: vec![
-            Skill {
-                name: "Acrobatics (Dex)".into(),
-                proficiency: false,
-                primary: abilities.dexterity.clone(),
-            },
-            Skill {
-                name: "Animal Handling (Wis)".into(),
-                proficiency: false,
-                primary: abilities.wisdom.clone(),
-            },
-            Skill {
-                name: "Arcana (Int)".into(),
-                proficiency: true,
-                primary: abilities.intelligence.clone(),
-            },
-            Skill {
-                name: "Athletics (Str)".into(),
-                proficiency: false,
-                primary: abilities.strength.clone(),
-            },
-            Skill {
-                name: "Deception (Cha)".into(),
-                proficiency: false,
-                primary: abilities.charisma.clone(),
-            },
-            Skill {
-                name: "History (Int)".into(),
-                proficiency: false,
-                primary: abilities.intelligence.clone(),
-            },
-            Skill {
-                name: "Insight (Wis)".into(),
-                proficiency: true,
-                primary: abilities.wisdom.clone(),
-            },
-            Skill {
-                name: "Intimidation (Cha)".into(),
-                proficiency: false,
-                primary: abilities.charisma.clone(),
-            },
-            Skill {
-                name: "Investigation (Int)".into(),
-                proficiency: false,
-                primary: abilities.intelligence.clone(),
-            },
-            Skill {
-                name: "Medicine (Wis)".into(),
-                proficiency: false,
-                primary: abilities.wisdom.clone(),
-            },
-            Skill {
-                name: "Nature (Int)".into(),
-                proficiency: true,
-                primary: abilities.intelligence.clone(),
-            },
-            Skill {
-                name: "Perception (Wis)".into(),
-                proficiency: false,
-                primary: abilities.wisdom.clone(),
-            },
-            Skill {
-                name: "Performance (Cha)".into(),
-                proficiency: false,
-                primary: abilities.charisma.clone(),
-            },
-            Skill {
-                name: "Persuasion (Cha)".into(),
-                proficiency: false,
-                primary: abilities.charisma.clone(),
-            },
-            Skill {
-                name: "Religion (Int)".into(),
-                proficiency: false,
-                primary: abilities.intelligence.clone(),
-            },
-            Skill {
-                name: "Sleight of Hand (Dex)".into(),
-                proficiency: false,
-                primary: abilities.dexterity.clone(),
-            },
-            Skill {
-                name: "Stealth (Dex)".into(),
-                proficiency: false,
-                primary: abilities.dexterity.clone(),
-            },
-            Skill {
-                name: "Survival (Wis)".into(),
-                proficiency: false,
-                primary: abilities.wisdom.clone(),
-            },
-        ],
-    };
+    let skills = vec![
+        Skill {
+            name: "Acrobatics (Dex)".into(),
+            proficiency: false,
+            primary: abilities[abilities.iter().position(|a| a.name == "Dexterity").unwrap()].clone(),
+        },
+        Skill {
+            name: "Animal Handling (Wis)".into(),
+            proficiency: false,
+            primary: abilities[abilities.iter().position(|a| a.name == "Wisdom").unwrap()].clone(),
+        },
+        Skill {
+            name: "Arcana (Int)".into(),
+            proficiency: true,
+            primary: abilities[abilities.iter().position(|a| a.name == "Intelligence").unwrap()].clone(),
+        },
+        Skill {
+            name: "Athletics (Str)".into(),
+            proficiency: false,
+            primary: abilities[abilities.iter().position(|a| a.name == "Strength").unwrap()].clone(),
+        },
+        Skill {
+            name: "Deception (Cha)".into(),
+            proficiency: false,
+            primary: abilities[abilities.iter().position(|a| a.name == "Charisma").unwrap()].clone(),
+        },
+        Skill {
+            name: "History (Int)".into(),
+            proficiency: false,
+            primary: abilities[abilities.iter().position(|a| a.name == "Intelligence").unwrap()].clone(),
+        },
+        Skill {
+            name: "Insight (Wis)".into(),
+            proficiency: true,
+            primary: abilities[abilities.iter().position(|a| a.name == "Wisdom").unwrap()].clone(),
+        },
+        Skill {
+            name: "Intimidation (Cha)".into(),
+            proficiency: false,
+            primary: abilities[abilities.iter().position(|a| a.name == "Charisma").unwrap()].clone(),
+        },
+        Skill {
+            name: "Investigation (Int)".into(),
+            proficiency: false,
+            primary: abilities[abilities.iter().position(|a| a.name == "Intelligence").unwrap()].clone(),
+        },
+        Skill {
+            name: "Medicine (Wis)".into(),
+            proficiency: false,
+            primary: abilities[abilities.iter().position(|a| a.name == "Wisdom").unwrap()].clone(),
+        },
+        Skill {
+            name: "Nature (Int)".into(),
+            proficiency: true,
+            primary: abilities[abilities.iter().position(|a| a.name == "Intelligence").unwrap()].clone(),
+        },
+        Skill {
+            name: "Perception (Wis)".into(),
+            proficiency: false,
+            primary: abilities[abilities.iter().position(|a| a.name == "Wisdom").unwrap()].clone(),
+        },
+        Skill {
+            name: "Performance (Cha)".into(),
+            proficiency: false,
+            primary: abilities[abilities.iter().position(|a| a.name == "Charisma").unwrap()].clone(),
+        },
+        Skill {
+            name: "Persuasion (Cha)".into(),
+            proficiency: false,
+            primary: abilities[abilities.iter().position(|a| a.name == "Charisma").unwrap()].clone(),
+        },
+        Skill {
+            name: "Religion (Int)".into(),
+            proficiency: false,
+            primary: abilities[abilities.iter().position(|a| a.name == "Intelligence").unwrap()].clone(),
+        },
+        Skill {
+            name: "Sleight of Hand (Dex)".into(),
+            proficiency: false,
+            primary: abilities[abilities.iter().position(|a| a.name == "Dexterity").unwrap()].clone(),
+        },
+        Skill {
+            name: "Stealth (Dex)".into(),
+            proficiency: false,
+            primary: abilities[abilities.iter().position(|a| a.name == "Dexterity").unwrap()].clone(),
+        },
+        Skill {
+            name: "Survival (Wis)".into(),
+            proficiency: false,
+            primary: abilities[abilities.iter().position(|a| a.name == "Wisdom").unwrap()].clone(),
+        },
+    ];
 
     let saves = Saves {
         success: [true, false, false],

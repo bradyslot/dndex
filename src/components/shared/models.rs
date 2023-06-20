@@ -4,8 +4,8 @@ use yew::prelude::*;
 pub struct Character {
     pub level: u8,
     pub hp: Health,
-    pub abilities: Abilities,
-    pub skills: SkillList,
+    pub abilities: Vec<Ability>,
+    pub skills: Vec<Skill>,
     pub saves: Saves,
     pub inspiration: bool,
     pub speed: Movement,
@@ -38,25 +38,10 @@ pub struct Ability {
 }
 
 #[derive(Clone, Properties, PartialEq)]
-pub struct Abilities {
-    pub strength: Ability,
-    pub dexterity: Ability,
-    pub constitution: Ability,
-    pub intelligence: Ability,
-    pub wisdom: Ability,
-    pub charisma: Ability,
-}
-
-#[derive(Clone, Properties, PartialEq)]
 pub struct Skill {
     pub name: AttrValue,
     pub proficiency: bool,
     pub primary: Ability,
-}
-
-#[derive(Clone, Properties, PartialEq)]
-pub struct SkillList {
-    pub skill: Vec<Skill>,
 }
 
 // generic component props

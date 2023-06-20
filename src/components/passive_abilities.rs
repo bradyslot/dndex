@@ -26,14 +26,14 @@ pub fn passive_abilities(props: &Character) -> Html {
                 <LabeledDivider text={"Passive Abilities"} />
             </div>
             <LabeledValue value={calc_proficiency_bonus(props.level)} label={"Proficiency Bonus"} />
-            <LabeledValue value={10 + calc_base_modifier(props.abilities.wisdom.value)} label={"Perception (Passive)"} />
-            <LabeledValue value={10 + calc_base_modifier(props.abilities.intelligence.value)} label={"Investigation (Passive)"} />
-            <LabeledValue value={10 + calc_base_modifier(props.abilities.wisdom.value)} label={"Insight (Passive)"} />
-            <LabeledValue value={10 + calc_base_modifier(props.abilities.intelligence.value)} label={"Arcana (Passive)"} />
-            <LabeledValue value={10 + calc_base_modifier(props.abilities.intelligence.value)} label={"History (Passive)"} />
-            <LabeledValue value={10 + calc_base_modifier(props.abilities.wisdom.value)} label={"Religion (Passive)"} />
-            <LabeledValue value={10 + calc_base_modifier(props.abilities.wisdom.value)} label={"Nature (Passive)"} />
-            <LabeledValue value={10 + calc_base_modifier(props.abilities.wisdom.value)} label={"Survival (Passive)"} />
+            <LabeledValue value={10 + calc_base_modifier(props.abilities[props.abilities.iter().position(|a| a.name == "Wisdom").unwrap()].value)} label={"Perception (Passive)"} />
+            <LabeledValue value={10 + calc_base_modifier(props.abilities[props.abilities.iter().position(|a| a.name == "Intelligence").unwrap()].value)} label={"Investigation (Passive)"} />
+            <LabeledValue value={10 + calc_base_modifier(props.abilities[props.abilities.iter().position(|a| a.name == "Wisdom").unwrap()].value)} label={"Insight (Passive)"} />
+            <LabeledValue value={10 + calc_base_modifier(props.abilities[props.abilities.iter().position(|a| a.name == "Intelligence").unwrap()].value)} label={"Arcana (Passive)"} />
+            <LabeledValue value={10 + calc_base_modifier(props.abilities[props.abilities.iter().position(|a| a.name == "Intelligence").unwrap()].value)} label={"History (Passive)"} />
+            <LabeledValue value={10 + calc_base_modifier(props.abilities[props.abilities.iter().position(|a| a.name == "Wisdom").unwrap()].value)} label={"Religion (Passive)"} />
+            <LabeledValue value={10 + calc_base_modifier(props.abilities[props.abilities.iter().position(|a| a.name == "Wisdom").unwrap()].value)} label={"Nature (Passive)"} />
+            <LabeledValue value={10 + calc_base_modifier(props.abilities[props.abilities.iter().position(|a| a.name == "Wisdom").unwrap()].value)} label={"Survival (Passive)"} />
         </div>
     }
 }

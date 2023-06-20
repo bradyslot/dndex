@@ -34,7 +34,7 @@ pub fn skills(props: &Character) -> Html {
             <div class={format!("top-{}", s)}>
                 <LabeledDivider text={"Skills"}/>
             </div>
-            { for props.skills.skill.iter().map(|skill| html! {
+            { for props.skills.iter().map(|skill| html! {
                 <LabeledValueCheckbox checked={skill.proficiency} value={modifier(skill.clone())} label={skill.name.clone()} />
             }) }
         </div>
