@@ -2,14 +2,15 @@ use yew::prelude::*;
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct Character {
-    pub level: u8,
-    pub hp: Health,
     pub abilities: Vec<Ability>,
-    pub skills: Vec<Skill>,
     pub deathsaves: DeathSaves,
+    pub hp: Health,
+    pub initiative: i8,
     pub inspiration: bool,
-    pub speed: Movement,
+    pub level: u8,
     pub passives: Vec<Passive>,
+    pub skills: Vec<Skill>,
+    pub speed: Movement,
 }
 
 #[derive(Clone, Properties, PartialEq)]

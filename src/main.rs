@@ -13,6 +13,7 @@ use components::hit_points::*;
 use components::saving_throws::*;
 use components::speed::*;
 use components::death_save_rolls::*;
+use components::initiative::*;
 
 mod constants;
 use constants::*;
@@ -64,17 +65,20 @@ fn App() -> Html {
     };
 
     let speed = Movement { base: 25, modifier: -5 };
+    
+    let initiative = calc_base_modifier(abilities[1].value);
 
     let props = props! {
         Character { 
-            level: 5,
-            hp: hp,
             abilities: abilities,
-            skills: skills,
             deathsaves: deathsaves,
+            hp: hp,
+            initiative: initiative,
             inspiration: false,
-            speed: speed,
+            level: 5,
             passives: passives,
+            skills: skills,
+            speed: speed,
         }
     };
 
@@ -101,6 +105,7 @@ fn App() -> Html {
         <div class={style}>
             <div class="row">
                 <Speed ..props.clone() />
+                <Initiative ..props.clone() />
                 <DeathSaveRolls ..props.clone() />
             </div>
             <div class="row">

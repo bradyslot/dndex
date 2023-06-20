@@ -13,3 +13,4 @@ pub mod rectangle;
 pub mod saving_throws;
 pub mod speed;
 pub mod skills;
+pub mod initiative;
