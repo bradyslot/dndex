@@ -7,6 +7,7 @@ use yew::props;
 
 mod components;
 use components::shared::models::*;
+use components::shared::utils::*;
 
 use components::passive_abilities::*;
 use components::primary_abilities::*;
@@ -18,6 +19,7 @@ use components::death_saves::*;
 
 mod constants;
 use constants::*;
+
 
 // #[wasm_bindgen]
 // extern "C" {
@@ -169,6 +171,25 @@ fn App() -> Html {
         },
     ];
 
+    let passives = vec![
+        Passive {
+            name: "Passive Perception (Wis)".into(),
+            value: 10 + calc_base_modifier(abilities[abilities.iter().position(|a| a.name == "Wisdom").unwrap()].value),
+        },
+        Passive {
+            name: "Passive Investigation (Int)".into(),
+            value: 10 + calc_base_modifier(abilities[abilities.iter().position(|a| a.name == "Intelligence").unwrap()].value),
+        },
+        Passive {
+            name: "Passive Insight (Wis)".into(),
+            value: 10 + calc_base_modifier(abilities[abilities.iter().position(|a| a.name == "Wisdom").unwrap()].value),
+        },
+        Passive {
+            name: "Passive Stealth (Dex)".into(),
+            value: 10 + calc_base_modifier(abilities[abilities.iter().position(|a| a.name == "Dexterity").unwrap()].value),
+        },
+    ];
+
     let saves = Saves {
         success: [true, false, false],
         failure: [true, false, false],
@@ -188,6 +209,7 @@ fn App() -> Html {
             saves: saves,
             inspiration: false,
             speed: speed,
+            passives: passives,
         }
     };
 
@@ -217,10 +239,10 @@ fn App() -> Html {
                 <HitPoints ..props.clone() />
             </div>
             <div class="row">
-                <PassiveAbilities ..props.clone() />
+                <PrimaryAbilities ..props.clone() />
             </div>
             <div class="row">
-                <PrimaryAbilities ..props.clone() />
+                <PassiveAbilities ..props.clone() />
             </div>
             <div class="row">
                 <Skills ..props.clone() />

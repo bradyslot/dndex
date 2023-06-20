@@ -9,6 +9,13 @@ pub struct Character {
     pub saves: Saves,
     pub inspiration: bool,
     pub speed: Movement,
+    pub passives: Vec<Passive>,
+}
+
+#[derive(Clone, Properties, PartialEq)]
+pub struct Passive {
+    pub name: String,
+    pub value: i8,
 }
 
 #[derive(Clone, Properties, PartialEq)]
