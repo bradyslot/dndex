@@ -6,11 +6,9 @@ use super::rectangle::*;
 
 #[function_component(Initiative)]
 pub fn initiative(props: &Character) -> Html {
-    // grid-area: (row start) / (column start) / (row end) / (column end)
     let s = random_alpha_string(8);
     let style = css!(
         display: flex;
-        font-size: 1.5rem;
         height: 10rem;
         width: 10rem;
 

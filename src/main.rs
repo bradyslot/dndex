@@ -14,6 +14,7 @@ use components::saving_throws::*;
 use components::speed::*;
 use components::death_save_rolls::*;
 use components::initiative::*;
+use components::hit_dice::*;
 
 mod constants;
 use constants::*;
@@ -32,31 +33,31 @@ fn App() -> Html {
     let hp = Health { max: 52, current: 37, temp: 0 };
 
     let skills = vec![
-        Skill { name: "Acrobatics (Dex)".into(),      proficiency: false, primary: abilities[1].clone() },
-        Skill { name: "Animal Handling (Wis)".into(), proficiency: false, primary: abilities[4].clone() },
-        Skill { name: "Arcana (Int)".into(),          proficiency: true,  primary: abilities[3].clone() },
-        Skill { name: "Athletics (Str)".into(),       proficiency: false, primary: abilities[0].clone() },
-        Skill { name: "Deception (Cha)".into(),       proficiency: false, primary: abilities[5].clone() },
-        Skill { name: "History (Int)".into(),         proficiency: false, primary: abilities[3].clone() },
-        Skill { name: "Insight (Wis)".into(),         proficiency: true,  primary: abilities[4].clone() },
-        Skill { name: "Intimidation (Cha)".into(),    proficiency: false, primary: abilities[5].clone() },
-        Skill { name: "Investigation (Int)".into(),   proficiency: false, primary: abilities[3].clone() },
-        Skill { name: "Medicine (Wis)".into(),        proficiency: false, primary: abilities[4].clone() },
-        Skill { name: "Nature (Int)".into(),          proficiency: true,  primary: abilities[3].clone() },
-        Skill { name: "Perception (Wis)".into(),      proficiency: false, primary: abilities[4].clone() },
-        Skill { name: "Performance (Cha)".into(),     proficiency: false, primary: abilities[5].clone() },
-        Skill { name: "Persuasion (Cha)".into(),      proficiency: false, primary: abilities[5].clone() },
-        Skill { name: "Religion (Int)".into(),        proficiency: false, primary: abilities[3].clone() },
-        Skill { name: "Sleight of Hand (Dex)".into(), proficiency: false, primary: abilities[1].clone() },
-        Skill { name: "Stealth (Dex)".into(),         proficiency: false, primary: abilities[1].clone() },
-        Skill { name: "Survival (Wis)".into(),        proficiency: false, primary: abilities[4].clone() },
+        Skill { name: "Acrobatics (Dex)".into(),      proficiency: false, primary: abilities[DEX].clone() },
+        Skill { name: "Animal Handling (Wis)".into(), proficiency: false, primary: abilities[WIS].clone() },
+        Skill { name: "Arcana (Int)".into(),          proficiency: true,  primary: abilities[INT].clone() },
+        Skill { name: "Athletics (Str)".into(),       proficiency: false, primary: abilities[STR].clone() },
+        Skill { name: "Deception (Cha)".into(),       proficiency: false, primary: abilities[CHA].clone() },
+        Skill { name: "History (Int)".into(),         proficiency: false, primary: abilities[INT].clone() },
+        Skill { name: "Insight (Wis)".into(),         proficiency: true,  primary: abilities[WIS].clone() },
+        Skill { name: "Intimidation (Cha)".into(),    proficiency: false, primary: abilities[CHA].clone() },
+        Skill { name: "Investigation (Int)".into(),   proficiency: false, primary: abilities[INT].clone() },
+        Skill { name: "Medicine (Wis)".into(),        proficiency: false, primary: abilities[WIS].clone() },
+        Skill { name: "Nature (Int)".into(),          proficiency: true,  primary: abilities[INT].clone() },
+        Skill { name: "Perception (Wis)".into(),      proficiency: false, primary: abilities[WIS].clone() },
+        Skill { name: "Performance (Cha)".into(),     proficiency: false, primary: abilities[CHA].clone() },
+        Skill { name: "Persuasion (Cha)".into(),      proficiency: false, primary: abilities[CHA].clone() },
+        Skill { name: "Religion (Int)".into(),        proficiency: false, primary: abilities[INT].clone() },
+        Skill { name: "Sleight of Hand (Dex)".into(), proficiency: false, primary: abilities[DEX].clone() },
+        Skill { name: "Stealth (Dex)".into(),         proficiency: false, primary: abilities[DEX].clone() },
+        Skill { name: "Survival (Wis)".into(),        proficiency: false, primary: abilities[WIS].clone() },
     ];
 
     let passives = vec![
-        Passive { name: "Passive Perception (Wis)".into(),    value: 10 + calc_base_modifier(abilities[4].value) },
-        Passive { name: "Passive Investigation (Int)".into(), value: 10 + calc_base_modifier(abilities[3].value) },
-        Passive { name: "Passive Insight (Wis)".into(),       value: 10 + calc_base_modifier(abilities[4].value) },
-        Passive { name: "Passive Stealth (Dex)".into(),       value: 10 + calc_base_modifier(abilities[1].value) },
+        Passive { name: "Passive Perception (Wis)".into(),    value: 10 + calc_base_modifier(abilities[WIS].value) },
+        Passive { name: "Passive Investigation (Int)".into(), value: 10 + calc_base_modifier(abilities[INT].value) },
+        Passive { name: "Passive Insight (Wis)".into(),       value: 10 + calc_base_modifier(abilities[WIS].value) },
+        Passive { name: "Passive Stealth (Dex)".into(),       value: 10 + calc_base_modifier(abilities[DEX].value) },
     ];
 
     let deathsaves = DeathSaves {
@@ -106,6 +107,7 @@ fn App() -> Html {
             <div class="row">
                 <Speed ..props.clone() />
                 <Initiative ..props.clone() />
+                <HitDice ..props.clone() />
                 <DeathSaveRolls ..props.clone() />
             </div>
             <div class="row">
