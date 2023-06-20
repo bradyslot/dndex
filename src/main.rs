@@ -12,7 +12,7 @@ use components::skills::*;
 use components::hit_points::*;
 use components::saving_throws::*;
 use components::speed::*;
-use components::death_saves::*;
+use components::death_save_rolls::*;
 
 mod constants;
 use constants::*;
@@ -58,7 +58,7 @@ fn App() -> Html {
         Passive { name: "Passive Stealth (Dex)".into(),       value: 10 + calc_base_modifier(abilities[1].value) },
     ];
 
-    let saves = Saves {
+    let deathsaves = DeathSaves {
         success: [true, false, false],
         failure: [true, false, false],
     };
@@ -71,7 +71,7 @@ fn App() -> Html {
             hp: hp,
             abilities: abilities,
             skills: skills,
-            saves: saves,
+            deathsaves: deathsaves,
             inspiration: false,
             speed: speed,
             passives: passives,
@@ -101,7 +101,7 @@ fn App() -> Html {
         <div class={style}>
             <div class="row">
                 <Speed ..props.clone() />
-                <DeathSaves ..props.clone() />
+                <DeathSaveRolls ..props.clone() />
             </div>
             <div class="row">
                 <SavingThrows ..props.clone() />

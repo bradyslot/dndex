@@ -6,7 +6,7 @@ pub struct Character {
     pub hp: Health,
     pub abilities: Vec<Ability>,
     pub skills: Vec<Skill>,
-    pub saves: Saves,
+    pub deathsaves: DeathSaves,
     pub inspiration: bool,
     pub speed: Movement,
     pub passives: Vec<Passive>,
@@ -25,7 +25,7 @@ pub struct Movement {
 }
 
 #[derive(Clone, Properties, PartialEq)]
-pub struct Saves {
+pub struct DeathSaves {
     pub success: [bool; 3],
     pub failure: [bool; 3],
 }
