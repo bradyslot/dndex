@@ -89,8 +89,7 @@ pub fn hit_points(props: &Character) -> Html {
     html! {
         <div class={style}>
             <div class={format!("grid-left-{}", s)}>
-                <Rectangle>
-                    <div class={format!("absolute-{} center-{} label-{}", s, s, s)}> {"Current Hit Points"} </div>
+                <Rectangle label={"Current Hit Points"}>
                     <div class={format!("absolute-{} center-{} middle-{}", s, s, s)}> {props.hp.current} </div>
                     <div class={format!("bottom-left-{}", s)}>
                         <div class={format!("svg-{}", s)}>{icon_star(props.inspiration)}</div>

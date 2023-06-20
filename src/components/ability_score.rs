@@ -36,11 +36,6 @@ pub fn ability_score(props: &Ability) -> Html {
             text-align: center;
         }
 
-        .label-${s} {
-            top: 0.5rem;
-            font-size: 1.5rem;
-        }
-
         .modifier-${s} {
             align-self: center;
             font-size: 5rem;
@@ -64,8 +59,7 @@ pub fn ability_score(props: &Ability) -> Html {
     html! {
         <div class={style}>
             <div class={format!("upper-{}", s)}>
-                <Rectangle>
-                    <div class={format!("absolute-{} center-{} label-{}", s, s, s)}>{ &props.name }</div>
+                <Rectangle label={ &props.name }>
                     <div class={format!("absolute-{} center-{} modifier-{}", s, s, s)}>{ calc_base_modifier(props.value) }</div>
                 </Rectangle>
             </div>

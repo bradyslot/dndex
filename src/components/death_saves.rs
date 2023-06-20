@@ -27,12 +27,8 @@ pub fn death_saves(props: &Character) -> Html {
             width: 100%;
         }
 
-        .label-${s} {
-            top: 0.5rem;
-            font-size: 1.5rem;
-        }
-
-        .center-${s} {
+        .flex-center-${s} {
+            display: flex;
             text-align: center;
             justify-content: center;
             align-items: center;
@@ -49,17 +45,16 @@ pub fn death_saves(props: &Character) -> Html {
 
     html! {
         <div class={style}>
-            <Rectangle>
-                <div class={format!("absolute-{} center-{} label-{}", s, s, s)}>{"Death Saves"}</div>
+            <Rectangle label={"Death Saves"}>
                 <div class={format!("grid-{}", s)}>
-                    <div class={format!("center-{}", s)}>{"Success: "}</div>
-                    <div class={format!("center-{} svg-{}", s, s)}>{icon_heart(props.saves.success[0])}</div>
-                    <div class={format!("center-{} svg-{}", s, s)}>{icon_heart(props.saves.success[1])}</div>
-                    <div class={format!("center-{} svg-{}", s, s)}>{icon_heart(props.saves.success[2])}</div>
-                    <div class={format!("center-{}", s)}>{"Failure: "}</div>
-                    <div class={format!("center-{} svg-{}", s, s)}>{icon_skull(props.saves.failure[0])}</div>
-                    <div class={format!("center-{} svg-{}", s, s)}>{icon_skull(props.saves.failure[1])}</div>
-                    <div class={format!("center-{} svg-{}", s, s)}>{icon_skull(props.saves.failure[2])}</div>
+                    <div class={format!("flex-center-{}", s)}>{"Success: "}</div>
+                    <div class={format!("flex-center-{} svg-{}", s, s)}>{icon_heart(props.saves.success[0])}</div>
+                    <div class={format!("flex-center-{} svg-{}", s, s)}>{icon_heart(props.saves.success[1])}</div>
+                    <div class={format!("flex-center-{} svg-{}", s, s)}>{icon_heart(props.saves.success[2])}</div>
+                    <div class={format!("flex-center-{}", s)}>{"Failure: "}</div>
+                    <div class={format!("flex-center-{} svg-{}", s, s)}>{icon_skull(props.saves.failure[0])}</div>
+                    <div class={format!("flex-center-{} svg-{}", s, s)}>{icon_skull(props.saves.failure[1])}</div>
+                    <div class={format!("flex-center-{} svg-{}", s, s)}>{icon_skull(props.saves.failure[2])}</div>
                 </div>
             </Rectangle>
         </div>

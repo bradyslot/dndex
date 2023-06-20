@@ -13,6 +13,21 @@ pub fn rectangle(props: &Child) -> Html {
         width: 100%;
         height: 100%;
 
+        .flex-center-${s} {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .label-${s} {
+            position: absolute;
+            top: 0.5rem;
+            width: 100%;
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+
         .border-${s} {
             position: absolute;
             top: 0;
@@ -50,7 +65,12 @@ pub fn rectangle(props: &Child) -> Html {
             <div class={format!("radius-{} top-{} right-{}", s, s, s)} />
             <div class={format!("radius-{} bottom-{} left-{}", s, s, s)} />
             <div class={format!("radius-{} bottom-{} right-{}", s, s, s)} />
-            <div class={format!("children-{}", s)}>{for props.children.iter()}</div>
+            <div class={format!("label-{} flex-center-{}", s, s)}>
+                { props.label.clone() }
+            </div>
+            <div class={format!("children-{}", s)}>
+                { for props.children.iter() }
+            </div>
         </div>
     }
 }

@@ -85,10 +85,7 @@ fn App() -> Html {
         failure: [true, false, false],
     };
 
-    let speed = Movement {
-        base: 25,
-        modifier: -5,
-    };
+    let speed = Movement { base: 25, modifier: -5 };
 
     let props = props! {
         Character { 

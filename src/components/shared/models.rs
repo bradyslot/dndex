@@ -55,11 +55,12 @@ pub struct Skill {
 #[derive(Clone, Properties, PartialEq)]
 pub struct Child {
     pub children: Children,
+    pub label: Option<AttrValue>,
 }
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct Label {
-    pub text: AttrValue,
+    pub text: Option<AttrValue>,
 }
 
 #[derive(Clone, Properties, PartialEq)]
