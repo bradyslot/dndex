@@ -2,6 +2,7 @@ use yew::prelude::*;
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct Character {
+    pub name: AttrValue,
     pub abilities: Vec<Ability>,
     pub deathsaves: DeathSaves,
     pub hp: Health,
@@ -98,6 +99,7 @@ pub struct LabeledValueCheckboxProps {
 #[derive(Clone, Properties, PartialEq)]
 pub struct LabeledValueModiferBoxProps {
     pub label: AttrValue,
-    pub value: u8,
+    pub value: Option<u8>,
+    pub text: Option<AttrValue>,
     pub modifier: i8,
 }

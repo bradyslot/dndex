@@ -8,6 +8,10 @@ use super::shared::utils::*;
 pub fn hit_dice(props: &Character) -> Html {
 
     html! {
-        <LabeledValueModiferBox label={"HitDice"} value={props.class.hitdice.sides} modifier={calc_base_modifier(props.abilities[CON].value)} />
+        <LabeledValueModiferBox
+            label={"HitDice"}
+            text={format!("{}d{}", props.class.hitdice.count, props.class.hitdice.sides)}
+            modifier={calc_base_modifier(props.abilities[CON].value)}
+        />
     }
 }

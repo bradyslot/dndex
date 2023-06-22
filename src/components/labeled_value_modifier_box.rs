@@ -57,7 +57,8 @@ pub fn labeled_value_modifier_box(props: &LabeledValueModiferBoxProps) -> Html {
         <div class={style}>
             <div class={format!("flex-center-{} upper-{}", s, s)}>
                 <div class={format!("flex-center-{} label-{}", s, s)}>{props.label.clone()}</div>
-                <div class={format!("flex-center-{} middle-{}", s, s)}>{props.value}</div>
+                { if props.value.is_some() {html! (<div class={format!("flex-center-{} middle-{}", s, s)}>{props.value}</div>)} else {html!()} }
+                { if props.text.is_some() {html! (<div class={format!("flex-center-{} middle-{}", s, s)}>{props.text.clone()}</div>)} else {html!()} }
             </div>
             <div class={format!("flex-center-{} lower-{}", s, s)}>
                 <div class={format!("flex-center-{} modifier-{}", s, s)}>{props.modifier}</div>

@@ -69,7 +69,7 @@ fn App() -> Html {
     
     let character_initiative = calc_base_modifier(character_abilities[DEX].value);
 
-    let character_level = 5;
+    let character_level = 6;
 
     let character_class = Class {
         class: "Artificer".into(),
@@ -79,8 +79,11 @@ fn App() -> Html {
         saves: vec![ character_abilities[CON].clone(), character_abilities[INT].clone() ]
     };
 
+    let character_name: AttrValue = "Howard".into();
+
     let props = props! {
         Character { 
+            name: character_name,
             abilities: character_abilities,
             deathsaves: character_deathsaves,
             hp: character_hp,
