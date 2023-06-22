@@ -11,6 +11,24 @@ pub struct Character {
     pub passives: Vec<Passive>,
     pub skills: Vec<Skill>,
     pub speed: Movement,
+    pub class: Class,
+}
+
+#[derive(Clone, Properties, PartialEq)]
+pub struct Class {
+    pub class: AttrValue,
+    pub subclass: AttrValue,
+    pub primary: Ability,
+    pub saves: Vec<Ability>,
+    pub hitdice: Dice,
+    // pub features
+    // pub archetype
+}
+
+#[derive(Clone, Properties, PartialEq)]
+pub struct Dice {
+    pub count: u8,
+    pub sides: u8,
 }
 
 #[derive(Clone, Properties, PartialEq)]
@@ -42,7 +60,7 @@ pub struct Health {
 pub struct Ability {
     pub name: AttrValue,
     pub value: u8,
-    pub saving: bool,
+    // pub saving: bool,
 }
 
 #[derive(Clone, Properties, PartialEq)]
@@ -66,14 +84,14 @@ pub struct Label {
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct LabeledValueProps {
-    pub value: i8,
     pub label: AttrValue,
+    pub value: i8,
 }
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct LabeledValueCheckboxProps {
-    pub value: i8,
     pub label: AttrValue,
+    pub value: i8,
     pub checked: bool,
 }
 

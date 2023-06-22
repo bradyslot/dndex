@@ -21,65 +21,76 @@ use constants::*;
 
 #[function_component]
 fn App() -> Html {
-    let abilities = vec![
-        Ability { name: "Strength".into(),     value: 8,  saving: false },
-        Ability { name: "Dexterity".into(),    value: 13, saving: false },
-        Ability { name: "Constitution".into(), value: 15, saving: true  },
-        Ability { name: "Intelligence".into(), value: 19, saving: true  },
-        Ability { name: "Wisdom".into(),       value: 12, saving: false },
-        Ability { name: "Charisma".into(),     value: 10, saving: false },
+    let character_abilities = vec![
+        Ability { name: "Strength".into(),     value: 8  },
+        Ability { name: "Dexterity".into(),    value: 13 },
+        Ability { name: "Constitution".into(), value: 15 },
+        Ability { name: "Intelligence".into(), value: 19 },
+        Ability { name: "Wisdom".into(),       value: 12 },
+        Ability { name: "Charisma".into(),     value: 10 },
     ];
 
-    let hp = Health { max: 52, current: 37, temp: 0 };
+    let character_hp = Health { max: 52, current: 37, temp: 0 };
 
-    let skills = vec![
-        Skill { name: "Acrobatics (Dex)".into(),      proficiency: false, primary: abilities[DEX].clone() },
-        Skill { name: "Animal Handling (Wis)".into(), proficiency: false, primary: abilities[WIS].clone() },
-        Skill { name: "Arcana (Int)".into(),          proficiency: true,  primary: abilities[INT].clone() },
-        Skill { name: "Athletics (Str)".into(),       proficiency: false, primary: abilities[STR].clone() },
-        Skill { name: "Deception (Cha)".into(),       proficiency: false, primary: abilities[CHA].clone() },
-        Skill { name: "History (Int)".into(),         proficiency: false, primary: abilities[INT].clone() },
-        Skill { name: "Insight (Wis)".into(),         proficiency: true,  primary: abilities[WIS].clone() },
-        Skill { name: "Intimidation (Cha)".into(),    proficiency: false, primary: abilities[CHA].clone() },
-        Skill { name: "Investigation (Int)".into(),   proficiency: false, primary: abilities[INT].clone() },
-        Skill { name: "Medicine (Wis)".into(),        proficiency: false, primary: abilities[WIS].clone() },
-        Skill { name: "Nature (Int)".into(),          proficiency: true,  primary: abilities[INT].clone() },
-        Skill { name: "Perception (Wis)".into(),      proficiency: false, primary: abilities[WIS].clone() },
-        Skill { name: "Performance (Cha)".into(),     proficiency: false, primary: abilities[CHA].clone() },
-        Skill { name: "Persuasion (Cha)".into(),      proficiency: false, primary: abilities[CHA].clone() },
-        Skill { name: "Religion (Int)".into(),        proficiency: false, primary: abilities[INT].clone() },
-        Skill { name: "Sleight of Hand (Dex)".into(), proficiency: false, primary: abilities[DEX].clone() },
-        Skill { name: "Stealth (Dex)".into(),         proficiency: false, primary: abilities[DEX].clone() },
-        Skill { name: "Survival (Wis)".into(),        proficiency: false, primary: abilities[WIS].clone() },
+    let character_skills = vec![
+        Skill { name: "Acrobatics (Dex)".into(),      proficiency: false, primary: character_abilities[DEX].clone() },
+        Skill { name: "Animal Handling (Wis)".into(), proficiency: false, primary: character_abilities[WIS].clone() },
+        Skill { name: "Arcana (Int)".into(),          proficiency: true,  primary: character_abilities[INT].clone() },
+        Skill { name: "Athletics (Str)".into(),       proficiency: false, primary: character_abilities[STR].clone() },
+        Skill { name: "Deception (Cha)".into(),       proficiency: false, primary: character_abilities[CHA].clone() },
+        Skill { name: "History (Int)".into(),         proficiency: false, primary: character_abilities[INT].clone() },
+        Skill { name: "Insight (Wis)".into(),         proficiency: true,  primary: character_abilities[WIS].clone() },
+        Skill { name: "Intimidation (Cha)".into(),    proficiency: false, primary: character_abilities[CHA].clone() },
+        Skill { name: "Investigation (Int)".into(),   proficiency: false, primary: character_abilities[INT].clone() },
+        Skill { name: "Medicine (Wis)".into(),        proficiency: false, primary: character_abilities[WIS].clone() },
+        Skill { name: "Nature (Int)".into(),          proficiency: true,  primary: character_abilities[INT].clone() },
+        Skill { name: "Perception (Wis)".into(),      proficiency: false, primary: character_abilities[WIS].clone() },
+        Skill { name: "Performance (Cha)".into(),     proficiency: false, primary: character_abilities[CHA].clone() },
+        Skill { name: "Persuasion (Cha)".into(),      proficiency: false, primary: character_abilities[CHA].clone() },
+        Skill { name: "Religion (Int)".into(),        proficiency: false, primary: character_abilities[INT].clone() },
+        Skill { name: "Sleight of Hand (Dex)".into(), proficiency: false, primary: character_abilities[DEX].clone() },
+        Skill { name: "Stealth (Dex)".into(),         proficiency: false, primary: character_abilities[DEX].clone() },
+        Skill { name: "Survival (Wis)".into(),        proficiency: false, primary: character_abilities[WIS].clone() },
     ];
 
-    let passives = vec![
-        Passive { name: "Passive Perception (Wis)".into(),    value: 10 + calc_base_modifier(abilities[WIS].value) },
-        Passive { name: "Passive Investigation (Int)".into(), value: 10 + calc_base_modifier(abilities[INT].value) },
-        Passive { name: "Passive Insight (Wis)".into(),       value: 10 + calc_base_modifier(abilities[WIS].value) },
-        Passive { name: "Passive Stealth (Dex)".into(),       value: 10 + calc_base_modifier(abilities[DEX].value) },
+    let character_passives = vec![
+        Passive { name: "Passive Perception (Wis)".into(),    value: 10 + calc_base_modifier(character_abilities[WIS].value) },
+        Passive { name: "Passive Investigation (Int)".into(), value: 10 + calc_base_modifier(character_abilities[INT].value) },
+        Passive { name: "Passive Insight (Wis)".into(),       value: 10 + calc_base_modifier(character_abilities[WIS].value) },
+        Passive { name: "Passive Stealth (Dex)".into(),       value: 10 + calc_base_modifier(character_abilities[DEX].value) },
     ];
 
-    let deathsaves = DeathSaves {
+    let character_deathsaves = DeathSaves {
         success: [true, false, false],
         failure: [true, false, false],
     };
 
-    let speed = Movement { base: 25, modifier: -5 };
+    let character_speed = Movement { base: 25, modifier: -5 };
     
-    let initiative = calc_base_modifier(abilities[1].value);
+    let character_initiative = calc_base_modifier(character_abilities[DEX].value);
+
+    let character_level = 5;
+
+    let character_class = Class {
+        class: "Artificer".into(),
+        subclass: "Battle Smith".into(),
+        hitdice: Dice { count: character_level, sides: 8 },
+        primary: character_abilities[INT].clone(),
+        saves: vec![ character_abilities[CON].clone(), character_abilities[INT].clone() ]
+    };
 
     let props = props! {
         Character { 
-            abilities: abilities,
-            deathsaves: deathsaves,
-            hp: hp,
-            initiative: initiative,
+            abilities: character_abilities,
+            deathsaves: character_deathsaves,
+            hp: character_hp,
+            initiative: character_initiative,
             inspiration: false,
-            level: 5,
-            passives: passives,
-            skills: skills,
-            speed: speed,
+            level: character_level,
+            passives: character_passives,
+            skills: character_skills,
+            speed: character_speed,
+            class: character_class,
         }
     };
 

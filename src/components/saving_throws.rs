@@ -35,11 +35,13 @@ pub fn saving_throws(props: &Character) -> Html {
         }
     );
 
-    let modifier = |ability: Ability| -> i8 {
+    let proficiency_bonus = calc_proficiency_bonus(props.level);
+    let modifier = |ability: &Ability| -> i8 {
         let base_modifier = calc_base_modifier(ability.value);
-        if ability.saving {
-            base_modifier + calc_proficiency_bonus(props.level)
-        } else { base_modifier }
+        if !props.class.saves.contains(ability) {
+            return base_modifier;
+        }
+        base_modifier + proficiency_bonus
     };
 
     html! {
@@ -47,7 +49,13 @@ pub fn saving_throws(props: &Character) -> Html {
             <Rectangle>
                 <div class={format!("absolute-{} center-{} label-{}", s, s, s)}>{"Saving Throws"}</div>
                 <div class={format!("grid-{}", s)}>
-                    { for props.abilities.iter().map(|a| html! { <LabeledValueCheckbox checked={a.saving} label={a.name.clone()} value={modifier(a.clone())} /> }) }
+                    { for props.abilities.iter().map(|a| html! { 
+                        <LabeledValueCheckbox 
+                            checked={props.class.saves.contains(a)}
+                            label={a.name.clone()}
+                            value={modifier(&a)} 
+                        /> })
+                    }
                 </div>
             </Rectangle>
         </div>

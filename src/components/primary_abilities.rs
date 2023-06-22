@@ -27,7 +27,7 @@ pub fn primary_abilities(props: &Character) -> Html {
             <div class={format!("top-{}", s)}>
                 <LabeledDivider text={"Primary Abilities"} />
             </div>
-            { for props.abilities.iter().map(|a| html! { <AbilityScore saving={false} value={a.value} name={a.name.clone()} /> }) }
+            { for props.abilities.iter().map(|a| html! { <AbilityScore value={a.value} name={a.name.clone()} /> }) }
         </div>
     }
 }
