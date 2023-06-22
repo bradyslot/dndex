@@ -2,22 +2,23 @@ use yew::prelude::*;
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct Character {
-    pub name: AttrValue,
     pub abilities: Vec<Ability>,
+    pub ac: u8,
+    pub class: Class,
     pub deathsaves: DeathSaves,
     pub hp: Health,
     pub initiative: i8,
     pub inspiration: bool,
     pub level: u8,
+    pub name: AttrValue,
     pub passives: Vec<Passive>,
     pub skills: Vec<Skill>,
     pub speed: Movement,
-    pub class: Class,
 }
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct Class {
-    pub class: AttrValue,
+    pub name: AttrValue,
     pub subclass: AttrValue,
     pub primary: Ability,
     pub saves: Vec<Ability>,
@@ -61,7 +62,6 @@ pub struct Health {
 pub struct Ability {
     pub name: AttrValue,
     pub value: u8,
-    // pub saving: bool,
 }
 
 #[derive(Clone, Properties, PartialEq)]
@@ -74,7 +74,7 @@ pub struct Skill {
 // generic component props
 #[derive(Clone, Properties, PartialEq)]
 pub struct Child {
-    pub children: Children,
+    pub children: Option<Children>,
     pub label: Option<AttrValue>,
 }
 

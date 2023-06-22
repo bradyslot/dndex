@@ -2,7 +2,7 @@ use stylist::css;
 use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
-use super::rectangle::*;
+use super::rectangle_scooped::*;
 
 #[function_component(AbilityScore)]
 pub fn ability_score(props: &Ability) -> Html {
@@ -58,9 +58,9 @@ pub fn ability_score(props: &Ability) -> Html {
     html! {
         <div class={style}>
             <div class={format!("upper-{}", s)}>
-                <Rectangle label={ &props.name }>
+                <RectangleScooped label={ &props.name }>
                     <div class={format!("absolute-{} center-{} modifier-{}", s, s, s)}>{ calc_base_modifier(props.value) }</div>
-                </Rectangle>
+                </RectangleScooped>
             </div>
             <div class={format!("lower-{}", s)}>
                 <div class={format!("center-{} circle-{}", s, s)}>{ &props.value }</div>

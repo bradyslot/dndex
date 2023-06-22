@@ -1,10 +1,10 @@
 use stylist::css;
 use yew::prelude::*;
 use super::shared::models::*;
-use super::rectangle_scooped::*;
+use super::rectangle_notched::*;
 
-#[function_component(Initiative)]
-pub fn initiative(props: &Character) -> Html {
+#[function_component(ArmorClass)]
+pub fn armor_class(props: &Character) -> Html {
     let style = css!(
         display: flex;
         flex-grow: 1;
@@ -17,9 +17,9 @@ pub fn initiative(props: &Character) -> Html {
     );
 
     html! {
-        <RectangleScooped label={"Initiative"}>
-            <div class={style}>{props.initiative}</div>
-        </RectangleScooped>
+        <RectangleNotched label={"AC"}>
+            <div class={style}>{props.ac}</div>
+        </RectangleNotched>
     }
 }
 

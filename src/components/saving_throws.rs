@@ -2,7 +2,7 @@ use stylist::css;
 use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
-use super::rectangle::*;
+use super::rectangle_scooped::*;
 use super::labeled_value_checkbox::*;
 
 #[function_component(SavingThrows)]
@@ -46,7 +46,7 @@ pub fn saving_throws(props: &Character) -> Html {
 
     html! {
         <div class={style}>
-            <Rectangle>
+            <RectangleScooped>
                 <div class={format!("absolute-{} center-{} label-{}", s, s, s)}>{"Saving Throws"}</div>
                 <div class={format!("grid-{}", s)}>
                     { for props.abilities.iter().map(|a| html! { 
@@ -57,7 +57,7 @@ pub fn saving_throws(props: &Character) -> Html {
                         /> })
                     }
                 </div>
-            </Rectangle>
+            </RectangleScooped>
         </div>
     }
 }

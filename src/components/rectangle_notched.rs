@@ -3,10 +3,11 @@ use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
 
-#[function_component(Rectangle)]
-pub fn rectangle(props: &Child) -> Html {
+#[function_component(RectangleNotched)]
+pub fn rectangle_notched(props: &Child) -> Html {
     let s = random_alpha_string(8);
     let style = css!(
+        display: flex;
         background-color: var(--foreground);
         position: relative;
         overflow: hidden;
@@ -22,23 +23,25 @@ pub fn rectangle(props: &Child) -> Html {
             border: 2px solid black;
         }
 
-        .radius-${s} {
+        .notch-${s} {
+            content: "";
             position: absolute;
-            width: 1rem;
-            height: 1rem;
-            border-radius: 100%;
+            margin: -2px;
+            width: 2rem;
+            height: 2rem;
             background-color: var(--background);
+            transform: rotate(45deg);
             border: 2px solid black;
         }
 
-        .top-${s} { top: -0.5rem; }
-        .bottom-${s} { bottom: -0.5rem; }
-        .left-${s} { left: -0.5rem; }
-        .right-${s} { right: -0.5rem; }
+        .top-${s} { top: -1rem; }
+        .bottom-${s} { bottom: -1rem; }
+        .left-${s} { left: -1rem; }
+        .right-${s} { right: -1rem; }
 
         .children-${s} {
-            height: 100%;
-            width: 100%;
+            display: flex;
+            flex-grow: 1;
         }
 
         .label-${s} {
@@ -60,15 +63,15 @@ pub fn rectangle(props: &Child) -> Html {
     html! {
         <div class={style}>
             <div class={format!("border-{}", s)} />
-            <div class={format!("radius-{} top-{} left-{}", s, s, s)} />
-            <div class={format!("radius-{} top-{} right-{}", s, s, s)} />
-            <div class={format!("radius-{} bottom-{} left-{}", s, s, s)} />
-            <div class={format!("radius-{} bottom-{} right-{}", s, s, s)} />
+            <div class={format!("notch-{} top-{} left-{}", s, s, s)} />
+            <div class={format!("notch-{} top-{} right-{}", s, s, s)} />
+            <div class={format!("notch-{} bottom-{} left-{}", s, s, s)} />
+            <div class={format!("notch-{} bottom-{} right-{}", s, s, s)} />
             <div class={format!("label-{} flex-center-{}", s, s)}>
                 { props.label.clone() }
             </div>
             <div class={format!("children-{}", s)}>
-                { for props.children.iter() }
+                { props.children.clone().unwrap_or_default() } 
             </div>
         </div>
     }

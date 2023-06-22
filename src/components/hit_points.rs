@@ -3,7 +3,7 @@ use yew::prelude::*;
 use super::shared::models::*;
 use super::shared::utils::*;
 use super::shared::icons::*;
-use super::rectangle::*;
+use super::rectangle_scooped::*;
 
 #[function_component(HitPoints)]
 pub fn hit_points(props: &Character) -> Html {
@@ -41,6 +41,8 @@ pub fn hit_points(props: &Character) -> Html {
         }
 
         .center-${s} {
+            display: flex;
+            flex-grow: 1;
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -88,13 +90,13 @@ pub fn hit_points(props: &Character) -> Html {
     html! {
         <div class={style}>
             <div class={format!("grid-left-{}", s)}>
-                <Rectangle label={"Current Hit Points"}>
-                    <div class={format!("absolute-{} center-{} middle-{}", s, s, s)}> {props.hp.current} </div>
+                <RectangleScooped label={"Current Hit Points"}>
+                    <div class={format!("center-{} middle-{}", s, s)}> {props.hp.current} </div>
                     <div class={format!("bottom-left-{}", s)}>
                         <div class={format!("svg-{}", s)}>{icon_star(props.inspiration)}</div>
                         <div class={format!("inspiration-{}", s)}>{"Inspiration"}</div>
                     </div>
-                </Rectangle>
+                </RectangleScooped>
             </div>
             <div class={format!("grid-right-top-{}", s)}> 
                 <div class={format!("center-{} label-{}", s, s)}> {"Maximum"} </div>

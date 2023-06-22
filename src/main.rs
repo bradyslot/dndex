@@ -5,16 +5,10 @@ use yew::props;
 mod components;
 use components::shared::models::*;
 use components::shared::utils::*;
-
-use components::passive_abilities::*;
+use components::character_stats::*;
 use components::primary_abilities::*;
+use components::passive_abilities::*;
 use components::skills::*;
-use components::hit_points::*;
-use components::saving_throws::*;
-use components::speed::*;
-use components::death_save_rolls::*;
-use components::initiative::*;
-use components::hit_dice::*;
 
 mod constants;
 use constants::*;
@@ -29,9 +23,6 @@ fn App() -> Html {
         Ability { name: "Wisdom".into(),       value: 12 },
         Ability { name: "Charisma".into(),     value: 10 },
     ];
-
-    let character_hp = Health { max: 52, current: 37, temp: 0 };
-
     let character_skills = vec![
         Skill { name: "Acrobatics (Dex)".into(),      proficiency: false, primary: character_abilities[DEX].clone() },
         Skill { name: "Animal Handling (Wis)".into(), proficiency: false, primary: character_abilities[WIS].clone() },
@@ -52,48 +43,44 @@ fn App() -> Html {
         Skill { name: "Stealth (Dex)".into(),         proficiency: false, primary: character_abilities[DEX].clone() },
         Skill { name: "Survival (Wis)".into(),        proficiency: false, primary: character_abilities[WIS].clone() },
     ];
-
     let character_passives = vec![
         Passive { name: "Passive Perception (Wis)".into(),    value: 10 + calc_base_modifier(character_abilities[WIS].value) },
         Passive { name: "Passive Investigation (Int)".into(), value: 10 + calc_base_modifier(character_abilities[INT].value) },
         Passive { name: "Passive Insight (Wis)".into(),       value: 10 + calc_base_modifier(character_abilities[WIS].value) },
         Passive { name: "Passive Stealth (Dex)".into(),       value: 10 + calc_base_modifier(character_abilities[DEX].value) },
     ];
-
     let character_deathsaves = DeathSaves {
         success: [true, false, false],
         failure: [true, false, false],
     };
-
+    let character_name: AttrValue = "Howard".into();
+    let character_hp = Health { max: 52, current: 37, temp: 0 };
     let character_speed = Movement { base: 25, modifier: -5 };
-    
     let character_initiative = calc_base_modifier(character_abilities[DEX].value);
-
     let character_level = 6;
-
+    let character_ac = 17;
     let character_class = Class {
-        class: "Artificer".into(),
+        name: "Artificer".into(),
         subclass: "Battle Smith".into(),
         hitdice: Dice { count: character_level, sides: 8 },
         primary: character_abilities[INT].clone(),
         saves: vec![ character_abilities[CON].clone(), character_abilities[INT].clone() ]
     };
 
-    let character_name: AttrValue = "Howard".into();
-
     let props = props! {
         Character { 
-            name: character_name,
             abilities: character_abilities,
+            ac: character_ac,
+            class: character_class,
             deathsaves: character_deathsaves,
             hp: character_hp,
             initiative: character_initiative,
             inspiration: false,
             level: character_level,
+            name: character_name,
             passives: character_passives,
             skills: character_skills,
             speed: character_speed,
-            class: character_class,
         }
     };
 
@@ -119,14 +106,7 @@ fn App() -> Html {
     html! {
         <div class={style}>
             <div class="row">
-                <Speed ..props.clone() />
-                <Initiative ..props.clone() />
-                <HitDice ..props.clone() />
-                <DeathSaveRolls ..props.clone() />
-            </div>
-            <div class="row">
-                <SavingThrows ..props.clone() />
-                <HitPoints ..props.clone() />
+                <CharacterStats ..props.clone() />
             </div>
             <div class="row">
                 <PrimaryAbilities ..props.clone() />
