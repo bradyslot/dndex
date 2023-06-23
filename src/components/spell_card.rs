@@ -138,7 +138,7 @@ pub fn spell_card(props: &Spell) -> Html {
             <div class={format!("grid-{}", s)}>
                 <div class={format!("name-{}", s)}>{props.name.clone()}</div>
                 <div class={format!("name-label-{}", s)}>{"Name"}</div>
-                <div class={format!("level-{}", s)}>{props.level}</div>
+                <div class={format!("level-{}", s)}>{if props.level > 0 {html!({props.level})} else {html!({"C"})}}</div>
                 <div class={format!("level-label-{}", s)}>{"Level"}</div>
                 <div class={format!("casttime-{}", s)}>
                     <div class={format!("flex-{}", s)}>{props.casttime.clone()}</div>
