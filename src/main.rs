@@ -69,10 +69,10 @@ fn App() -> Html {
     };
     let character_spells = vec![
         Spell {
-            name: "Fireball".into(),
+            name: "Fire Bolt".into(),
             level: 0,
             casttime: "1 action".into(),
-            range: "120\"".into(),
+            range: "120 feet".into(),
             duration: "Instant".into(),
             school: "Evocation".into(),
             ritual: false,
@@ -80,7 +80,7 @@ fn App() -> Html {
             components: SpellComponents { verbal: true, somatic: true, material: false },
             description: "1d10 fire damage. Flammable objects ignite if not worn or carried.".into(),
             classes: vec![],
-            higherlevels: None,
+            higherlevels: "L5 2d10, L11 3d10, L17 4d10".into(),
         }
     ];
 

@@ -30,7 +30,7 @@ pub struct Spell {
     pub components: SpellComponents,
     pub description: AttrValue,
     pub classes: Vec<Class>,
-    pub higherlevels: Option<AttrValue>,
+    pub higherlevels: AttrValue,
 }
 
 #[derive(Clone, Properties, PartialEq)]
