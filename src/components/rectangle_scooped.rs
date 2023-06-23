@@ -13,15 +13,8 @@ pub fn rectangle_scooped(props: &Child) -> Html {
         overflow: hidden;
         width: 100%;
         height: 100%;
-
-        .border-${s} {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border: 2px solid black;
-        }
+        outline: 2px solid black;
+        outline-offset: -2px;
 
         .scoop-${s} {
             content: "";
@@ -61,7 +54,6 @@ pub fn rectangle_scooped(props: &Child) -> Html {
 
     html! {
         <div class={style}>
-            <div class={format!("border-{}", s)} />
             <div class={format!("scoop-{} top-{} left-{}", s, s, s)} />
             <div class={format!("scoop-{} top-{} right-{}", s, s, s)} />
             <div class={format!("scoop-{} bottom-{} left-{}", s, s, s)} />

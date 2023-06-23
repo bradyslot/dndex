@@ -59,7 +59,7 @@ fn App() -> Html {
     let character_speed = Movement { base: 25, modifier: -5 };
     let character_initiative = calc_base_modifier(character_abilities[DEX].value);
     let character_level = 6;
-    let character_ac = 17;
+    let character_ac = AC { base: 17, modifier: 1 };
     let character_class = Class {
         name: "Artificer".into(),
         subclass: "Battle Smith".into(),

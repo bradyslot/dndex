@@ -20,7 +20,8 @@ pub fn labeled_value_modifier_box(props: &LabeledValueModiferBoxProps) -> Html {
 
         .upper-${s} {
             grid-area: 1 / 1 / 4 / 1;
-            border: 2px solid black;
+            outline: 2px solid black;
+            outline-offset: -2px;
             height: 10rem;
             width: 10rem;
         }
