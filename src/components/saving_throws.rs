@@ -31,7 +31,8 @@ pub fn saving_throws(props: &Character) -> Html {
         .grid-${s} {
             display: grid;
             grid-template-rows: repeat(6, 1fr);
-            margin: 1rem;
+            margin: 1rem 2rem 1rem 2rem;
+            width: 100%;
         }
     );
 

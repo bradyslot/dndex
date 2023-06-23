@@ -12,6 +12,7 @@ pub fn hit_points(props: &Character) -> Html {
     let style = css!(
         display: grid;
         width: 100%;
+        height: 100%;
         grid-template-columns: 1fr;
 
         .grid-left-${s} {
