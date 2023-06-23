@@ -17,7 +17,7 @@ pub fn death_save_rolls(props: &Character) -> Html {
         min-width: 10rem;
 
         .grid-${s} {
-            margin-top: 2rem;
+            margin: 2rem 1rem 1rem 1rem;
             display: grid;
             grid-template-rows: 1fr 1fr;
             grid-template-columns: 1fr 1fr 1fr 1fr;
