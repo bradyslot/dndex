@@ -11,8 +11,8 @@ use super::super::components::hit_dice::*;
 use super::super::components::armor_class::*;
 use super::super::components::labeled_divider::*;
 
-#[function_component(CharacterStats)]
-pub fn character_stats(props: &Character) -> Html {
+#[function_component(PlayerStats)]
+pub fn player_stats(props: &Character) -> Html {
     let s = random_alpha_string(8);
     let style = css!(
         display: grid;
@@ -56,7 +56,7 @@ pub fn character_stats(props: &Character) -> Html {
 
     html! {
         <div class={style}>
-            <div class={format!("divider-{}", s)}><LabeledDivider text={"Character Stats"} /></div>
+            <div class={format!("divider-{}", s)}><LabeledDivider text={"Player Stats"} /></div>
             <div class={format!("speed-{}", s)}><Speed ..props.clone() /></div>
             <div class={format!("initiative-{}", s)}><Initiative ..props.clone() /></div>
             <div class={format!("hitdice-{}", s)}><HitDice ..props.clone() /></div>

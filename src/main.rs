@@ -5,7 +5,7 @@ use yew::props;
 mod components;
 use components::shared::models::*;
 use components::shared::utils::*;
-use components::character_stats::*;
+use components::player_stats::*;
 use components::primary_abilities::*;
 use components::passive_abilities::*;
 use components::skills::*;
@@ -94,29 +94,14 @@ fn App() -> Html {
     let style = css!(
         display: flex;
         flex-direction: column;
-        flex-grow: 1;
-
-        .row {
-            display: flex;
-            flex-direction: row;
-            flex-grow: 1;
-        }
     );
 
     html! {
         <div class={style}>
-            <div class="row">
-                <CharacterStats ..props.clone() />
-            </div>
-            <div class="row">
-                <PrimaryAbilities ..props.clone() />
-            </div>
-            <div class="row">
-                <PassiveAbilities ..props.clone() />
-            </div>
-            <div class="row">
-                <Skills ..props.clone() />
-            </div>
+            <PlayerStats ..props.clone() />
+            <PrimaryAbilities ..props.clone() />
+            <PassiveAbilities ..props.clone() />
+            <Skills ..props.clone() />
         </div>
     }
 }
