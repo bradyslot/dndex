@@ -9,6 +9,7 @@ use components::player_stats::*;
 use components::primary_abilities::*;
 use components::passive_abilities::*;
 use components::skills::*;
+use components::spell_card::*;
 
 mod constants;
 use constants::*;
@@ -66,6 +67,22 @@ fn App() -> Html {
         primary: character_abilities[INT].clone(),
         saves: vec![ character_abilities[CON].clone(), character_abilities[INT].clone() ]
     };
+    let character_spells = vec![
+        Spell {
+            name: "Fireball".into(),
+            level: 0,
+            casttime: "1 action".into(),
+            range: "120\"".into(),
+            duration: "Instant".into(),
+            school: "Evocation".into(),
+            ritual: false,
+            concentration: false,
+            components: SpellComponents { verbal: true, somatic: true, material: false },
+            description: "1d10 fire damage. Flammable objects ignite if not worn or carried.".into(),
+            classes: vec![],
+            higherlevels: None,
+        }
+    ];
 
     let props = props! {
         Character { 
@@ -81,6 +98,7 @@ fn App() -> Html {
             passives: character_passives,
             skills: character_skills,
             speed: character_speed,
+            spells: character_spells.clone(),
         }
     };
 
@@ -98,6 +116,7 @@ fn App() -> Html {
 
     html! {
         <div class={style}>
+            <SpellCard ..character_spells[0].clone() />
             <PlayerStats ..props.clone() />
             <PrimaryAbilities ..props.clone() />
             <PassiveAbilities ..props.clone() />

@@ -3,7 +3,7 @@ use yew::prelude::*;
 #[derive(Clone, Properties, PartialEq)]
 pub struct Character {
     pub abilities: Vec<Ability>,
-    pub ac: u8,
+    pub ac: u8, // TODO: extend to include modifiers
     pub class: Class,
     pub deathsaves: DeathSaves,
     pub hp: Health,
@@ -14,6 +14,30 @@ pub struct Character {
     pub passives: Vec<Passive>,
     pub skills: Vec<Skill>,
     pub speed: Movement,
+    pub spells: Option<Vec<Spell>>,
+}
+
+#[derive(Clone, Properties, PartialEq)]
+pub struct Spell {
+    pub name: AttrValue,
+    pub level: u8,
+    pub casttime: AttrValue,
+    pub range: AttrValue,
+    pub duration: AttrValue,
+    pub school: AttrValue,
+    pub ritual: bool,
+    pub concentration: bool,
+    pub components: SpellComponents,
+    pub description: AttrValue,
+    pub classes: Vec<Class>,
+    pub higherlevels: Option<AttrValue>,
+}
+
+#[derive(Clone, Properties, PartialEq)]
+pub struct SpellComponents {
+    pub verbal: bool,
+    pub somatic: bool,
+    pub material: bool,
 }
 
 #[derive(Clone, Properties, PartialEq)]

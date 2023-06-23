@@ -18,3 +18,4 @@ pub mod rectangle_scooped;
 pub mod saving_throws;
 pub mod skills;
 pub mod speed;
+pub mod spell_card;
