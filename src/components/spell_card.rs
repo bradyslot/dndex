@@ -9,11 +9,13 @@ pub fn spell_card(props: &Spell) -> Html {
     let s = random_alpha_string(8);
     let style = css!(
         height: 40rem;
-        width: 30rem;
+        width: 25rem;
         border: 2px solid black;
         border-radius: 1rem;
         font-size: 1.5rem;
         padding: 0.5rem;
+        margin: 0.5rem;
+        flex-shrink: 0;
 
         .grid-${s} {
             display: grid;
@@ -167,7 +169,7 @@ pub fn spell_card(props: &Spell) -> Html {
                 </div>
                 <div class={format!("components-label-{}", s)}>{"Components"}</div>
                 <div class={format!("description-{}", s)}>{props.description.clone()}</div>
-                <div class={format!("higherlevels-{}", s)}>{props.higherlevels.clone()}</div>
+                { if props.higherlevels.len() > 0 {html!(<div class={format!("higherlevels-{}", s)}>{props.higherlevels.clone()}</div>) } else {html!(<div></div>)} }
             </div>
         </div>
     }

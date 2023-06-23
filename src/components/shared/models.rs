@@ -14,7 +14,7 @@ pub struct Character {
     pub passives: Vec<Passive>,
     pub skills: Vec<Skill>,
     pub speed: Movement,
-    pub spells: Option<Vec<Spell>>,
+    pub spells: Vec<Spell>,
 }
 
 #[derive(Clone, Properties, PartialEq)]
