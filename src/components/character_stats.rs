@@ -9,6 +9,7 @@ use super::super::components::death_save_rolls::*;
 use super::super::components::initiative::*;
 use super::super::components::hit_dice::*;
 use super::super::components::armor_class::*;
+use super::super::components::labeled_divider::*;
 
 #[function_component(CharacterStats)]
 pub fn character_stats(props: &Character) -> Html {
@@ -18,9 +19,13 @@ pub fn character_stats(props: &Character) -> Html {
         grid-gap: 1rem;
         margin: 1rem;
         grid-template-areas:
+            "divider divider divider divider divider"
             "speed initiative hitdice armorclass deathsaverolls"
             "savingthrows savingthrows hitpoints hitpoints hitpoints";
 
+        .divider-${s} {
+            grid-area: divider;
+        }
         .speed-${s} {
             grid-area: speed;
         }
@@ -51,6 +56,7 @@ pub fn character_stats(props: &Character) -> Html {
 
     html! {
         <div class={style}>
+            <div class={format!("divider-{}", s)}><LabeledDivider text={"Character Stats"} /></div>
             <div class={format!("speed-{}", s)}><Speed ..props.clone() /></div>
             <div class={format!("initiative-{}", s)}><Initiative ..props.clone() /></div>
             <div class={format!("hitdice-{}", s)}><HitDice ..props.clone() /></div>
