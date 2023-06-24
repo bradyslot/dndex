@@ -69,50 +69,7 @@ fn App() -> Html {
         primary: character_abilities[INT].clone(),
         saves: vec![ character_abilities[CON].clone(), character_abilities[INT].clone() ]
     };
-    let character_spells = vec![
-        Spell {
-            name: "Fire Bolt".into(),
-            level: 0,
-            casttime: "1 Action".into(),
-            range: "120 feet".into(),
-            duration: "Instant".into(),
-            school: "Evocation".into(),
-            ritual: false,
-            concentration: false,
-            components: SpellComponents { verbal: true, somatic: true, material: false },
-            description: "1d10 fire damage. Flammable objects ignite if not worn or carried.".into(),
-            classes: vec![],
-            higherlevels: "L5 2d10, L11 3d10, L17 4d10".into(),
-        },
-        Spell {
-            name: "Shield".into(),
-            level: 1,
-            casttime: "1 Reaction".into(),
-            range: "Self".into(),
-            duration: "1 Round".into(),
-            school: "Abjuration".into(),
-            ritual: false,
-            concentration: false,
-            components: SpellComponents { verbal: true, somatic: true, material: false },
-            description: "Invisible barrier. +5 AC including trigger attack. No damage from magic missile".into(),
-            classes: vec![],
-            higherlevels: "".into(),
-        },
-        Spell {
-            name: "Vortex Warp".into(),
-            level: 2,
-            casttime: "1 Action".into(),
-            range: "90 feet".into(),
-            duration: "Instant".into(),
-            school: "Conjur".into(),
-            ritual: false,
-            concentration: false,
-            components: SpellComponents { verbal: true, somatic: true, material: false },
-            description: "Twist space around creature within range. Target must succeed on a constitution saving throw (target can choose to fail). Teleport to unoccupied space within range.".into(),
-            classes: vec![],
-            higherlevels: "".into(),
-        },
-    ];
+    let character_spells = vec!["cure-wounds".into()];
 
     let props = props! {
         Character { 

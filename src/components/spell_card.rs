@@ -140,12 +140,12 @@ pub fn spell_card(props: &Spell) -> Html {
             <div class={format!("grid-{}", s)}>
                 <div class={format!("name-{}", s)}>{props.name.clone()}</div>
                 <div class={format!("name-label-{}", s)}>{"Name"}</div>
-                <div class={format!("level-{}", s)}>{if props.level > 0 {html!({props.level})} else {html!({"C"})}}</div>
+                <div class={format!("level-{}", s)}>{if props.level_int > 0 {html!({props.level_int})} else {html!({"C"})}}</div>
                 <div class={format!("level-label-{}", s)}>{"Level"}</div>
                 <div class={format!("casttime-{}", s)}>
-                    <div class={format!("flex-{}", s)}>{props.casttime.clone()}</div>
+                    <div class={format!("flex-{}", s)}>{props.casting_time.clone()}</div>
                     <div class={format!("flex-{}", s)}>
-                        <div class={format!("svg-{}", s)}>{icon_checkbox(props.ritual)}</div>
+                        <div class={format!("svg-{}", s)}>{icon_checkbox(is_yes_or_no(props.ritual.clone()))}</div>
                         {" R "}
                     </div>
                 </div>
@@ -155,7 +155,7 @@ pub fn spell_card(props: &Spell) -> Html {
                 <div class={format!("duration-{}", s)}>
                     <div class={format!("flex-{}", s)}>{props.duration.clone()}</div>
                     <div class={format!("flex-{}", s)}>
-                        <div class={format!("svg-{}", s)}>{icon_checkbox(props.concentration)}</div>
+                        <div class={format!("svg-{}", s)}>{icon_checkbox(is_yes_or_no(props.concentration.clone()))}</div>
                         {" C "}
                     </div>
                 </div>
@@ -163,13 +163,13 @@ pub fn spell_card(props: &Spell) -> Html {
                 <div class={format!("school-{}", s)}>{props.school.clone()}</div>
                 <div class={format!("school-label-{}", s)}>{"School"}</div>
                 <div class={format!("components-{}", s)}>
-                    <div class={format!("flex-{}", s)}><div class={format!("svg-{}", s)}>{icon_checkbox(props.components.verbal)}</div>{" V "}</div>
-                    <div class={format!("flex-{}", s)}><div class={format!("svg-{}", s)}>{icon_checkbox(props.components.somatic)}</div>{" S "}</div>
-                    <div class={format!("flex-{}", s)}><div class={format!("svg-{}", s)}>{icon_checkbox(props.components.material)}</div>{" M "}</div>
+                    <div class={format!("flex-{}", s)}><div class={format!("svg-{}", s)}>{icon_checkbox(props.requires_verbal_components)}</div>{" V "}</div>
+                    <div class={format!("flex-{}", s)}><div class={format!("svg-{}", s)}>{icon_checkbox(props.requires_somatic_components)}</div>{" S "}</div>
+                    <div class={format!("flex-{}", s)}><div class={format!("svg-{}", s)}>{icon_checkbox(props.requires_material_components)}</div>{" M "}</div>
                 </div>
                 <div class={format!("components-label-{}", s)}>{"Components"}</div>
-                <div class={format!("description-{}", s)}>{props.description.clone()}</div>
-                { if props.higherlevels.len() > 0 {html!(<div class={format!("higherlevels-{}", s)}>{props.higherlevels.clone()}</div>) } else {html!(<div></div>)} }
+                <div class={format!("description-{}", s)}>{props.desc.clone()}</div>
+                { if props.higher_level.len() > 0 {html!(<div class={format!("higherlevels-{}", s)}>{props.higher_level.clone()}</div>) } else {html!(<div></div>)} }
             </div>
         </div>
     }

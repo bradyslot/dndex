@@ -1,4 +1,6 @@
+#![allow(non_snake_case)]
 use yew::prelude::*;
+use serde::Deserialize;
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct Character {
@@ -14,7 +16,7 @@ pub struct Character {
     pub passives: Vec<Passive>,
     pub skills: Vec<Skill>,
     pub speed: Movement,
-    pub spells: Vec<Spell>,
+    pub spells: Vec<String>,
 }
 
 #[derive(Clone, Properties, PartialEq)]
@@ -23,27 +25,38 @@ pub struct AC {
     pub modifier: i8,
 }
 
-#[derive(Clone, Properties, PartialEq)]
+#[derive(Deserialize, Clone, Properties, PartialEq)]
 pub struct Spell {
-    pub name: AttrValue,
-    pub level: u8,
-    pub casttime: AttrValue,
-    pub range: AttrValue,
-    pub duration: AttrValue,
-    pub school: AttrValue,
-    pub ritual: bool,
-    pub concentration: bool,
-    pub components: SpellComponents,
-    pub description: AttrValue,
-    pub classes: Vec<Class>,
-    pub higherlevels: AttrValue,
-}
-
-#[derive(Clone, Properties, PartialEq)]
-pub struct SpellComponents {
-    pub verbal: bool,
-    pub somatic: bool,
-    pub material: bool,
+    pub slug: String,
+    pub name: String,
+    pub desc: String,
+    pub higher_level: String,
+    pub page: String,
+    pub range: String,
+    pub target_range_sort: u8,
+    pub components: String,
+    pub requires_verbal_components: bool,
+    pub requires_somatic_components: bool,
+    pub requires_material_components: bool,
+    pub material: String,
+    pub can_be_cast_as_ritual: bool,
+    pub ritual: String,
+    pub duration: String,
+    pub concentration: String,
+    pub requires_concentration: bool,
+    pub casting_time: String,
+    pub level: String,
+    pub level_int: u8,
+    pub spell_level: u8,
+    pub school: String,
+    pub dnd_class: String,
+    pub spell_lists: Vec<String>,
+    pub archetype: String,
+    pub circles: String,
+    pub document__slug: String,
+    pub document__title: String,
+    pub document__license_url: String,
+    pub document__url: String,
 }
 
 #[derive(Clone, Properties, PartialEq)]
