@@ -13,4 +13,4 @@ This project will use the following stack:
 ## Fair Use  
 
 This projects aims to respect the:  
-[Wizards of the Coast's Fan Content Policy](Wizards of the Coast's Fan Content Policy)
+[Wizards of the Coast's Fan Content Policy](https://company.wizards.com/en/legal/fancontentpolicy)
