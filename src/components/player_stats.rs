@@ -1,6 +1,6 @@
 use stylist::css;
 use yew::prelude::*;
-use super::shared::models::*;
+use super::super::models::models::*;
 use super::shared::utils::*;
 use super::super::components::hit_points::*;
 use super::super::components::saving_throws::*;

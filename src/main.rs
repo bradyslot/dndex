@@ -2,8 +2,10 @@ use stylist::{css, global_style};
 use yew::prelude::*;
 use yew::props;
 
+mod models;
+use models::models::*;
+
 mod components;
-use components::shared::models::*;
 use components::shared::utils::*;
 use components::player_stats::*;
 use components::primary_abilities::*;

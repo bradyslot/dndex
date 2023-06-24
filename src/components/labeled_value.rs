@@ -1,6 +1,6 @@
 use stylist::css;
 use yew::prelude::*;
-use super::shared::models::*;
+use super::super::models::models::*;
 use super::shared::utils::*;
 
 #[function_component(LabeledValue)]

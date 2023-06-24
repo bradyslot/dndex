@@ -1,6 +1,6 @@
 use stylist::css;
 use yew::prelude::*;
-use super::shared::models::*;
+use super::super::models::models::*;
 use super::shared::utils::*;
 use super::shared::icons::*;
 use super::rectangle_scooped::*;
