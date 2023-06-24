@@ -1,6 +1,3 @@
 target/
 dist/
-Trunk.toml
-frontend/dist
-frontend/target
 Cargo.lock
