@@ -69,7 +69,20 @@ fn App() -> Html {
         primary: character_abilities[INT].clone(),
         saves: vec![ character_abilities[CON].clone(), character_abilities[INT].clone() ]
     };
-    let character_spells = vec!["cure-wounds".into()];
+    let character_spells = vec![
+        "fire-bolt".into(),
+        "shocking-grasp".into(),
+        "message".into(),
+        "prestidigitation".into(),
+        "heroism".into(),
+        "shield".into(),
+        "branding-smite".into(),
+        "warding-bond".into(),
+        "cure-wounds".into(),
+        "disguise-self".into(),
+        "identify".into(),
+        "magic-weapon".into(),
+    ];
 
     let props = props! {
         Character { 
@@ -113,5 +126,6 @@ fn App() -> Html {
 }
 
 fn main() {
+    wasm_logger::init(wasm_logger::Config::default());
     yew::Renderer::<App>::new().render();
 }

@@ -12,7 +12,7 @@ pub fn spell_card(props: &Spell) -> Html {
         width: 25rem;
         border: 2px solid black;
         border-radius: 1rem;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         padding: 0.5rem;
         margin: 0.5rem;
         flex-shrink: 0;
@@ -120,6 +120,7 @@ pub fn spell_card(props: &Spell) -> Html {
         }
         .description-${s} {
             grid-area: description;
+            overflow-y: auto;
         }
         .higherlevels-${s} {
             border-top: 2px dashed black;

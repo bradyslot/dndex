@@ -10,4 +10,4 @@ pub const INT: usize = 3;
 pub const WIS: usize = 4;
 pub const CHA: usize = 5;
 
-pub const API_URL: &str = "http://localhost:8080";
+pub const API_URL: &str = "http://localhost:8888";
