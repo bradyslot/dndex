@@ -5,10 +5,11 @@
 Haven't found one I like so I'm building my own.  
 It's a good excuse to learn D&D and Rust at the same time.  
 
-This project will use the following stack:  
+This project intends to use:  
 
-- Yew frontend
-- SurrealDB backend
+- Yew for frontend  
+- Open5e-api for resources  
+- SurrealDB for homebrew data  
 
 ## Fair Use  
 
