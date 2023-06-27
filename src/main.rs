@@ -12,6 +12,7 @@ use components::primary_abilities::*;
 use components::passive_abilities::*;
 use components::skills::*;
 use components::spells::*;
+use components::spell_slots::*;
 
 mod constants;
 use constants::*;
@@ -70,18 +71,13 @@ fn App() -> Html {
         saves: vec![ character_abilities[CON].clone(), character_abilities[INT].clone() ]
     };
     let character_spells = vec![
-        "fire-bolt".into(),
-        "shocking-grasp".into(),
-        "message".into(),
-        "prestidigitation".into(),
-        "heroism".into(),
-        "shield".into(),
-        "branding-smite".into(),
-        "warding-bond".into(),
-        "cure-wounds".into(),
-        "disguise-self".into(),
-        "identify".into(),
-        "magic-weapon".into(),
+        "animate-objects".into(),
+        "confusion".into(),
+        "awaken-object".into(),
+        "booster-shot".into(),
+        "chaotic-vitality".into(),
+        "clearing-the-field".into(),
+        "conjure-greater-spectral-dead".into(),
     ];
 
     let props = props! {
@@ -116,11 +112,12 @@ fn App() -> Html {
 
     html! {
         <div class={style}>
+            <Spells ..props.clone() />
+            <SpellSlots ..props.clone() />
             <PlayerStats ..props.clone() />
             <PrimaryAbilities ..props.clone() />
             <PassiveAbilities ..props.clone() />
             <Skills ..props.clone() />
-            <Spells ..props.clone() />
         </div>
     }
 }

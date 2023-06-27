@@ -20,18 +20,18 @@ pub fn spells(props: &Character) -> Html {
 
     use_effect_with_deps(
         move |_| {
-            async fn fetch_spell_data(url: String) -> Result<Spell, anyhow::Error> {
+            async fn fetch_spell_data(url: String) -> Result<Open5eSpell, anyhow::Error> {
                 let response = Request::get(&url)
                     .send()
                     .await
                     .expect("could not send request")
-                    .json::<Spell>()
+                    .json::<Open5eSpell>()
                     .await
                     .expect("could not parse json response");
                 Ok(response)
             }
 
-            async fn fetch_spells(spells: Vec<String>, spell_card_data: Rc<RefCell<Vec<Spell>>>) {
+            async fn fetch_spells(spells: Vec<String>, spell_card_data: Rc<RefCell<Vec<Open5eSpell>>>) {
                 for spell in spells {
                     let url = format!("{}/spells/{}", API_URL, spell);
                     let fetched_spell_card = fetch_spell_data(url).await.expect("could not fetch spell");
@@ -98,10 +98,6 @@ pub fn spells(props: &Character) -> Html {
                             spell_lists={spell.spell_lists.clone()}
                             archetype={spell.archetype.clone()}
                             circles={spell.circles.clone()}
-                            document__slug={spell.document__slug.clone()}
-                            document__title={spell.document__title.clone()}
-                            document__license_url={spell.document__license_url.clone()}
-                            document__url={spell.document__url.clone()}
                         />)
                 } else {
                     html! (<SpellCard
@@ -131,10 +127,6 @@ pub fn spells(props: &Character) -> Html {
                             spell_lists={vec![]}
                             archetype={"Loading..."}
                             circles={"Loading..."}
-                            document__slug={"Loading..."}
-                            document__title={"Loading..."}
-                            document__license_url={"Loading..."}
-                            document__url={"Loading..."}
                         />)
                 }
             })}

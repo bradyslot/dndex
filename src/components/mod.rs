@@ -20,3 +20,4 @@ pub mod skills;
 pub mod speed;
 pub mod spells;
 pub mod spell_card;
+pub mod spell_slots;

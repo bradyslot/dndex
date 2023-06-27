@@ -1,6 +1,7 @@
-#![allow(non_snake_case, non_camel_case_types)]
+#![allow(non_snake_case, non_camel_case_types, clippy::similar_names)]
 use yew::prelude::*;
 use serde::Deserialize;
+use std::collections::HashMap;
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct Character {
@@ -25,12 +26,97 @@ pub struct AC {
     pub modifier: i8,
 }
 
-#[derive(Deserialize, Debug, Clone, Properties, PartialEq)]
-pub struct Spell {
+// this only applies to WOTC 5e SRD 5.1
+// #[derive(Deserialize, Clone, Properties, PartialEq)]
+// pub struct Open5eSpellList {
+//     pub slug: String, // spellcasters
+//     pub name: String,
+//     // pub desc: String, // always empty
+//     pub spells: Vec<String>,
+// }
+
+#[derive(Deserialize, Clone, Properties, PartialEq)]
+pub struct Open5eFeats {
     pub slug: String,
     pub name: String,
     pub desc: String,
-    pub higher_level: String,
+    pub prerequisite: Option<String>, // possibly null
+    pub effects_desc: Vec<String>,
+}
+
+
+#[derive(Deserialize, Clone, Properties, PartialEq)]
+pub struct Open5eClass {
+    pub name: String,
+    pub slug: String,
+    pub desc: String, // Markdown
+    pub hit_dice: String,
+    pub hp_at_1st_level: String,
+    pub hp_at_higher_levels: String,
+    pub prof_armor: String,
+    pub prof_weapons: String,
+    pub prof_tools: String,
+    pub prof_saving_throws: String,
+    pub prof_skills: String,
+    pub equipment: String, // Markdown
+    pub table: String, // Markdown
+    pub spellcasting_ability: String,
+    pub subtypes_name: String,
+    pub archetypes: Vec<Open5eArchetype>,
+}
+
+#[derive(Deserialize, Clone, Properties, PartialEq)]
+pub struct Open5eASI {
+    pub attributes: Vec<String>,
+    pub value: u8,
+}
+
+#[derive(Deserialize, Clone, Properties, PartialEq)]
+pub struct Open5eSpeed {
+    pub speed: HashMap<String, u8>,
+}
+
+#[derive(Deserialize, Clone, Properties, PartialEq)]
+pub struct Open5eSubrace {
+    pub name: String,
+    pub slug: String,
+    pub desc: String,
+    pub asi: Vec<Open5eASI>,
+    pub traits: String, // Markdown
+    pub asi_desc: String, // Markdown
+}
+
+#[derive(Deserialize, Clone, Properties, PartialEq)]
+pub struct Open5eRace {
+    pub name: String,
+    pub slug: String,
+    pub desc: String, // Markdown
+    pub asi_desc: String, // Markdown
+    pub asi: Vec<Open5eASI>,
+    pub age: String, // Markdown
+    pub alignment: String, // Markdown
+    pub size: String, // Markdown
+    pub speed: Open5eSpeed,
+    pub speed_desc: String, // Markdown
+    pub languages: String, // Markdown
+    pub vision: String, // Markdown
+    pub traits: String, // Markdown
+    pub subraces: Vec<Open5eSubrace>,
+}
+
+#[derive(Deserialize, Clone, Properties, PartialEq)]
+pub struct Open5eArchetype {
+    pub name: String,
+    pub slug: String,
+    pub desc: String,
+}
+
+#[derive(Deserialize, Debug, Clone, Properties, PartialEq)]
+pub struct Open5eSpell {
+    pub slug: String,
+    pub name: String,
+    pub desc: String, // Markdown sometimes
+    pub higher_level: String, // Markdown sometimes
     pub page: String,
     pub range: String,
     pub target_range_sort: u8,
@@ -53,10 +139,6 @@ pub struct Spell {
     pub spell_lists: Vec<String>,
     pub archetype: String,
     pub circles: String,
-    pub document__slug: String,
-    pub document__title: String,
-    pub document__license_url: String,
-    pub document__url: String,
 }
 
 #[derive(Clone, Properties, PartialEq)]

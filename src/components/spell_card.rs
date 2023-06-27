@@ -1,11 +1,14 @@
 use stylist::css;
 use yew::prelude::*;
+use yew::Html;
 use super::super::models::models::*;
 use super::shared::utils::*;
 use super::shared::icons::*;
+use comrak::{markdown_to_html, ComrakOptions};
+use log::info;
 
 #[function_component(SpellCard)]
-pub fn spell_card(props: &Spell) -> Html {
+pub fn spell_card(props: &Open5eSpell) -> Html {
     let s = random_alpha_string(8);
     let style = css!(
         height: 40rem;
@@ -134,7 +137,21 @@ pub fn spell_card(props: &Spell) -> Html {
         .flex-${s} {
             display: flex;
         }
+        // table {
+        //     border: 2px solid black;
+        // }
+        th {
+            text-align: center;
+            border-bottom: 2px solid black;
+        }
+        td {
+            border-bottom: 1px solid black;
+        }
     );
+
+    let mut options = ComrakOptions::default();
+    options.extension.table = true;
+    let description = Html::from_html_unchecked(markdown_to_html(&props.desc, &options).into());
 
     html! {
         <div class={style}>
@@ -169,7 +186,7 @@ pub fn spell_card(props: &Spell) -> Html {
                     <div class={format!("flex-{}", s)}><div class={format!("svg-{}", s)}>{icon_checkbox(props.requires_material_components)}</div>{" M "}</div>
                 </div>
                 <div class={format!("components-label-{}", s)}>{"Components"}</div>
-                <div class={format!("description-{}", s)}>{props.desc.clone()}</div>
+                <div class={format!("description-{}", s)}>{description}</div>
                 { if props.higher_level.len() > 0 {html!(<div class={format!("higherlevels-{}", s)}>{props.higher_level.clone()}</div>) } else {html!(<div></div>)} }
             </div>
         </div>
