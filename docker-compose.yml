@@ -1,7 +1,7 @@
 version: '3'
 services:
   server:
-    image: 'eepmoody/open5e-api:latest'
+    image: 'eepmoody/open5e-api:staging'
     build: .
     environment:
       - OPEN5E_DEBUG=false

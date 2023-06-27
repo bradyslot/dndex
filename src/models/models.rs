@@ -1,3 +1,4 @@
+#![allow(non_snake_case, non_camel_case_types)]
 use yew::prelude::*;
 use serde::Deserialize;
 
@@ -24,7 +25,6 @@ pub struct AC {
     pub modifier: i8,
 }
 
-#[allow(non_snake_case)]
 #[derive(Deserialize, Debug, Clone, Properties, PartialEq)]
 pub struct Spell {
     pub slug: String,

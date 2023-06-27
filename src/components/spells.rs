@@ -63,6 +63,7 @@ pub fn spells(props: &Character) -> Html {
         }
     );
 
+    // TODO: add materials
     html! {
         <div class={style}>
             <LabeledDivider text={"Spell Cards"}/>
