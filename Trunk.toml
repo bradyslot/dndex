@@ -2,7 +2,7 @@
 port = 8000
 address = "0.0.0.0"
 
-[[hooks]]
-stage = "pre_build"
-command = "docker-compose"
-command_arguments = ["up", "--detach"]
+# [[hooks]]
+# stage = "pre_build"
+# command = "docker-compose"
+# command_arguments = ["up", "--detach"]

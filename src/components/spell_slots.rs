@@ -9,7 +9,7 @@ use super::shared::utils::*;
 use super::super::components::rectangle_scooped::*;
 
 #[function_component(SpellSlots)]
-pub fn spell_slots(props: &Character) -> Html {
+pub fn spell_slots(_props: &Character) -> Html {
 
     let s = random_alpha_string(8);
     let style = css!(

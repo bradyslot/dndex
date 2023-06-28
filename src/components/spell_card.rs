@@ -5,7 +5,6 @@ use super::super::models::models::*;
 use super::shared::utils::*;
 use super::shared::icons::*;
 use comrak::{markdown_to_html, ComrakOptions};
-use log::info;
 
 #[function_component(SpellCard)]
 pub fn spell_card(props: &Open5eSpell) -> Html {
@@ -129,6 +128,8 @@ pub fn spell_card(props: &Open5eSpell) -> Html {
             border-top: 2px dashed black;
             padding-top: 0.5rem;
             grid-area: higherlevels;
+            overflow-y: auto;
+            max-height: 15rem;
         }
         .svg-${s} {
             height: 1.25rem;
@@ -137,9 +138,14 @@ pub fn spell_card(props: &Open5eSpell) -> Html {
         .flex-${s} {
             display: flex;
         }
-        // table {
-        //     border: 2px solid black;
-        // }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+        p {
+            margin: 0;
+        }
         th {
             text-align: center;
             border-bottom: 2px solid black;
@@ -151,7 +157,8 @@ pub fn spell_card(props: &Open5eSpell) -> Html {
 
     let mut options = ComrakOptions::default();
     options.extension.table = true;
-    let description = Html::from_html_unchecked(markdown_to_html(&props.desc, &options).into());
+    let desc = Html::from_html_unchecked(markdown_to_html(&props.desc, &options).into());
+    let higher_level = Html::from_html_unchecked(markdown_to_html(&props.higher_level, &options).into());
 
     html! {
         <div class={style}>
@@ -186,8 +193,8 @@ pub fn spell_card(props: &Open5eSpell) -> Html {
                     <div class={format!("flex-{}", s)}><div class={format!("svg-{}", s)}>{icon_checkbox(props.requires_material_components)}</div>{" M "}</div>
                 </div>
                 <div class={format!("components-label-{}", s)}>{"Components"}</div>
-                <div class={format!("description-{}", s)}>{description}</div>
-                { if props.higher_level.len() > 0 {html!(<div class={format!("higherlevels-{}", s)}>{props.higher_level.clone()}</div>) } else {html!(<div></div>)} }
+                <div class={format!("description-{}", s)}>{desc}</div>
+                { if props.higher_level.len() > 0 {html!(<div class={format!("higherlevels-{}", s)}>{higher_level}</div>) } else {html!(<div></div>)} }
             </div>
         </div>
     }
