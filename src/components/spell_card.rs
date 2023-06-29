@@ -5,6 +5,8 @@ use super::super::models::models::*;
 use super::shared::utils::*;
 use super::shared::icons::*;
 use comrak::{markdown_to_html, ComrakOptions};
+use minijinja::render;
+// use log::info;
 
 #[function_component(SpellCard)]
 pub fn spell_card(props: &Open5eSpell) -> Html {
@@ -129,7 +131,7 @@ pub fn spell_card(props: &Open5eSpell) -> Html {
             padding-top: 0.5rem;
             grid-area: higherlevels;
             overflow-y: auto;
-            max-height: 15rem;
+            max-height: 12rem;
         }
         .svg-${s} {
             height: 1.25rem;
@@ -137,6 +139,9 @@ pub fn spell_card(props: &Open5eSpell) -> Html {
         }
         .flex-${s} {
             display: flex;
+        }
+        table {
+            width: 100%;
         }
         h2 {
             font-size: 1.5rem;
@@ -157,8 +162,17 @@ pub fn spell_card(props: &Open5eSpell) -> Html {
 
     let mut options = ComrakOptions::default();
     options.extension.table = true;
-    let desc = Html::from_html_unchecked(markdown_to_html(&props.desc, &options).into());
-    let higher_level = Html::from_html_unchecked(markdown_to_html(&props.higher_level, &options).into());
+
+    let base_url = "https://open5e.com";
+    let desc = render!(&props.desc.clone(), base_url);
+    let higher_level = render!(&props.higher_level.clone(), base_url);
+    // info!("desc: {}", desc);
+
+    let desc_string = markdown_to_html(&desc, &options).into();
+    let desc_html = Html::from_html_unchecked(desc_string);
+
+    let higher_level_string = markdown_to_html(&higher_level, &options).into();
+    let higher_level_html = Html::from_html_unchecked(higher_level_string);
 
     html! {
         <div class={style}>
@@ -193,8 +207,8 @@ pub fn spell_card(props: &Open5eSpell) -> Html {
                     <div class={format!("flex-{}", s)}><div class={format!("svg-{}", s)}>{icon_checkbox(props.requires_material_components)}</div>{" M "}</div>
                 </div>
                 <div class={format!("components-label-{}", s)}>{"Components"}</div>
-                <div class={format!("description-{}", s)}>{desc}</div>
-                { if props.higher_level.len() > 0 {html!(<div class={format!("higherlevels-{}", s)}>{higher_level}</div>) } else {html!(<div></div>)} }
+                <div class={format!("description-{}", s)}>{desc_html}</div>
+                { if props.higher_level.len() > 0 {html!(<div class={format!("higherlevels-{}", s)}>{higher_level_html}</div>) } else {html!(<div></div>)} }
             </div>
         </div>
     }

@@ -71,19 +71,21 @@ fn App() -> Html {
         saves: vec![ character_abilities[CON].clone(), character_abilities[INT].clone() ]
     };
     let character_spells = vec![
-        "awaken-object".into(),
-        "booster-shot".into(),
-        "chaotic-vitality".into(),
-        "curse-of-incompetence".into(),
-        "dragon-breath".into(),
-        "fluctuating-alignment".into(),
+        // "awaken-object".into(),
+        // "booster-shot".into(),
+        // "chaotic-vitality".into(),
+        // "curse-of-incompetence".into(),
+        // "dragon-breath".into(),
+        // "fluctuating-alignment".into(),
+        // "lovesick".into(),
+        // "prismatic-ray".into(),
+        // "snow-boulder".into(),
+        // "time-vortex".into(),
+        // "timely-distraction".into(),
+        // "uncontrollable-transformation".into(),
+        "as-you-were".into(),
+        "conjure-greater-spectral-dead".into(),
         "frenzied-bolt".into(),
-        "lovesick".into(),
-        "prismatic-ray".into(),
-        "snow-boulder".into(),
-        "time-vortex".into(),
-        "timely-distraction".into(),
-        "uncontrollable-transformation".into(),
     ];
 
     let props = props! {
