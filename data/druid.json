@@ -1,0 +1,144 @@
+{
+  "class_table": [
+    {
+      "level": "1st",
+      "proficiency_bonus": 2,
+      "features": [ ],
+      "cantrips_known": 3,
+      "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": "2nd",
+      "proficiency_bonus": 2,
+      "features": [ ],
+      "cantrips_known": 3,
+      "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": "3rd",
+      "proficiency_bonus": 2,
+      "features": [ ],
+      "cantrips_known": 3,
+      "spell_slots": [ 4, 2, 0, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": "4th",
+      "proficiency_bonus": 2,
+      "features": [ ],
+      "cantrips_known": 3,
+      "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": "5th",
+      "proficiency_bonus": 3,
+      "features": [ ],
+      "cantrips_known": 3,
+      "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": "6th",
+      "proficiency_bonus": 3,
+      "features": [ ],
+      "cantrips_known": 3,
+      "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": "7th",
+      "proficiency_bonus": 3,
+      "features": [ ],
+      "cantrips_known": 3,
+      "spell_slots": [ 4, 3, 3, 1, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": "8th",
+      "proficiency_bonus": 3,
+      "features": [ ],
+      "cantrips_known": 3,
+      "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": "9th",
+      "proficiency_bonus": 4,
+      "features": [ ],
+      "cantrips_known": 3,
+      "spell_slots": [ 4, 3, 3, 3, 1, 0, 0, 0, 0 ]
+    },
+    {
+      "level": "10th",
+      "proficiency_bonus": 4,
+      "features": [ ],
+      "cantrips_known": 4,
+      "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
+    },
+    {
+      "level": "11th",
+      "proficiency_bonus": 4,
+      "features": [ ],
+      "cantrips_known": 4,
+      "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
+    },
+    {
+      "level": "12th",
+      "proficiency_bonus": 4,
+      "features": [ ],
+      "cantrips_known": 4,
+      "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
+    },
+    {
+      "level": "13th",
+      "proficiency_bonus": 5,
+      "features": [ ],
+      "cantrips_known": 4,
+      "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
+    },
+    {
+      "level": "14th",
+      "proficiency_bonus": 5,
+      "features": [ ],
+      "cantrips_known": 4,
+      "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
+    },
+    {
+      "level": "15th",
+      "proficiency_bonus": 5,
+      "features": [ ],
+      "cantrips_known": 4,
+      "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
+    },
+    {
+      "level": "16th",
+      "proficiency_bonus": 5,
+      "features": [ ],
+      "cantrips_known": 4,
+      "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
+    },
+    {
+      "level": "17th",
+      "proficiency_bonus": 6,
+      "features": [ ],
+      "cantrips_known": 4,
+      "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 1 ]
+    },
+    {
+      "level": "18th",
+      "proficiency_bonus": 6,
+      "features": [ ],
+      "cantrips_known": 4,
+      "spell_slots": [ 4, 3, 3, 3, 3, 1, 1, 1, 1 ]
+    },
+    {
+      "level": "19th",
+      "proficiency_bonus": 6,
+      "features": [ ],
+      "cantrips_known": 4,
+      "spell_slots": [ 4, 3, 3, 3, 3, 2, 1, 1, 1 ]
+    },
+    {
+      "level": "20th",
+      "proficiency_bonus": 6,
+      "features": [ ],
+      "cantrips_known": 4,
+      "spell_slots": [ 4, 3, 3, 3, 3, 2, 2, 1, 1 ]
+    }
+  ]
+}

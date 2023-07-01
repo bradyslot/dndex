@@ -83,13 +83,12 @@ fn App() -> Html {
         // "time-vortex".into(),
         // "timely-distraction".into(),
         // "uncontrollable-transformation".into(),
-        "as-you-were".into(),
         "conjure-greater-spectral-dead".into(),
         "frenzied-bolt".into(),
     ];
 
     let props = props! {
-        Character { 
+        Character {
             abilities: character_abilities,
             ac: character_ac,
             class: character_class,
