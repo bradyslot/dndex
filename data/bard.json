@@ -1,8 +1,9 @@
 {
   "class_hit_points": {
     "hit_dice": 8,
-    "first_level": { "modifier": "constitution", "value": 8 },
-    "higher_levels": { "modifier": "constitution", "value": 5 }
+    "modifier": "constitution",
+    "first_level": 8,
+    "higher_levels": 5
   },
   "class_proficiencies": {
     "armor": "Light armor",
