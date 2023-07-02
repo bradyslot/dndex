@@ -1,142 +1,199 @@
 {
-  "class_table": [
+  "class_hit_points": {
+    "hit_dice": 8,
+    "first_level": 8,
+    "static_option": 5,
+    "desc": "**Hit Dice:** 1d8 per cleric level\n**Hit Points at 1st Level:** 8 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d8 (or 5) + your Constitution modifier per cleric level after 1st"
+  },
+  "class_proficiencies": {
+    "saving_throws": [ "wisdom", "charisma" ],
+    "skills": { "qty": 2, "options": [ "history", "insight", "medicine", "persuasion", "religion" ] },
+    "desc": "**Armor:** Light armor, medium armor, shields\n**Weapons:** Simple weapons\n**Tools:** None\n**Saving Throws:** Wisdom, Charisma\n**Skills:** Choose two from History, Insight, Medicine, Persuasion, and Religion"
+  },
+  "class_equipment": {
+    "weapon_choices": {
+      "choice_1": [
+        { "open5e_slug": "mace" },
+        { "open5e_slug": "warhammer" }
+      ],
+      "choice_2": [
+        { "open5e_slug": "crossbow-light", "bolts": 20 },
+        { "open5e_category": "Simple" }
+      ]
+    },
+    "armor_choices": {
+      "choice_1": [
+        { "open5e_slug": "scale-mail" },
+        { "open5e_slug": "leather" },
+        { "open5e_slug": "chain-mail" }
+      ]
+    },
+    "pack_choices": {
+      "choice_1": [
+        { "dndex_slug": "priests-pack" },
+        { "dndex_slug": "explorers-pack" }
+      ]
+    },
+    "defaults": [
+      { "open5e_slug": "shield" },
+      { "dndex_slug": "holy-symbol" }
+    ],
+    "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a mace or *(b)* a warhammer (if proficient)\n- *(a)* scale mail, *(b)* leather armor, or (c) chain mail (if proficient)\n- *(a)* a light crossbow and 20 bolts or *(b)* any simple weapon\n- *(a)* a priest's pack or *(b)* an explorer's pack\nA shield and a holy symbol"
+  },
+  "class_levels": [
     {
-      "level": "1st",
-      "proficiency_bonus": 2,
-      "features": [ "spellcasting", "divine-domain" ],
+      "level": 1,
+      "features": [
+        { "dndex_slug": "cleric-spellcasting" },
+        { "dndex_slug": "divine-domain" }
+      ],
       "cantrips_known": 3,
       "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
     {
-      "level": "2nd",
-      "proficiency_bonus": 2,
-      "features": [ "channel-divinity-1-rest", "divine-domain-feature" ],
+      "level": 2,
+      "features": [
+        { "dndex_slug": "channel-divinity" },
+        { "dndex_slug": "divine-domain-feature" }
+      ],
       "cantrips_known": 3,
       "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
     {
-      "level": "3rd",
-      "proficiency_bonus": 2,
-      "features": [ ],
+      "level": 3,
+      "features": [],
       "cantrips_known": 3,
       "spell_slots": [ 4, 2, 0, 0, 0, 0, 0, 0, 0 ]
     },
     {
-      "level": "4th",
-      "proficiency_bonus": 2,
-      "features": [ "ability-score-improvement" ],
+      "level": 4,
+      "features": [
+        { "dndex_slug": "ability-score-improvement" }
+      ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
     },
     {
-      "level": "5th",
-      "proficiency_bonus": 3,
-      "features": [ "destroy-undead-cr-1-2" ],
+      "level": 5,
+      "features": [
+        { "dndex_slug": "destroy-undead" }
+      ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
     },
     {
-      "level": "6th",
-      "proficiency_bonus": 3,
-      "features": [ "channel-divinity-2-rest", "divine-domain-feature" ],
+      "level": 6,
+      "features": [
+        { "dndex_slug": "channel-divinity" },
+        { "dndex_slug": "divine-domain-feature" }
+      ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
     },
     {
-      "level": "7th",
-      "proficiency_bonus": 3,
-      "features": [ ],
+      "level": 7,
+      "features": [],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 1, 0, 0, 0, 0, 0 ]
     },
     {
-      "level": "8th",
-      "proficiency_bonus": 3,
-      "features": [ "ability-score-improvement","destroy-undead-cr-1", "divine-domain-feature" ],
+      "level": 8,
+      "features": [
+        { "dndex_slug": "ability-score-improvement" },
+        { "dndex_slug": "destroy-undead" },
+        { "dndex_slug": "divine-domain-feature" }
+      ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
     },
     {
-      "level": "9th",
-      "proficiency_bonus": 4,
-      "features": [ ],
+      "level": 9,
+      "features": [],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 3, 1, 0, 0, 0, 0 ]
     },
     {
-      "level": "10th",
-      "proficiency_bonus": 4,
-      "features": [ "devine-intervention" ],
+      "level": 10,
+      "features": [
+        { "dndex_slug": "devine-intervention" }
+      ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
     },
     {
-      "level": "11th",
-      "proficiency_bonus": 4,
-      "features": [ "destroy-undead-cr-2" ],
+      "level": 11,
+      "features": [
+        { "dndex_slug": "destroy-undead" }
+      ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
     },
     {
-      "level": "12th",
-      "proficiency_bonus": 4,
-      "features": [ "ability-score-improvement" ],
+      "level": 12,
+      "features": [
+        { "dndex_slug": "ability-score-improvement" }
+      ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
     },
     {
-      "level": "13th",
-      "proficiency_bonus": 5,
-      "features": [ ],
+      "level": 13,
+      "features": [],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
     },
     {
-      "level": "14th",
-      "proficiency_bonus": 5,
-      "features": [ "destroy-undead-cr-3" ],
+      "level": 14,
+      "features": [
+        { "dndex_slug": "destroy-undead" }
+      ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
     },
     {
-      "level": "15th",
-      "proficiency_bonus": 5,
-      "features": [ ],
+      "level": 15,
+      "features": [],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
     },
     {
-      "level": "16th",
-      "proficiency_bonus": 5,
-      "features": [ "ability-score-improvement" ],
+      "level": 16,
+      "features": [
+        { "dndex_slug": "ability-score-improvement" }
+      ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
     },
     {
-      "level": "17th",
-      "proficiency_bonus": 6,
-      "features": [ "destroy-undead-cr-4", "divine-domain-feature" ],
+      "level": 17,
+      "features": [
+        { "dndex_slug": "destroy-undead" },
+        { "dndex_slug": "divine-domain-feature" }
+      ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 1 ]
     },
     {
-      "level": "18th",
-      "proficiency_bonus": 6,
-      "features": [ "channel-divinity-3-rest" ],
+      "level": 18,
+      "features": [
+        { "dndex_slug": "channel-divinity" }
+      ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 1, 1, 1, 1 ]
     },
     {
-      "level": "19th",
-      "proficiency_bonus": 6,
-      "features": [ "ability-score-improvement" ],
+      "level": 19,
+      "features": [
+        { "dndex_slug": "ability-score-improvement" }
+      ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 1, 1, 1 ]
     },
     {
-      "level": "20th",
-      "proficiency_bonus": 6,
-      "features": [ "divine-intervention-improvement" ],
+      "level": 20,
+      "features": [
+        { "dndex_slug": "divine-intervention-improvement" }
+      ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 2, 1, 1 ]
     }

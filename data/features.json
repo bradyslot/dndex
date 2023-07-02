@@ -1,57 +1,122 @@
 {
-  "features": [
+  "class_features": [
     {
-      "slug": "spellcasting",
+      "dndex_slug": "rage",
+      "name": "Rage",
+      "desc": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.\nWhile raging, you gain the following benefits if you aren't wearing heavy armor:\nYou have advantage on Strength checks and Strength saving throws.\nWhen you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.\nYou have resistance to bludgeoning, piercing, and slashing damage.\nIf you are able to cast spells, you can't cast them or concentrate on them while raging.\nYour rage lasts for 1 minute. It ends early if you are knocked srd:unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action.\nOnce you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again."
+    },
+    {
+      "dndex_slug": "unarmored-defense",
+      "name": "Unarmored Defense",
+      "desc": "While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."
+    },
+    {
+      "dndex_slug": "reckless-attack",
+      "name": "Reckless Attack",
+      "desc": "Starting at 2nd level, you can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you have advantage until your next turn."
+    },
+    {
+      "dndex_slug": "danger-sense",
+      "name": "Danger Sense",
+      "desc": "At 2nd level, you gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger.\nYou have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can't be [blinded]({{ base_url }}/conditions/blinded), [deafened]({{ base_url }}/conditions/deafened), or [incapacitated]({{ base_url }}/conditions/incapacitated)."
+    },
+    {
+      "dndex_slug": "primal-path",
+      "name": "Primal Path",
+      "desc": "At 3rd level, you choose a path that shapes the nature of your rage. Choose the Path of the Berserker or the Path of the Totem Warrior, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 6th, 10th, and 14th levels."
+    },
+    {
+      "dndex_slug": "extra-attack",
+      "name": "Extra Attack",
+      "desc": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
+    },
+    {
+      "dndex_slug": "fast-movement",
+      "name": "Fast Movement",
+      "desc": "Starting at 5th level, your speed increases by 10 feet while you aren't wearing heavy armor."
+    },
+    {
+      "dndex_slug": "feral-instinct",
+      "name": "Feral Instinct",
+      "desc": "By 7th level, your instincts are so honed that you have advantage on initiative rolls.\nAdditionally, if you are surprised at the beginning of combat and aren't srd:incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn."
+    },
+    {
+      "dndex_slug": "brutal-critical",
+      "name": "Brutal Critical",
+      "desc": "Beginning at 9th level, you can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack.\nThis increases to two additional dice at 13th level and three additional dice at 17th level."
+    },
+    {
+      "dndex_slug": "relentless-rage",
+      "name": "Relentless Rage",
+      "desc": "Starting at 11th level, your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and don't die outright, you can make a DC 10 Constitution saving throw. If you succeed, you drop to 1 hit point instead.\nEach time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10. "
+    },
+    {
+      "dndex_slug": "persistent-rage",
+      "name": "Persistent Rage",
+      "desc": "Beginning at 15th level, your rage is so fierce that it ends early only if you fall srd:unconscious or if you choose to end it."
+    },
+    {
+      "dndex_slug": "indomitable-might",
+      "name": "Indomitable Might",
+      "desc": "Beginning at 18th level, if your total for a Strength check is less than your Strength score, you can use that score in place of the total."
+    },
+    {
+      "dndex_slug": "primal-champion",
+      "name": "Primal Champion",
+      "desc": "At 20th level, you embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24."
+    },
+    {
+      "dndex_slug": "bard-spellcasting",
       "name": "Spellcasting",
-      "desc": "You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music. \nYour spells are part of your vast repertoire, magic that you can tune to different situations. \n## Cantrips \nYou know two cantrips of your choice from the [Bard Spell List]({{ base_url }}/spells/by-class/bard). You learn additional bard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Bard table. \n## Spell Slots \nThe Bard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest. \nFor example, if you know the 1st-level spell cure wounds and have a 1st-level and a 2nd-level spell slot available, you can cast cure wounds using either slot. \n## Spells Known of 1st Level and Higher \nYou know four 1st-level spells of your choice from the [Bard Spell List]({{ base_url }}/spells/by-class/bard). \nThe Spells Known column of the Bard table shows when you learn more bard spells of your choice. Each of these spells must be of a level for which you have spell slots, as shown on the table. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level. \nAdditionally, when you gain a level in this class, you can choose one of the bard spells you know and replace it with another spell from the bard spell list, which also must be of a level for which you have spell slots. \n## Spellcasting Ability \nCharisma is your spellcasting ability for your bard spells. Your magic comes from the heart and soul you pour into the performance of your music or oration. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a bard spell you cast and when making an attack roll with one. \n**Spell save DC** = 8 + your proficiency bonus + your Charisma modifier \n**Spell attack modifier** = your proficiency bonus + your Charisma modifier \n## Ritual Casting \nYou can cast any bard spell you know as a ritual if that spell has the ritual tag. \n## Spellcasting Focus \nYou can use a musical instrument (see [Adventuring Gear]({{ base_url }}/sections/adventuring-gear)) as a spellcasting focus for your bard spells."
+      "desc": "You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music.\nYour spells are part of your vast repertoire, magic that you can tune to different situations.\n## Cantrips\nYou know two cantrips of your choice from the [Bard Spell List]({{ base_url }}/spells/by-class/bard). You learn additional bard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Bard table.\n## Spell Slots\nThe Bard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\nFor example, if you know the 1st-level spell cure wounds and have a 1st-level and a 2nd-level spell slot available, you can cast cure wounds using either slot.\n## Spells Known of 1st Level and Higher\nYou know four 1st-level spells of your choice from the [Bard Spell List]({{ base_url }}/spells/by-class/bard).\nThe Spells Known column of the Bard table shows when you learn more bard spells of your choice. Each of these spells must be of a level for which you have spell slots, as shown on the table. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.\nAdditionally, when you gain a level in this class, you can choose one of the bard spells you know and replace it with another spell from the bard spell list, which also must be of a level for which you have spell slots.\n## Spellcasting Ability\nCharisma is your spellcasting ability for your bard spells. Your magic comes from the heart and soul you pour into the performance of your music or oration. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a bard spell you cast and when making an attack roll with one.\n**Spell save DC** = 8 + your proficiency bonus + your Charisma modifier\n**Spell attack modifier** = your proficiency bonus + your Charisma modifier\n## Ritual Casting\nYou can cast any bard spell you know as a ritual if that spell has the ritual tag.\n## Spellcasting Focus\nYou can use a musical instrument (see [Adventuring Gear]({{ base_url }}/sections/adventuring-gear)) as a spellcasting focus for your bard spells."
     },
     {
-      "slug": "bardic-inspiration",
+      "dndex_slug": "bardic-inspiration",
       "name": "Bardic Inspiration",
-      "desc": "You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6. \nOnce within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the GM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time. \nYou can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest. \nYour Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level."
+      "desc": "You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6.\nOnce within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the GM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.\nYou can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest.\nYour Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level."
     },
     {
-      "slug": "jack-of-all-trades",
+      "dndex_slug": "jack-of-all-trades",
       "name": "Jack of All Trades",
-      "desc": "Jack of all trades applies only to ability checks, not attack rolls or saving throws. However since initiative rolls are Dexterity checks Jack of All Trades does apply to initiative rolls as long as it is not already benefiting from the character's proficiency bonus. \nStarting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you make that doesn't already include your proficiency bonus."
+      "desc": "Jack of all trades applies only to ability checks, not attack rolls or saving throws. However since initiative rolls are Dexterity checks Jack of All Trades does apply to initiative rolls as long as it is not already benefiting from the character's proficiency bonus.\nStarting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you make that doesn't already include your proficiency bonus."
     },
     {
-      "slug": "song-of-rest",
+      "dndex_slug": "song-of-rest",
       "name": "Song of Rest",
-      "desc": "Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creatures who can hear your performance regain hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra 1d6 hit points. \nThe extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level."
+      "desc": "Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creatures who can hear your performance regain hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra 1d6 hit points.\nThe extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level."
     },
     {
-      "slug": "bard-college",
+      "dndex_slug": "bard-college",
       "name": "Bard College",
       "desc": "At 3rd level, you delve into the advanced techniques of a bard college of your choice, such as the College of Lore. Your choice grants you features at 3rd level and again at 6th and 14th level."
     },
     {
-      "slug": "expertise",
+      "dndex_slug": "expertise",
       "name": "Expertise",
-      "desc": "At 3rd level, choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies. \nAt 10th level, you can choose another two skill proficiencies to gain this benefit."
+      "desc": "At 3rd level, choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.\nAt 10th level, you can choose another two skill proficiencies to gain this benefit."
     },
     {
-      "slug": "ability-score-improvement",
+      "dndex_slug": "ability-score-improvement",
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
     },
     {
-      "slug": "font-of-inspiration",
+      "dndex_slug": "font-of-inspiration",
       "name": "Font of Inspiration",
       "desc": "Beginning when you reach 5th level, you regain all of your expended uses of Bardic Inspiration when you finish a short or long rest."
     },
     {
-      "slug": "countercharm",
+      "dndex_slug": "countercharm",
       "name": "Countercharm",
       "desc": "At 6th level, you gain the ability to use musical notes or words of power to disrupt mind-influencing effects. As an action, you can start a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being [frightened]({{ base_url }}/conditions/frightened) or [charmed]({{ base_url }}/conditions/charmed). A creature must be able to hear you to gain this benefit. The performance ends early if you are [incapacitated]({{ base_url }}/conditions/incapacitated) or silenced or if you voluntarily end it (no action required)."
     },
     {
-      "slug": "magical-secrets",
+      "dndex_slug": "magical-secrets",
       "name": "Magical Secrets",
-      "desc": "By 10th level, you have plundered magical knowledge from a wide spectrum of disciplines. Choose two spells from any class, including this one. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip. \nThe chosen spells count as bard spells for you and are included in the number in the Spells Known column of the Bard table. \nYou learn two additional spells from any class at 14th level and again at 18th level."
+      "desc": "By 10th level, you have plundered magical knowledge from a wide spectrum of disciplines. Choose two spells from any class, including this one. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip.\nThe chosen spells count as bard spells for you and are included in the number in the Spells Known column of the Bard table.\nYou learn two additional spells from any class at 14th level and again at 18th level."
     },
     {
-      "slug": "superior-inspiration",
+      "dndex_slug": "superior-inspiration",
       "name": "Superior Inspiration",
       "desc": "At 20th level, when you roll initiative and have no uses of Bardic Inspiration left, you regain one use."
     }
