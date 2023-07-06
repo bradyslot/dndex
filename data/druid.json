@@ -12,12 +12,20 @@
   },
   "class_equipment": {
     "choice_1": [
-      { "api_path": "armor", "open5e_slug": "shield" },
-      { "api_path": "weapons", "open5e_category": "Simple" }
+      [
+        { "api_path": "armor", "open5e_slug": "shield" }
+      ],
+      [
+        { "api_path": "weapons", "open5e_category": "Simple" }
+      ]
     ],
     "choice_2": [
-      { "api_path": "weapons", "open5e_slug": "scimitar" },
-      { "api_path": "weapons", "open5e_category": "Simple Melee" }
+      [
+        { "api_path": "weapons", "open5e_slug": "scimitar" }
+      ],
+      [
+        { "api_path": "weapons", "open5e_category": "Simple Melee" }
+      ]
     ],
     "defaults": [
       { "api_path": "armor" , "open5e_slug": "leather" },

@@ -12,13 +12,23 @@
   },
   "class_equipment": {
     "choice_1": [
-      { "api_path": "weapons", "open5e_slug": "rapier" },
-      { "api_path": "weapons", "open5e_slug": "longsword" },
-      { "api_path": "weapons", "open5e_category": "Simple Melee" }
+      [
+        { "api_path": "weapons", "open5e_slug": "rapier" }
+      ],
+      [
+        { "api_path": "weapons", "open5e_slug": "longsword" }
+      ],
+      [
+        { "api_path": "weapons", "open5e_category": "Simple Melee" }
+      ]
     ],
     "choice_2": [
-      { "source": "equipment_packs", "dndex_slug": "diplomats-pack" },
-      { "source": "equipment_packs", "dndex_slug": "entertainers-pack" }
+      [
+        { "source": "equipment_packs", "dndex_slug": "diplomats-pack" }
+      ],
+      [
+        { "source": "equipment_packs", "dndex_slug": "entertainers-pack" }
+      ]
     ],
     "defaults": [
       { "api_path": "weapons", "open5e_slug": "dagger" },

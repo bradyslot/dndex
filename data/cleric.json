@@ -12,21 +12,40 @@
   },
   "class_equipment": {
     "choice_1": [
-      { "api_path": "weapons", "open5e_slug": "mace" },
-      { "api_path": "weapons", "open5e_slug": "warhammer" }
+      [
+        { "api_path": "weapons", "open5e_slug": "mace" }
+      ],
+      [
+        { "api_path": "weapons", "open5e_slug": "warhammer" }
+      ]
     ],
     "choice_2": [
-      { "api_path": "weapons", "open5e_slug": "crossbow-light", "ammunition": 20 },
-      { "api_path": "weapons", "open5e_category": "Simple" }
+      [
+        { "api_path": "weapons", "open5e_slug": "crossbow-light" },
+        { "name": "Bolts", "qty": 20 }
+      ],
+      [
+        { "api_path": "weapons", "open5e_category": "Simple" }
+      ]
     ],
     "choice_3": [
-      { "api_path": "armor", "open5e_slug": "scale-mail" },
-      { "api_path": "armor", "open5e_slug": "leather" },
-      { "api_path": "armor", "open5e_slug": "chain-mail" }
+      [
+        { "api_path": "armor", "open5e_slug": "scale-mail" }
+      ],
+      [
+        { "api_path": "armor", "open5e_slug": "leather" }
+      ],
+      [
+        { "api_path": "armor", "open5e_slug": "chain-mail" }
+      ]
     ],
     "choice_4": [
-      { "source": "equipment_packs", "dndex_slug": "priests-pack" },
-      { "source": "equipment_packs", "dndex_slug": "explorers-pack" }
+      [
+        { "source": "equipment_packs", "dndex_slug": "priests-pack" }
+      ],
+      [
+        { "source": "equipment_packs", "dndex_slug": "explorers-pack" }
+      ]
     ],
     "defaults": [
       { "api_path": "armor", "open5e_slug": "shield" },

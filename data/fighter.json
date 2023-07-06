@@ -1,0 +1,179 @@
+{
+  "class_hit_points": {
+    "hit_dice": 10,
+    "first_level": 10,
+    "static_option": 6,
+    "desc": "**Hit Dice:** 1d10 per Fighter level\n**Hit Points at 1st Level:** 10 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d10 (or 6) + your Constitution modifier per fighter level after 1st"
+  },
+  "class_proficiencies": {
+    "saving_throws": [ "strength", "constitution" ],
+    "skills": { "choices": 2, "options": [ "acrobatics", "animal-handling", "athletics", "history", "insight", "intimidation", "perception", "survival" ] },
+    "desc": "**Armor:** All armor, shields\n**Weapons:** Simple weapons, martial weapons\n**Tools:** None\n**Saving Throws:** Strength, Constitution\n**Skills:** Choose two skills from Acrobatics, Animal, Handling, Athletics, History, Insight, Intimidation, Perception, and Survival"
+  },
+  "class_equipment": {
+    "choice_1": [
+      [
+        { "api_path": "armor", "open5e_slug": "chain-mail" }
+      ],
+      [
+        { "api_path": "armor", "open5e_slug": "leather" },
+        { "api_path": "weapons", "open5e_slug": "longbow" },
+        { "name": "Arrows", "qty": 20 }
+      ]
+    ],
+    "choice_2": [
+      [
+        { "api_path": "weapons", "open5e_category": "Martial" },
+        { "api_path": "armor", "open5e_slug": "shield" }
+      ],
+      [
+        { "api_path": "weapons", "open5e_category": "Martial" },
+        { "api_path": "weapons", "open5e_category": "Martial" }
+      ]
+    ],
+    "choice_3": [
+      [
+        { "api_path": "weapons", "open5e_slug": "crossbow-light" },
+        { "name": "Bolts", "qty": 20 }
+      ],
+      [
+        { "api_path": "weapons", "open5e_slug": "handaxe" },
+        { "api_path": "weapons", "open5e_slug": "handaxe" }
+      ]
+    ],
+    "choice_4": [
+      [
+        { "source": "equipment_packs", "dndex_slug": "dungeoneers-pack" }
+      ],
+      [
+        { "source": "equipment_packs", "dndex_slug": "explorers-pack" }
+      ]
+    ],
+    "defaults": [],
+    "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* chain mail or *(b)* leather armor, longbow, and 20 arrows\n- *(a)* a martial weapon and a shield or *(b)* two martial weapons\n- *(a)* a light crossbow and 20 bolts or *(b)* two handaxes\n- *(a)* a dungeoneer’s pack or *(b)* an explorer’s pack"
+  },
+  "class_levels": [
+    {
+      "level": 1,
+      "features": [
+        { "dndex_slug": "fighting-style" },
+        { "dndex_slug": "second-wind" }
+      ]
+    },
+    {
+      "level": 2,
+      "features": [
+        { "dndex_slug": "action-surge", "name": "Action Surge (1 use)" }
+      ]
+    },
+    {
+      "level": 3,
+      "features": [
+        { "dndex_slug": "martial-archetype" }
+      ]
+    },
+    {
+      "level": 4,
+      "features": [
+        { "dndex_slug": "fighter-ability-score" }
+      ]
+    },
+    {
+      "level": 5,
+      "features": [
+        { "dndex_slug": "fighter-extra-attack" }
+      ]
+    },
+    {
+      "level": 6,
+      "features": [
+        { "dndex_slug": "fighter-ability-score" }
+      ]
+    },
+    {
+      "level": 7,
+      "features": [
+        { "dndex_slug": "martial-archetype", "name": "Martial Archetype Feature" }
+      ]
+    },
+    {
+      "level": 8,
+      "features": [
+        { "dndex_slug": "fighter-ability-score" }
+      ]
+    },
+    {
+      "level": 9,
+      "features": [
+        { "dndex_slug": "indomitable", "name": "Indomitable (1 use)" }
+      ]
+    },
+    {
+      "level": 10,
+      "features": [
+        { "dndex_slug": "martial-archetype", "name": "Martial Archetype Feature" }
+      ]
+    },
+    {
+      "level": 11,
+      "features": [
+        { "dndex_slug": "fighter-extra-attack", "name": "Extra Attack (2)" }
+      ]
+    },
+    {
+      "level": 12,
+      "features": [
+        { "dndex_slug": "fighter-ability-score" }
+      ]
+    },
+    {
+      "level": 13,
+      "features": [
+        { "dndex_slug": "indomitable", "name": "Indomitable (2 uses)" }
+      ]
+    },
+    {
+      "level": 14,
+      "features": [
+        { "dndex_slug": "fighter-ability-score" }
+      ]
+    },
+    {
+      "level": 15,
+      "features": [
+        { "dndex_slug": "martial-archetype", "name": "Martial Archetype Feature" }
+      ]
+    },
+    {
+      "level": 16,
+      "features": [
+        { "dndex_slug": "fighter-ability-score" }
+      ]
+    },
+    {
+      "level": 17,
+      "features": [
+        { "dndex_slug": "action-surge", "name": "Action Surge (2 uses)" },
+        { "dndex_slug": "indomitable", "name": "Indomitable (3 uses)" }
+      ]
+    },
+    {
+      "level": 18,
+      "features": [
+        { "dndex_slug": "martial-archetype", "name": "Martial Archetype Feature" }
+      ]
+    },
+    {
+      "level": 19,
+      "features": [
+        { "dndex_slug": "fighter-ability-score" }
+      ]
+    },
+    {
+      "level": 20,
+      "features": [
+        { "dndex_slug": "extra-attack", "name": "Extra Attack (3)" }
+      ]
+    }
+  ]
+}
