@@ -40,6 +40,7 @@ pub fn spells(props: &Character) -> Html {
             }
 
             let spell_card_data_clone = spell_card_data_clone.clone();
+            // serde_wasm_bindgen::spawn_local(async move {
             wasm_bindgen_futures::spawn_local(async move {
                 let spell_card_data = Rc::new(RefCell::new(vec![]));
                 fetch_spells(spells, spell_card_data.clone()).await;

@@ -7,36 +7,30 @@
   },
   "class_proficiencies": {
     "saving_throws": [ "wisdom", "charisma" ],
-    "skills": { "qty": 2, "options": [ "history", "insight", "medicine", "persuasion", "religion" ] },
+    "skills": { "choices": 2, "options": [ "history", "insight", "medicine", "persuasion", "religion" ] },
     "desc": "**Armor:** Light armor, medium armor, shields\n**Weapons:** Simple weapons\n**Tools:** None\n**Saving Throws:** Wisdom, Charisma\n**Skills:** Choose two from History, Insight, Medicine, Persuasion, and Religion"
   },
   "class_equipment": {
-    "weapon_choices": {
-      "choice_1": [
-        { "open5e_slug": "mace" },
-        { "open5e_slug": "warhammer" }
-      ],
-      "choice_2": [
-        { "open5e_slug": "crossbow-light", "bolts": 20 },
-        { "open5e_category": "Simple" }
-      ]
-    },
-    "armor_choices": {
-      "choice_1": [
-        { "open5e_slug": "scale-mail" },
-        { "open5e_slug": "leather" },
-        { "open5e_slug": "chain-mail" }
-      ]
-    },
-    "pack_choices": {
-      "choice_1": [
-        { "dndex_slug": "priests-pack" },
-        { "dndex_slug": "explorers-pack" }
-      ]
-    },
+    "choice_1": [
+      { "api_path": "weapons", "open5e_slug": "mace" },
+      { "api_path": "weapons", "open5e_slug": "warhammer" }
+    ],
+    "choice_2": [
+      { "api_path": "weapons", "open5e_slug": "crossbow-light", "ammunition": 20 },
+      { "api_path": "weapons", "open5e_category": "Simple" }
+    ],
+    "choice_3": [
+      { "api_path": "armor", "open5e_slug": "scale-mail" },
+      { "api_path": "armor", "open5e_slug": "leather" },
+      { "api_path": "armor", "open5e_slug": "chain-mail" }
+    ],
+    "choice_4": [
+      { "source": "equipment_packs", "dndex_slug": "priests-pack" },
+      { "source": "equipment_packs", "dndex_slug": "explorers-pack" }
+    ],
     "defaults": [
-      { "open5e_slug": "shield" },
-      { "dndex_slug": "holy-symbol" }
+      { "api_path": "armor", "open5e_slug": "shield" },
+      { "source": "adventuring_gear", "dndex_slug": "holy-symbol" }
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a mace or *(b)* a warhammer (if proficient)\n- *(a)* scale mail, *(b)* leather armor, or (c) chain mail (if proficient)\n- *(a)* a light crossbow and 20 bolts or *(b)* any simple weapon\n- *(a)* a priest's pack or *(b)* an explorer's pack\nA shield and a holy symbol"
   },
@@ -53,8 +47,8 @@
     {
       "level": 2,
       "features": [
-        { "dndex_slug": "channel-divinity" },
-        { "dndex_slug": "divine-domain-feature" }
+        { "dndex_slug": "channel-divinity", "name": "Channel Divinity (1/rest)" },
+        { "dndex_slug": "divine-domain", "name": "Divine Domain Feature" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -68,7 +62,7 @@
     {
       "level": 4,
       "features": [
-        { "dndex_slug": "ability-score-improvement" }
+        { "dndex_slug": "ability-score" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
@@ -76,7 +70,7 @@
     {
       "level": 5,
       "features": [
-        { "dndex_slug": "destroy-undead" }
+        { "dndex_slug": "destroy-undead", "name": "Destroy Undead (CR 1/2)" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
@@ -84,8 +78,8 @@
     {
       "level": 6,
       "features": [
-        { "dndex_slug": "channel-divinity" },
-        { "dndex_slug": "divine-domain-feature" }
+        { "dndex_slug": "channel-divinity", "name": "Channel Divinity (2/rest)" },
+        { "dndex_slug": "divine-domain", "name": "Divine Domain Feature" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
@@ -99,9 +93,9 @@
     {
       "level": 8,
       "features": [
-        { "dndex_slug": "ability-score-improvement" },
-        { "dndex_slug": "destroy-undead" },
-        { "dndex_slug": "divine-domain-feature" }
+        { "dndex_slug": "ability-score" },
+        { "dndex_slug": "destroy-undead", "name": "Destroy Undead (CR 1)" },
+        { "dndex_slug": "divine-domain", "name": "Divine Domain Feature" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
@@ -123,7 +117,7 @@
     {
       "level": 11,
       "features": [
-        { "dndex_slug": "destroy-undead" }
+        { "dndex_slug": "destroy-undead", "name": "Destroy Undead (CR 2)" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
@@ -131,7 +125,7 @@
     {
       "level": 12,
       "features": [
-        { "dndex_slug": "ability-score-improvement" }
+        { "dndex_slug": "ability-score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
@@ -145,7 +139,7 @@
     {
       "level": 14,
       "features": [
-        { "dndex_slug": "destroy-undead" }
+        { "dndex_slug": "destroy-undead", "name": "Destroy Undead (CR 3)" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
@@ -159,7 +153,7 @@
     {
       "level": 16,
       "features": [
-        { "dndex_slug": "ability-score-improvement" }
+        { "dndex_slug": "ability-score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
@@ -167,8 +161,8 @@
     {
       "level": 17,
       "features": [
-        { "dndex_slug": "destroy-undead" },
-        { "dndex_slug": "divine-domain-feature" }
+        { "dndex_slug": "destroy-undead", "name": "Destroy Undead (CR 4)" },
+        { "dndex_slug": "divine-domain", "name": "Divine Domain Feature" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 1 ]
@@ -176,7 +170,7 @@
     {
       "level": 18,
       "features": [
-        { "dndex_slug": "channel-divinity" }
+        { "dndex_slug": "channel-divinity", "name": "Channel Divinity (3/rest)" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 1, 1, 1, 1 ]
@@ -184,7 +178,7 @@
     {
       "level": 19,
       "features": [
-        { "dndex_slug": "ability-score-improvement" }
+        { "dndex_slug": "ability-score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 1, 1, 1 ]
@@ -192,7 +186,7 @@
     {
       "level": 20,
       "features": [
-        { "dndex_slug": "divine-intervention-improvement" }
+        { "dndex_slug": "divine-intervention" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 2, 1, 1 ]

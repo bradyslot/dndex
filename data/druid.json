@@ -1,142 +1,178 @@
 {
+  "class_hit_points": {
+    "hit_dice": 8,
+    "first_level": 8,
+    "static_option": 5,
+    "desc": "**Hit Dice:** 1d8 per druid level\n**Hit Points at 1st Level:** 8 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d8 (or 5) + your Constitution modifier per druid level after 1st"
+  },
+  "class_proficiencies": {
+    "saving_throws": [ "intelligence", "wisdom" ],
+    "skills": { "choices": 2, "options": [ "arcana", "animal-handling", "insight", "medicine", "nature", "perception", "religion", "survival" ] },
+    "desc": "**Armor:** Light armor, medium armor, shields (druids will not wear armor or use shields made of metal)\n**Weapons:** Clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears\n**Tools:** Herbalism kit\n**Saving Throws:** Intelligence, Wisdom\n**Skills:** Choose two from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, and Survival"
+  },
+  "class_equipment": {
+    "choice_1": [
+      { "api_path": "armor", "open5e_slug": "shield" },
+      { "api_path": "weapons", "open5e_category": "Simple" }
+    ],
+    "choice_2": [
+      { "api_path": "weapons", "open5e_slug": "scimitar" },
+      { "api_path": "weapons", "open5e_category": "Simple Melee" }
+    ],
+    "defaults": [
+      { "api_path": "armor" , "open5e_slug": "leather" },
+      { "source": "explorers_packs", "dndex_slug": "explorers-pack" },
+      { "source": "adventuring_gear", "dndex_slug": "druidic-focus" }
+    ],
+    "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a wooden shield or *(b)* any simple weapon\n- *(a)* a scimitar or *(b)* any simple melee weapon\n- Leather armor, an explorer’s pack, and a druidic focus"
+  },
   "class_table": [
     {
-      "level": "1st",
-      "proficiency_bonus": 2,
-      "features": [ ],
+      "level": 1,
+      "features": [
+        { "dndex_slug": "druidic" },
+        { "dndex_slug": "druid-spellcasting" }
+      ],
       "cantrips_known": 3,
       "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
     {
-      "level": "2nd",
-      "proficiency_bonus": 2,
-      "features": [ ],
+      "level": 2,
+      "features": [
+        { "dndex_slug": "wild-shape" },
+        { "dndex_slug": "druid-circle" }
+      ],
       "cantrips_known": 3,
       "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
     {
-      "level": "3rd",
-      "proficiency_bonus": 2,
-      "features": [ ],
+      "level": 3,
+      "features": [],
       "cantrips_known": 3,
       "spell_slots": [ 4, 2, 0, 0, 0, 0, 0, 0, 0 ]
     },
     {
-      "level": "4th",
-      "proficiency_bonus": 2,
-      "features": [ ],
+      "level": 4,
+      "features": [
+        { "dndex_slug": "wild-shape", "name": "Wild Shape Improvement" },
+        { "dndex_slug": "ability-score" }
+      ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
     },
     {
-      "level": "5th",
-      "proficiency_bonus": 3,
-      "features": [ ],
+      "level": 5,
+      "features": [],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
     },
     {
-      "level": "6th",
-      "proficiency_bonus": 3,
-      "features": [ ],
+      "level": 6,
+      "features": [
+        { "dndex_slug": "druid-circle", "name": "Druid Circle Feature" }
+      ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
     },
     {
-      "level": "7th",
-      "proficiency_bonus": 3,
-      "features": [ ],
+      "level": 7,
+      "features": [],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 1, 0, 0, 0, 0, 0 ]
     },
     {
-      "level": "8th",
-      "proficiency_bonus": 3,
-      "features": [ ],
+      "level": 8,
+      "features": [
+        { "dndex_slug": "wild-shape", "name": "Wild Shape Improvement" },
+        { "dndex_slug": "ability-score" }
+      ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
     },
     {
-      "level": "9th",
-      "proficiency_bonus": 4,
-      "features": [ ],
+      "level": 9,
+      "features": [],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 3, 1, 0, 0, 0, 0 ]
     },
     {
-      "level": "10th",
-      "proficiency_bonus": 4,
-      "features": [ ],
+      "level": 10,
+      "features": [
+        { "dndex_slug": "druid-circle", "name": "Druid Circle Feature" }
+      ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
     },
     {
-      "level": "11th",
-      "proficiency_bonus": 4,
-      "features": [ ],
+      "level": 11,
+      "features": [],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
     },
     {
-      "level": "12th",
-      "proficiency_bonus": 4,
-      "features": [ ],
+      "level": 12,
+      "features": [
+        { "dndex_slug": "ability-score" }
+      ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
     },
     {
-      "level": "13th",
-      "proficiency_bonus": 5,
+      "level": 13,
       "features": [ ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
     },
     {
-      "level": "14th",
-      "proficiency_bonus": 5,
-      "features": [ ],
+      "level": 14,
+      "features": [
+        { "dndex_slug": "druid-circle", "name": "Druid Circle Feature" }
+      ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
     },
     {
-      "level": "15th",
-      "proficiency_bonus": 5,
-      "features": [ ],
+      "level": 15,
+      "features": [],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
     },
     {
-      "level": "16th",
-      "proficiency_bonus": 5,
-      "features": [ ],
+      "level": 16,
+      "features": [
+        { "dndex_slug": "ability-score" }
+      ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
     },
     {
-      "level": "17th",
-      "proficiency_bonus": 6,
-      "features": [ ],
+      "level": 17,
+      "features": [],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 1 ]
     },
     {
-      "level": "18th",
-      "proficiency_bonus": 6,
-      "features": [ ],
+      "level": 18,
+      "features": [
+        { "dndex_slug": "timeless-body" },
+        { "dndex_slug": "beast-spells" }
+      ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 1, 1, 1, 1 ]
     },
     {
-      "level": "19th",
-      "proficiency_bonus": 6,
-      "features": [ ],
+      "level": 19,
+      "features": [
+        { "dndex_slug": "ability-score" }
+      ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 1, 1, 1 ]
     },
     {
-      "level": "20th",
-      "proficiency_bonus": 6,
-      "features": [ ],
+      "level": 20,
+      "features": [
+        { "dndex_slug": "archdruid" }
+      ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 2, 1, 1 ]
     }

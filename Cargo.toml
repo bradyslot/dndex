@@ -9,6 +9,7 @@ stylist = { version = "0.12.0", features = ["yew_integration", "parser", "macros
 fastrand = "2.0"
 gloo-net = "0.3"
 serde = { version = "1.0", features = ["derive"] }
+serde-wasm-bindgen = "0.5" # TODO: use this for data/
 wasm-bindgen-futures = "0.4"
 wasm-logger = "0.2"
 log = "0.4"

@@ -7,23 +7,21 @@
   },
   "class_proficiencies": {
     "saving_throws": [ "strength", "constitution" ],
-    "skills": { "qty": 2, "options": [ "animal-handling", "athletics", "intimidation", "nature", "perception", "survival" ] },
+    "skills": { "choices": 2, "options": [ "animal-handling", "athletics", "intimidation", "nature", "perception", "survival" ] },
     "desc": "**Armor:** Light armor, medium armor, shields\n**Weapons:** Simple weapons, martial weapons\n**Tools:** None\n**Saving Throws:** Strength, Constitution\n**Skills:** Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
   },
   "class_equipment": {
-    "weapon_choices": {
-      "choice_1": [
-        { "slug": "greataxe" },
-        { "category": "Martial Melee" }
-      ],
-      "choice_2": [
-        { "slug": "handaxe", "qty": 2 },
-        { "category": "Simple Melee" }
-      ]
-    },
+    "choice_1": [
+      { "api_path": "weapons", "open5e_slug": "greataxe" },
+      { "api_path": "weapons", "open5e_category": "Martial Melee" }
+    ],
+    "choice_2": [
+      { "api_path": "weapons", "open5e_slug": "handaxe", "qty": 2 },
+      { "api_path": "weapons", "open5e_category": "Simple Melee" }
+    ],
     "defaults": [
-      { "slug": "explorers-pack" },
-      { "slug": "javelin", "qty": 4 }
+      { "source": "equipment_packs", "dndex_slug": "explorers-pack" },
+      { "api_path": "weapons", "open5e_slug": "javelin", "qty": 4 }
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a greataxe or *(b)* any martial melee weapon \n- *(a)* two handaxes or *(b)* any simple weapon\nAn explorer's pack and four javelins"
   },
@@ -57,7 +55,7 @@
     {
       "level": 4,
       "features": [
-        { "dndex_slug": "ability-score-improvement" }
+        { "dndex_slug": "ability-score" }
       ],
       "rages": 3,
       "rage_damage": 2
@@ -74,7 +72,7 @@
     {
       "level": 6,
       "features": [
-        { "dndex_slug": "path-feature" }
+        { "dndex_slug": "primal-path", "name": "Path Feature" }
       ],
       "rages": 4,
       "rage_damage": 2
@@ -90,7 +88,7 @@
     {
       "level": 8,
       "features": [
-        { "dndex_slug": "ability-score-improvement" }
+        { "dndex_slug": "ability-score" }
       ],
       "rages": 4,
       "rage_damage": 2
@@ -98,7 +96,7 @@
     {
       "level": 9,
       "features": [
-        { "dndex_slug": "brutal-critical" }
+        { "dndex_slug": "brutal-critical", "name": "Brutal Critical (1 die)" }
       ],
       "rages": 4,
       "rage_damage": 3
@@ -106,7 +104,7 @@
     {
       "level": 10,
       "features": [
-        { "dndex_slug": "path-feature" }
+        { "dndex_slug": "primal-path", "name": "Path Feature" }
       ],
       "rages": 4,
       "rage_damage": 3
@@ -122,7 +120,7 @@
     {
       "level": 12,
       "features": [
-        { "dndex_slug": "ability-score-improvement" }
+        { "dndex_slug": "ability-score" }
       ],
       "rages": 5,
       "rage_damage": 3
@@ -130,7 +128,7 @@
     {
       "level": 13,
       "features": [
-        { "dndex_slug": "brutal-critical" }
+        { "dndex_slug": "brutal-critical", "name": "Brutal Critical (2 dice)" }
       ],
       "rages": 5,
       "rage_damage": 3
@@ -138,7 +136,7 @@
     {
       "level": 14,
       "features": [
-        { "dndex_slug": "path-feature" }
+        { "dndex_slug": "primal-path", "name": "Path Feature" }
       ],
       "rages": 5,
       "rage_damage": 3
@@ -154,7 +152,7 @@
     {
       "level": 16,
       "features": [
-        { "dndex_slug": "ability-score-improvement" }
+        { "dndex_slug": "ability-score" }
       ],
       "rages": 5,
       "rage_damage": 4
@@ -162,7 +160,7 @@
     {
       "level": 17,
       "features": [
-        { "dndex_slug": "brutal-critical" }
+        { "dndex_slug": "brutal-critical", "name": "Brutal Critical (3 dice)" }
       ],
       "rages": 5,
       "rage_damage": 4
@@ -178,7 +176,7 @@
     {
       "level": 19,
       "features": [
-        { "dndex_slug": "ability-score-improvement" }
+        { "dndex_slug": "ability-score" }
       ],
       "rages": 5,
       "rage_damage": 4
