@@ -32,7 +32,7 @@
       { "source": "explorers_packs", "dndex_slug": "explorers-pack" },
       { "source": "adventuring_gear", "dndex_slug": "druidic-focus" }
     ],
-    "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a wooden shield or *(b)* any simple weapon\n- *(a)* a scimitar or *(b)* any simple melee weapon\n- Leather armor, an explorer’s pack, and a druidic focus"
+    "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a wooden shield or *(b)* any simple weapon\n- *(a)* a scimitar or *(b)* any simple melee weapon\n- Leather armor, an explorer's pack, and a druidic focus"
   },
   "class_table": [
     {
@@ -162,7 +162,7 @@
     {
       "level": 18,
       "features": [
-        { "dndex_slug": "timeless-body" },
+        { "dndex_slug": "druid-timeless-body" },
         { "dndex_slug": "beast-spells" }
       ],
       "cantrips_known": 4,

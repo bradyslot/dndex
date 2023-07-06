@@ -1,0 +1,224 @@
+{
+  "class_hit_points": {
+    "hit_dice": 8,
+    "first_level": 8,
+    "static_option": 5,
+    "desc": "**Hit Dice:** 1d8 per Monk level\n**Hit Points at 1st Level:** 8 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d8 (or 5) + your Constitution modifier per monk level after 1st"
+  },
+  "class_proficiencies": {
+    "saving_throws": [ "strength", "dexterity" ],
+    "skills": { "choices": 2, "options": [ "acrobatics", "athletics", "history", "insight", "religion", "stealth" ] },
+    "desc": "**Armor:** None\n**Weapons:** Simple weapons, shortswords\n**Tools:** Choose one type of artisan's tools or one musical instrument\n**Saving Throws:** Strength, Dexterity\n**Skills:** Choose two from Acrobatics, Athletics, History, Insight, Religion, and Stealth"
+  },
+  "class_equipment": {
+    "choice_1": [
+      [
+        { "api_path": "weapons", "open5e_slug": "shortsword" }
+      ],
+      [
+        { "api_path": "weapons", "open5e_category": "Simple" }
+      ]
+    ],
+    "choice_2": [
+      [
+        { "source": "equipment_packs", "dndex_slug": "dungeoneers-pack" }
+      ],
+      [
+        { "source": "equipment_packs", "dndex_slug": "explorers-pack" }
+      ]
+    ],
+    "defaults": [
+      { "api_path": "weapons", "open5e_slug": "dart" }
+    ],
+    "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a shortsword or *(b)* any simple weapon\n- *(a)* a dungeoneer's pack or *(b)* an explorer’s pack\n- 10 darts"
+  },
+  "class_levels": [
+    {
+      "level": 1,
+      "features": [
+        { "dndex_slug": "unarmored-defence" },
+        { "dndex_slug": "martial-arts" }
+      ],
+      "martial_arts": 4,
+      "ki_points": 0,
+      "unarmored_movement": 0
+    },
+    {
+      "level": 2,
+      "features": [
+        { "dndex_slug": "ki" },
+        { "dndex_slug": "unarmored-movement" }
+      ],
+      "martial_arts": 4,
+      "ki_points": 2,
+      "unarmored_movement": 10
+    },
+    {
+      "level": 3,
+      "features": [
+        { "dndex_slug": "monastic-traditions" },
+        { "dndex_slug": "deflect-missiles" }
+      ],
+      "martial_arts": 4,
+      "ki_points": 3,
+      "unarmored_movement": 10
+    },
+    {
+      "level": 4,
+      "features": [
+        { "dndex_slug": "ability-score" },
+        { "dndex_slug": "slow-fall" }
+      ],
+      "martial_arts": 4,
+      "ki_points": 4,
+      "unarmored_movement": 10
+    },
+    {
+      "level": 5,
+      "features": [
+        { "dndex_slug": "monk-extra-attack" },
+        { "dndex_slug": "stunning-strike" }
+      ],
+      "martial_arts": 6,
+      "ki_points": 5,
+      "unarmored_movement": 10
+    },
+    {
+      "level": 6,
+      "features": [
+        { "dndex_slug": "ki-empowered-strikes" },
+        { "dndex_slug": "monastic-traditions", "name": "Monastic Tradition Feature" }
+      ],
+      "martial_arts": 6,
+      "ki_points": 6,
+      "unarmored_movement": 15
+    },
+    {
+      "level": 7,
+      "features": [
+        { "dndex_slug": "evasion" },
+        { "dndex_slug": "stillness-of-mind" }
+      ],
+      "martial_arts": 6,
+      "ki_points": 7,
+      "unarmored_movement": 15
+    },
+    {
+      "level": 8,
+      "features": [
+        { "dndex_slug": "ability-score" }
+      ],
+      "martial_arts": 6,
+      "ki_points": 8,
+      "unarmored_movement": 15
+    },
+    {
+      "level": 9,
+      "features": [
+        { "dndex_slug": "unarmored-movement", "name": "Unarmored Movement Improvement" }
+      ],
+      "martial_arts": 6,
+      "ki_points": 9,
+      "unarmored_movement": 15
+    },
+    {
+      "level": 10,
+      "features": [
+        { "dndex_slug": "purity-of-body" }
+      ],
+      "martial_arts": 6,
+      "ki_points": 10,
+      "unarmored_movement": 20
+    },
+    {
+      "level": 11,
+      "features": [
+        { "dndex_slug": "monastic-traditions", "name": "Monastic Tradition Feature" }
+      ],
+      "martial_arts": 8,
+      "ki_points": 11,
+      "unarmored_movement": 20
+    },
+    {
+      "level": 12,
+      "features": [
+        { "dndex_slug": "ability-score" }
+      ],
+      "martial_arts": 8,
+      "ki_points": 12,
+      "unarmored_movement": 20
+    },
+    {
+      "level": 13,
+      "features": [
+        { "dndex_slug": "tongue-of-the-sun-and-moon" }
+      ],
+      "martial_arts": 8,
+      "ki_points": 13,
+      "unarmored_movement": 20
+    },
+    {
+      "level": 14,
+      "features": [
+        { "dndex_slug": "diamond-soul" }
+      ],
+      "martial_arts": 8,
+      "ki_points": 14,
+      "unarmored_movement": 25
+    },
+    {
+      "level": 15,
+      "features": [
+        { "dndex_slug": "monk-timeless-body" }
+      ],
+      "martial_arts": 8,
+      "ki_points": 15,
+      "unarmored_movement": 25
+    },
+    {
+      "level": 16,
+      "features": [
+        { "dndex_slug": "ability-score" }
+      ],
+      "martial_arts": 8,
+      "ki_points": 16,
+      "unarmored_movement": 25
+    },
+    {
+      "level": 17,
+      "features": [
+        { "dndex_slug": "monastic-traditions", "name": "Monastic Tradition Feature" }
+      ],
+      "martial_arts": 10,
+      "ki_points": 17,
+      "unarmored_movement": 25
+    },
+    {
+      "level": 18,
+      "features": [
+        { "dndex_slug": "empty-body" }
+      ],
+      "martial_arts": 10,
+      "ki_points": 18,
+      "unarmored_movement": 30
+    },
+    {
+      "level": 19,
+      "features": [
+        { "dndex_slug": "ability-score" }
+      ],
+      "martial_arts": 10,
+      "ki_points": 19,
+      "unarmored_movement": 30
+    },
+    {
+      "level": 20,
+      "features": [
+        { "dndex_slug": "perfect-self" }
+      ],
+      "martial_arts": 10,
+      "ki_points": 20,
+      "unarmored_movement": 30
+    }
+  ]
+}
