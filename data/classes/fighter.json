@@ -56,7 +56,7 @@
     {
       "level": 1,
       "features": [
-        { "dndex_slug": "fighting-style" },
+        { "dndex_slug": "fighter-fighting-style" },
         { "dndex_slug": "second-wind" }
       ]
     },

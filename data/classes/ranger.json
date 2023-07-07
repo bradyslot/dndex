@@ -1,0 +1,209 @@
+{
+  "class_hit_points": {
+    "hit_dice": 10,
+    "first_level": 10,
+    "static_option": 6,
+    "desc": "**Hit Dice:** 1d10 per Ranger level\n**Hit Points at 1st Level:** 10 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d10 (or 6) + your Constitution modifier per ranger level after 1st"
+  },
+  "class_proficiencies": {
+    "saving_throws": [ "strength", "dexterity" ],
+    "skills": { "choices": 3, "options": [ "animal-handling", "athletics", "insight", "investigation", "nature", "perception", "stealth", "survival" ] },
+    "desc": "**Armor:** Light armor, medium armor, shields\n**Weapons:** Simple weapons, martial weapons\n**Tools:** None\n**Saving Throws:** Strength, Dexterity\n**Skills:** Choose three from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival"
+  },
+  "class_equipment": {
+    "choice_1": [
+      [
+        { "api_path": "armor", "open5e_slug": "scale-mail" }
+      ],
+      [
+        { "api_path": "armor", "open5e_slug": "leather" }
+      ]
+    ],
+    "choice_2": [
+      [
+        { "api_path": "weapons", "open5e_slug": "shortsword" },
+        { "api_path": "weapons", "open5e_slug": "shortsword" }
+      ],
+      [
+        { "api_path": "weapons", "open5e_category": "Simple Melee" },
+        { "api_path": "weapons", "open5e_category": "Simple Melee" }
+      ]
+    ],
+    "choice_3": [
+      [
+        { "source": "equipment_packs", "dndex_slug": "dungeoneers-pack" }
+      ],
+      [
+        { "source": "equipment_packs", "dndex_slug": "explorers-pack" }
+      ]
+    ],
+    "defaults": [
+      { "api_path": "weapons", "open5e_slug": "longbow" },
+      { "name": "Arrow", "qty": 20 }
+    ],
+    "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* scale mail or *(b)* leather armor\n- *(a)* two shortswords or *(b)* two simple melee weapons\n- *(a)* a dungeoneer's pack or *(b)* an explorer's pack\n- A longbow and a quiver of 20 arrows"
+  },
+  "class_levels": [
+    {
+      "level": 1,
+      "features": [
+        { "dndex_slug": "favored-enemy" },
+        { "dndex_slug": "natural-explorer" }
+      ],
+      "spells_known": 4,
+      "spell_slots": [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 2,
+      "features": [
+        { "dndex_slug": "ranger-fighting-style" },
+        { "dndex_slug": "ranger-spellcasting" }
+      ],
+      "spells_known": 2,
+      "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 3,
+      "features": [
+        { "dndex_slug": "ranger-archetype" },
+        { "dndex_slug": "primeval-awareness" }
+      ],
+      "spells_known": 3,
+      "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 4,
+      "features": [
+        { "dndex_slug": "ability-score" }
+      ],
+      "spells_known": 3,
+      "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 5,
+      "features": [
+        { "dndex_slug": "ranger-extra-attack" }
+      ],
+      "spells_known": 4,
+      "spell_slots": [ 4, 2, 0, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 6,
+      "features": [
+        { "dndex_slug": "favored-enemy", "name": "Favored Enemy Improvement" },
+        { "dndex_slug": "natural-explorer", "name": "Natural Explorer Improvment" }
+      ],
+      "spells_known": 4,
+      "spell_slots": [ 4, 2, 0, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 7,
+      "features": [
+        { "dndex_slug": "ranger-archetype", "name": "Ranger Archetype Feature" }
+      ],
+      "spells_known": 5,
+      "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 8,
+      "features": [
+        { "dndex_slug": "ability-score" },
+        { "dndex_slug": "lands-stride" }
+      ],
+      "spells_known": 5,
+      "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 9,
+      "features": [],
+      "spells_known": 6,
+      "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 10,
+      "features": [
+        { "dndex_slug": "natural-explorer", "name": "Natural Explorer Improvement" },
+        { "dndex_slug": "hide-in-plain-sight" }
+      ],
+      "spells_known": 6,
+      "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 11,
+      "features": [
+        { "dndex_slug": "ranger-archetype", "name": "Ranger Archetype Feature" }
+      ],
+      "spells_known": 7,
+      "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 12,
+      "features": [
+        { "dndex_slug": "ability-score" }
+      ],
+      "spells_known": 7,
+      "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 13,
+      "features": [],
+      "spells_known": 8,
+      "spell_slots": [ 4, 3, 3, 1, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 14,
+      "features": [
+        { "dndex_slug": "favored-enemy", "name": "Favored Enemy Improvement" },
+        { "dndex_slug": "vanish" }
+      ],
+      "spells_known": 8,
+      "spell_slots": [ 4, 3, 3, 1, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 15,
+      "features": [
+        { "dndex_slug": "ranger-archetype", "name": "Ranger Archetype Feature" }
+      ],
+      "spells_known": 9,
+      "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 16,
+      "features": [
+        { "dndex_slug": "ability-score" }
+      ],
+      "spells_known": 9,
+      "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 17,
+      "features": [],
+      "spells_known": 10,
+      "spell_slots": [ 4, 3, 3, 3, 1, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 18,
+      "features": [
+        { "dndex_slug": "feral-senses" }
+      ],
+      "spells_known": 10,
+      "spell_slots": [ 4, 3, 3, 3, 1, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 19,
+      "features": [
+        { "dndex_slug": "ability-score" }
+      ],
+      "spells_known": 11,
+      "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 20,
+      "features": [
+        { "dndex_slug": "foe-slayer" }
+      ],
+      "spells_known": 11,
+      "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
+    }
+  ]
+}
