@@ -41,15 +41,15 @@
     ],
     "choice_4": [
       [
-        { "source": "equipment_packs", "dndex_slug": "priests-pack" }
+        { "source": "equipment_packs", "slug": "priests-pack" }
       ],
       [
-        { "source": "equipment_packs", "dndex_slug": "explorers-pack" }
+        { "source": "equipment_packs", "slug": "explorers-pack" }
       ]
     ],
     "defaults": [
       { "api_path": "armor", "open5e_slug": "shield" },
-      { "source": "adventuring_gear", "dndex_slug": "holy-symbol" }
+      { "source": "adventuring_gear", "slug": "holy-symbol" }
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a mace or *(b)* a warhammer (if proficient)\n- *(a)* scale mail, *(b)* leather armor, or (c) chain mail (if proficient)\n- *(a)* a light crossbow and 20 bolts or *(b)* any simple weapon\n- *(a)* a priest's pack or *(b)* an explorer's pack\nA shield and a holy symbol"
   },
@@ -57,8 +57,8 @@
     {
       "level": 1,
       "features": [
-        { "dndex_slug": "cleric-spellcasting" },
-        { "dndex_slug": "divine-domain" }
+        { "slug": "cleric-spellcasting" },
+        { "slug": "divine-domain" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -66,8 +66,8 @@
     {
       "level": 2,
       "features": [
-        { "dndex_slug": "channel-divinity", "name": "Channel Divinity (1/rest)" },
-        { "dndex_slug": "divine-domain", "name": "Divine Domain Feature" }
+        { "slug": "channel-divinity", "name": "Channel Divinity (1/rest)" },
+        { "slug": "divine-domain", "name": "Divine Domain Feature" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -81,7 +81,7 @@
     {
       "level": 4,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
@@ -89,7 +89,7 @@
     {
       "level": 5,
       "features": [
-        { "dndex_slug": "destroy-undead", "name": "Destroy Undead (CR 1/2)" }
+        { "slug": "destroy-undead", "name": "Destroy Undead (CR 1/2)" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
@@ -97,8 +97,8 @@
     {
       "level": 6,
       "features": [
-        { "dndex_slug": "channel-divinity", "name": "Channel Divinity (2/rest)" },
-        { "dndex_slug": "divine-domain", "name": "Divine Domain Feature" }
+        { "slug": "channel-divinity", "name": "Channel Divinity (2/rest)" },
+        { "slug": "divine-domain", "name": "Divine Domain Feature" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
@@ -112,9 +112,9 @@
     {
       "level": 8,
       "features": [
-        { "dndex_slug": "ability-score" },
-        { "dndex_slug": "destroy-undead", "name": "Destroy Undead (CR 1)" },
-        { "dndex_slug": "divine-domain", "name": "Divine Domain Feature" }
+        { "slug": "ability-score" },
+        { "slug": "destroy-undead", "name": "Destroy Undead (CR 1)" },
+        { "slug": "divine-domain", "name": "Divine Domain Feature" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
@@ -128,7 +128,7 @@
     {
       "level": 10,
       "features": [
-        { "dndex_slug": "devine-intervention" }
+        { "slug": "devine-intervention" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
@@ -136,7 +136,7 @@
     {
       "level": 11,
       "features": [
-        { "dndex_slug": "destroy-undead", "name": "Destroy Undead (CR 2)" }
+        { "slug": "destroy-undead", "name": "Destroy Undead (CR 2)" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
@@ -144,7 +144,7 @@
     {
       "level": 12,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
@@ -158,7 +158,7 @@
     {
       "level": 14,
       "features": [
-        { "dndex_slug": "destroy-undead", "name": "Destroy Undead (CR 3)" }
+        { "slug": "destroy-undead", "name": "Destroy Undead (CR 3)" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
@@ -172,7 +172,7 @@
     {
       "level": 16,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
@@ -180,8 +180,8 @@
     {
       "level": 17,
       "features": [
-        { "dndex_slug": "destroy-undead", "name": "Destroy Undead (CR 4)" },
-        { "dndex_slug": "divine-domain", "name": "Divine Domain Feature" }
+        { "slug": "destroy-undead", "name": "Destroy Undead (CR 4)" },
+        { "slug": "divine-domain", "name": "Divine Domain Feature" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 1 ]
@@ -189,7 +189,7 @@
     {
       "level": 18,
       "features": [
-        { "dndex_slug": "channel-divinity", "name": "Channel Divinity (3/rest)" }
+        { "slug": "channel-divinity", "name": "Channel Divinity (3/rest)" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 1, 1, 1, 1 ]
@@ -197,7 +197,7 @@
     {
       "level": 19,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 1, 1, 1 ]
@@ -205,7 +205,7 @@
     {
       "level": 20,
       "features": [
-        { "dndex_slug": "divine-intervention" }
+        { "slug": "divine-intervention" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 2, 1, 1 ]

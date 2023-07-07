@@ -1,0 +1,172 @@
+{
+  "class_hit_points": {
+    "hit_dice": 8,
+    "first_level": 8,
+    "static_option": 5,
+    "desc": "**Hit Dice:** 1d8 per Rogue level\n**Hit Points at 1st Level:** 8 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d8 (or 5) + your Constitution modifier per rogue level after 1st"
+  },
+  "class_proficiencies": {
+    "saving_throws": [ "dexterity", "intelligence" ],
+    "skills": { "choices": 4, "options": [ "acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "performance", "persuasion", "sleight-of-hand", "stealth" ] },
+    "desc": "**Armor:** Light armor\n**Weapons:** Simple weapons, hand crossbows, longswords, rapiers, shortswords\n**Tools:** Thieves' tools\n**Saving Throws:** Dexterity, Intelligence\n**Skills:** Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, and Stealth"
+  },
+  "class_equipment": {
+    "choice_1": [
+      [
+        { "api_path": "weapons", "open5e_slug": "rapier" }
+      ],
+      [
+        { "api_path": "weapons", "open5e_slug": "shortsword" }
+      ]
+    ],
+    "choice_2": [
+      [
+        { "api_path": "weapons", "open5e_slug": "shortbow" },
+        { "name": "Arrow", "qty": 20 }
+      ],
+      [
+        { "api_path": "weapons", "open5e_slug": "shortsword" }
+      ]
+    ],
+    "choice_3": [
+      [
+        { "source": "equipment_packs", "slug": "burglars-pack" }
+      ],
+      [
+        { "source": "equipment_packs", "slug": "dungeoneers-pack" }
+      ],
+      [
+        { "source": "equipment_packs", "slug": "explorers-pack" }
+      ]
+    ],
+    "defaults": [
+      { "api_path": "armor", "open5e_slug": "leather" },
+      { "api_path": "weapons", "open5e_slug": "dagger" },
+      { "api_path": "weapons", "open5e_slug": "dagger" },
+      { "source": "tools", "slug": "thieves-tools" }
+    ],
+    "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a rapier or *(b)* a shortsword\n- *(a)* a shortbow and quiver of 20 arrows or *(b)* a shortsword\n- *(a)* a burglar's pack, *(b)* a dungeoneer's pack, or *(c)* an explorer's pack\n- *(a)* Leather armor, two daggers, and thieves' tools"
+  },
+  "class_levels": [
+    {
+      "level": 1,
+      "features": [
+      ],
+      "sneak_attack": 2
+    },
+    {
+      "level": 2,
+      "features": [
+      ],
+      "sneak_attack": 2
+    },
+    {
+      "level": 3,
+      "features": [
+      ],
+      "sneak_attack": 3
+    },
+    {
+      "level": 4,
+      "features": [
+      ],
+      "sneak_attack": 3
+    },
+    {
+      "level": 5,
+      "features": [
+      ],
+      "sneak_attack": 4
+    },
+    {
+      "level": 6,
+      "features": [
+      ],
+      "sneak_attack": 4
+    },
+    {
+      "level": 7,
+      "features": [
+      ],
+      "sneak_attack": 4
+    },
+    {
+      "level": 8,
+      "features": [
+      ],
+      "sneak_attack": 4
+    },
+    {
+      "level": 9,
+      "features": [
+      ],
+      "sneak_attack": 4
+    },
+    {
+      "level": 10,
+      "features": [
+      ],
+      "sneak_attack": 4
+    },
+    {
+      "level": 11,
+      "features": [
+      ],
+      "sneak_attack": 4
+    },
+    {
+      "level": 12,
+      "features": [
+      ],
+      "sneak_attack": 5
+    },
+    {
+      "level": 13,
+      "features": [
+      ],
+      "sneak_attack": 5
+    },
+    {
+      "level": 14,
+      "features": [
+      ],
+      "sneak_attack": 5
+    },
+    {
+      "level": 15,
+      "features": [
+      ],
+      "sneak_attack": 5
+    },
+    {
+      "level": 16,
+      "features": [
+      ],
+      "sneak_attack": 5
+    },
+    {
+      "level": 17,
+      "features": [
+      ],
+      "sneak_attack": 5
+    },
+    {
+      "level": 18,
+      "features": [
+      ],
+      "sneak_attack": 5
+    },
+    {
+      "level": 19,
+      "features": [
+      ],
+      "sneak_attack": 5
+    },
+    {
+      "level": 20,
+      "features": [
+      ],
+      "sneak_attack": 0
+    }
+  ]
+}

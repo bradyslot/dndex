@@ -21,10 +21,10 @@
     ],
     "choice_2": [
       [
-        { "source": "equipment_packs", "dndex_slug": "dungeoneers-pack" }
+        { "source": "equipment_packs", "slug": "dungeoneers-pack" }
       ],
       [
-        { "source": "equipment_packs", "dndex_slug": "explorers-pack" }
+        { "source": "equipment_packs", "slug": "explorers-pack" }
       ]
     ],
     "defaults": [
@@ -36,8 +36,8 @@
     {
       "level": 1,
       "features": [
-        { "dndex_slug": "unarmored-defence" },
-        { "dndex_slug": "martial-arts" }
+        { "slug": "unarmored-defence" },
+        { "slug": "martial-arts" }
       ],
       "martial_arts": 4,
       "ki_points": 0,
@@ -46,8 +46,8 @@
     {
       "level": 2,
       "features": [
-        { "dndex_slug": "ki" },
-        { "dndex_slug": "unarmored-movement" }
+        { "slug": "ki" },
+        { "slug": "unarmored-movement" }
       ],
       "martial_arts": 4,
       "ki_points": 2,
@@ -56,8 +56,8 @@
     {
       "level": 3,
       "features": [
-        { "dndex_slug": "monastic-traditions" },
-        { "dndex_slug": "deflect-missiles" }
+        { "slug": "monastic-traditions" },
+        { "slug": "deflect-missiles" }
       ],
       "martial_arts": 4,
       "ki_points": 3,
@@ -66,8 +66,8 @@
     {
       "level": 4,
       "features": [
-        { "dndex_slug": "ability-score" },
-        { "dndex_slug": "slow-fall" }
+        { "slug": "ability-score" },
+        { "slug": "slow-fall" }
       ],
       "martial_arts": 4,
       "ki_points": 4,
@@ -76,8 +76,8 @@
     {
       "level": 5,
       "features": [
-        { "dndex_slug": "monk-extra-attack" },
-        { "dndex_slug": "stunning-strike" }
+        { "slug": "monk-extra-attack" },
+        { "slug": "stunning-strike" }
       ],
       "martial_arts": 6,
       "ki_points": 5,
@@ -86,8 +86,8 @@
     {
       "level": 6,
       "features": [
-        { "dndex_slug": "ki-empowered-strikes" },
-        { "dndex_slug": "monastic-traditions", "name": "Monastic Tradition Feature" }
+        { "slug": "ki-empowered-strikes" },
+        { "slug": "monastic-traditions", "name": "Monastic Tradition Feature" }
       ],
       "martial_arts": 6,
       "ki_points": 6,
@@ -96,8 +96,8 @@
     {
       "level": 7,
       "features": [
-        { "dndex_slug": "evasion" },
-        { "dndex_slug": "stillness-of-mind" }
+        { "slug": "evasion" },
+        { "slug": "stillness-of-mind" }
       ],
       "martial_arts": 6,
       "ki_points": 7,
@@ -106,7 +106,7 @@
     {
       "level": 8,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "martial_arts": 6,
       "ki_points": 8,
@@ -115,7 +115,7 @@
     {
       "level": 9,
       "features": [
-        { "dndex_slug": "unarmored-movement", "name": "Unarmored Movement Improvement" }
+        { "slug": "unarmored-movement", "name": "Unarmored Movement Improvement" }
       ],
       "martial_arts": 6,
       "ki_points": 9,
@@ -124,7 +124,7 @@
     {
       "level": 10,
       "features": [
-        { "dndex_slug": "purity-of-body" }
+        { "slug": "purity-of-body" }
       ],
       "martial_arts": 6,
       "ki_points": 10,
@@ -133,7 +133,7 @@
     {
       "level": 11,
       "features": [
-        { "dndex_slug": "monastic-traditions", "name": "Monastic Tradition Feature" }
+        { "slug": "monastic-traditions", "name": "Monastic Tradition Feature" }
       ],
       "martial_arts": 8,
       "ki_points": 11,
@@ -142,7 +142,7 @@
     {
       "level": 12,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "martial_arts": 8,
       "ki_points": 12,
@@ -151,7 +151,7 @@
     {
       "level": 13,
       "features": [
-        { "dndex_slug": "tongue-of-the-sun-and-moon" }
+        { "slug": "tongue-of-the-sun-and-moon" }
       ],
       "martial_arts": 8,
       "ki_points": 13,
@@ -160,7 +160,7 @@
     {
       "level": 14,
       "features": [
-        { "dndex_slug": "diamond-soul" }
+        { "slug": "diamond-soul" }
       ],
       "martial_arts": 8,
       "ki_points": 14,
@@ -169,7 +169,7 @@
     {
       "level": 15,
       "features": [
-        { "dndex_slug": "monk-timeless-body" }
+        { "slug": "monk-timeless-body" }
       ],
       "martial_arts": 8,
       "ki_points": 15,
@@ -178,7 +178,7 @@
     {
       "level": 16,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "martial_arts": 8,
       "ki_points": 16,
@@ -187,7 +187,7 @@
     {
       "level": 17,
       "features": [
-        { "dndex_slug": "monastic-traditions", "name": "Monastic Tradition Feature" }
+        { "slug": "monastic-traditions", "name": "Monastic Tradition Feature" }
       ],
       "martial_arts": 10,
       "ki_points": 17,
@@ -196,7 +196,7 @@
     {
       "level": 18,
       "features": [
-        { "dndex_slug": "empty-body" }
+        { "slug": "empty-body" }
       ],
       "martial_arts": 10,
       "ki_points": 18,
@@ -205,7 +205,7 @@
     {
       "level": 19,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "martial_arts": 10,
       "ki_points": 19,
@@ -214,7 +214,7 @@
     {
       "level": 20,
       "features": [
-        { "dndex_slug": "perfect-self" }
+        { "slug": "perfect-self" }
       ],
       "martial_arts": 10,
       "ki_points": 20,

@@ -43,10 +43,10 @@
     ],
     "choice_4": [
       [
-        { "source": "equipment_packs", "dndex_slug": "dungeoneers-pack" }
+        { "source": "equipment_packs", "slug": "dungeoneers-pack" }
       ],
       [
-        { "source": "equipment_packs", "dndex_slug": "explorers-pack" }
+        { "source": "equipment_packs", "slug": "explorers-pack" }
       ]
     ],
     "defaults": [],
@@ -56,123 +56,123 @@
     {
       "level": 1,
       "features": [
-        { "dndex_slug": "fighter-fighting-style" },
-        { "dndex_slug": "second-wind" }
+        { "slug": "fighter-fighting-style" },
+        { "slug": "second-wind" }
       ]
     },
     {
       "level": 2,
       "features": [
-        { "dndex_slug": "action-surge", "name": "Action Surge (1 use)" }
+        { "slug": "action-surge", "name": "Action Surge (1 use)" }
       ]
     },
     {
       "level": 3,
       "features": [
-        { "dndex_slug": "martial-archetype" }
+        { "slug": "martial-archetype" }
       ]
     },
     {
       "level": 4,
       "features": [
-        { "dndex_slug": "fighter-ability-score" }
+        { "slug": "fighter-ability-score" }
       ]
     },
     {
       "level": 5,
       "features": [
-        { "dndex_slug": "fighter-extra-attack" }
+        { "slug": "fighter-extra-attack" }
       ]
     },
     {
       "level": 6,
       "features": [
-        { "dndex_slug": "fighter-ability-score" }
+        { "slug": "fighter-ability-score" }
       ]
     },
     {
       "level": 7,
       "features": [
-        { "dndex_slug": "martial-archetype", "name": "Martial Archetype Feature" }
+        { "slug": "martial-archetype", "name": "Martial Archetype Feature" }
       ]
     },
     {
       "level": 8,
       "features": [
-        { "dndex_slug": "fighter-ability-score" }
+        { "slug": "fighter-ability-score" }
       ]
     },
     {
       "level": 9,
       "features": [
-        { "dndex_slug": "indomitable", "name": "Indomitable (1 use)" }
+        { "slug": "indomitable", "name": "Indomitable (1 use)" }
       ]
     },
     {
       "level": 10,
       "features": [
-        { "dndex_slug": "martial-archetype", "name": "Martial Archetype Feature" }
+        { "slug": "martial-archetype", "name": "Martial Archetype Feature" }
       ]
     },
     {
       "level": 11,
       "features": [
-        { "dndex_slug": "fighter-extra-attack", "name": "Extra Attack (2)" }
+        { "slug": "fighter-extra-attack", "name": "Extra Attack (2)" }
       ]
     },
     {
       "level": 12,
       "features": [
-        { "dndex_slug": "fighter-ability-score" }
+        { "slug": "fighter-ability-score" }
       ]
     },
     {
       "level": 13,
       "features": [
-        { "dndex_slug": "indomitable", "name": "Indomitable (2 uses)" }
+        { "slug": "indomitable", "name": "Indomitable (2 uses)" }
       ]
     },
     {
       "level": 14,
       "features": [
-        { "dndex_slug": "fighter-ability-score" }
+        { "slug": "fighter-ability-score" }
       ]
     },
     {
       "level": 15,
       "features": [
-        { "dndex_slug": "martial-archetype", "name": "Martial Archetype Feature" }
+        { "slug": "martial-archetype", "name": "Martial Archetype Feature" }
       ]
     },
     {
       "level": 16,
       "features": [
-        { "dndex_slug": "fighter-ability-score" }
+        { "slug": "fighter-ability-score" }
       ]
     },
     {
       "level": 17,
       "features": [
-        { "dndex_slug": "action-surge", "name": "Action Surge (2 uses)" },
-        { "dndex_slug": "indomitable", "name": "Indomitable (3 uses)" }
+        { "slug": "action-surge", "name": "Action Surge (2 uses)" },
+        { "slug": "indomitable", "name": "Indomitable (3 uses)" }
       ]
     },
     {
       "level": 18,
       "features": [
-        { "dndex_slug": "martial-archetype", "name": "Martial Archetype Feature" }
+        { "slug": "martial-archetype", "name": "Martial Archetype Feature" }
       ]
     },
     {
       "level": 19,
       "features": [
-        { "dndex_slug": "fighter-ability-score" }
+        { "slug": "fighter-ability-score" }
       ]
     },
     {
       "level": 20,
       "features": [
-        { "dndex_slug": "extra-attack", "name": "Extra Attack (3)" }
+        { "slug": "extra-attack", "name": "Extra Attack (3)" }
       ]
     }
   ]

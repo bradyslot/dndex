@@ -1,372 +1,372 @@
 {
   "class_features": [
     {
-      "dndex_slug": "favored-enemy",
+      "slug": "favored-enemy",
       "name": "Favored Enemy",
       "desc": "Beginning at 1st level, you have significant experience studying, tracking, hunting, and even talking to a certain type of enemy.\nChoose a type of favored enemy: aberrations, beasts, celestials, constructs, dragons, elementals, fey, fiends, giants, monstrosities, oozes, plants, or undead. Alternatively, you can select two races of humanoid (such as gnolls and orcs) as favored enemies.\nYou have advantage on Wisdom (Survival) checks to track your favored enemies, as well as on Intelligence checks to recall information about them.\nWhen you gain this feature, you also learn one language of your choice that is spoken by your favored enemies, if they speak one at all.\nYou choose one additional favored enemy, as well as an associated language, at 6th and 14th level. As you gain levels, your choices should reflect the types of monsters you have encountered on your adventures."
     },
     {
-      "dndex_slug": "natural-explorer",
+      "slug": "natural-explorer",
       "name": "Natural Explorer",
       "desc": "You are particularly familiar with one type of natural environment and are adept at traveling and surviving in such regions. Choose one type of favored terrain: arctic, coast, desert, forest, grassland, mountain, or swamp. When you make an Intelligence or Wisdom check related to your favored terrain, your proficiency bonus is doubled if you are using a skill that you're proficient in.\nWhile traveling for an hour or more in your favored terrain, you gain the following benefits:\nDifficult terrain doesn't slow your group's travel.\nYour group can't become lost except by magical means.\nEven when you are engaged in another activity while traveling (such as foraging, navigating, or tracking), you remain alert to danger.\nIf you are traveling alone, you can move stealthily at a normal pace.\nWhen you forage, you find twice as much food as you normally would.\nWhile tracking other creatures, you also learn their exact number, their sizes, and how long ago they passed through the area.\nYou choose additional favored terrain types at 6th and 10th level."
     },
     {
-      "dndex_slug": "ranger-fighting-style",
+      "slug": "ranger-fighting-style",
       "name": "Fighting Style",
       "desc": "At 2nd level, you adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\n## Archery You gain a +2 bonus to attack rolls you make with ranged weapons.\n## Defense While you are wearing armor, you gain a +1 bonus to AC.\n## Dueling When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.\n## Two-Weapon Fighting When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack."
     },
     {
-      "dndex_slug": "ranger-spellcasting",
+      "slug": "ranger-spellcasting",
       "name": "Spellcasting",
       "desc": "By the time you reach 2nd level, you have learned to use the magical essence of nature to cast spells, much as a druid does. See chapter 10 for the general rules of spellcasting and chapter 11 for the ranger spell list.\n## Spell Slots\nThe Ranger table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\nFor example, if you know the 1st-level spell *animal friendship* and have a 1st-level and a 2nd-level spell slot available, you can cast *animal friendship* using either slot.\n## Spells Known of 1st Level and Higher\nYou know two 1st-level spells of your choice from the ranger spell list.\nThe Spells Known column of the Ranger table shows when you learn more ranger spells of your choice. Each of these spells must be of a level for which you have spell slots. For instance, when you reach 5th level in this class, you can learn one new spell of 1st or 2nd level.\nAdditionally, when you gain a level in this class, you can choose one of the ranger spells you know and replace it with another spell from the ranger spell list, which also must be of a level for which you have spell slots.\n## Spellcasting Ability\nWisdom is your spellcasting ability for your ranger spells, since your magic draws on your attunement to nature. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a ranger spell you cast and when making an attack roll with one.\n**Spell save DC** = 8 + your proficiency bonus + your Wisdom modifier\n**Spell attack modifier** = your proficiency bonus + your Wisdom modifier"
     },
     {
-      "dndex_slug": "ranger-archetype",
+      "slug": "ranger-archetype",
       "name": "Ranger Archetype",
       "desc": "At 3rd level, you choose an archetype that you strive to emulate: Hunter or Beast Master, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 7th, 11th, and 15th level."
     },
     {
-      "dndex_slug": "primeval-awareness",
+      "slug": "primeval-awareness",
       "name": "Primeval Awareness",
       "desc": "Beginning at 3rd level, you can use your action and expend one ranger spell slot to focus your awareness on the region around you. For 1 minute per level of the spell slot you expend, you can sense whether the following types of creatures are present within 1 mile of you (or within up to 6 miles if you are in your favored terrain): aberrations, celestials, dragons, elementals, fey, fiends, and undead. This feature doesn't reveal the creatures' location or number."
     },
     {
-      "dndex_slug": "ranger-extra-attack",
+      "slug": "ranger-extra-attack",
       "name": "Extra Attack",
       "desc": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
     },
     {
-      "dndex_slug": "lands-stride",
+      "slug": "lands-stride",
       "name": "Land's Stride",
       "desc": "Starting at 8th level, moving through nonmagical difficult terrain costs you no extra movement. You can also pass through nonmagical plants without being slowed by them and without taking damage from them if they have thorns, spines, or a similar hazard.\nIn addition, you have advantage on saving throws against plants that are magically created or manipulated to impede movement, such those created by the *entangle* spell."
     },
     {
-      "dndex_slug": "hide-in-plain-sight",
+      "slug": "hide-in-plain-sight",
       "name": "Hide in Plain Sight",
       "desc": "Starting at 10th level, you can spend 1 minute creating camouflage for yourself. You must have access to fresh mud, dirt, plants, soot, and other naturally occurring materials with which to create your camouflage.\nOnce you are camouflaged in this way, you can try to hide by pressing yourself up against a solid surface, such as a tree or wall, that is at least as tall and wide as you are. You gain a +10 bonus to Dexterity (Stealth) checks as long as you remain there without moving or taking actions. Once you move or take an action or a reaction, you must camouflage yourself again to gain this benefit."
     },
     {
-      "dndex_slug": "vanish",
+      "slug": "vanish",
       "name": "Vanish",
       "desc": "Starting at 14th level, you can use the Hide action as a bonus action on your turn. Also, you can't be tracked by nonmagical means, unless you choose to leave a trail."
     },
     {
-      "dndex_slug": "feral-senses",
+      "slug": "feral-senses",
       "name": "Feral Senses",
       "desc": "At 18th level, you gain preternatural senses that help you fight creatures you can't see. When you attack a creature you can't see, your inability to see it doesn't impose disadvantage on your attack rolls against it.\nYou are also aware of the location of any invisible creature within 30 feet of you, provided that the creature isn't hidden from you and you aren't blinded or deafened."
     },
     {
-      "dndex_slug": "foe-slayer",
+      "slug": "foe-slayer",
       "name": "Foe Slayer",
       "desc": "At 20th level, you become an unparalleled hunter of your enemies. Once on each of your turns, you can add your Wisdom modifier to the attack roll or the damage roll of an attack you make against one of your favored enemies. You can choose to use this feature before or after the roll, but before any effects of the roll are applied."
     },
     {
-      "dndex_slug": "unarmored-defense",
+      "slug": "unarmored-defense",
       "name": "Unarmored Defense",
       "desc": "Beginning at 1st level, while you are wearing no armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier."
     },
     {
-      "dndex_slug": "martial-arts",
+      "slug": "martial-arts",
       "name": "Martial Arts",
       "desc": "At 1st level, your practice of martial arts gives you mastery of combat styles that use unarmed strikes and monk weapons, which are shortswords and any simple melee weapons that don't have the two- handed or heavy property.\nYou gain the following benefits while you are unarmed or wielding only monk weapons and you aren't wearing armor or wielding a shield:\nYou can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes and monk weapons.\nYou can roll a d4 in place of the normal damage of your unarmed strike or monk weapon. This die changes as you gain monk levels, as shown in the Martial Arts column of the Monk table.\nWhen you use the Attack action with an unarmed strike or a monk weapon on your turn, you can make one unarmed strike as a bonus action. For example, if you take the Attack action and attack with a quarterstaff, you can also make an unarmed strike as a bonus action, assuming you haven't already taken a bonus action this turn.\nCertain monasteries use specialized forms of the monk weapons. For example, you might use a club that is two lengths of wood connected by a short chain (called a nunchaku) or a sickle with a shorter, straighter blade (called a kama). Whatever name you use for a monk weapon, you can use the game statistics provided for the weapon."
     },
     {
-      "dndex_slug": "ki",
+      "slug": "ki",
       "name": "Ki",
       "desc": "Starting at 2nd level, your training allows you to harness the mystic energy of ki. Your access to this energy is represented by a number of ki points. Your monk level determines the number of points you have, as shown in the Ki Points column of the Monk table.\nYou can spend these points to fuel various ki features. You start knowing three such features: Flurry of Blows, Patient Defense, and Step of the Wind. You learn more ki features as you gain levels in this class.\nWhen you spend a ki point, it is unavailable until you finish a short or long rest, at the end of which you draw all of your expended ki back into yourself. You must spend at least 30 minutes of the rest meditating to regain your ki points.\nSome of your ki features require your target to make a saving throw to resist the feature's effects. The saving throw DC is calculated as follows:\n**Ki save DC** = 8 + your proficiency bonus + your Wisdom modifier\n## Flurry of Blows\nImmediately after you take the Attack action on your turn, you can spend 1 ki point to make two unarmed strikes as a bonus action.\n## Patient Defense\nYou can spend 1 ki point to take the Dodge action as a bonus action on your turn.\n## Step of the Wind\nYou can spend 1 ki point to take the Disengage or Dash action as a bonus action on your turn, and your jump distance is doubled for the turn."
     },
     {
-      "dndex_slug": "unarmored-movement",
+      "slug": "unarmored-movement",
       "name": "Unarmored Movement",
       "desc": "Starting at 2nd level, your speed increases by 10 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table.\nAt 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move."
     },
     {
-      "dndex_slug": "monastic-tradition",
+      "slug": "monastic-tradition",
       "name": "Monastic Tradition",
       "desc": "When you reach 3rd level, you commit yourself to a monastic tradition: the Way of the Open Hand, the Way of Shadow, or the Way of the Four Elements, all detailed at the end of the class description. Your tradition grants you features at 3rd level and again at 6th, 11th, and 17th level."
     },
     {
-      "dndex_slug": "deflect-missiles",
+      "slug": "deflect-missiles",
       "name": "Deflect Missiles",
       "desc": "Starting at 3rd level, you can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your monk level.\nIf you reduce the damage to 0, you can catch the missile if it is small enough for you to hold in one hand and you have at least one hand free. If you catch a missile in this way, you can spend 1 ki point to make a ranged attack with the weapon or piece of ammunition you just caught, as part of the same reaction. You make this attack with proficiency, regardless of your weapon proficiencies, and the missile counts as a monk weapon for the attack, which has a normal range of 20 feet and a long range of 60 feet."
     },
     {
-      "dndex_slug": "slow-fall",
+      "slug": "slow-fall",
       "name": "Slow Fall",
       "desc": "Beginning at 4th level, you can use your reaction when you fall to reduce any falling damage you take by an amount equal to five times your monk level."
     },
     {
-      "dndex_slug": "monk-extra-attack",
+      "slug": "monk-extra-attack",
       "name": "Extra Attack",
       "desc": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
     },
     {
-      "dndex_slug": "stunning-strike",
+      "slug": "stunning-strike",
       "name": "Stunning Strike",
       "desc": "Starting at 5th level, you can interfere with the flow of ki in an opponent's body. When you hit another creature with a melee weapon attack, you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn."
     },
     {
-      "dndex_slug": "ki-empowered-strikes",
+      "slug": "ki-empowered-strikes",
       "name": "Ki Empowered Strikes",
       "desc": "Starting at 6th level, your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage."
     },
     {
-      "dndex_slug": "evasion",
+      "slug": "evasion",
       "name": "Evasion",
       "desc": "At 7th level, your instinctive agility lets you dodge out of the way of certain area effects, such as a blue dragon's lightning breath or a *fireball* spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
     },
     {
-      "dndex_slug": "stillness-of-mind",
+      "slug": "stillness-of-mind",
       "name": "Stillness of Mind",
       "desc": "Starting at 7th level, you can use your action to end one effect on yourself that is causing you to be charmed or frightened."
     },
     {
-      "dndex_slug": "purity-of-body",
+      "slug": "purity-of-body",
       "name": "Purity of Body",
       "desc": "At 10th level, your mastery of the ki flowing through you makes you immune to disease and poison."
     },
     {
-      "dndex_slug": "tongue-of-the-sun-and-moon",
+      "slug": "tongue-of-the-sun-and-moon",
       "name": "Tongue of the Sun and Moon",
       "desc": "Starting at 13th level, you learn to touch the ki of other minds so that you understand all spoken languages. Moreover, any creature that can understand a language can understand what you say."
     },
     {
-      "dndex_slug": "diamond-soul",
+      "slug": "diamond-soul",
       "name": "Diamond Soul",
       "desc": "Beginning at 14th level, your mastery of ki grants you proficiency in all saving throws.\nAdditionally, whenever you make a saving throw and fail, you can spend 1 ki point to reroll it and take the second result."
     },
     {
-      "dndex_slug": "monk-timeless-body",
+      "slug": "monk-timeless-body",
       "name": "Timeless Body",
       "desc": "At 15th level, your ki sustains you so that you suffer none of the frailty of old age, and you can't be aged magically. You can still die of old age, however. In addition, you no longer need food or water."
     },
     {
-      "dndex_slug": "empty-body",
+      "slug": "empty-body",
       "name": "Empty Body",
       "desc": "Beginning at 18th level, you can use your action to spend 4 ki points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage.\nAdditionally, you can spend 8 ki points to cast the *astral projection* spell, without needing material components. When you do so, you can't take any other creatures with you."
     },
     {
-      "dndex_slug": "perfect-self",
+      "slug": "perfect-self",
       "name": "Perfect Self",
       "desc": "At 20th level, when you roll for initiative and have no ki points remaining, you regain 4 ki points."
     },
     {
-      "dndex_slug": "monastic-tradition",
+      "slug": "monastic-tradition",
       "name": "Monastic Traditions",
       "desc": "Three traditions of monastic pursuit are common in the monasteries scattered across the multiverse. Most monasteries practice one tradition exclusively, but a few honor the three traditions and instruct each monk according to his or her aptitude and interest. All three traditions rely on the same basic techniques, diverging as the student grows more adept. Thus, a monk need choose a tradition only upon reaching 3rd level."
     },
     {
-      "dndex_slug": "fighter-fighting-style",
+      "slug": "fighter-fighting-style",
       "name": "Fighting Style",
       "desc": "You adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\n## Archery You gain a +2 bonus to attack rolls you make with ranged weapons.\n## Defense While you are wearing armor, you gain a +1 bonus to AC.\n## Dueling When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.\n## Great Weapon Fighting When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. The weapon must have the two-handed or versatile property for you to gain this benefit.\n## Protection When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield.\n## Two-Weapon Fighting When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack. "
     },
     {
-      "dndex_slug": "second-wind",
+      "slug": "second-wind",
       "name": "Second Wind",
       "desc": "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again."
     },
     {
-      "dndex_slug": "action-surge",
+      "slug": "action-surge",
       "name": "Action Surge",
       "desc": "Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action.\nOnce you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn. "
     },
     {
-      "dndex_slug": "martial-archetype",
+      "slug": "martial-archetype",
       "name": "Martial Archetype",
       "desc": "At 3rd level, you choose an archetype that you strive to emulate in your combat styles and techniques. Choose Champion, Battle Master, or Eldritch Knight, all detailed at the end of the class description. The archetype you choose grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level.\nDifferent fighters choose different approaches to perfecting their fighting prowess. The martial archetype you choose to emulate reflects your approach."
     },
     {
-      "dndex_slug": "fighter-ability-score",
+      "slug": "fighter-ability-score",
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 6th, 8th, 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
     },
     {
-      "dndex_slug": "fighter-extra-attack",
+      "slug": "fighter-extra-attack",
       "name": "Extra Attack",
       "desc": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.\nThe number of attacks increases to three when you reach 11th level in this class and to four when you reach 20th level in this class."
     },
     {
-      "dndex_slug": "indomitable",
+      "slug": "indomitable",
       "name": "Indomitable",
       "desc": "Beginning at 9th level, you can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can't use this feature again until you finish a long rest.\nYou can use this feature twice between long rests starting at 13th level and three times between long rests starting at 17th level."
     },
     {
-      "dndex_slug": "druidic",
+      "slug": "druidic",
       "name": "Druidic",
       "desc": "You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message's presence with a successful DC 15 Wisdom (Perception) check but can't decipher it without magic."
     },
     {
-      "dndex_slug": "druid-spellcasting",
+      "slug": "druid-spellcasting",
       "name": "Spellcasting",
       "desc": "Drawing on the divine essence of nature itself, you can cast spells to shape that essence to your will.\n## Cantrips At 1st level, you know two cantrips of your choice from the druid spell list. You learn additional druid cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Druid table.\n## Preparing and Casting Spells The Druid table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these druid spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\nYou prepare the list of druid spells that are available for you to cast, choosing from the druid spell list. When you do so, choose a number of druid spells equal to your Wisdom modifier + your druid level (minimum of one spell). The spells must be of a level for which you have spell slots.\nFor example, if you are a 3rd-level druid, you have four 1st-level and two 2nd-level spell slots. With a Wisdom of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell *cure wounds*, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.\nYou can also change your list of prepared spells when you finish a long rest. Preparing a new list of druid spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.\n## Spellcasting Ability Wisdom is your spellcasting ability for your druid spells, since your magic draws upon your devotion and attunement to nature. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a druid spell you cast and when making an attack roll with one.\n**Spell save DC** = 8 + your proficiency bonus + your Wisdom modifier\n**Spell attack modifier** = your proficiency bonus + your Wisdom modifier\n## Ritual Casting You can cast a druid spell as a ritual if that spell has the ritual tag and you have the spell prepared.\n## Spellcasting Focus You can use a druidic focus (see [Adventuring Gear]({{ base_url }}/equipment/adventuring-gear)) as a spellcasting focus for your druid spells."
     },
     {
-      "dndex_slug": "wild-shape",
+      "slug": "wild-shape",
       "name": "Wild Shape",
       "desc": "Starting at 2nd level, you can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.\nYour druid level determines the beasts you can transform into, as shown in the Beast Shapes table. At 2nd level, for example, you can transform into any beast that has a challenge rating of 1/4 or lower that doesn't have a flying or swimming speed.\n**Beast Shapes (table)**\n| Level | Max. CR | Limitations | Example |\n|-|-|-|-|\n| 2nd | 1/4 | No flying or swimming speed | Wolf |\n| 4th | 1/2 | No flying speed | Crocodile |\n| 8th | 1 | | Giant eagle |\n\nYou can stay in a beast shape for a number of hours equal to half your druid level (rounded down). You then revert to your normal form unless you expend another use of this feature. You can revert to your normal form earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.\nWhile you are transformed, the following rules apply:\nYour game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature. If the creature has the same proficiency as you and the bonus in its stat block is higher than yours, use the creature's bonus instead of yours. If the creature has any legendary or lair actions, you can't use them.\nWhen you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and have only 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.\nYou can't cast spells, and your ability to speak or take any action that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a spell you've already cast, however, or prevent you from taking actions that are part of a spell, such as *call lightning*, that you've already cast.\nYou retain the benefit of any features from your class, race, or other source and can use them if the new form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense.\nYou choose whether your equipment falls to the ground in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the GM decides whether it is practical for the new form to wear a piece of equipment, based on the creature's shape and size. Your equipment doesn't change size or shape to match the new form, and any equipment that the new form can't wear must either fall to the ground or merge with it. Equipment that merges with the form has no effect until you leave the form."
     },
     {
-      "dndex_slug": "druid-cirlce",
+      "slug": "druid-cirlce",
       "name": "Druid Circle",
       "desc": "At 2nd level, you choose to identify with a circle of druids: the Circle of the Land or the Circle of the Moon, both detailed at the end of the class description. Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level."
     },
     {
-      "dndex_slug": "druid-timeless-body",
+      "slug": "druid-timeless-body",
       "name": "Timeless Body",
       "desc": "Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year."
     },
     {
-      "dndex_slug": "beast-spells",
+      "slug": "beast-spells",
       "name": "Beast Spells",
       "desc": "Beginning at 18th level, you can cast many of your druid spells in any shape you assume using Wild Shape. You can perform the somatic and verbal components of a druid spell while in a beast shape, but you aren't able to provide material components."
     },
     {
-      "dndex_slug": "archdruid",
+      "slug": "archdruid",
       "name": "Archdruid",
       "desc": "At 20th level, you can use your Wild Shape an unlimited number of times.\nAdditionally, you can ignore the verbal and somatic components of your druid spells, as well as any material components that lack a cost and aren't consumed by a spell. You gain this benefit in both your normal shape and your beast shape from Wild Shape."
     },
     {
-      "dndex_slug": "cleric-spellcasting",
+      "slug": "cleric-spellcasting",
       "name": "Spellcasting",
       "desc": "As a conduit for divine power, you can cast cleric spells.\n## Cantrips At 1st level, you know three cantrips of your choice from the cleric spell list. You learn additional cleric cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Cleric table.\n## Preparing and Casting Spells The Cleric table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\nYou prepare the list of cleric spells that are available for you to cast, choosing from the cleric spell list. When you do so, choose a number of cleric spells equal to your Wisdom modifier + your cleric level (minimum of one spell). The spells must be of a level for which you have spell slots.\nFor example, if you are a 3rd-level cleric, you have four 1st-level and two 2nd-level spell slots. With a Wisdom of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.\nYou can change your list of prepared spells when you finish a long rest. Preparing a new list of cleric spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.\n## Spellcasting Ability Wisdom is your spellcasting ability for your cleric spells. The power of your spells comes from your devotion to your deity. You use your Wisdom whenever a cleric spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a cleric spell you cast and when making an attack roll with one.\n**Spell save DC** = 8 + your proficiency bonus + your Wisdom modifier\n**Spell attack modifier** = your proficiency bonus + your Wisdom modifier\n## Ritual Casting You can cast a cleric spell as a ritual if that spell has the ritual tag and you have the spell prepared.\n## Spellcasting Focus You can use a holy symbol (see [Adventuring Gear]({{ base_url }}/equipment/adventuring-gear)) as a spellcasting focus for your cleric spells."
     },
     {
-      "dndex_slug": "divine-domain",
+      "slug": "divine-domain",
       "name": "Devine Domain",
       "desc": "Choose one domain related to your deity: Knowledge, Life, Light, Nature, Tempest, Trickery, or War. Each domain is detailed at the end of the class description, and each one provides examples of gods associated with it. Your choice grants you domain spells and other features when you choose it at 1st level. It also grants you additional ways to use Channel Divinity when you gain that feature at 2nd level, and additional benefits at 6th, 8th, and 17th levels.\n## Domain Spells Each domain has a list of spells that you gain at the cleric levels noted in the domain description. Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day.\nIf you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you."
     },
     {
-      "dndex_slug": "channel-divinity",
+      "slug": "channel-divinity",
       "name": "Channel Divinity",
       "desc": "At 2nd level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.\nWhen you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.\nSome Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC.\nBeginning at 6th level, you can use your Channel\nDivinity twice between rests, and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you regain your expended uses.\n## Channel Divinity: Turn Undead As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.\nA turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action."
     },
     {
-      "dndex_slug": "destroy-undead",
+      "slug": "destroy-undead",
       "name": "Destroy Undead",
       "desc": "Starting at 5th level, when an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is at or below a certain threshold, as shown in the Destroy Undead table.\n**Destroy Undeada (table)**\n| Cleric Level | Destroys Undead of CR… |\n|-|-|\n| 5th | 1/2 or lower |\n| 8th | 1 or lower |\n| 11th | 2 or lower |\n| 14th | 3 or lower |\n| 17th | 4 or lower |\n"
     },
     {
-      "dndex_slug": "divine-intervention",
+      "slug": "divine-intervention",
       "name": "Divine Intervention",
       "desc": "Beginning at 10th level, you can call on your deity to intervene on your behalf when your need is great.\nImploring your deity's aid requires you to use your action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes. The GM chooses the nature of the intervention; the effect of any cleric spell or cleric domain spell would be appropriate.\nIf your deity intervenes, you can't use this feature again for 7 days. Otherwise, you can use it again after you finish a long rest.\nAt 20th level, your call for intervention succeeds automatically, no roll required. "
     },
     {
-      "dndex_slug": "rage",
+      "slug": "rage",
       "name": "Rage",
       "desc": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.\nWhile raging, you gain the following benefits if you aren't wearing heavy armor:\nYou have advantage on Strength checks and Strength saving throws.\nWhen you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.\nYou have resistance to bludgeoning, piercing, and slashing damage.\nIf you are able to cast spells, you can't cast them or concentrate on them while raging.\nYour rage lasts for 1 minute. It ends early if you are knocked srd:unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action.\nOnce you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again."
     },
     {
-      "dndex_slug": "unarmored-defense",
+      "slug": "unarmored-defense",
       "name": "Unarmored Defense",
       "desc": "While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."
     },
     {
-      "dndex_slug": "reckless-attack",
+      "slug": "reckless-attack",
       "name": "Reckless Attack",
       "desc": "Starting at 2nd level, you can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you have advantage until your next turn."
     },
     {
-      "dndex_slug": "danger-sense",
+      "slug": "danger-sense",
       "name": "Danger Sense",
       "desc": "At 2nd level, you gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger.\nYou have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can't be [blinded]({{ base_url }}/conditions/blinded), [deafened]({{ base_url }}/conditions/deafened), or [incapacitated]({{ base_url }}/conditions/incapacitated)."
     },
     {
-      "dndex_slug": "primal-path",
+      "slug": "primal-path",
       "name": "Primal Path",
       "desc": "At 3rd level, you choose a path that shapes the nature of your rage. Choose the Path of the Berserker or the Path of the Totem Warrior, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 6th, 10th, and 14th levels."
     },
     {
-      "dndex_slug": "barbarian-extra-attack",
+      "slug": "barbarian-extra-attack",
       "name": "Extra Attack",
       "desc": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
     },
     {
-      "dndex_slug": "fast-movement",
+      "slug": "fast-movement",
       "name": "Fast Movement",
       "desc": "Starting at 5th level, your speed increases by 10 feet while you aren't wearing heavy armor."
     },
     {
-      "dndex_slug": "feral-instinct",
+      "slug": "feral-instinct",
       "name": "Feral Instinct",
       "desc": "By 7th level, your instincts are so honed that you have advantage on initiative rolls.\nAdditionally, if you are surprised at the beginning of combat and aren't srd:incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn."
     },
     {
-      "dndex_slug": "brutal-critical",
+      "slug": "brutal-critical",
       "name": "Brutal Critical",
       "desc": "Beginning at 9th level, you can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack.\nThis increases to two additional dice at 13th level and three additional dice at 17th level."
     },
     {
-      "dndex_slug": "relentless-rage",
+      "slug": "relentless-rage",
       "name": "Relentless Rage",
       "desc": "Starting at 11th level, your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and don't die outright, you can make a DC 10 Constitution saving throw. If you succeed, you drop to 1 hit point instead.\nEach time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10. "
     },
     {
-      "dndex_slug": "persistent-rage",
+      "slug": "persistent-rage",
       "name": "Persistent Rage",
       "desc": "Beginning at 15th level, your rage is so fierce that it ends early only if you fall srd:unconscious or if you choose to end it."
     },
     {
-      "dndex_slug": "indomitable-might",
+      "slug": "indomitable-might",
       "name": "Indomitable Might",
       "desc": "Beginning at 18th level, if your total for a Strength check is less than your Strength score, you can use that score in place of the total."
     },
     {
-      "dndex_slug": "primal-champion",
+      "slug": "primal-champion",
       "name": "Primal Champion",
       "desc": "At 20th level, you embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24."
     },
     {
-      "dndex_slug": "bard-spellcasting",
+      "slug": "bard-spellcasting",
       "name": "Spellcasting",
       "desc": "You have learned to untangle and reshape the fabric of reality in harmony with your wishes and music.\nYour spells are part of your vast repertoire, magic that you can tune to different situations.\n## Cantrips\nYou know two cantrips of your choice from the [Bard Spell List]({{ base_url }}/spells/by-class/bard). You learn additional bard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Bard table.\n## Spell Slots\nThe Bard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\nFor example, if you know the 1st-level spell cure wounds and have a 1st-level and a 2nd-level spell slot available, you can cast cure wounds using either slot.\n## Spells Known of 1st Level and Higher\nYou know four 1st-level spells of your choice from the [Bard Spell List]({{ base_url }}/spells/by-class/bard).\nThe Spells Known column of the Bard table shows when you learn more bard spells of your choice. Each of these spells must be of a level for which you have spell slots, as shown on the table. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.\nAdditionally, when you gain a level in this class, you can choose one of the bard spells you know and replace it with another spell from the bard spell list, which also must be of a level for which you have spell slots.\n## Spellcasting Ability\nCharisma is your spellcasting ability for your bard spells. Your magic comes from the heart and soul you pour into the performance of your music or oration. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a bard spell you cast and when making an attack roll with one.\n**Spell save DC** = 8 + your proficiency bonus + your Charisma modifier\n**Spell attack modifier** = your proficiency bonus + your Charisma modifier\n## Ritual Casting\nYou can cast any bard spell you know as a ritual if that spell has the ritual tag.\n## Spellcasting Focus\nYou can use a musical instrument (see [Adventuring Gear]({{ base_url }}/sections/adventuring-gear)) as a spellcasting focus for your bard spells."
     },
     {
-      "dndex_slug": "bardic-inspiration",
+      "slug": "bardic-inspiration",
       "name": "Bardic Inspiration",
       "desc": "You can inspire others through stirring words or music. To do so, you use a bonus action on your turn to choose one creature other than yourself within 60 feet of you who can hear you. That creature gains one Bardic Inspiration die, a d6.\nOnce within the next 10 minutes, the creature can roll the die and add the number rolled to one ability check, attack roll, or saving throw it makes. The creature can wait until after it rolls the d20 before deciding to use the Bardic Inspiration die, but must decide before the GM says whether the roll succeeds or fails. Once the Bardic Inspiration die is rolled, it is lost. A creature can have only one Bardic Inspiration die at a time.\nYou can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain any expended uses when you finish a long rest.\nYour Bardic Inspiration die changes when you reach certain levels in this class. The die becomes a d8 at 5th level, a d10 at 10th level, and a d12 at 15th level."
     },
     {
-      "dndex_slug": "jack-of-all-trades",
+      "slug": "jack-of-all-trades",
       "name": "Jack of All Trades",
       "desc": "Jack of all trades applies only to ability checks, not attack rolls or saving throws. However since initiative rolls are Dexterity checks Jack of All Trades does apply to initiative rolls as long as it is not already benefiting from the character's proficiency bonus.\nStarting at 2nd level, you can add half your proficiency bonus, rounded down, to any ability check you make that doesn't already include your proficiency bonus."
     },
     {
-      "dndex_slug": "song-of-rest",
+      "slug": "song-of-rest",
       "name": "Song of Rest",
       "desc": "Beginning at 2nd level, you can use soothing music or oration to help revitalize your wounded allies during a short rest. If you or any friendly creatures who can hear your performance regain hit points at the end of the short rest by spending one or more Hit Dice, each of those creatures regains an extra 1d6 hit points.\nThe extra hit points increase when you reach certain levels in this class: to 1d8 at 9th level, to 1d10 at 13th level, and to 1d12 at 17th level."
     },
     {
-      "dndex_slug": "bard-college",
+      "slug": "bard-college",
       "name": "Bard College",
       "desc": "At 3rd level, you delve into the advanced techniques of a bard college of your choice, such as the College of Lore. Your choice grants you features at 3rd level and again at 6th and 14th level."
     },
     {
-      "dndex_slug": "expertise",
+      "slug": "expertise",
       "name": "Expertise",
       "desc": "At 3rd level, choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.\nAt 10th level, you can choose another two skill proficiencies to gain this benefit."
     },
     {
-      "dndex_slug": "ability-score",
+      "slug": "ability-score",
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
     },
     {
-      "dndex_slug": "font-of-inspiration",
+      "slug": "font-of-inspiration",
       "name": "Font of Inspiration",
       "desc": "Beginning when you reach 5th level, you regain all of your expended uses of Bardic Inspiration when you finish a short or long rest."
     },
     {
-      "dndex_slug": "countercharm",
+      "slug": "countercharm",
       "name": "Countercharm",
       "desc": "At 6th level, you gain the ability to use musical notes or words of power to disrupt mind-influencing effects. As an action, you can start a performance that lasts until the end of your next turn. During that time, you and any friendly creatures within 30 feet of you have advantage on saving throws against being [frightened]({{ base_url }}/conditions/frightened) or [charmed]({{ base_url }}/conditions/charmed). A creature must be able to hear you to gain this benefit. The performance ends early if you are [incapacitated]({{ base_url }}/conditions/incapacitated) or silenced or if you voluntarily end it (no action required)."
     },
     {
-      "dndex_slug": "magical-secrets",
+      "slug": "magical-secrets",
       "name": "Magical Secrets",
       "desc": "By 10th level, you have plundered magical knowledge from a wide spectrum of disciplines. Choose two spells from any class, including this one. A spell you choose must be of a level you can cast, as shown on the Bard table, or a cantrip.\nThe chosen spells count as bard spells for you and are included in the number in the Spells Known column of the Bard table.\nYou learn two additional spells from any class at 14th level and again at 18th level."
     },
     {
-      "dndex_slug": "superior-inspiration",
+      "slug": "superior-inspiration",
       "name": "Superior Inspiration",
       "desc": "At 20th level, when you roll initiative and have no uses of Bardic Inspiration left, you regain one use."
     }

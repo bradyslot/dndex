@@ -29,7 +29,7 @@
       ]
     ],
     "defaults": [
-      { "source": "equipment_packs", "dndex_slug": "explorers-pack" },
+      { "source": "equipment_packs", "slug": "explorers-pack" },
       { "api_path": "weapons", "open5e_slug": "javelin", "qty": 4 }
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a greataxe or *(b)* any martial melee weapon \n- *(a)* two handaxes or *(b)* any simple weapon\nAn explorer's pack and four javelins"
@@ -38,8 +38,8 @@
     {
       "level": 1,
       "features": [
-        { "dndex_slug": "rage" },
-        { "dndex_slug": "unarmored-defense" }
+        { "slug": "rage" },
+        { "slug": "unarmored-defense" }
       ],
       "rages": 2,
       "rage_damage": 2
@@ -47,8 +47,8 @@
     {
       "level": 2,
       "features": [
-        { "dndex_slug": "reckless-attack" },
-        { "dndex_slug": "danger-sense" }
+        { "slug": "reckless-attack" },
+        { "slug": "danger-sense" }
       ],
       "rages": 2,
       "rage_damage": 2
@@ -56,7 +56,7 @@
     {
       "level": 3,
       "features": [
-        { "dndex_slug": "primal-path" }
+        { "slug": "primal-path" }
       ],
       "rages": 3,
       "rage_damage": 2
@@ -64,7 +64,7 @@
     {
       "level": 4,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "rages": 3,
       "rage_damage": 2
@@ -72,8 +72,8 @@
     {
       "level": 5,
       "features": [
-        { "dndex_slug": "barbarian-extra-attack" },
-        { "dndex_slug": "fast-movement" }
+        { "slug": "barbarian-extra-attack" },
+        { "slug": "fast-movement" }
       ],
       "rages": 4,
       "rage_damage": 2
@@ -81,7 +81,7 @@
     {
       "level": 6,
       "features": [
-        { "dndex_slug": "primal-path", "name": "Path Feature" }
+        { "slug": "primal-path", "name": "Path Feature" }
       ],
       "rages": 4,
       "rage_damage": 2
@@ -89,7 +89,7 @@
     {
       "level": 7,
       "features": [
-        { "dndex_slug": "feral-instinct" }
+        { "slug": "feral-instinct" }
       ],
       "rages": 4,
       "rage_damage": 2
@@ -97,7 +97,7 @@
     {
       "level": 8,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "rages": 4,
       "rage_damage": 2
@@ -105,7 +105,7 @@
     {
       "level": 9,
       "features": [
-        { "dndex_slug": "brutal-critical", "name": "Brutal Critical (1 die)" }
+        { "slug": "brutal-critical", "name": "Brutal Critical (1 die)" }
       ],
       "rages": 4,
       "rage_damage": 3
@@ -113,7 +113,7 @@
     {
       "level": 10,
       "features": [
-        { "dndex_slug": "primal-path", "name": "Path Feature" }
+        { "slug": "primal-path", "name": "Path Feature" }
       ],
       "rages": 4,
       "rage_damage": 3
@@ -121,7 +121,7 @@
     {
       "level": 11,
       "features": [
-        { "dndex_slug": "relentless-rage" }
+        { "slug": "relentless-rage" }
       ],
       "rages": 4,
       "rage_damage": 3
@@ -129,7 +129,7 @@
     {
       "level": 12,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "rages": 5,
       "rage_damage": 3
@@ -137,7 +137,7 @@
     {
       "level": 13,
       "features": [
-        { "dndex_slug": "brutal-critical", "name": "Brutal Critical (2 dice)" }
+        { "slug": "brutal-critical", "name": "Brutal Critical (2 dice)" }
       ],
       "rages": 5,
       "rage_damage": 3
@@ -145,7 +145,7 @@
     {
       "level": 14,
       "features": [
-        { "dndex_slug": "primal-path", "name": "Path Feature" }
+        { "slug": "primal-path", "name": "Path Feature" }
       ],
       "rages": 5,
       "rage_damage": 3
@@ -153,7 +153,7 @@
     {
       "level": 15,
       "features": [
-        { "dndex_slug": "persistent-rage" }
+        { "slug": "persistent-rage" }
       ],
       "rages": 5,
       "rage_damage": 3
@@ -161,7 +161,7 @@
     {
       "level": 16,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "rages": 5,
       "rage_damage": 4
@@ -169,7 +169,7 @@
     {
       "level": 17,
       "features": [
-        { "dndex_slug": "brutal-critical", "name": "Brutal Critical (3 dice)" }
+        { "slug": "brutal-critical", "name": "Brutal Critical (3 dice)" }
       ],
       "rages": 5,
       "rage_damage": 4
@@ -177,7 +177,7 @@
     {
       "level": 18,
       "features": [
-        { "dndex_slug": "indomitable-might" }
+        { "slug": "indomitable-might" }
       ],
       "rages": 5,
       "rage_damage": 4
@@ -185,7 +185,7 @@
     {
       "level": 19,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "rages": 5,
       "rage_damage": 4
@@ -193,7 +193,7 @@
     {
       "level": 20,
       "features": [
-        { "dndex_slug": "primal-champion" }
+        { "slug": "primal-champion" }
       ],
       "rages": 0,
       "rage_damage": 4

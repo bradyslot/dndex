@@ -24,10 +24,10 @@
     ],
     "choice_2": [
       [
-        { "source": "equipment_packs", "dndex_slug": "diplomats-pack" }
+        { "source": "equipment_packs", "slug": "diplomats-pack" }
       ],
       [
-        { "source": "equipment_packs", "dndex_slug": "entertainers-pack" }
+        { "source": "equipment_packs", "slug": "entertainers-pack" }
       ]
     ],
     "defaults": [
@@ -40,8 +40,8 @@
     {
       "level": 1,
       "features": [
-        { "dndex_slug": "bard-spellcasting" },
-        { "dndex_slug": "bardic-inspiration", "name": "Bardic Inspiration (d6)" }
+        { "slug": "bard-spellcasting" },
+        { "slug": "bardic-inspiration", "name": "Bardic Inspiration (d6)" }
       ],
       "cantrips_known": 2,
       "spells_known": 4,
@@ -50,8 +50,8 @@
     {
       "level": 2,
       "features": [
-        { "dndex_slug": "jack-of-all-trades" },
-        { "dndex_slug": "song-of-rest", "name": "Song of Rest (d6)" }
+        { "slug": "jack-of-all-trades" },
+        { "slug": "song-of-rest", "name": "Song of Rest (d6)" }
       ],
       "cantrips_known": 2,
       "spells_known": 5,
@@ -60,8 +60,8 @@
     {
       "level": 3,
       "features": [
-        { "dndex_slug": "bard-college" },
-        { "dndex_slug": "expertise" }
+        { "slug": "bard-college" },
+        { "slug": "expertise" }
       ],
       "cantrips_known": 3,
       "spells_known": 6,
@@ -70,7 +70,7 @@
     {
       "level": 4,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "cantrips_known": 3,
       "spells_known": 7,
@@ -79,8 +79,8 @@
     {
       "level": 5,
       "features": [
-        { "dndex_slug": "bardic-inspiration", "name": "Bardic Inspiration (d8)" },
-        { "dndex_slug": "font-of-inspiration" }
+        { "slug": "bardic-inspiration", "name": "Bardic Inspiration (d8)" },
+        { "slug": "font-of-inspiration" }
       ],
       "cantrips_known": 3,
       "spells_known": 8,
@@ -89,8 +89,8 @@
     {
       "level": 6,
       "features": [
-        { "dndex_slug": "countercharm" },
-        { "dndex_slug": "bard-college", "name": "Bard College Feature" }
+        { "slug": "countercharm" },
+        { "slug": "bard-college", "name": "Bard College Feature" }
       ],
       "cantrips_known": 3,
       "spells_known": 9,
@@ -106,7 +106,7 @@
     {
       "level": 8,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "cantrips_known": 3,
       "spells_known": 11,
@@ -115,7 +115,7 @@
     {
       "level": 9,
       "features": [
-        { "dndex_slug": "song-of-rest", "name": "Song of Rest (d8)" }
+        { "slug": "song-of-rest", "name": "Song of Rest (d8)" }
       ],
       "cantrips_known": 3,
       "spells_known": 12,
@@ -124,9 +124,9 @@
     {
       "level": 10,
       "features": [
-        { "dndex_slug": "bardic-inspiration", "name": "Bardic Inspiration (d10)" },
-        { "dndex_slug": "expertise", "name": "Expertise Upgrade" },
-        { "dndex_slug": "magical-secrets" }
+        { "slug": "bardic-inspiration", "name": "Bardic Inspiration (d10)" },
+        { "slug": "expertise", "name": "Expertise Upgrade" },
+        { "slug": "magical-secrets" }
       ],
       "cantrips_known": 4,
       "spells_known": 14,
@@ -142,7 +142,7 @@
     {
       "level": 12,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "cantrips_known": 4,
       "spells_known": 15,
@@ -151,7 +151,7 @@
     {
       "level": 13,
       "features": [
-        { "dndex_slug": "song-of-rest", "name": "Song of Rest (d10)" }
+        { "slug": "song-of-rest", "name": "Song of Rest (d10)" }
       ],
       "cantrips_known": 4,
       "spells_known": 16,
@@ -160,8 +160,8 @@
     {
       "level": 14,
       "features": [
-        { "dndex_slug": "magical-secrets" },
-        { "dndex_slug": "bard-college", "name": "Bard College Feature" }
+        { "slug": "magical-secrets" },
+        { "slug": "bard-college", "name": "Bard College Feature" }
       ],
       "cantrips_known": 4,
       "spells_known": 18,
@@ -170,7 +170,7 @@
     {
       "level": 15,
       "features": [
-        { "dndex_slug": "bardic-inspiration", "name": "Bardic Inspiration (d12)" }
+        { "slug": "bardic-inspiration", "name": "Bardic Inspiration (d12)" }
       ],
       "cantrips_known": 4,
       "spells_known": 19,
@@ -179,7 +179,7 @@
     {
       "level": 16,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "cantrips_known": 4,
       "spells_known": 19,
@@ -188,7 +188,7 @@
     {
       "level": 17,
       "features": [
-        { "dndex_slug": "song-of-rest", "name": "Song of Rest (d12)" }
+        { "slug": "song-of-rest", "name": "Song of Rest (d12)" }
       ],
       "cantrips_known": 4,
       "spells_known": 20,
@@ -197,7 +197,7 @@
     {
       "level": 18,
       "features": [
-        { "dndex_slug": "magical-secrets", "name": "Magical Secrets Upgrade" }
+        { "slug": "magical-secrets", "name": "Magical Secrets Upgrade" }
       ],
       "cantrips_known": 4,
       "spells_known": 22,
@@ -206,7 +206,7 @@
     {
       "level": 19,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "cantrips_known": 4,
       "spells_known": 22,
@@ -215,7 +215,7 @@
     {
       "level": 20,
       "features": [
-        { "dndex_slug": "superior-inspiration" }
+        { "slug": "superior-inspiration" }
       ],
       "cantrips_known": 4,
       "spells_known": 22,

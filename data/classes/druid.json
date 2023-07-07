@@ -29,8 +29,8 @@
     ],
     "defaults": [
       { "api_path": "armor" , "open5e_slug": "leather" },
-      { "source": "explorers_packs", "dndex_slug": "explorers-pack" },
-      { "source": "adventuring_gear", "dndex_slug": "druidic-focus" }
+      { "source": "explorers_packs", "slug": "explorers-pack" },
+      { "source": "adventuring_gear", "slug": "druidic-focus" }
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a wooden shield or *(b)* any simple weapon\n- *(a)* a scimitar or *(b)* any simple melee weapon\n- Leather armor, an explorer's pack, and a druidic focus"
   },
@@ -38,8 +38,8 @@
     {
       "level": 1,
       "features": [
-        { "dndex_slug": "druidic" },
-        { "dndex_slug": "druid-spellcasting" }
+        { "slug": "druidic" },
+        { "slug": "druid-spellcasting" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -47,8 +47,8 @@
     {
       "level": 2,
       "features": [
-        { "dndex_slug": "wild-shape" },
-        { "dndex_slug": "druid-circle" }
+        { "slug": "wild-shape" },
+        { "slug": "druid-circle" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -62,8 +62,8 @@
     {
       "level": 4,
       "features": [
-        { "dndex_slug": "wild-shape", "name": "Wild Shape Improvement" },
-        { "dndex_slug": "ability-score" }
+        { "slug": "wild-shape", "name": "Wild Shape Improvement" },
+        { "slug": "ability-score" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
@@ -77,7 +77,7 @@
     {
       "level": 6,
       "features": [
-        { "dndex_slug": "druid-circle", "name": "Druid Circle Feature" }
+        { "slug": "druid-circle", "name": "Druid Circle Feature" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
@@ -91,8 +91,8 @@
     {
       "level": 8,
       "features": [
-        { "dndex_slug": "wild-shape", "name": "Wild Shape Improvement" },
-        { "dndex_slug": "ability-score" }
+        { "slug": "wild-shape", "name": "Wild Shape Improvement" },
+        { "slug": "ability-score" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
@@ -106,7 +106,7 @@
     {
       "level": 10,
       "features": [
-        { "dndex_slug": "druid-circle", "name": "Druid Circle Feature" }
+        { "slug": "druid-circle", "name": "Druid Circle Feature" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
@@ -120,7 +120,7 @@
     {
       "level": 12,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
@@ -134,7 +134,7 @@
     {
       "level": 14,
       "features": [
-        { "dndex_slug": "druid-circle", "name": "Druid Circle Feature" }
+        { "slug": "druid-circle", "name": "Druid Circle Feature" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
@@ -148,7 +148,7 @@
     {
       "level": 16,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
@@ -162,8 +162,8 @@
     {
       "level": 18,
       "features": [
-        { "dndex_slug": "druid-timeless-body" },
-        { "dndex_slug": "beast-spells" }
+        { "slug": "druid-timeless-body" },
+        { "slug": "beast-spells" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 1, 1, 1, 1 ]
@@ -171,7 +171,7 @@
     {
       "level": 19,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 1, 1, 1 ]
@@ -179,7 +179,7 @@
     {
       "level": 20,
       "features": [
-        { "dndex_slug": "archdruid" }
+        { "slug": "archdruid" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 2, 1, 1 ]

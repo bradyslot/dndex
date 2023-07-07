@@ -31,10 +31,10 @@
     ],
     "choice_3": [
       [
-        { "source": "equipment_packs", "dndex_slug": "dungeoneers-pack" }
+        { "source": "equipment_packs", "slug": "dungeoneers-pack" }
       ],
       [
-        { "source": "equipment_packs", "dndex_slug": "explorers-pack" }
+        { "source": "equipment_packs", "slug": "explorers-pack" }
       ]
     ],
     "defaults": [
@@ -47,8 +47,8 @@
     {
       "level": 1,
       "features": [
-        { "dndex_slug": "favored-enemy" },
-        { "dndex_slug": "natural-explorer" }
+        { "slug": "favored-enemy" },
+        { "slug": "natural-explorer" }
       ],
       "spells_known": 4,
       "spell_slots": [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -56,8 +56,8 @@
     {
       "level": 2,
       "features": [
-        { "dndex_slug": "ranger-fighting-style" },
-        { "dndex_slug": "ranger-spellcasting" }
+        { "slug": "ranger-fighting-style" },
+        { "slug": "ranger-spellcasting" }
       ],
       "spells_known": 2,
       "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -65,8 +65,8 @@
     {
       "level": 3,
       "features": [
-        { "dndex_slug": "ranger-archetype" },
-        { "dndex_slug": "primeval-awareness" }
+        { "slug": "ranger-archetype" },
+        { "slug": "primeval-awareness" }
       ],
       "spells_known": 3,
       "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -74,7 +74,7 @@
     {
       "level": 4,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "spells_known": 3,
       "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -82,7 +82,7 @@
     {
       "level": 5,
       "features": [
-        { "dndex_slug": "ranger-extra-attack" }
+        { "slug": "ranger-extra-attack" }
       ],
       "spells_known": 4,
       "spell_slots": [ 4, 2, 0, 0, 0, 0, 0, 0, 0 ]
@@ -90,8 +90,8 @@
     {
       "level": 6,
       "features": [
-        { "dndex_slug": "favored-enemy", "name": "Favored Enemy Improvement" },
-        { "dndex_slug": "natural-explorer", "name": "Natural Explorer Improvment" }
+        { "slug": "favored-enemy", "name": "Favored Enemy Improvement" },
+        { "slug": "natural-explorer", "name": "Natural Explorer Improvment" }
       ],
       "spells_known": 4,
       "spell_slots": [ 4, 2, 0, 0, 0, 0, 0, 0, 0 ]
@@ -99,7 +99,7 @@
     {
       "level": 7,
       "features": [
-        { "dndex_slug": "ranger-archetype", "name": "Ranger Archetype Feature" }
+        { "slug": "ranger-archetype", "name": "Ranger Archetype Feature" }
       ],
       "spells_known": 5,
       "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
@@ -107,8 +107,8 @@
     {
       "level": 8,
       "features": [
-        { "dndex_slug": "ability-score" },
-        { "dndex_slug": "lands-stride" }
+        { "slug": "ability-score" },
+        { "slug": "lands-stride" }
       ],
       "spells_known": 5,
       "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
@@ -122,8 +122,8 @@
     {
       "level": 10,
       "features": [
-        { "dndex_slug": "natural-explorer", "name": "Natural Explorer Improvement" },
-        { "dndex_slug": "hide-in-plain-sight" }
+        { "slug": "natural-explorer", "name": "Natural Explorer Improvement" },
+        { "slug": "hide-in-plain-sight" }
       ],
       "spells_known": 6,
       "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
@@ -131,7 +131,7 @@
     {
       "level": 11,
       "features": [
-        { "dndex_slug": "ranger-archetype", "name": "Ranger Archetype Feature" }
+        { "slug": "ranger-archetype", "name": "Ranger Archetype Feature" }
       ],
       "spells_known": 7,
       "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
@@ -139,7 +139,7 @@
     {
       "level": 12,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "spells_known": 7,
       "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
@@ -153,8 +153,8 @@
     {
       "level": 14,
       "features": [
-        { "dndex_slug": "favored-enemy", "name": "Favored Enemy Improvement" },
-        { "dndex_slug": "vanish" }
+        { "slug": "favored-enemy", "name": "Favored Enemy Improvement" },
+        { "slug": "vanish" }
       ],
       "spells_known": 8,
       "spell_slots": [ 4, 3, 3, 1, 0, 0, 0, 0, 0 ]
@@ -162,7 +162,7 @@
     {
       "level": 15,
       "features": [
-        { "dndex_slug": "ranger-archetype", "name": "Ranger Archetype Feature" }
+        { "slug": "ranger-archetype", "name": "Ranger Archetype Feature" }
       ],
       "spells_known": 9,
       "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
@@ -170,7 +170,7 @@
     {
       "level": 16,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "spells_known": 9,
       "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
@@ -184,7 +184,7 @@
     {
       "level": 18,
       "features": [
-        { "dndex_slug": "feral-senses" }
+        { "slug": "feral-senses" }
       ],
       "spells_known": 10,
       "spell_slots": [ 4, 3, 3, 3, 1, 0, 0, 0, 0 ]
@@ -192,7 +192,7 @@
     {
       "level": 19,
       "features": [
-        { "dndex_slug": "ability-score" }
+        { "slug": "ability-score" }
       ],
       "spells_known": 11,
       "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
@@ -200,7 +200,7 @@
     {
       "level": 20,
       "features": [
-        { "dndex_slug": "foe-slayer" }
+        { "slug": "foe-slayer" }
       ],
       "spells_known": 11,
       "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
