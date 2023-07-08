@@ -1,7 +1,6 @@
 {
   "class_hit_points": {
     "hit_dice": 12,
-    "first_level": 12,
     "static_option": 7,
     "desc": "**Hit Dice:** 1d12 per barbarian level\n**Hit Points at 1st Level:** 12 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d12 (or 7) + your Constitution modifier per barbarian level after 1st"
   },

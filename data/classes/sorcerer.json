@@ -1,7 +1,6 @@
 {
   "class_hit_points": {
     "hit_dice": 6,
-    "first_level": 6,
     "static_option": 4,
     "desc": "**Hit Dice:** 1d6 per Sorcerer level\n**Hit Points at 1st Level:** 6 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d6 (or 4) + your Constitution modifier per sorcerer level after 1st"
   },
