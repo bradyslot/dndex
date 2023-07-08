@@ -96,7 +96,7 @@
     {
       "level": 7,
       "features": [
-        { "slug": "evasion" },
+        { "slug": "monk-evasion" },
         { "slug": "stillness-of-mind" }
       ],
       "martial_arts": 6,

@@ -51,120 +51,142 @@
     {
       "level": 1,
       "features": [
+        { "slug": "rogue-expertise" },
+        { "slug": "sneak-attack" },
+        { "slug": "thieves-cant" }
       ],
       "sneak_attack": 2
     },
     {
       "level": 2,
       "features": [
+        { "slug": "cunning-action" }
       ],
       "sneak_attack": 2
     },
     {
       "level": 3,
       "features": [
+        { "slug": "roguish-archetype" }
       ],
       "sneak_attack": 3
     },
     {
       "level": 4,
       "features": [
+        { "slug": "ability-score" }
       ],
       "sneak_attack": 3
     },
     {
       "level": 5,
       "features": [
+        { "slug": "uncanny-dodge" }
       ],
       "sneak_attack": 4
     },
     {
       "level": 6,
       "features": [
+        { "slug": "rogue-expertise" }
       ],
       "sneak_attack": 4
     },
     {
       "level": 7,
       "features": [
+        { "slug": "rogue-evasion" }
       ],
       "sneak_attack": 4
     },
     {
       "level": 8,
       "features": [
+        { "slug": "ability-score" }
       ],
       "sneak_attack": 4
     },
     {
       "level": 9,
       "features": [
+        { "slug": "roguish-archetype", "name": "Roguish Archetype Feature" }
       ],
       "sneak_attack": 4
     },
     {
       "level": 10,
       "features": [
+        { "slug": "ability-score" }
       ],
       "sneak_attack": 4
     },
     {
       "level": 11,
       "features": [
+        { "slug": "reliable-talent" }
       ],
       "sneak_attack": 4
     },
     {
       "level": 12,
       "features": [
+        { "slug": "ability-score" }
       ],
       "sneak_attack": 5
     },
     {
       "level": 13,
       "features": [
+        { "slug": "roguish-archetype", "name": "Roguish Archetype Feature" }
       ],
       "sneak_attack": 5
     },
     {
       "level": 14,
       "features": [
+        { "slug": "blindsense" }
       ],
       "sneak_attack": 5
     },
     {
       "level": 15,
       "features": [
+        { "slug": "slippery-mind" }
       ],
       "sneak_attack": 5
     },
     {
       "level": 16,
       "features": [
+        { "slug": "ability-score" }
       ],
       "sneak_attack": 5
     },
     {
       "level": 17,
       "features": [
+        { "slug": "roguish-archetype", "name": "Roguish Archetype Feature" }
       ],
       "sneak_attack": 5
     },
     {
       "level": 18,
       "features": [
+        { "slug": "elusive" }
       ],
       "sneak_attack": 5
     },
     {
       "level": 19,
       "features": [
+        { "slug": "ability-score" }
       ],
       "sneak_attack": 5
     },
     {
       "level": 20,
       "features": [
+        { "slug": "stroke-of-luck" }
       ],
       "sneak_attack": 0
     }
