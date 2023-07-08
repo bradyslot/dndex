@@ -48,7 +48,7 @@
     {
       "level": 1,
       "features": [
-        { "slug": "sorcerer-spellcasting" },
+        { "slug": "spellcasting" },
         { "slug": "sorcerous-origin" }
       ],
       "sorcery_points": 0,

@@ -58,7 +58,7 @@
       "level": 2,
       "features": [
         { "slug": "ranger-fighting-style" },
-        { "slug": "ranger-spellcasting" }
+        { "slug": "spellcasting" }
       ],
       "spells_known": 2,
       "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]

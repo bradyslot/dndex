@@ -43,7 +43,7 @@
     {
       "level": 1,
       "features": [
-        { "slug": "bard-spellcasting" },
+        { "slug": "spellcasting" },
         { "slug": "bardic-inspiration", "name": "Bardic Inspiration (d6)" }
       ],
       "cantrips_known": 2,

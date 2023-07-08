@@ -60,7 +60,7 @@
     {
       "level": 1,
       "features": [
-        { "slug": "cleric-spellcasting" },
+        { "slug": "spellcasting" },
         { "slug": "divine-domain" }
       ],
       "cantrips_known": 3,

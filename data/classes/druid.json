@@ -42,7 +42,7 @@
       "level": 1,
       "features": [
         { "slug": "druidic" },
-        { "slug": "druid-spellcasting" }
+        { "slug": "spellcasting" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]
