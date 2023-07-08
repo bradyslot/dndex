@@ -22,7 +22,7 @@
     "choice_2": [
       [
         { "api_path": "weapons", "open5e_slug": "shortbow" },
-        { "name": "Arrow", "qty": 20 }
+        { "name": "Arrows", "qty": 20 }
       ],
       [
         { "api_path": "weapons", "open5e_slug": "shortsword" }
@@ -41,8 +41,7 @@
     ],
     "defaults": [
       { "api_path": "armor", "open5e_slug": "leather" },
-      { "api_path": "weapons", "open5e_slug": "dagger" },
-      { "api_path": "weapons", "open5e_slug": "dagger" },
+      { "api_path": "weapons", "open5e_slug": "dagger", "qty": 2},
       { "source": "tools", "slug": "thieves-tools" }
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a rapier or *(b)* a shortsword\n- *(a)* a shortbow and quiver of 20 arrows or *(b)* a shortsword\n- *(a)* a burglar's pack, *(b)* a dungeoneer's pack, or *(c)* an explorer's pack\n- *(a)* Leather armor, two daggers, and thieves' tools"

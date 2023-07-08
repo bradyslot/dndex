@@ -1,0 +1,235 @@
+{
+  "class_hit_points": {
+    "hit_dice": 6,
+    "first_level": 6,
+    "static_option": 4,
+    "desc": "**Hit Dice:** 1d6 per Sorcerer level\n**Hit Points at 1st Level:** 6 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d6 (or 4) + your Constitution modifier per sorcerer level after 1st"
+  },
+  "class_proficiencies": {
+    "saving_throws": [ "constitution", "charisma" ],
+    "skills": { "choices": 2, "options": [ "arcana", "deception", "insight", "intimidation", "persuasion", "religion" ] },
+    "desc": "**Armor:** None\n**Weapons:** Daggers, darts, slings, quarterstaffs, light crossbows\n**Tools:** None\n**Saving Throws:** Constitution, Charisma\n**Skills:** Choose two from Arcana, Deception, Insight, Intimidation, Persuasion, and Religion"
+  },
+  "class_equipment": {
+    "choice_1": [
+      [
+        { "api_path": "weapons", "open5e_slug": "crossbow-light" },
+        { "name": "Bolts", "qty": 20 }
+      ],
+      [
+        { "api_path": "weapons", "open5e_category": "Simple" }
+      ]
+    ],
+    "choice_2": [
+      [
+        { "source": "adventuring_gear", "slug": "component-pouch" }
+      ],
+      [
+        { "source": "adventuring_gear", "slug": "arcane-focus" }
+      ]
+    ],
+    "choice_3": [
+      [
+        { "source": "equipment_packs", "slug": "dungeoneers-pack" }
+      ],
+      [
+        { "source": "equipment_packs", "slug": "explorers-pack" }
+      ]
+    ],
+    "defaults": [
+      { "api_path": "weapons", "open5e_slug": "dagger", "qty": 2 }
+    ],
+    "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a light crossbow and 20 bolts or *(b)* any simple weapon\n- *(a)* a component pouch or *(b)* an arcane focus\n- *(a)* a dungeoneer's pack or *(b)* an explorer's pack\n- Two daggers"
+  },
+  "class_levels": [
+    {
+      "level": 1,
+      "features": [
+        { "slug": "sorcerer-spellcasting" },
+        { "slug": "sorcerous-origin" }
+      ],
+      "sorcery_points": 0,
+      "cantrips_known": 4,
+      "spells_known": 2,
+      "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 2,
+      "features": [
+        { "slug": "font-of-magic" }
+      ],
+      "sorcery_points": 2,
+      "cantrips_known": 4,
+      "spells_known": 3,
+      "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 3,
+      "features": [
+        { "slug": "metamagic" }
+      ],
+      "sorcery_points": 3,
+      "cantrips_known": 4,
+      "spells_known": 4,
+      "spell_slots": [ 4, 2, 0, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 4,
+      "features": [
+        { "slug": "ability-score" }
+      ],
+      "sorcery_points": 4,
+      "cantrips_known": 5,
+      "spells_known": 5,
+      "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 5,
+      "features": [],
+      "sorcery_points": 5,
+      "cantrips_known": 5,
+      "spells_known": 6,
+      "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 6,
+      "features": [
+        { "slug": "sorcerous-origin", "name": "Sorcerous Origin Feature" }
+      ],
+      "sorcery_points": 6,
+      "cantrips_known": 5,
+      "spells_known": 7,
+      "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 7,
+      "features": [],
+      "sorcery_points": 7,
+      "cantrips_known": 5,
+      "spells_known": 8,
+      "spell_slots": [ 4, 3, 3, 1, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 8,
+      "features": [
+        { "slug": "ability-score" }
+      ],
+      "sorcery_points": 8,
+      "cantrips_known": 5,
+      "spells_known": 9,
+      "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 9,
+      "features": [],
+      "sorcery_points": 9,
+      "cantrips_known": 5,
+      "spells_known": 10,
+      "spell_slots": [ 4, 3, 3, 3, 1, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 10,
+      "features": [
+        { "slug": "metamagic", "name": "Metamagic Option" }
+      ],
+      "sorcery_points": 10,
+      "cantrips_known": 6,
+      "spells_known": 11,
+      "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
+    },
+    {
+      "level": 11,
+      "features": [],
+      "sorcery_points": 11,
+      "cantrips_known": 6,
+      "spells_known": 12,
+      "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
+    },
+    {
+      "level": 12,
+      "features": [
+        { "slug": "ability-score" }
+      ],
+      "sorcery_points": 12,
+      "cantrips_known": 6,
+      "spells_known": 12,
+      "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
+    },
+    {
+      "level": 13,
+      "features": [],
+      "sorcery_points": 13,
+      "cantrips_known": 6,
+      "spells_known": 13,
+      "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
+    },
+    {
+      "level": 14,
+      "features": [
+        { "slug": "sorcerous-origin", "name": "Sorcerous Origin Feature" }
+      ],
+      "sorcery_points": 14,
+      "cantrips_known": 6,
+      "spells_known": 13,
+      "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
+    },
+    {
+      "level": 15,
+      "features": [],
+      "sorcery_points": 15,
+      "cantrips_known": 6,
+      "spells_known": 14,
+      "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
+    },
+    {
+      "level": 16,
+      "features": [
+        { "slug": "ability-score" }
+      ],
+      "sorcery_points": 16,
+      "cantrips_known": 6,
+      "spells_known": 14,
+      "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
+    },
+    {
+      "level": 17,
+      "features": [
+        { "slug": "metamagic", "name": "Metamagic Option" }
+      ],
+      "sorcery_points": 17,
+      "cantrips_known": 6,
+      "spells_known": 15,
+      "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 1 ]
+    },
+    {
+      "level": 18,
+      "features": [
+        { "slug": "sorcerous-origin", "name": "Sorcerous Origin Feature" }
+      ],
+      "sorcery_points": 18,
+      "cantrips_known": 6,
+      "spells_known": 15,
+      "spell_slots": [ 4, 3, 3, 3, 3, 1, 1, 1, 1 ]
+    },
+    {
+      "level": 19,
+      "features": [
+        { "slug": "ability-score" }
+      ],
+      "sorcery_points": 19,
+      "cantrips_known": 6,
+      "spells_known": 15,
+      "spell_slots": [ 4, 3, 3, 3, 3, 2, 1, 1, 1 ]
+    },
+    {
+      "level": 20,
+      "features": [
+        { "slug": "sorcerous-restoration" }
+      ],
+      "sorcery_points": 20,
+      "cantrips_known": 6,
+      "spells_known": 15,
+      "spell_slots": [ 4, 3, 3, 3, 3, 2, 2, 1, 1 ]
+    }
+  ]
+}

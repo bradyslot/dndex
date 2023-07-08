@@ -21,8 +21,7 @@
     ],
     "choice_2": [
       [
-        { "api_path": "weapons", "open5e_slug": "handaxe" },
-        { "api_path": "weapons", "open5e_slug": "handaxe" }
+        { "api_path": "weapons", "open5e_slug": "handaxe", "qty": 2 }
       ],
       [
         { "api_path": "weapons", "open5e_category": "Simple Melee" }

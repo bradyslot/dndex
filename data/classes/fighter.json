@@ -27,8 +27,7 @@
         { "api_path": "armor", "open5e_slug": "shield" }
       ],
       [
-        { "api_path": "weapons", "open5e_category": "Martial" },
-        { "api_path": "weapons", "open5e_category": "Martial" }
+        { "api_path": "weapons", "open5e_category": "Martial", "qty": 2 }
       ]
     ],
     "choice_3": [
@@ -37,8 +36,7 @@
         { "name": "Bolts", "qty": 20 }
       ],
       [
-        { "api_path": "weapons", "open5e_slug": "handaxe" },
-        { "api_path": "weapons", "open5e_slug": "handaxe" }
+        { "api_path": "weapons", "open5e_slug": "handaxe", "qty": 2}
       ]
     ],
     "choice_4": [

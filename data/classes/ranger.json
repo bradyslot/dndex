@@ -21,12 +21,10 @@
     ],
     "choice_2": [
       [
-        { "api_path": "weapons", "open5e_slug": "shortsword" },
-        { "api_path": "weapons", "open5e_slug": "shortsword" }
+        { "api_path": "weapons", "open5e_slug": "shortsword", "qty": 2 }
       ],
       [
-        { "api_path": "weapons", "open5e_category": "Simple Melee" },
-        { "api_path": "weapons", "open5e_category": "Simple Melee" }
+        { "api_path": "weapons", "open5e_category": "Simple Melee", "qty": 2 }
       ]
     ],
     "choice_3": [
@@ -39,7 +37,7 @@
     ],
     "defaults": [
       { "api_path": "weapons", "open5e_slug": "longbow" },
-      { "name": "Arrow", "qty": 20 }
+      { "name": "Arrows", "qty": 20 }
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* scale mail or *(b)* leather armor\n- *(a)* two shortswords or *(b)* two simple melee weapons\n- *(a)* a dungeoneer's pack or *(b)* an explorer's pack\n- A longbow and a quiver of 20 arrows"
   },
