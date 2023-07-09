@@ -12,37 +12,37 @@
   "class_equipment": {
     "choice_1": [
       [
-        { "api_path": "weapons", "open5e_slug": "rapier" }
+        { "source": "open5e", "location": "weapons", "key": "rapier" }
       ],
       [
-        { "api_path": "weapons", "open5e_slug": "shortsword" }
+        { "source": "open5e", "location": "weapons", "key": "shortsword" }
       ]
     ],
     "choice_2": [
       [
-        { "api_path": "weapons", "open5e_slug": "shortbow" },
+        { "source": "open5e", "location": "weapons", "key": "shortbow" },
         { "name": "Arrows", "qty": 20 }
       ],
       [
-        { "api_path": "weapons", "open5e_slug": "shortsword" }
+        { "source": "open5e", "location": "weapons", "key": "shortsword" }
       ]
     ],
     "choice_3": [
       [
-        { "source": "equipment_packs", "slug": "burglars-pack" }
+        { "source": "data", "location": "equipment_packs", "key": "burglars-pack" }
       ],
       [
-        { "source": "equipment_packs", "slug": "dungeoneers-pack" }
+        { "source": "data", "location": "equipment_packs", "key": "dungeoneers-pack" }
       ],
       [
-        { "source": "equipment_packs", "slug": "explorers-pack" }
+        { "source": "data", "location": "equipment_packs", "key": "explorers-pack" }
       ]
     ],
     "choice_4": [],
     "defaults": [
-      { "api_path": "armor", "open5e_slug": "leather" },
-      { "api_path": "weapons", "open5e_slug": "dagger", "qty": 2},
-      { "source": "tools", "slug": "thieves-tools" }
+      { "source": "open5e", "location": "armor", "key": "leather" },
+      { "source": "open5e", "location": "weapons", "key": "dagger", "qty": 2},
+      { "source": "open5e", "location": "tools", "key": "thieves-tools" }
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a rapier or *(b)* a shortsword\n- *(a)* a shortbow and quiver of 20 arrows or *(b)* a shortsword\n- *(a)* a burglar's pack, *(b)* a dungeoneer's pack, or *(c)* an explorer's pack\n- *(a)* Leather armor, two daggers, and thieves' tools"
   },
@@ -51,209 +51,209 @@
     {
       "level": 1,
       "features": [
-        { "slug": "rogue-expertise" },
-        { "slug": "sneak-attack" },
-        { "slug": "thieves-cant" }
+        { "key": "rogue-expertise" },
+        { "key": "sneak-attack" },
+        { "key": "thieves-cant" }
       ],
       "sneak_attack": 2
     },
     {
       "level": 2,
       "features": [
-        { "slug": "cunning-action" }
+        { "key": "cunning-action" }
       ],
       "sneak_attack": 2
     },
     {
       "level": 3,
       "features": [
-        { "slug": "roguish-archetype" }
+        { "key": "roguish-archetype" }
       ],
       "sneak_attack": 3
     },
     {
       "level": 4,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "sneak_attack": 3
     },
     {
       "level": 5,
       "features": [
-        { "slug": "uncanny-dodge" }
+        { "key": "uncanny-dodge" }
       ],
       "sneak_attack": 4
     },
     {
       "level": 6,
       "features": [
-        { "slug": "rogue-expertise" }
+        { "key": "rogue-expertise" }
       ],
       "sneak_attack": 4
     },
     {
       "level": 7,
       "features": [
-        { "slug": "rogue-evasion" }
+        { "key": "rogue-evasion" }
       ],
       "sneak_attack": 4
     },
     {
       "level": 8,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "sneak_attack": 4
     },
     {
       "level": 9,
       "features": [
-        { "slug": "roguish-archetype", "name": "Roguish Archetype Feature" }
+        { "key": "roguish-archetype", "name": "Roguish Archetype Feature" }
       ],
       "sneak_attack": 4
     },
     {
       "level": 10,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "sneak_attack": 4
     },
     {
       "level": 11,
       "features": [
-        { "slug": "reliable-talent" }
+        { "key": "reliable-talent" }
       ],
       "sneak_attack": 4
     },
     {
       "level": 12,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "sneak_attack": 5
     },
     {
       "level": 13,
       "features": [
-        { "slug": "roguish-archetype", "name": "Roguish Archetype Feature" }
+        { "key": "roguish-archetype", "name": "Roguish Archetype Feature" }
       ],
       "sneak_attack": 5
     },
     {
       "level": 14,
       "features": [
-        { "slug": "blindsense" }
+        { "key": "blindsense" }
       ],
       "sneak_attack": 5
     },
     {
       "level": 15,
       "features": [
-        { "slug": "slippery-mind" }
+        { "key": "slippery-mind" }
       ],
       "sneak_attack": 5
     },
     {
       "level": 16,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "sneak_attack": 5
     },
     {
       "level": 17,
       "features": [
-        { "slug": "roguish-archetype", "name": "Roguish Archetype Feature" }
+        { "key": "roguish-archetype", "name": "Roguish Archetype Feature" }
       ],
       "sneak_attack": 5
     },
     {
       "level": 18,
       "features": [
-        { "slug": "elusive" }
+        { "key": "elusive" }
       ],
       "sneak_attack": 5
     },
     {
       "level": 19,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "sneak_attack": 5
     },
     {
       "level": 20,
       "features": [
-        { "slug": "stroke-of-luck" }
+        { "key": "stroke-of-luck" }
       ],
       "sneak_attack": 0
     }
   ],
   "class_features": [
     {
-      "slug": "ability-score",
+      "key": "ability-score",
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
     },
     {
-      "slug": "rogue-expertise",
+      "key": "rogue-expertise",
       "name": "Expertise",
       "desc": "At 1st level, choose two of your skill proficiencies, or one of your skill proficiencies and your proficiency with thieves' tools. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.\nAt 6th level, you can choose two more of your proficiencies (in skills or with thieves' tools) to gain this benefit."
     },
     {
-      "slug": "sneak-attack",
+      "key": "sneak-attack",
       "name": "Sneak Attack",
       "desc": "Beginning at 1st level, you know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage on the attack roll. The attack must use a finesse or a ranged weapon.\nYou don't need advantage on the attack roll if another enemy of the target is within 5 feet of it, that enemy isn't incapacitated, and you don't have disadvantage on the attack roll.\nThe amount of the extra damage increases as you gain levels in this class, as shown in the Sneak Attack column of the Rogue table."
     },
     {
-      "slug": "thieves-cant",
+      "key": "thieves-cant",
       "name": "Thieves' Cant",
       "desc": "During your rogue training you learned thieves' cant, a secret mix of dialect, jargon, and code that allows you to hide messages in seemingly normal conversation. Only another creature that knows thieves' cant understands such messages. It takes four times longer to convey such a message than it does to speak the same idea plainly.\nIn addition, you understand a set of secret signs and symbols used to convey short, simple messages, such as whether an area is dangerous or the territory of a thieves' guild, whether loot is nearby, or whether the people in an area are easy marks or will provide a safe house for thieves on the run."
     },
     {
-      "slug": "cunning-action",
+      "key": "cunning-action",
       "name": "Cunning Action",
       "desc": "Starting at 2nd level, your quick thinking and agility allow you to move and act quickly. You can take a bonus action on each of your turns in combat. This action can be used only to take the Dash, Disengage, or Hide action."
     },
     {
-      "slug": "roguish-archetype",
+      "key": "roguish-archetype",
       "name": "Roguish Archetype",
       "desc": "At 3rd level, you choose an archetype that you emulate in the exercise of your rogue abilities: Thief, Assassin, or Arcane Trickster, all detailed at the end of the class description. Your archetype choice grants you features at 3rd level and then again at 9th, 13th, and 17th level.\nRogues have many features in common, including their emphasis on perfecting their skills, their precise and deadly approach to combat, and their increasingly quick reflexes. But different rogues steer those talents in varying directions, embodied by the rogue archetypes. Your choice of archetype is a reflection of your focus-not necessarily an indication of your chosen profession, but a description of your preferred techniques."
     },
     {
-      "slug": "uncanny-dodge",
+      "key": "uncanny-dodge",
       "name": "Uncanny Dodge",
       "desc": "Starting at 5th level, when an attacker that you can see hits you with an attack, you can use your reaction to halve the attack's damage against you."
     },
     {
-      "slug": "rogue-evasion",
+      "key": "rogue-evasion",
       "name": "Evasion",
       "desc": "Beginning at 7th level, you can nimbly dodge out of the way of certain area effects, such as a red dragon's fiery breath or an ice storm spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
     },
     {
-      "slug": "reliable-talent",
+      "key": "reliable-talent",
       "name": "Reliable Talent",
       "desc": "By 11th level, you have refined your chosen skills until they approach perfection. Whenever you make an ability check that lets you add your proficiency bonus, you can treat a d20 roll of 9 or lower as a 10."
     },
     {
-      "slug": "blindsense",
+      "key": "blindsense",
       "name": "Blindsense",
       "desc": "Starting at 14th level, if you are able to hear, you are aware of the location of any hidden or invisible creature within 10 feet of you."
     },
     {
-      "slug": "slippery-mind",
+      "key": "slippery-mind",
       "name": "Slippery Mind",
       "desc": "By 15th level, you have acquired greater mental strength. You gain proficiency in Wisdom saving throws."
     },
     {
-      "slug": "elusive",
+      "key": "elusive",
       "name": "Elusive",
       "desc": "Beginning at 18th level, you are so evasive that attackers rarely gain the upper hand against you. No attack roll has advantage against you while you aren't incapacitated."
     },
     {
-      "slug": "stroke-of-luck",
+      "key": "stroke-of-luck",
       "name": "Stroke of Luck",
       "desc": "At 20th level, you have an uncanny knack for succeeding when you need to. If your attack misses a target within range, you can turn the miss into a hit. Alternatively, if you fail an ability check, you can treat the d20 roll as a 20.\nOnce you use this feature, you can't use it again until you finish a short or long rest."
     }

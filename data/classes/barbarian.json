@@ -12,25 +12,25 @@
   "class_equipment": {
     "choice_1": [
       [
-        { "api_path": "weapons", "open5e_slug": "greataxe" }
+        { "source": "open5e", "location": "weapons", "key": "greataxe" }
       ],
       [
-        { "api_path": "weapons", "open5e_category": "Martial Melee" }
+        { "source": "open5e", "location": "weapons", "category": "Martial Melee" }
       ]
     ],
     "choice_2": [
       [
-        { "api_path": "weapons", "open5e_slug": "handaxe", "qty": 2 }
+        { "source": "open5e", "location": "weapons", "key": "handaxe", "qty": 2 }
       ],
       [
-        { "api_path": "weapons", "open5e_category": "Simple Melee" }
+        { "source": "open5e", "location": "weapons", "category": "Simple Melee" }
       ]
     ],
     "choice_3": [],
     "choice_4": [],
     "defaults": [
-      { "source": "equipment_packs", "slug": "explorers-pack" },
-      { "api_path": "weapons", "open5e_slug": "javelin", "qty": 4 }
+      { "source": "data", "location": "equipment_packs", "key": "explorers-pack" },
+      { "source": "open5e", "location": "weapons", "key": "javelin", "qty": 4 }
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a greataxe or *(b)* any martial melee weapon \n- *(a)* two handaxes or *(b)* any simple weapon\nAn explorer's pack and four javelins"
   },
@@ -39,8 +39,8 @@
     {
       "level": 1,
       "features": [
-        { "slug": "rage" },
-        { "slug": "unarmored-defense" }
+        { "key": "rage" },
+        { "key": "unarmored-defense" }
       ],
       "rages": 2,
       "rage_damage": 2
@@ -48,8 +48,8 @@
     {
       "level": 2,
       "features": [
-        { "slug": "reckless-attack" },
-        { "slug": "danger-sense" }
+        { "key": "reckless-attack" },
+        { "key": "danger-sense" }
       ],
       "rages": 2,
       "rage_damage": 2
@@ -57,7 +57,7 @@
     {
       "level": 3,
       "features": [
-        { "slug": "primal-path" }
+        { "key": "primal-path" }
       ],
       "rages": 3,
       "rage_damage": 2
@@ -65,7 +65,7 @@
     {
       "level": 4,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "rages": 3,
       "rage_damage": 2
@@ -73,8 +73,8 @@
     {
       "level": 5,
       "features": [
-        { "slug": "barbarian-extra-attack" },
-        { "slug": "fast-movement" }
+        { "key": "barbarian-extra-attack" },
+        { "key": "fast-movement" }
       ],
       "rages": 4,
       "rage_damage": 2
@@ -82,7 +82,7 @@
     {
       "level": 6,
       "features": [
-        { "slug": "primal-path", "name": "Path Feature" }
+        { "key": "primal-path", "name": "Path Feature" }
       ],
       "rages": 4,
       "rage_damage": 2
@@ -90,7 +90,7 @@
     {
       "level": 7,
       "features": [
-        { "slug": "feral-instinct" }
+        { "key": "feral-instinct" }
       ],
       "rages": 4,
       "rage_damage": 2
@@ -98,7 +98,7 @@
     {
       "level": 8,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "rages": 4,
       "rage_damage": 2
@@ -106,7 +106,7 @@
     {
       "level": 9,
       "features": [
-        { "slug": "brutal-critical", "name": "Brutal Critical (1 die)" }
+        { "key": "brutal-critical", "name": "Brutal Critical (1 die)" }
       ],
       "rages": 4,
       "rage_damage": 3
@@ -114,7 +114,7 @@
     {
       "level": 10,
       "features": [
-        { "slug": "primal-path", "name": "Path Feature" }
+        { "key": "primal-path", "name": "Path Feature" }
       ],
       "rages": 4,
       "rage_damage": 3
@@ -122,7 +122,7 @@
     {
       "level": 11,
       "features": [
-        { "slug": "relentless-rage" }
+        { "key": "relentless-rage" }
       ],
       "rages": 4,
       "rage_damage": 3
@@ -130,7 +130,7 @@
     {
       "level": 12,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "rages": 5,
       "rage_damage": 3
@@ -138,7 +138,7 @@
     {
       "level": 13,
       "features": [
-        { "slug": "brutal-critical", "name": "Brutal Critical (2 dice)" }
+        { "key": "brutal-critical", "name": "Brutal Critical (2 dice)" }
       ],
       "rages": 5,
       "rage_damage": 3
@@ -146,7 +146,7 @@
     {
       "level": 14,
       "features": [
-        { "slug": "primal-path", "name": "Path Feature" }
+        { "key": "primal-path", "name": "Path Feature" }
       ],
       "rages": 5,
       "rage_damage": 3
@@ -154,7 +154,7 @@
     {
       "level": 15,
       "features": [
-        { "slug": "persistent-rage" }
+        { "key": "persistent-rage" }
       ],
       "rages": 5,
       "rage_damage": 3
@@ -162,7 +162,7 @@
     {
       "level": 16,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "rages": 5,
       "rage_damage": 4
@@ -170,7 +170,7 @@
     {
       "level": 17,
       "features": [
-        { "slug": "brutal-critical", "name": "Brutal Critical (3 dice)" }
+        { "key": "brutal-critical", "name": "Brutal Critical (3 dice)" }
       ],
       "rages": 5,
       "rage_damage": 4
@@ -178,7 +178,7 @@
     {
       "level": 18,
       "features": [
-        { "slug": "indomitable-might" }
+        { "key": "indomitable-might" }
       ],
       "rages": 5,
       "rage_damage": 4
@@ -186,7 +186,7 @@
     {
       "level": 19,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "rages": 5,
       "rage_damage": 4
@@ -194,7 +194,7 @@
     {
       "level": 20,
       "features": [
-        { "slug": "primal-champion" }
+        { "key": "primal-champion" }
       ],
       "rages": 0,
       "rage_damage": 4
@@ -202,72 +202,72 @@
   ],
   "class_features": [
     {
-      "slug": "ability-score",
+      "key": "ability-score",
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
     },
     {
-      "slug": "rage",
+      "key": "rage",
       "name": "Rage",
       "desc": "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action.\nWhile raging, you gain the following benefits if you aren't wearing heavy armor:\nYou have advantage on Strength checks and Strength saving throws.\nWhen you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.\nYou have resistance to bludgeoning, piercing, and slashing damage.\nIf you are able to cast spells, you can't cast them or concentrate on them while raging.\nYour rage lasts for 1 minute. It ends early if you are knocked srd:unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action.\nOnce you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again."
     },
     {
-      "slug": "unarmored-defense",
+      "key": "unarmored-defense",
       "name": "Unarmored Defense",
       "desc": "While you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."
     },
     {
-      "slug": "reckless-attack",
+      "key": "reckless-attack",
       "name": "Reckless Attack",
       "desc": "Starting at 2nd level, you can throw aside all concern for defense to attack with fierce desperation. When you make your first attack on your turn, you can decide to attack recklessly. Doing so gives you advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you have advantage until your next turn."
     },
     {
-      "slug": "danger-sense",
+      "key": "danger-sense",
       "name": "Danger Sense",
       "desc": "At 2nd level, you gain an uncanny sense of when things nearby aren't as they should be, giving you an edge when you dodge away from danger.\nYou have advantage on Dexterity saving throws against effects that you can see, such as traps and spells. To gain this benefit, you can't be [blinded]({{ base_url }}/conditions/blinded), [deafened]({{ base_url }}/conditions/deafened), or [incapacitated]({{ base_url }}/conditions/incapacitated)."
     },
     {
-      "slug": "primal-path",
+      "key": "primal-path",
       "name": "Primal Path",
       "desc": "At 3rd level, you choose a path that shapes the nature of your rage. Choose the Path of the Berserker or the Path of the Totem Warrior, both detailed at the end of the class description. Your choice grants you features at 3rd level and again at 6th, 10th, and 14th levels."
     },
     {
-      "slug": "barbarian-extra-attack",
+      "key": "barbarian-extra-attack",
       "name": "Extra Attack",
       "desc": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
     },
     {
-      "slug": "fast-movement",
+      "key": "fast-movement",
       "name": "Fast Movement",
       "desc": "Starting at 5th level, your speed increases by 10 feet while you aren't wearing heavy armor."
     },
     {
-      "slug": "feral-instinct",
+      "key": "feral-instinct",
       "name": "Feral Instinct",
       "desc": "By 7th level, your instincts are so honed that you have advantage on initiative rolls.\nAdditionally, if you are surprised at the beginning of combat and aren't srd:incapacitated, you can act normally on your first turn, but only if you enter your rage before doing anything else on that turn."
     },
     {
-      "slug": "brutal-critical",
+      "key": "brutal-critical",
       "name": "Brutal Critical",
       "desc": "Beginning at 9th level, you can roll one additional weapon damage die when determining the extra damage for a critical hit with a melee attack.\nThis increases to two additional dice at 13th level and three additional dice at 17th level."
     },
     {
-      "slug": "relentless-rage",
+      "key": "relentless-rage",
       "name": "Relentless Rage",
       "desc": "Starting at 11th level, your rage can keep you fighting despite grievous wounds. If you drop to 0 hit points while you're raging and don't die outright, you can make a DC 10 Constitution saving throw. If you succeed, you drop to 1 hit point instead.\nEach time you use this feature after the first, the DC increases by 5. When you finish a short or long rest, the DC resets to 10. "
     },
     {
-      "slug": "persistent-rage",
+      "key": "persistent-rage",
       "name": "Persistent Rage",
       "desc": "Beginning at 15th level, your rage is so fierce that it ends early only if you fall srd:unconscious or if you choose to end it."
     },
     {
-      "slug": "indomitable-might",
+      "key": "indomitable-might",
       "name": "Indomitable Might",
       "desc": "Beginning at 18th level, if your total for a Strength check is less than your Strength score, you can use that score in place of the total."
     },
     {
-      "slug": "primal-champion",
+      "key": "primal-champion",
       "name": "Primal Champion",
       "desc": "At 20th level, you embody the power of the wilds. Your Strength and Constitution scores increase by 4. Your maximum for those scores is now 24."
     }

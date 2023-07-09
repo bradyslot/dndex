@@ -4,124 +4,124 @@
     "table": "| Item | Cost | Weight |\n|-|-|-|\n| Artisan's tools | | |\n| - Alchemist's supplies | 50 gp | 8 lb. |\n| - Brewer's supplies | 20 gp | 9 lb. |\n| - Calligrapher's supplies | 10 gp | 5 lb. |\n| - Carpenter's tools | 8 gp | 6 lb. |\n| - Cartographer's tools | 15 gp | 6 lb. |\n| - Cobbler's tools | 5 gp | 5 lb. |\n| - Cook's utensils | 1 gp | 8 lb. |\n| - Glassblower's tools | 30 gp | 5 lb. |\n| - Jeweler's tools | 25 gp | 2 lb. |\n| - Leatherworker's tools | 5 gp | 5 lb. |\n| - Mason's tools | 10 gp | 8 lb. |\n| - Painter's supplies | 10 gp | 5 lb. |\n| - Potter's tools | 10 gp | 3 lb. |\n| - Smith's tools | 20 gp | 8 lb. |\n| - Tinker's tools | 50 gp | 10 lb. |\n| - Weaver's tools | 1 gp | 5 lb. |\n| - Woodcarver's tools | 1 gp | 5 lb. |\n| Disguise kit | 25 gp | 3 lb. |\n| Forgery kit | 15 gp | 5 lb. |\n| Gaming set | | |\n| - Dice set | 1 sp | |\n| - Playing card set | 5 sp | |\n| Herbalism kit | 5 gp | 3 lb. |\n| Musical instrument | | |\n| - Bagpipes | 30 gp | 6 lb. |\n| - Drum | 6 gp | 3 lb. |\n| - Dulcimer | 25 gp | 10 lb. |\n| - Flute | 2 gp | 1 lb. |\n| - Lute | 35 gp | 2 lb. |\n| - Lyre | 30 gp | 2 lb. |\n| - Horn | 3 gp | 2 lb. |\n| - Pan flute | 12 gp | 2 lb. |\n| - Shawm | 2 gp | 1 lb. |\n| - Viol | 30 gp | 1 lb. |\n| Navigator's tools | 25 gp | 2 lb. |\n| Poisoner's kit | 50 gp | 2 lb. |\n| Thieves' tools | 25 gp | 1 lb. |\n",
     "tool_category": [
       {
-        "slug": "artisans-tools",
+        "key": "artisans-tools",
         "name": "Atisan's Tools",
         "desc": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency.",
         "subtypes": [
           {
-            "slug": "alchemists-supplies",
+            "key": "alchemists-supplies",
             "name": "Alchemist's Supplies",
             "cost": 50,
             "denom": "gp",
             "weight": 8
           },
           {
-            "slug": "brewers-supplies",
+            "key": "brewers-supplies",
             "name": "Brewer's Supplies",
             "cost": 20,
             "denom": "gp",
             "weight": 9
           },
           {
-            "slug": "calligraphers-supplies",
+            "key": "calligraphers-supplies",
             "name": "Calligrapher's Supplies",
             "cost": 10,
             "denom": "gp",
             "weight": 5
           },
           {
-            "slug": "carpenters-tools",
+            "key": "carpenters-tools",
             "name": "Carpenter's Tools",
             "cost": 8,
             "denom": "gp",
             "weight": 6
           },
           {
-            "slug": "cartographers-tools",
+            "key": "cartographers-tools",
             "name": "Cartographer's Tools",
             "cost": 15,
             "denom": "gp",
             "weight": 6
           },
           {
-            "slug": "cobblers-tools",
+            "key": "cobblers-tools",
             "name": "Cobbler's Tools",
             "cost": 5,
             "denom": "gp",
             "weight": 5
           },
           {
-            "slug": "cooks-utensils",
+            "key": "cooks-utensils",
             "name": "Cook's Utensils",
             "cost": 1,
             "denom": "gp",
             "weight": 8
           },
           {
-            "slug": "glassblowers-tools",
+            "key": "glassblowers-tools",
             "name": "Glassblower's Tools",
             "cost": 30,
             "denom": "gp",
             "weight": 5
           },
           {
-            "slug": "jewelers-tools",
+            "key": "jewelers-tools",
             "name": "Jeweler's Tools",
             "cost": 25,
             "denom": "gp",
             "weight": 2
           },
           {
-            "slug": "leatherworkers-tools",
+            "key": "leatherworkers-tools",
             "name": "Leatherworker's Tools",
             "cost": 5,
             "denom": "gp",
             "weight": 5
           },
           {
-            "slug": "masons-tools",
+            "key": "masons-tools",
             "name": "Mason's Tools",
             "cost": 10,
             "denom": "gp",
             "weight": 8
           },
           {
-            "slug": "painters-supplies",
+            "key": "painters-supplies",
             "name": "Painter's Supplies",
             "cost": 10,
             "denom": "gp",
             "weight": 5
           },
           {
-            "slug": "potters-tools",
+            "key": "potters-tools",
             "name": "Potter's Tools",
             "cost": 10,
             "denom": "gp",
             "weight": 3
           },
           {
-            "slug": "smiths-tools",
+            "key": "smiths-tools",
             "name": "Smith's Tools",
             "cost": 20,
             "denom": "gp",
             "weight": 8
           },
           {
-            "slug": "tinkers-tools",
+            "key": "tinkers-tools",
             "name": "Tinker's Tools",
             "cost": 50,
             "denom": "gp",
             "weight": 10
           },
           {
-            "slug": "weavers-tools",
+            "key": "weavers-tools",
             "name": "Weaver's Tools",
             "cost": 1,
             "denom": "gp",
             "weight": 5
           },
           {
-            "slug": "woodcarvers-tools",
+            "key": "woodcarvers-tools",
             "name": "Woodcarver's Tools",
             "cost": 1,
             "denom": "gp",
@@ -130,19 +130,19 @@
         ]
       },
       {
-        "slug": "gaming-set",
+        "key": "gaming-set",
         "name": "Gaming Set",
         "desc": "This item encompasses a wide range of game pieces, including dice and decks of cards (for games such as Three-Dragon Ante). A few common examples appear on the Tools table, but other kinds of gaming sets exist. If you are proficient with a gaming set, you can add your proficiency bonus to ability checks you make to play a game with that set. Each type of gaming set requires a separate proficiency.",
         "subtypes": [
           {
-            "slug": "dice-set",
+            "key": "dice-set",
             "name": "Dice Set",
             "cost": 1,
             "denom": "sp",
             "weight": 0
           },
           {
-            "slug": "playing-card-set",
+            "key": "playing-card-set",
             "name": "Playing Card Set",
             "cost": 5,
             "denom": "sp",
@@ -151,75 +151,75 @@
         ]
       },
       {
-        "slug": "musical-instrument",
+        "key": "musical-instrument",
         "name": "Musical Instrument",
         "desc": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency.",
         "subtypes": [
           {
-            "slug": "bagpipes",
+            "key": "bagpipes",
             "name": "Bagpipes",
             "cost": 30,
             "denom": "gp",
             "weight": 6
           },
           {
-            "slug": "drum",
+            "key": "drum",
             "name": "Drum",
             "cost": 6,
             "denom": "gp",
             "weight": 3
           },
           {
-            "slug": "dulcimer",
+            "key": "dulcimer",
             "name": "Dulcimer",
             "cost": 25,
             "denom": "gp",
             "weight": 10
           },
           {
-            "slug": "flute",
+            "key": "flute",
             "name": "Flute",
             "cost": 2,
             "denom": "gp",
             "weight": 1
           },
           {
-            "slug": "lute",
+            "key": "lute",
             "name": "Lute",
             "cost": 35,
             "denom": "gp",
             "weight": 2
           },
           {
-            "slug": "lyre",
+            "key": "lyre",
             "name": "Lyre",
             "cost": 30,
             "denom": "gp",
             "weight": 2
           },
           {
-            "slug": "horn",
+            "key": "horn",
             "name": "Horn",
             "cost": 3,
             "denom": "gp",
             "weight": 2
           },
           {
-            "slug": "pan-flute",
+            "key": "pan-flute",
             "name": "Pan Flute",
             "cost": 12,
             "denom": "gp",
             "weight": 2
           },
           {
-            "slug": "shawm",
+            "key": "shawm",
             "name": "Shawm",
             "cost": 2,
             "denom": "gp",
             "weight": 1
           },
           {
-            "slug": "viol",
+            "key": "viol",
             "name": "Viol",
             "cost": 30,
             "denom": "gp",
@@ -230,7 +230,7 @@
     ],
     "tool_kit": [
       {
-        "slug": "disguise-kit",
+        "key": "disguise-kit",
         "name": "Disguise Kit",
         "cost": 25,
         "denom": "gp",
@@ -238,7 +238,7 @@
         "desc": "This pouch of cosmetics, hair dye, and small props lets you create disguises that change your physical appearance. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to create a visual disguise."
       },
       {
-        "slug": "forgery-kit",
+        "key": "forgery-kit",
         "name": "Forgery Kit",
         "cost": 15,
         "denom": "gp",
@@ -246,7 +246,7 @@
         "desc": "This small box contains a variety of papers and parchments, pens and inks, seals and sealing wax, gold and silver leaf, and other supplies necessary to create convincing forgeries of physical documents. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to create a physical forgery of a document."
       },
       {
-        "slug": "herbalism-kit",
+        "key": "herbalism-kit",
         "name": "Herbalism Kit",
         "cost": 5,
         "denom": "gp",
@@ -254,7 +254,7 @@
         "desc": "This kit contains a variety of instruments such as clippers, mortar and pestle, and pouches and vials used by herbalists to create remedies and potions. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to identify or apply herbs. Also, proficiency with this kit is required to create antitoxin and potions of healing."
       },
       {
-        "slug": "navigator-tools",
+        "key": "navigator-tools",
         "name": "Navigator's Tools",
         "cost": 25,
         "denom": "25",
@@ -262,7 +262,7 @@
         "desc": "This set of instruments is used for navigation at sea. Proficiency with navigator's tools lets you chart a ship's course and follow navigation charts. In addition, these tools allow you to add your proficiency bonus to any ability check you make to avoid getting lost at sea."
       },
       {
-        "slug": "poisoner-kit",
+        "key": "poisoner-kit",
         "name": "Poisoner's Kit",
         "cost": 50,
         "denom": "gp",
@@ -270,7 +270,7 @@
         "desc": "A poisoner's kit includes the vials, chemicals, and other equipment necessary for the creation of poisons. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to craft or use poisons."
       },
       {
-        "slug": "thieves-tools",
+        "key": "thieves-tools",
         "name": "Thieves' Tools",
         "cost": 25,
         "denom": "gp",

@@ -12,26 +12,26 @@
   "class_equipment": {
     "choice_1": [
       [
-        { "api_path": "armor", "open5e_slug": "shield" }
+        { "source": "open5e", "location": "armor", "key": "shield" }
       ],
       [
-        { "api_path": "weapons", "open5e_category": "Simple" }
+        { "source": "open5e", "location": "weapons", "category": "Simple" }
       ]
     ],
     "choice_2": [
       [
-        { "api_path": "weapons", "open5e_slug": "scimitar" }
+        { "source": "open5e", "location": "weapons", "key": "scimitar" }
       ],
       [
-        { "api_path": "weapons", "open5e_category": "Simple Melee" }
+        { "source": "open5e", "location": "weapons", "category": "Simple Melee" }
       ]
     ],
     "choice_3": [],
     "choice_4": [],
     "defaults": [
-      { "api_path": "armor" , "open5e_slug": "leather" },
-      { "source": "explorers_packs", "slug": "explorers-pack" },
-      { "source": "adventuring_gear", "slug": "druidic-focus" }
+      { "source": "open5e", "location": "armor" , "key": "leather" },
+      { "source": "data", "location": "explorers_packs", "key": "explorers-pack" },
+      { "source": "data", "location": "adventuring_gear", "key": "druidic-focus" }
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a wooden shield or *(b)* any simple weapon\n- *(a)* a scimitar or *(b)* any simple melee weapon\n- Leather armor, an explorer's pack, and a druidic focus"
   },
@@ -43,8 +43,8 @@
     {
       "level": 1,
       "features": [
-        { "slug": "druidic" },
-        { "slug": "spellcasting" }
+        { "key": "druidic" },
+        { "key": "spellcasting" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -52,8 +52,8 @@
     {
       "level": 2,
       "features": [
-        { "slug": "wild-shape" },
-        { "slug": "druid-circle" }
+        { "key": "wild-shape" },
+        { "key": "druid-circle" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -67,8 +67,8 @@
     {
       "level": 4,
       "features": [
-        { "slug": "wild-shape", "name": "Wild Shape Improvement" },
-        { "slug": "ability-score" }
+        { "key": "wild-shape", "name": "Wild Shape Improvement" },
+        { "key": "ability-score" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
@@ -82,7 +82,7 @@
     {
       "level": 6,
       "features": [
-        { "slug": "druid-circle", "name": "Druid Circle Feature" }
+        { "key": "druid-circle", "name": "Druid Circle Feature" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
@@ -96,8 +96,8 @@
     {
       "level": 8,
       "features": [
-        { "slug": "wild-shape", "name": "Wild Shape Improvement" },
-        { "slug": "ability-score" }
+        { "key": "wild-shape", "name": "Wild Shape Improvement" },
+        { "key": "ability-score" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
@@ -111,7 +111,7 @@
     {
       "level": 10,
       "features": [
-        { "slug": "druid-circle", "name": "Druid Circle Feature" }
+        { "key": "druid-circle", "name": "Druid Circle Feature" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
@@ -125,7 +125,7 @@
     {
       "level": 12,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
@@ -139,7 +139,7 @@
     {
       "level": 14,
       "features": [
-        { "slug": "druid-circle", "name": "Druid Circle Feature" }
+        { "key": "druid-circle", "name": "Druid Circle Feature" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
@@ -153,7 +153,7 @@
     {
       "level": 16,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
@@ -167,8 +167,8 @@
     {
       "level": 18,
       "features": [
-        { "slug": "druid-timeless-body" },
-        { "slug": "beast-spells" }
+        { "key": "druid-timeless-body" },
+        { "key": "beast-spells" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 1, 1, 1, 1 ]
@@ -176,7 +176,7 @@
     {
       "level": 19,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 1, 1, 1 ]
@@ -184,7 +184,7 @@
     {
       "level": 20,
       "features": [
-        { "slug": "archdruid" }
+        { "key": "archdruid" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 2, 1, 1 ]
@@ -192,37 +192,37 @@
   ],
   "class_features": [
     {
-      "slug": "ability-score",
+      "key": "ability-score",
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
     },
     {
-      "slug": "druidic",
+      "key": "druidic",
       "name": "Druidic",
       "desc": "You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages. You and others who know this language automatically spot such a message. Others spot the message's presence with a successful DC 15 Wisdom (Perception) check but can't decipher it without magic."
     },
     {
-      "slug": "wild-shape",
+      "key": "wild-shape",
       "name": "Wild Shape",
-      "desc": "Starting at 2nd level, you can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.\nYour druid level determines the beasts you can transform into, as shown in the Beast Shapes table. At 2nd level, for example, you can transform into any beast that has a challenge rating of 1/4 or lower that doesn't have a flying or swimming speed.\n**Beast Shapes (table)**\n| Level | Max. CR | Limitations | Example |\n|-|-|-|-|\n| 2nd | 1/4 | No flying or swimming speed | Wolf |\n| 4th | 1/2 | No flying speed | Crocodile |\n| 8th | 1 | | Giant eagle |\n\nYou can stay in a beast shape for a number of hours equal to half your druid level (rounded down). You then revert to your normal form unless you expend another use of this feature. You can revert to your normal form earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.\nWhile you are transformed, the following rules apply:\nYour game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature. If the creature has the same proficiency as you and the bonus in its stat block is higher than yours, use the creature's bonus instead of yours. If the creature has any legendary or lair actions, you can't use them.\nWhen you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and have only 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.\nYou can't cast spells, and your ability to speak or take any action that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a spell you've already cast, however, or prevent you from taking actions that are part of a spell, such as *call lightning*, that you've already cast.\nYou retain the benefit of any features from your class, race, or other source and can use them if the new form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense.\nYou choose whether your equipment falls to the ground in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the GM decides whether it is practical for the new form to wear a piece of equipment, based on the creature's shape and size. Your equipment doesn't change size or shape to match the new form, and any equipment that the new form can't wear must either fall to the ground or merge with it. Equipment that merges with the form has no effect until you leave the form."
+      "desc": "Starting at 2nd level, you can use your action to magically assume the shape of a beast that you have seen before. You can use this feature twice. You regain expended uses when you finish a short or long rest.\nYour druid level determines the beasts you can transform into, as shown in the Beast Shapes table. At 2nd level, for example, you can transform into any beast that has a challenge rating of 1/4 or lower that doesn't have a flying or swimming speed.\n**Beast Shapes (table)**\n| Level | Max. CR | Limitations | Example |\n|-|-|-|-|\n| 2nd | 1/4 | No flying or swimming speed | Wolf |\n| 4th | 1/2 | No flying speed | Crocodile |\n| 8th | 1 | | Giant eagle |\n\nYou can stay in a beast shape for a number of hours equal to half your druid level (rounded down). You then revert to your normal form unless you expend another use of this feature. You can revert to your normal form earlier by using a bonus action on your turn. You automatically revert if you fall unconscious, drop to 0 hit points, or die.\nWhile you are transformed, the following rules apply:\nYour game statistics are replaced by the statistics of the beast, but you retain your alignment, personality, and Intelligence, Wisdom, and Charisma scores. You also retain all of your skill and saving throw proficiencies, in addition to gaining those of the creature. If the creature has the same proficiency as you and the bonus in its stat block is higher than yours, use the creature's bonus instead of yours. If the creature has any legendary or lair actions, you can't use them.\nWhen you transform, you assume the beast's hit points and Hit Dice. When you revert to your normal form, you return to the number of hit points you had before you transformed. However, if you revert as a result of dropping to 0 hit points, any excess damage carries over to your normal form. For example, if you take 10 damage in animal form and have only 1 hit point left, you revert and take 9 damage. As long as the excess damage doesn't reduce your normal form to 0 hit points, you aren't knocked unconscious.\nYou can't cast spells, and your ability to speak or take any action that requires hands is limited to the capabilities of your beast form. Transforming doesn't break your concentration on a spell you've already cast, however, or prevent you from taking actions that are part of a spell, such as *call lightning*, that you've already cast.\nYou retain the benefit of any features from your class, race, or other location and can use them if the new form is physically capable of doing so. However, you can't use any of your special senses, such as darkvision, unless your new form also has that sense.\nYou choose whether your equipment falls to the ground in your space, merges into your new form, or is worn by it. Worn equipment functions as normal, but the GM decides whether it is practical for the new form to wear a piece of equipment, based on the creature's shape and size. Your equipment doesn't change size or shape to match the new form, and any equipment that the new form can't wear must either fall to the ground or merge with it. Equipment that merges with the form has no effect until you leave the form."
     },
     {
-      "slug": "druid-cirlce",
+      "key": "druid-cirlce",
       "name": "Druid Circle",
       "desc": "At 2nd level, you choose to identify with a circle of druids: the Circle of the Land or the Circle of the Moon, both detailed at the end of the class description. Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level."
     },
     {
-      "slug": "druid-timeless-body",
+      "key": "druid-timeless-body",
       "name": "Timeless Body",
       "desc": "Starting at 18th level, the primal magic that you wield causes you to age more slowly. For every 10 years that pass, your body ages only 1 year."
     },
     {
-      "slug": "beast-spells",
+      "key": "beast-spells",
       "name": "Beast Spells",
       "desc": "Beginning at 18th level, you can cast many of your druid spells in any shape you assume using Wild Shape. You can perform the somatic and verbal components of a druid spell while in a beast shape, but you aren't able to provide material components."
     },
     {
-      "slug": "archdruid",
+      "key": "archdruid",
       "name": "Archdruid",
       "desc": "At 20th level, you can use your Wild Shape an unlimited number of times.\nAdditionally, you can ignore the verbal and somatic components of your druid spells, as well as any material components that lack a cost and aren't consumed by a spell. You gain this benefit in both your normal shape and your beast shape from Wild Shape."
     }

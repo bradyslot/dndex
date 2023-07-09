@@ -12,22 +12,22 @@
   "class_equipment": {
     "choice_1": [
       [
-        { "api_path": "weapons", "open5e_slug": "shortsword" }
+        { "source": "open5e", "location": "weapons", "key": "shortsword" }
       ],
       [
-        { "api_path": "weapons", "open5e_category": "Simple" }
+        { "source": "open5e", "location": "weapons", "category": "Simple" }
       ]
     ],
     "choice_2": [
       [
-        { "source": "equipment_packs", "slug": "dungeoneers-pack" }
+        { "source": "data", "location": "equipment_packs", "key": "dungeoneers-pack" }
       ],
       [
-        { "source": "equipment_packs", "slug": "explorers-pack" }
+        { "source": "data", "location": "equipment_packs", "key": "explorers-pack" }
       ]
     ],
     "defaults": [
-      { "api_path": "weapons", "open5e_slug": "dart" }
+      { "source": "open5e", "location": "weapons", "key": "dart" }
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a shortsword or *(b)* any simple weapon\n- *(a)* a dungeoneer's pack or *(b)* an explorer’s pack\n- 10 darts"
   },
@@ -36,8 +36,8 @@
     {
       "level": 1,
       "features": [
-        { "slug": "unarmored-defence" },
-        { "slug": "martial-arts" }
+        { "key": "unarmored-defence" },
+        { "key": "martial-arts" }
       ],
       "martial_arts": 4,
       "ki_points": 0,
@@ -46,8 +46,8 @@
     {
       "level": 2,
       "features": [
-        { "slug": "ki" },
-        { "slug": "unarmored-movement" }
+        { "key": "ki" },
+        { "key": "unarmored-movement" }
       ],
       "martial_arts": 4,
       "ki_points": 2,
@@ -56,8 +56,8 @@
     {
       "level": 3,
       "features": [
-        { "slug": "monastic-traditions" },
-        { "slug": "deflect-missiles" }
+        { "key": "monastic-traditions" },
+        { "key": "deflect-missiles" }
       ],
       "martial_arts": 4,
       "ki_points": 3,
@@ -66,8 +66,8 @@
     {
       "level": 4,
       "features": [
-        { "slug": "ability-score" },
-        { "slug": "slow-fall" }
+        { "key": "ability-score" },
+        { "key": "slow-fall" }
       ],
       "martial_arts": 4,
       "ki_points": 4,
@@ -76,8 +76,8 @@
     {
       "level": 5,
       "features": [
-        { "slug": "monk-extra-attack" },
-        { "slug": "stunning-strike" }
+        { "key": "monk-extra-attack" },
+        { "key": "stunning-strike" }
       ],
       "martial_arts": 6,
       "ki_points": 5,
@@ -86,8 +86,8 @@
     {
       "level": 6,
       "features": [
-        { "slug": "ki-empowered-strikes" },
-        { "slug": "monastic-traditions", "name": "Monastic Tradition Feature" }
+        { "key": "ki-empowered-strikes" },
+        { "key": "monastic-traditions", "name": "Monastic Tradition Feature" }
       ],
       "martial_arts": 6,
       "ki_points": 6,
@@ -96,8 +96,8 @@
     {
       "level": 7,
       "features": [
-        { "slug": "monk-evasion" },
-        { "slug": "stillness-of-mind" }
+        { "key": "monk-evasion" },
+        { "key": "stillness-of-mind" }
       ],
       "martial_arts": 6,
       "ki_points": 7,
@@ -106,7 +106,7 @@
     {
       "level": 8,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "martial_arts": 6,
       "ki_points": 8,
@@ -115,7 +115,7 @@
     {
       "level": 9,
       "features": [
-        { "slug": "unarmored-movement", "name": "Unarmored Movement Improvement" }
+        { "key": "unarmored-movement", "name": "Unarmored Movement Improvement" }
       ],
       "martial_arts": 6,
       "ki_points": 9,
@@ -124,7 +124,7 @@
     {
       "level": 10,
       "features": [
-        { "slug": "purity-of-body" }
+        { "key": "purity-of-body" }
       ],
       "martial_arts": 6,
       "ki_points": 10,
@@ -133,7 +133,7 @@
     {
       "level": 11,
       "features": [
-        { "slug": "monastic-traditions", "name": "Monastic Tradition Feature" }
+        { "key": "monastic-traditions", "name": "Monastic Tradition Feature" }
       ],
       "martial_arts": 8,
       "ki_points": 11,
@@ -142,7 +142,7 @@
     {
       "level": 12,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "martial_arts": 8,
       "ki_points": 12,
@@ -151,7 +151,7 @@
     {
       "level": 13,
       "features": [
-        { "slug": "tongue-of-the-sun-and-moon" }
+        { "key": "tongue-of-the-sun-and-moon" }
       ],
       "martial_arts": 8,
       "ki_points": 13,
@@ -160,7 +160,7 @@
     {
       "level": 14,
       "features": [
-        { "slug": "diamond-soul" }
+        { "key": "diamond-soul" }
       ],
       "martial_arts": 8,
       "ki_points": 14,
@@ -169,7 +169,7 @@
     {
       "level": 15,
       "features": [
-        { "slug": "monk-timeless-body" }
+        { "key": "monk-timeless-body" }
       ],
       "martial_arts": 8,
       "ki_points": 15,
@@ -178,7 +178,7 @@
     {
       "level": 16,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "martial_arts": 8,
       "ki_points": 16,
@@ -187,7 +187,7 @@
     {
       "level": 17,
       "features": [
-        { "slug": "monastic-traditions", "name": "Monastic Tradition Feature" }
+        { "key": "monastic-traditions", "name": "Monastic Tradition Feature" }
       ],
       "martial_arts": 10,
       "ki_points": 17,
@@ -196,7 +196,7 @@
     {
       "level": 18,
       "features": [
-        { "slug": "empty-body" }
+        { "key": "empty-body" }
       ],
       "martial_arts": 10,
       "ki_points": 18,
@@ -205,7 +205,7 @@
     {
       "level": 19,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "martial_arts": 10,
       "ki_points": 19,
@@ -214,7 +214,7 @@
     {
       "level": 20,
       "features": [
-        { "slug": "perfect-self" }
+        { "key": "perfect-self" }
       ],
       "martial_arts": 10,
       "ki_points": 20,
@@ -223,102 +223,102 @@
   ],
   "class_features": [
     {
-      "slug": "ability-score",
+      "key": "ability-score",
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
     },
     {
-      "slug": "unarmored-defense",
+      "key": "unarmored-defense",
       "name": "Unarmored Defense",
       "desc": "Beginning at 1st level, while you are wearing no armor and not wielding a shield, your AC equals 10 + your Dexterity modifier + your Wisdom modifier."
     },
     {
-      "slug": "martial-arts",
+      "key": "martial-arts",
       "name": "Martial Arts",
       "desc": "At 1st level, your practice of martial arts gives you mastery of combat styles that use unarmed strikes and monk weapons, which are shortswords and any simple melee weapons that don't have the two- handed or heavy property.\nYou gain the following benefits while you are unarmed or wielding only monk weapons and you aren't wearing armor or wielding a shield:\nYou can use Dexterity instead of Strength for the attack and damage rolls of your unarmed strikes and monk weapons.\nYou can roll a d4 in place of the normal damage of your unarmed strike or monk weapon. This die changes as you gain monk levels, as shown in the Martial Arts column of the Monk table.\nWhen you use the Attack action with an unarmed strike or a monk weapon on your turn, you can make one unarmed strike as a bonus action. For example, if you take the Attack action and attack with a quarterstaff, you can also make an unarmed strike as a bonus action, assuming you haven't already taken a bonus action this turn.\nCertain monasteries use specialized forms of the monk weapons. For example, you might use a club that is two lengths of wood connected by a short chain (called a nunchaku) or a sickle with a shorter, straighter blade (called a kama). Whatever name you use for a monk weapon, you can use the game statistics provided for the weapon."
     },
     {
-      "slug": "ki",
+      "key": "ki",
       "name": "Ki",
       "desc": "Starting at 2nd level, your training allows you to harness the mystic energy of ki. Your access to this energy is represented by a number of ki points. Your monk level determines the number of points you have, as shown in the Ki Points column of the Monk table.\nYou can spend these points to fuel various ki features. You start knowing three such features: Flurry of Blows, Patient Defense, and Step of the Wind. You learn more ki features as you gain levels in this class.\nWhen you spend a ki point, it is unavailable until you finish a short or long rest, at the end of which you draw all of your expended ki back into yourself. You must spend at least 30 minutes of the rest meditating to regain your ki points.\nSome of your ki features require your target to make a saving throw to resist the feature's effects. The saving throw DC is calculated as follows:\n**Ki save DC** = 8 + your proficiency bonus + your Wisdom modifier\n## Flurry of Blows\nImmediately after you take the Attack action on your turn, you can spend 1 ki point to make two unarmed strikes as a bonus action.\n## Patient Defense\nYou can spend 1 ki point to take the Dodge action as a bonus action on your turn.\n## Step of the Wind\nYou can spend 1 ki point to take the Disengage or Dash action as a bonus action on your turn, and your jump distance is doubled for the turn."
     },
     {
-      "slug": "unarmored-movement",
+      "key": "unarmored-movement",
       "name": "Unarmored Movement",
       "desc": "Starting at 2nd level, your speed increases by 10 feet while you are not wearing armor or wielding a shield. This bonus increases when you reach certain monk levels, as shown in the Monk table.\nAt 9th level, you gain the ability to move along vertical surfaces and across liquids on your turn without falling during the move."
     },
     {
-      "slug": "monastic-tradition",
+      "key": "monastic-tradition",
       "name": "Monastic Tradition",
       "desc": "When you reach 3rd level, you commit yourself to a monastic tradition: the Way of the Open Hand, the Way of Shadow, or the Way of the Four Elements, all detailed at the end of the class description. Your tradition grants you features at 3rd level and again at 6th, 11th, and 17th level."
     },
     {
-      "slug": "deflect-missiles",
+      "key": "deflect-missiles",
       "name": "Deflect Missiles",
       "desc": "Starting at 3rd level, you can use your reaction to deflect or catch the missile when you are hit by a ranged weapon attack. When you do so, the damage you take from the attack is reduced by 1d10 + your Dexterity modifier + your monk level.\nIf you reduce the damage to 0, you can catch the missile if it is small enough for you to hold in one hand and you have at least one hand free. If you catch a missile in this way, you can spend 1 ki point to make a ranged attack with the weapon or piece of ammunition you just caught, as part of the same reaction. You make this attack with proficiency, regardless of your weapon proficiencies, and the missile counts as a monk weapon for the attack, which has a normal range of 20 feet and a long range of 60 feet."
     },
     {
-      "slug": "slow-fall",
+      "key": "slow-fall",
       "name": "Slow Fall",
       "desc": "Beginning at 4th level, you can use your reaction when you fall to reduce any falling damage you take by an amount equal to five times your monk level."
     },
     {
-      "slug": "monk-extra-attack",
+      "key": "monk-extra-attack",
       "name": "Extra Attack",
       "desc": "Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
     },
     {
-      "slug": "stunning-strike",
+      "key": "stunning-strike",
       "name": "Stunning Strike",
       "desc": "Starting at 5th level, you can interfere with the flow of ki in an opponent's body. When you hit another creature with a melee weapon attack, you can spend 1 ki point to attempt a stunning strike. The target must succeed on a Constitution saving throw or be stunned until the end of your next turn."
     },
     {
-      "slug": "ki-empowered-strikes",
+      "key": "ki-empowered-strikes",
       "name": "Ki Empowered Strikes",
       "desc": "Starting at 6th level, your unarmed strikes count as magical for the purpose of overcoming resistance and immunity to nonmagical attacks and damage."
     },
     {
-      "slug": "monk-evasion",
+      "key": "monk-evasion",
       "name": "Evasion",
       "desc": "At 7th level, your instinctive agility lets you dodge out of the way of certain area effects, such as a blue dragon's lightning breath or a *fireball* spell. When you are subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
     },
     {
-      "slug": "stillness-of-mind",
+      "key": "stillness-of-mind",
       "name": "Stillness of Mind",
       "desc": "Starting at 7th level, you can use your action to end one effect on yourself that is causing you to be charmed or frightened."
     },
     {
-      "slug": "purity-of-body",
+      "key": "purity-of-body",
       "name": "Purity of Body",
       "desc": "At 10th level, your mastery of the ki flowing through you makes you immune to disease and poison."
     },
     {
-      "slug": "tongue-of-the-sun-and-moon",
+      "key": "tongue-of-the-sun-and-moon",
       "name": "Tongue of the Sun and Moon",
       "desc": "Starting at 13th level, you learn to touch the ki of other minds so that you understand all spoken languages. Moreover, any creature that can understand a language can understand what you say."
     },
     {
-      "slug": "diamond-soul",
+      "key": "diamond-soul",
       "name": "Diamond Soul",
       "desc": "Beginning at 14th level, your mastery of ki grants you proficiency in all saving throws.\nAdditionally, whenever you make a saving throw and fail, you can spend 1 ki point to reroll it and take the second result."
     },
     {
-      "slug": "monk-timeless-body",
+      "key": "monk-timeless-body",
       "name": "Timeless Body",
       "desc": "At 15th level, your ki sustains you so that you suffer none of the frailty of old age, and you can't be aged magically. You can still die of old age, however. In addition, you no longer need food or water."
     },
     {
-      "slug": "empty-body",
+      "key": "empty-body",
       "name": "Empty Body",
       "desc": "Beginning at 18th level, you can use your action to spend 4 ki points to become invisible for 1 minute. During that time, you also have resistance to all damage but force damage.\nAdditionally, you can spend 8 ki points to cast the *astral projection* spell, without needing material components. When you do so, you can't take any other creatures with you."
     },
     {
-      "slug": "perfect-self",
+      "key": "perfect-self",
       "name": "Perfect Self",
       "desc": "At 20th level, when you roll for initiative and have no ki points remaining, you regain 4 ki points."
     },
     {
-      "slug": "monastic-tradition",
+      "key": "monastic-tradition",
       "name": "Monastic Traditions",
       "desc": "Three traditions of monastic pursuit are common in the monasteries scattered across the multiverse. Most monasteries practice one tradition exclusively, but a few honor the three traditions and instruct each monk according to his or her aptitude and interest. All three traditions rely on the same basic techniques, diverging as the student grows more adept. Thus, a monk need choose a tradition only upon reaching 3rd level."
     }

@@ -12,43 +12,43 @@
   "class_equipment": {
     "choice_1": [
       [
-        { "api_path": "weapons", "open5e_slug": "mace" }
+        { "source": "open5e", "location": "weapons", "key": "mace" }
       ],
       [
-        { "api_path": "weapons", "open5e_slug": "warhammer" }
+        { "source": "open5e", "location": "weapons", "key": "warhammer" }
       ]
     ],
     "choice_2": [
       [
-        { "api_path": "weapons", "open5e_slug": "crossbow-light" },
+        { "source": "open5e", "location": "weapons", "key": "crossbow-light" },
         { "name": "Bolts", "qty": 20 }
       ],
       [
-        { "api_path": "weapons", "open5e_category": "Simple" }
+        { "source": "open5e", "location": "weapons", "category": "Simple" }
       ]
     ],
     "choice_3": [
       [
-        { "api_path": "armor", "open5e_slug": "scale-mail" }
+        { "source": "open5e", "location": "armor", "key": "scale-mail" }
       ],
       [
-        { "api_path": "armor", "open5e_slug": "leather" }
+        { "source": "open5e", "location": "armor", "key": "leather" }
       ],
       [
-        { "api_path": "armor", "open5e_slug": "chain-mail" }
+        { "source": "open5e", "location": "armor", "key": "chain-mail" }
       ]
     ],
     "choice_4": [
       [
-        { "source": "equipment_packs", "slug": "priests-pack" }
+        { "source": "data", "location": "equipment_packs", "key": "priests-pack" }
       ],
       [
-        { "source": "equipment_packs", "slug": "explorers-pack" }
+        { "source": "data", "location": "equipment_packs", "key": "explorers-pack" }
       ]
     ],
     "defaults": [
-      { "api_path": "armor", "open5e_slug": "shield" },
-      { "source": "adventuring_gear", "slug": "holy-symbol" }
+      { "source": "open5e", "location": "armor", "key": "shield" },
+      { "source": "data", "location": "adventuring_gear", "key": "holy-symbol" }
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a mace or *(b)* a warhammer (if proficient)\n- *(a)* scale mail, *(b)* leather armor, or (c) chain mail (if proficient)\n- *(a)* a light crossbow and 20 bolts or *(b)* any simple weapon\n- *(a)* a priest's pack or *(b)* an explorer's pack\nA shield and a holy symbol"
   },
@@ -60,8 +60,8 @@
     {
       "level": 1,
       "features": [
-        { "slug": "spellcasting" },
-        { "slug": "divine-domain" }
+        { "key": "spellcasting" },
+        { "key": "divine-domain" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -69,8 +69,8 @@
     {
       "level": 2,
       "features": [
-        { "slug": "channel-divinity", "name": "Channel Divinity (1/rest)" },
-        { "slug": "divine-domain", "name": "Divine Domain Feature" }
+        { "key": "channel-divinity", "name": "Channel Divinity (1/rest)" },
+        { "key": "divine-domain", "name": "Divine Domain Feature" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
@@ -84,7 +84,7 @@
     {
       "level": 4,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
@@ -92,7 +92,7 @@
     {
       "level": 5,
       "features": [
-        { "slug": "destroy-undead", "name": "Destroy Undead (CR 1/2)" }
+        { "key": "destroy-undead", "name": "Destroy Undead (CR 1/2)" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
@@ -100,8 +100,8 @@
     {
       "level": 6,
       "features": [
-        { "slug": "channel-divinity", "name": "Channel Divinity (2/rest)" },
-        { "slug": "divine-domain", "name": "Divine Domain Feature" }
+        { "key": "channel-divinity", "name": "Channel Divinity (2/rest)" },
+        { "key": "divine-domain", "name": "Divine Domain Feature" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
@@ -115,9 +115,9 @@
     {
       "level": 8,
       "features": [
-        { "slug": "ability-score" },
-        { "slug": "destroy-undead", "name": "Destroy Undead (CR 1)" },
-        { "slug": "divine-domain", "name": "Divine Domain Feature" }
+        { "key": "ability-score" },
+        { "key": "destroy-undead", "name": "Destroy Undead (CR 1)" },
+        { "key": "divine-domain", "name": "Divine Domain Feature" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
@@ -131,7 +131,7 @@
     {
       "level": 10,
       "features": [
-        { "slug": "devine-intervention" }
+        { "key": "devine-intervention" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
@@ -139,7 +139,7 @@
     {
       "level": 11,
       "features": [
-        { "slug": "destroy-undead", "name": "Destroy Undead (CR 2)" }
+        { "key": "destroy-undead", "name": "Destroy Undead (CR 2)" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
@@ -147,7 +147,7 @@
     {
       "level": 12,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
@@ -161,7 +161,7 @@
     {
       "level": 14,
       "features": [
-        { "slug": "destroy-undead", "name": "Destroy Undead (CR 3)" }
+        { "key": "destroy-undead", "name": "Destroy Undead (CR 3)" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
@@ -175,7 +175,7 @@
     {
       "level": 16,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
@@ -183,8 +183,8 @@
     {
       "level": 17,
       "features": [
-        { "slug": "destroy-undead", "name": "Destroy Undead (CR 4)" },
-        { "slug": "divine-domain", "name": "Divine Domain Feature" }
+        { "key": "destroy-undead", "name": "Destroy Undead (CR 4)" },
+        { "key": "divine-domain", "name": "Divine Domain Feature" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 1 ]
@@ -192,7 +192,7 @@
     {
       "level": 18,
       "features": [
-        { "slug": "channel-divinity", "name": "Channel Divinity (3/rest)" }
+        { "key": "channel-divinity", "name": "Channel Divinity (3/rest)" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 1, 1, 1, 1 ]
@@ -200,7 +200,7 @@
     {
       "level": 19,
       "features": [
-        { "slug": "ability-score" }
+        { "key": "ability-score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 1, 1, 1 ]
@@ -208,7 +208,7 @@
     {
       "level": 20,
       "features": [
-        { "slug": "divine-intervention" }
+        { "key": "divine-intervention" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 2, 1, 1 ]
@@ -216,27 +216,27 @@
   ],
   "class_features": [
     {
-      "slug": "ability-score",
+      "key": "ability-score",
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
     },
     {
-      "slug": "divine-domain",
+      "key": "divine-domain",
       "name": "Devine Domain",
       "desc": "Choose one domain related to your deity: Knowledge, Life, Light, Nature, Tempest, Trickery, or War. Each domain is detailed at the end of the class description, and each one provides examples of gods associated with it. Your choice grants you domain spells and other features when you choose it at 1st level. It also grants you additional ways to use Channel Divinity when you gain that feature at 2nd level, and additional benefits at 6th, 8th, and 17th levels.\n## Domain Spells Each domain has a list of spells that you gain at the cleric levels noted in the domain description. Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day.\nIf you have a domain spell that doesn't appear on the cleric spell list, the spell is nonetheless a cleric spell for you."
     },
     {
-      "slug": "channel-divinity",
+      "key": "channel-divinity",
       "name": "Channel Divinity",
       "desc": "At 2nd level, you gain the ability to channel divine energy directly from your deity, using that energy to fuel magical effects. You start with two such effects: Turn Undead and an effect determined by your domain. Some domains grant you additional effects as you advance in levels, as noted in the domain description.\nWhen you use your Channel Divinity, you choose which effect to create. You must then finish a short or long rest to use your Channel Divinity again.\nSome Channel Divinity effects require saving throws. When you use such an effect from this class, the DC equals your cleric spell save DC.\nBeginning at 6th level, you can use your Channel\nDivinity twice between rests, and beginning at 18th level, you can use it three times between rests. When you finish a short or long rest, you regain your expended uses.\n## Channel Divinity: Turn Undead As an action, you present your holy symbol and speak a prayer censuring the undead. Each undead that can see or hear you within 30 feet of you must make a Wisdom saving throw. If the creature fails its saving throw, it is turned for 1 minute or until it takes any damage.\nA turned creature must spend its turns trying to move as far away from you as it can, and it can't willingly move to a space within 30 feet of you. It also can't take reactions. For its action, it can use only the Dash action or try to escape from an effect that prevents it from moving. If there's nowhere to move, the creature can use the Dodge action."
     },
     {
-      "slug": "destroy-undead",
+      "key": "destroy-undead",
       "name": "Destroy Undead",
       "desc": "Starting at 5th level, when an undead fails its saving throw against your Turn Undead feature, the creature is instantly destroyed if its challenge rating is at or below a certain threshold, as shown in the Destroy Undead table.\n**Destroy Undeada (table)**\n| Cleric Level | Destroys Undead of CR… |\n|-|-|\n| 5th | 1/2 or lower |\n| 8th | 1 or lower |\n| 11th | 2 or lower |\n| 14th | 3 or lower |\n| 17th | 4 or lower |\n"
     },
     {
-      "slug": "divine-intervention",
+      "key": "divine-intervention",
       "name": "Divine Intervention",
       "desc": "Beginning at 10th level, you can call on your deity to intervene on your behalf when your need is great.\nImploring your deity's aid requires you to use your action. Describe the assistance you seek, and roll percentile dice. If you roll a number equal to or lower than your cleric level, your deity intervenes. The GM chooses the nature of the intervention; the effect of any cleric spell or cleric domain spell would be appropriate.\nIf your deity intervenes, you can't use this feature again for 7 days. Otherwise, you can use it again after you finish a long rest.\nAt 20th level, your call for intervention succeeds automatically, no roll required. "
     }
