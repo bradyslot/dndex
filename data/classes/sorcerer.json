@@ -234,5 +234,47 @@
       "spells_known": 15,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 2, 1, 1 ]
     }
+  ],
+  "class_features": [
+    {
+      "slug": "ability-score",
+      "name": "Ability Score Improvement",
+      "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+    },
+    {
+      "slug": "aura-of-protection",
+      "name": "Aura of Protection",
+      "desc": "Starting at 6th level, whenever you or a friendly creature within 10 feet of you must make a saving throw, the creature gains a bonus to the saving throw equal to your Charisma modifier (with a minimum bonus of +1). You must be conscious to grant this bonus.\nAt 18th level, the range of this aura increases to 30 feet."
+    },
+    {
+      "slug": "aura-of-courage",
+      "name": "Aura of Courage",
+      "desc": "Starting at 10th level, you and friendly creatures within 10 feet of you can't be frightened while you are conscious.\nAt 18th level, the range of this aura increases to 30 feet."
+    },
+    {
+      "slug": "cleansing-touch",
+      "name": "Cleansing Touch",
+      "desc": "Beginning at 14th level, you can use your action to end one spell on yourself or on one willing creature that you touch.\nYou can use this feature a number of times equal to your Charisma modifier (a minimum of once). You regain expended uses when you finish a long rest."
+    },
+    {
+      "slug": "sorcerous-origin",
+      "name": "Sorcerous Origin",
+      "desc": "Choose a sorcerous origin, which describes the source of your innate magical power: Draconic Bloodline or Wild Magic, both detailed at the end of the class description.\nYour choice grants you features when you choose it at 1st level and again at 6th, 14th, and 18th level.\nDifferent sorcerers claim different origins for their innate magic. Although many variations exist, most of these origins fall into two categories: a draconic bloodline and wild magic. "
+    },
+    {
+      "slug": "font-of-magic",
+      "name": "Font of Magic",
+      "desc": "At 2nd level, you tap into a deep wellspring of magic within yourself. This wellspring is represented by sorcery points, which allow you to create a variety of magical effects.\n## Sorcery Points\nYou have 2 sorcery points, and you gain more as you reach higher levels, as shown in the Sorcery Points column of the Sorcerer table. You can never have more sorcery points than shown on the table for your level. You regain all spent sorcery points when you finish a long rest.\n## Flexible Casting\nYou can use your sorcery points to gain additional spell slots, or sacrifice spell slots to gain additional sorcery points. You learn other ways to use your sorcery points as you reach higher levels.\n**Creating Spell Slots.** You can transform unexpended sorcery points into one spell slot as a bonus action on your turn. The Creating Spell Slots table shows the cost of creating a spell slot of a given level. You can create spell slots no higher in level than 5th.\nAny spell slot you create with this feature vanishes when you finish a long rest.\n**Creating Spell Slots (table)**\n\n|Spell Slot Level | Sorcery Point Cost |\n| - | - |\n| 1st | 2 |\n| 2nd | 3 |\n| 3rd | 5 |\n| 4th | 6 |\n| 5th | 7 |\n\n**Converting a Spell Slot to Sorcery Points.** As a bonus action on your turn, you can expend one spell slot and gain a number of sorcery points equal to the slot's level."
+    },
+    {
+      "slug": "metamagic",
+      "name": "Metamagic",
+      "desc": "At 3rd level, you gain the ability to twist your spells to suit your needs. You gain two of the following Metamagic options of your choice. You gain another one at 10th and 17th level.\nYou can use only one Metamagic option on a spell when you cast it, unless otherwise noted.\n## Careful Spell\nWhen you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, you spend 1 sorcery point and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell.\n## Distant Spell\nWhen you cast a spell that has a range of 5 feet or greater, you can spend 1 sorcery point to double the range of the spell.\nWhen you cast a spell that has a range of touch, you can spend 1 sorcery point to make the range of the spell 30 feet.\n## Empowered Spell\nWhen you roll damage for a spell, you can spend 1 sorcery point to reroll a number of the damage dice up to your Charisma modifier (minimum of one). You must use the new rolls.\nYou can use Empowered Spell even if you have already used a different Metamagic option during the casting of the spell.\n## Extended Spell\nWhen you cast a spell that has a duration of 1 minute or longer, you can spend 1 sorcery point to double its duration, to a maximum duration of 24 hours.\n## Heightened Spell\nWhen you cast a spell that forces a creature to make a saving throw to resist its effects, you can spend 3 sorcery points to give one target of the spell disadvantage on its first saving throw made against the spell.\n## Quickened Spell\nWhen you cast a spell that has a casting time of 1 action, you can spend 2 sorcery points to change the casting time to 1 bonus action for this casting.\n## Subtle Spell\nWhen you cast a spell, you can spend 1 sorcery point to cast it without any somatic or verbal components.\n## Twinned Spell\nWhen you cast a spell that targets only one creature and doesn't have a range of self, you can spend a number of sorcery points equal to the spell's level to target a second creature in range with the same spell (1 sorcery point if the spell is a cantrip).\nTo be eligible, a spell must be incapable of targeting more than one creature at the spell's current level. For example, *magic missile* and *scorching ray* aren't eligible, but *ray of frost* and *chromatic orb* are."
+    },
+    {
+      "slug": "sorceous-restoration",
+      "name": "Sorceous Restoration",
+      "desc": "At 20th level, you regain 4 expended sorcery points whenever you finish a short rest."
+    }
   ]
 }
