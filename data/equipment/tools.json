@@ -11,119 +11,119 @@
           {
             "key": "alchemists-supplies",
             "name": "Alchemist's Supplies",
-            "cost": 50,
+            "value": 50,
             "denom": "gp",
             "weight": 8
           },
           {
             "key": "brewers-supplies",
             "name": "Brewer's Supplies",
-            "cost": 20,
+            "value": 20,
             "denom": "gp",
             "weight": 9
           },
           {
             "key": "calligraphers-supplies",
             "name": "Calligrapher's Supplies",
-            "cost": 10,
+            "value": 10,
             "denom": "gp",
             "weight": 5
           },
           {
             "key": "carpenters-tools",
             "name": "Carpenter's Tools",
-            "cost": 8,
+            "value": 8,
             "denom": "gp",
             "weight": 6
           },
           {
             "key": "cartographers-tools",
             "name": "Cartographer's Tools",
-            "cost": 15,
+            "value": 15,
             "denom": "gp",
             "weight": 6
           },
           {
             "key": "cobblers-tools",
             "name": "Cobbler's Tools",
-            "cost": 5,
+            "value": 5,
             "denom": "gp",
             "weight": 5
           },
           {
             "key": "cooks-utensils",
             "name": "Cook's Utensils",
-            "cost": 1,
+            "value": 1,
             "denom": "gp",
             "weight": 8
           },
           {
             "key": "glassblowers-tools",
             "name": "Glassblower's Tools",
-            "cost": 30,
+            "value": 30,
             "denom": "gp",
             "weight": 5
           },
           {
             "key": "jewelers-tools",
             "name": "Jeweler's Tools",
-            "cost": 25,
+            "value": 25,
             "denom": "gp",
             "weight": 2
           },
           {
             "key": "leatherworkers-tools",
             "name": "Leatherworker's Tools",
-            "cost": 5,
+            "value": 5,
             "denom": "gp",
             "weight": 5
           },
           {
             "key": "masons-tools",
             "name": "Mason's Tools",
-            "cost": 10,
+            "value": 10,
             "denom": "gp",
             "weight": 8
           },
           {
             "key": "painters-supplies",
             "name": "Painter's Supplies",
-            "cost": 10,
+            "value": 10,
             "denom": "gp",
             "weight": 5
           },
           {
             "key": "potters-tools",
             "name": "Potter's Tools",
-            "cost": 10,
+            "value": 10,
             "denom": "gp",
             "weight": 3
           },
           {
             "key": "smiths-tools",
             "name": "Smith's Tools",
-            "cost": 20,
+            "value": 20,
             "denom": "gp",
             "weight": 8
           },
           {
             "key": "tinkers-tools",
             "name": "Tinker's Tools",
-            "cost": 50,
+            "value": 50,
             "denom": "gp",
             "weight": 10
           },
           {
             "key": "weavers-tools",
             "name": "Weaver's Tools",
-            "cost": 1,
+            "value": 1,
             "denom": "gp",
             "weight": 5
           },
           {
             "key": "woodcarvers-tools",
             "name": "Woodcarver's Tools",
-            "cost": 1,
+            "value": 1,
             "denom": "gp",
             "weight": 5
           }
@@ -137,14 +137,14 @@
           {
             "key": "dice-set",
             "name": "Dice Set",
-            "cost": 1,
+            "value": 1,
             "denom": "sp",
             "weight": 0
           },
           {
             "key": "playing-card-set",
             "name": "Playing Card Set",
-            "cost": 5,
+            "value": 5,
             "denom": "sp",
             "weight": 0
           }
@@ -158,70 +158,70 @@
           {
             "key": "bagpipes",
             "name": "Bagpipes",
-            "cost": 30,
+            "value": 30,
             "denom": "gp",
             "weight": 6
           },
           {
             "key": "drum",
             "name": "Drum",
-            "cost": 6,
+            "value": 6,
             "denom": "gp",
             "weight": 3
           },
           {
             "key": "dulcimer",
             "name": "Dulcimer",
-            "cost": 25,
+            "value": 25,
             "denom": "gp",
             "weight": 10
           },
           {
             "key": "flute",
             "name": "Flute",
-            "cost": 2,
+            "value": 2,
             "denom": "gp",
             "weight": 1
           },
           {
             "key": "lute",
             "name": "Lute",
-            "cost": 35,
+            "value": 35,
             "denom": "gp",
             "weight": 2
           },
           {
             "key": "lyre",
             "name": "Lyre",
-            "cost": 30,
+            "value": 30,
             "denom": "gp",
             "weight": 2
           },
           {
             "key": "horn",
             "name": "Horn",
-            "cost": 3,
+            "value": 3,
             "denom": "gp",
             "weight": 2
           },
           {
             "key": "pan-flute",
             "name": "Pan Flute",
-            "cost": 12,
+            "value": 12,
             "denom": "gp",
             "weight": 2
           },
           {
             "key": "shawm",
             "name": "Shawm",
-            "cost": 2,
+            "value": 2,
             "denom": "gp",
             "weight": 1
           },
           {
             "key": "viol",
             "name": "Viol",
-            "cost": 30,
+            "value": 30,
             "denom": "gp",
             "weight": 1
           }
@@ -232,7 +232,7 @@
       {
         "key": "disguise-kit",
         "name": "Disguise Kit",
-        "cost": 25,
+        "value": 25,
         "denom": "gp",
         "weight": 3,
         "desc": "This pouch of cosmetics, hair dye, and small props lets you create disguises that change your physical appearance. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to create a visual disguise."
@@ -240,7 +240,7 @@
       {
         "key": "forgery-kit",
         "name": "Forgery Kit",
-        "cost": 15,
+        "value": 15,
         "denom": "gp",
         "weight": 5,
         "desc": "This small box contains a variety of papers and parchments, pens and inks, seals and sealing wax, gold and silver leaf, and other supplies necessary to create convincing forgeries of physical documents. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to create a physical forgery of a document."
@@ -248,7 +248,7 @@
       {
         "key": "herbalism-kit",
         "name": "Herbalism Kit",
-        "cost": 5,
+        "value": 5,
         "denom": "gp",
         "weight": 3,
         "desc": "This kit contains a variety of instruments such as clippers, mortar and pestle, and pouches and vials used by herbalists to create remedies and potions. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to identify or apply herbs. Also, proficiency with this kit is required to create antitoxin and potions of healing."
@@ -256,7 +256,7 @@
       {
         "key": "navigator-tools",
         "name": "Navigator's Tools",
-        "cost": 25,
+        "value": 25,
         "denom": "25",
         "weight": 2,
         "desc": "This set of instruments is used for navigation at sea. Proficiency with navigator's tools lets you chart a ship's course and follow navigation charts. In addition, these tools allow you to add your proficiency bonus to any ability check you make to avoid getting lost at sea."
@@ -264,7 +264,7 @@
       {
         "key": "poisoner-kit",
         "name": "Poisoner's Kit",
-        "cost": 50,
+        "value": 50,
         "denom": "gp",
         "weight": 2,
         "desc": "A poisoner's kit includes the vials, chemicals, and other equipment necessary for the creation of poisons. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to craft or use poisons."
@@ -272,7 +272,7 @@
       {
         "key": "thieves-tools",
         "name": "Thieves' Tools",
-        "cost": 25,
+        "value": 25,
         "denom": "gp",
         "weight": 1,
         "desc": "This set of tools includes a small file, a set of lock picks, a small mirror mounted on a metal handle, a set of narrow-bladed scissors, and a pair of pliers. Proficiency with these tools lets you add your proficiency bonus to any ability checks you make to disarm traps or open locks."
