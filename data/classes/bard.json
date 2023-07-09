@@ -5,6 +5,21 @@
     "desc": "**Hit Dice:** 1d8 per bard level\n**Hit Points at 1st Level:** 8 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d8 (or 5) + your Constitution modifier per bard level after 1st"
   },
   "class_proficiencies": {
+    "armor": [
+      { "category": "Light" }
+    ],
+    "weapons": [
+      { "category": "Simple" },
+      { "key": "crowsbow-hand" },
+      { "key": "longsword" },
+      { "key": "rapier" },
+      { "key": "shortsword" }
+    ],
+    "tools": [
+      [
+        { "key": "musical-instrument" }
+      ]
+    ],
     "saving_throws": [ "dexterity", "charisma" ],
     "skills": { "choices": 3, "options": [] },
     "desc": "**Armor:** Light armor\n**Weapons:** Simple weapons, hand crossbows, longswords, rapiers, shortswords\n**Tools:** Three musical instruments of your choice\n**Saving Throws:** Dexterity, Charisma\n**Skills:** Choose any three"

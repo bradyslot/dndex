@@ -5,6 +5,28 @@
     "desc": "**Hit Dice:** 1d8 per druid level\n**Hit Points at 1st Level:** 8 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d8 (or 5) + your Constitution modifier per druid level after 1st"
   },
   "class_proficiencies": {
+    "armor": [
+      { "category": "Light" },
+      { "category": "Medium" },
+      { "category": "Shield" }
+    ],
+    "weapons": [
+      { "key": "club" },
+      { "key": "dagger" },
+      { "key": "dart" },
+      { "key": "javelin" },
+      { "key": "mace" },
+      { "key": "quarterstaff" },
+      { "key": "scimitar" },
+      { "key": "sickle" },
+      { "key": "sling" },
+      { "key": "spear" }
+    ],
+    "tools": [
+      [
+        { "key": "herbalism-kit" }
+      ]
+    ],
     "saving_throws": [ "intelligence", "wisdom" ],
     "skills": { "choices": 2, "options": [ "arcana", "animal-handling", "insight", "medicine", "nature", "perception", "religion", "survival" ] },
     "desc": "**Armor:** Light armor, medium armor, shields (druids will not wear armor or use shields made of metal)\n**Weapons:** Clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears\n**Tools:** Herbalism kit\n**Saving Throws:** Intelligence, Wisdom\n**Skills:** Choose two from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, and Survival"

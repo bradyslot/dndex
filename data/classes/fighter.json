@@ -5,6 +5,14 @@
     "desc": "**Hit Dice:** 1d10 per Fighter level\n**Hit Points at 1st Level:** 10 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d10 (or 6) + your Constitution modifier per fighter level after 1st"
   },
   "class_proficiencies": {
+    "armor": [
+      { "category": "Armor" }
+    ],
+    "weapons": [
+      { "category": "Simple" },
+      { "category": "Martial" }
+    ],
+    "tools": [],
     "saving_throws": [ "strength", "constitution" ],
     "skills": { "choices": 2, "options": [ "acrobatics", "animal-handling", "athletics", "history", "insight", "intimidation", "perception", "survival" ] },
     "desc": "**Armor:** All armor, shields\n**Weapons:** Simple weapons, martial weapons\n**Tools:** None\n**Saving Throws:** Strength, Constitution\n**Skills:** Choose two skills from Acrobatics, Animal, Handling, Athletics, History, Insight, Intimidation, Perception, and Survival"

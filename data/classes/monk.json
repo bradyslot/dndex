@@ -5,6 +5,19 @@
     "desc": "**Hit Dice:** 1d8 per Monk level\n**Hit Points at 1st Level:** 8 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d8 (or 5) + your Constitution modifier per monk level after 1st"
   },
   "class_proficiencies": {
+    "armor": [],
+    "weapons": [
+      { "category": "Simple" },
+      { "key": "shortsword" }
+    ],
+    "tools": [
+      [
+        { "key": "artisans-tools" }
+      ],
+      [
+        { "key": "musical-instrument" }
+      ]
+    ],
     "saving_throws": [ "strength", "dexterity" ],
     "skills": { "choices": 2, "options": [ "acrobatics", "athletics", "history", "insight", "religion", "stealth" ] },
     "desc": "**Armor:** None\n**Weapons:** Simple weapons, shortswords\n**Tools:** Choose one type of artisan's tools or one musical instrument\n**Saving Throws:** Strength, Dexterity\n**Skills:** Choose two from Acrobatics, Athletics, History, Insight, Religion, and Stealth"
@@ -26,6 +39,8 @@
         { "source": "data", "location": "equipment_packs", "key": "explorers-pack" }
       ]
     ],
+    "choice_3": [],
+    "choice_4": [],
     "defaults": [
       { "source": "open5e", "location": "weapons", "key": "dart" }
     ],

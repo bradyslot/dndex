@@ -5,6 +5,15 @@
     "desc": "**Hit Dice:** 1d6 per Sorcerer level\n**Hit Points at 1st Level:** 6 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d6 (or 4) + your Constitution modifier per sorcerer level after 1st"
   },
   "class_proficiencies": {
+    "armor": [],
+    "weapons": [
+      { "key": "dagger" },
+      { "key": "dart" },
+      { "key": "sling" },
+      { "key": "quarterstaff" },
+      { "key": "crossbow-light" }
+    ],
+    "tools": [],
     "saving_throws": [ "constitution", "charisma" ],
     "skills": { "choices": 2, "options": [ "arcana", "deception", "insight", "intimidation", "persuasion", "religion" ] },
     "desc": "**Armor:** None\n**Weapons:** Daggers, darts, slings, quarterstaffs, light crossbows\n**Tools:** None\n**Saving Throws:** Constitution, Charisma\n**Skills:** Choose two from Arcana, Deception, Insight, Intimidation, Persuasion, and Religion"

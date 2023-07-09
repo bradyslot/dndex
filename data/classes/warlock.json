@@ -5,6 +5,13 @@
     "desc": "**Hit Dice:** 1d8 per Warlock level\n**Hit Points at 1st Level:*8 8 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d8 (or 5) + your Constitution modifier per warlock level after 1st"
   },
   "class_proficiencies": {
+    "armor": [
+      { "category": "Light" }
+    ],
+    "weapons": [
+      { "category": "Simple" }
+    ],
+    "tools": [],
     "saving_throws": [ "wisdom", "charisma" ],
     "skills": { "choices": 2, "options": [ "arcana", "deception", "history", "intimidation", "investigation", "nature", "religion" ] },
     "desc": "**Armor:** Light armor\n**Weapons:** Simple weapons\n**Tools:** None\n**Saving Throws:** Wisdom, Charisma\n**Skills:** Choose two skills from Arcana, Deception, History, Intimidation, Investigation, Nature, and Religion"

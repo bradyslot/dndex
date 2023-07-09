@@ -5,6 +5,21 @@
     "desc": "**Hit Dice:** 1d8 per Rogue level\n**Hit Points at 1st Level:** 8 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d8 (or 5) + your Constitution modifier per rogue level after 1st"
   },
   "class_proficiencies": {
+    "armor": [
+      { "category": "Light" }
+    ],
+    "weapons": [
+      { "category": "Simple" },
+      { "key": "crowsbow-hand" },
+      { "key": "longsword" },
+      { "key": "rapier" },
+      { "key": "shortsword" }
+    ],
+    "tools": [
+      [
+        { "key": "thieves-tools" }
+      ]
+    ],
     "saving_throws": [ "dexterity", "intelligence" ],
     "skills": { "choices": 4, "options": [ "acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "performance", "persuasion", "sleight-of-hand", "stealth" ] },
     "desc": "**Armor:** Light armor\n**Weapons:** Simple weapons, hand crossbows, longswords, rapiers, shortswords\n**Tools:** Thieves' tools\n**Saving Throws:** Dexterity, Intelligence\n**Skills:** Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, and Stealth"

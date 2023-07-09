@@ -5,6 +5,16 @@
     "desc": "**Hit Dice:** 1d12 per barbarian level\n**Hit Points at 1st Level:** 12 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d12 (or 7) + your Constitution modifier per barbarian level after 1st"
   },
   "class_proficiencies": {
+    "armor": [
+      { "category": "Light" },
+      { "category": "Medium" },
+      { "category": "Shield" }
+    ],
+    "weapons": [
+      { "category": "Simple" },
+      { "category": "Martial" }
+    ],
+    "tools": [],
     "saving_throws": [ "strength", "constitution" ],
     "skills": { "choices": 2, "options": [ "animal-handling", "athletics", "intimidation", "nature", "perception", "survival" ] },
     "desc": "**Armor:** Light armor, medium armor, shields\n**Weapons:** Simple weapons, martial weapons\n**Tools:** None\n**Saving Throws:** Strength, Constitution\n**Skills:** Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"

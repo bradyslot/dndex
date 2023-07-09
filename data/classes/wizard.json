@@ -5,6 +5,15 @@
     "desc": "**Hit Dice:** 1d6 per Wizard level\n**Hit Points at 1st Level:** 6 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d6 (or 4) + your Constitution modifier per wizard level after 1st"
   },
   "class_proficiencies": {
+    "armor": [],
+    "weapons": [
+      { "key": "dagger" },
+      { "key": "dart" },
+      { "key": "sling" },
+      { "key": "quarterstaff" },
+      { "key": "crossbow-light" }
+    ],
+    "tools": [],
     "saving_throws": [ "intelligence", "wisdom" ],
     "skills": { "choices": 3, "options": [ "arcana", "history", "insight", "investigation", "medicine", "religion" ] },
     "desc": "**Armor:** None\n**Weapons:** Daggers, darts, slings, quarterstaffs, light crossbows\n**Tools:** None\n**Saving Throws:** Intelligence, Wisdom\n**Skills:** Choose two from Arcana, History, Insight, Investigation, Medicine, and Religion"

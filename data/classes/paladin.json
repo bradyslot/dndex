@@ -5,6 +5,15 @@
     "desc": "**Hit Dice:** 1d10 per Paladin level\n**Hit Points at 1st Level:** 10 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d10 (or 6) + your Constitution modifier per paladin level after 1st"
   },
   "class_proficiencies": {
+    "armor": [
+      { "category": "Armor" },
+      { "category": "Shield" }
+    ],
+    "weapons": [
+      { "category": "Simple" },
+      { "category": "Martial" }
+    ],
+    "tools": [],
     "saving_throws": [ "wisdom", "charisma" ],
     "skills": { "choices": 2, "options": [ "athletics", "insight", "intimidation", "medicine", "persuasion", "religion" ] },
     "desc": "**Armor:** All armor, shields\n**Weapons:** Simple weapons, martial weapons\n**Tools:** None\n**Saving Throws:** Wisdom, Charisma\n**Skills:** Choose two from Athletics, Insight, Intimidation, Medicine, Persuasion, and Religion"
