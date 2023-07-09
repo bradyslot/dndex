@@ -26,6 +26,8 @@
         { "api_path": "weapons", "open5e_category": "Simple Melee" }
       ]
     ],
+    "choice_3": [],
+    "choice_4": [],
     "defaults": [
       { "source": "equipment_packs", "slug": "explorers-pack" },
       { "api_path": "weapons", "open5e_slug": "javelin", "qty": 4 }

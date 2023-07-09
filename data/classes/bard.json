@@ -37,6 +37,7 @@
         { "source": "tools", "slug": "musical-instrument" }
       ]
     ],
+    "choice_4": [],
     "defaults": [
       { "api_path": "weapons", "open5e_slug": "dagger" },
       { "api_path": "weapons", "open5e_slug": "leather" }

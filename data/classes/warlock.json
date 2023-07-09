@@ -34,6 +34,7 @@
         { "source": "equipment_packs", "slug": "dungeoneers-pack" }
       ]
     ],
+    "choice_4": [],
     "defaults": [
       { "api_path": "armor", "open5e_slug": "leather" },
       { "api_path": "weapons", "open5e_category": "Simple" },
