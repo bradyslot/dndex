@@ -6,7 +6,7 @@
     "desc": "Burglar's Pack (16 gp). Includes a backpack, a bag of 1,000 ball bearings, 10 feet of string, a bell, 5 candles, a crowbar, a hammer, 10 pitons, a hooded lantern, 2 flasks of oil, 5 days rations, a tinderbox, and a waterskin. The pack also has 50 feet of hempen rope strapped to the side of it.",
     "contents": [
       { "name": "Backpack" },
-      { "key": "ball-bearings", "qty": 1000 },
+      { "key": "ball_bearings", "qty": 1000 },
       { "name": "String (feet)", "qty": 10 },
       { "name": "Bell" },
       { "key": "candle", "qty": 5 },
@@ -28,7 +28,7 @@
     "desc": "Diplomat's Pack (39 gp). Includes a chest, 2 cases for maps and scrolls, a set of fine clothes, a bottle of ink, an ink pen, a lamp, 2 flasks of oil, 5 sheets of paper, a vial of perfume, sealing wax, and soap.",
     "contents": [
       { "name": "Chest" },
-      { "key": "case-map-or-scroll", "qty": 2 },
+      { "key": "case_map_or_scroll", "qty": 2 },
       { "name": "Set of fine clothes" },
       { "name": "Bottle of ink" },
       { "name": "Ink pen" },
