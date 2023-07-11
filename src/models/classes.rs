@@ -5,89 +5,89 @@ use std::collections::HashMap;
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct DnDClass {
-    class_hit_points: ClassHitPoints,
-    class_proficiencies: ClassProficiencies,
-    class_equipment: ClassEquipment,
-    class_spellcasting: ClassSpellcasting,
-    class_levels: Vec<ClassLevelAttributes>,
-    class_features: HashMap<String, ClassFeatures>,
+    pub hit_points: ClassHitPoints,
+    pub proficiencies: ClassProficiencies,
+    pub equipment: ClassEquipment,
+    pub spellcasting: ClassSpellcasting,
+    pub levels: Vec<ClassLevelAttributes>,
+    pub features: HashMap<String, ClassFeatures>,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassHitPoints {
-    hit_dice: u8,
-    static_option: u8,
-    desc: String,
+    pub hit_dice: u8,
+    pub static_option: u8,
+    pub desc: String,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassProficiencies {
-    armor: Vec<ClassEquipmentItem>,
-    weapons: Vec<ClassEquipmentItem>,
-    tools: Vec<Vec<ClassEquipmentItem>>,
-    saving_throws: Vec<String>,
-    skills: ClassSkillChoices,
-    desc: String,
+    pub armor: Vec<ClassEquipmentItem>,
+    pub weapons: Vec<ClassEquipmentItem>,
+    pub tools: Vec<Vec<ClassEquipmentItem>>,
+    pub saving_throws: Vec<String>,
+    pub skills: ClassSkillChoices,
+    pub desc: String,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassSkillChoices {
-    choices: u8,
-    options: Vec<String>,
+    pub choices: u8,
+    pub options: Vec<String>,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassEquipmentItem {
-    name: Option<String>,
-    source: Option<String>,
-    location: Option<String>,
-    key: Option<String>,
-    category: Option<String>,
-    qty: Option<u8>,
+    pub name: Option<String>,
+    pub source: Option<String>,
+    pub location: Option<String>,
+    pub key: Option<String>,
+    pub category: Option<String>,
+    pub qty: Option<u8>,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassEquipment {
-    choice_1: Vec<Vec<ClassEquipmentItem>>,
-    choice_2: Vec<Vec<ClassEquipmentItem>>,
-    choice_3: Vec<Vec<ClassEquipmentItem>>,
-    choice_4: Vec<Vec<ClassEquipmentItem>>,
-    defaults: Vec<ClassEquipmentItem>,
-    desc: String,
+    pub choice_1: Vec<Vec<ClassEquipmentItem>>,
+    pub choice_2: Vec<Vec<ClassEquipmentItem>>,
+    pub choice_3: Vec<Vec<ClassEquipmentItem>>,
+    pub choice_4: Vec<Vec<ClassEquipmentItem>>,
+    pub defaults: Vec<ClassEquipmentItem>,
+    pub desc: String,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassSpellcasting {
-    ability: Option<String>,
-    desc: Option<String>,
+    pub ability: Option<String>,
+    pub desc: Option<String>,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassLevelFeature {
-    key: String,
-    name: Option<String>, // if present, overrides the name of the feature
+    pub key: String,
+    pub name: Option<String>, // if present, overrides the name of the feature
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassLevelAttributes {
-    level: u8,
-    features: Vec<ClassLevelFeature>,
-    rages: Option<u8>,
-    rage_damage: Option<u8>,
-    cantrips_known: Option<u8>,
-    spells_known: Option<u8>,
-    spell_slots: Option<Vec<u8>>,
-    martial_arts: Option<u8>,
-    ki_points: Option<u8>,
-    unarmored_movement: Option<u8>,
-    sneak_attack: Option<u8>,
-    available_spell_slots: Option<u8>,
-    slot_level: Option<u8>,
-    invocations_known: Option<u8>,
+    pub level: u8,
+    pub features: Vec<ClassLevelFeature>,
+    pub rages: Option<u8>,
+    pub rage_damage: Option<u8>,
+    pub cantrips_known: Option<u8>,
+    pub spells_known: Option<u8>,
+    pub spell_slots: Option<Vec<u8>>,
+    pub martial_arts: Option<u8>,
+    pub ki_points: Option<u8>,
+    pub unarmored_movement: Option<u8>,
+    pub sneak_attack: Option<u8>,
+    pub available_spell_slots: Option<u8>,
+    pub slot_level: Option<u8>,
+    pub invocations_known: Option<u8>,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassFeatures {
-    name: String,
-    desc: String,
+    pub name: String,
+    pub desc: String,
 }

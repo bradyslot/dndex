@@ -1,10 +1,12 @@
+#![allow(unused)]
+pub const WARLOCK_DATA: &str = r#"
 {
-  "class_hit_points": {
+  "hit_points": {
     "hit_dice": 8,
     "static_option": 5,
     "desc": "**Hit Dice:** 1d8 per Warlock level\n**Hit Points at 1st Level:*8 8 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d8 (or 5) + your Constitution modifier per warlock level after 1st"
   },
-  "class_proficiencies": {
+  "proficiencies": {
     "armor": [
       { "category": "Light" }
     ],
@@ -16,7 +18,7 @@
     "skills": { "choices": 2, "options": [ "arcana", "deception", "history", "intimidation", "investigation", "nature", "religion" ] },
     "desc": "**Armor:** Light armor\n**Weapons:** Simple weapons\n**Tools:** None\n**Saving Throws:** Wisdom, Charisma\n**Skills:** Choose two skills from Arcana, Deception, History, Intimidation, Investigation, Nature, and Religion"
   },
-  "class_equipment": {
+  "equipment": {
     "choice_1": [
       [
         { "source": "open5e", "location": "weapons", "key": "crossbow-light" }
@@ -49,12 +51,13 @@
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a light crossbow and 20 bolts or *(b)* any simple weapon\n- *(a)* a component pouch or *(b)* an arcane focus\n- *(a)* a scholar's pack or *(b)* a dungeoneer's pack\nLeather armor, any simple weapon, and two daggers"
   },
-  "class_spellcasting": {
+  "spellcasting": {
     "ability": "charisma",
     "desc": "Your arcane research and the magic bestowed on you by your patron have given you facility with spells.\n## Cantrips\nYou know two cantrips of your choice from the warlock spell list. You learn additional warlock cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Warlock table.\n## Spell Slots\nThe Warlock table shows how many spell slots you have. The table also shows what the level of those slots is; all of your spell slots are the same level. To cast one of your warlock spells of 1st level or higher, you must expend a spell slot. You regain all expended spell slots when you finish a short or long rest.\nFor example, when you are 5th level, you have two 3rd-level spell slots. To cast the 1st-level spell thunderwave, you must spend one of those slots, and you cast it as a 3rd-level spell.\n## Spells Known of 1st Level and Higher\nAt 1st level, you know two 1st-level spells of your choice from the warlock spell list.\nThe Spells Known column of the Warlock table shows when you learn more warlock spells of your choice of 1st level and higher. A spell you choose must be of a level no higher than what's shown in the table's Slot Level column for your level. When you reach 6th level, for example, you learn a new warlock spell, which can be 1st, 2nd, or 3rd level.\nAdditionally, when you gain a level in this class, you can choose one of the warlock spells you know and replace it with another spell from the warlock spell list, which also must be of a level for which you have spell slots.\n## Spellcasting Ability\nCharisma is your spellcasting ability for your warlock spells, so you use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a warlock spell you cast and when making an attack roll with one.\n**Spell save DC** = 8 + your proficiency bonus + your Charisma modifier\n**Spell attack modifier** = your proficiency bonus + your Charisma modifier\n## Spellcasting Focus\nYou can use an arcane focus as a spellcasting focus for your warlock spells."
   },
-  "class_levels": {
-    "1st": {
+  "levels": [
+    {
+      "level": 1,
       "features": [
         { "key": "otherworldly_patron" },
         { "key": "spellcasting", "name": "Pact Magic" }
@@ -65,7 +68,8 @@
       "slot_level": 1,
       "invocations_known": 0
     },
-    "2nd": {
+    {
+      "level": 2,
       "features": [
         { "key": "eldritch_invocations" }
       ],
@@ -75,7 +79,8 @@
       "slot_level": 1,
       "invocations_known": 2
     },
-    "3rd": {
+    {
+      "level": 3,
       "features": [
         { "key": "pact_boon" }
       ],
@@ -85,7 +90,8 @@
       "slot_level": 2,
       "invocations_known": 2
     },
-    "4th": {
+    {
+      "level": 4,
       "features": [
         { "key": "ability_score" }
       ],
@@ -95,7 +101,8 @@
       "slot_level": 2,
       "invocations_known": 2
     },
-    "5th": {
+    {
+      "level": 5,
       "features": [],
       "cantrips_known": 3,
       "spells_known": 6,
@@ -103,7 +110,8 @@
       "slot_level": 3,
       "invocations_known": 3
     },
-    "6th": {
+    {
+      "level": 6,
       "features": [
         { "key": "otherworldly_patron", "name": "Otherworldly Patron Feature" }
       ],
@@ -113,7 +121,8 @@
       "slot_level": 3,
       "invocations_known": 3
     },
-    "7th": {
+    {
+      "level": 7,
       "features": [],
       "cantrips_known": 3,
       "spells_known": 8,
@@ -121,7 +130,8 @@
       "slot_level": 4,
       "invocations_known": 4
     },
-    "8th": {
+    {
+      "level": 8,
       "features": [
         { "key": "ability_score" }
       ],
@@ -131,7 +141,8 @@
       "slot_level": 4,
       "invocations_known": 4
     },
-    "9th": {
+    {
+      "level": 9,
       "features": [],
       "cantrips_known": 3,
       "spells_known": 10,
@@ -139,7 +150,8 @@
       "slot_level": 5,
       "invocations_known": 5
     },
-    "10th": {
+    {
+      "level": 10,
       "features": [
         { "key": "otherworldly_patron", "name": "Otherworldly Patron Feature" }
       ],
@@ -149,7 +161,8 @@
       "slot_level": 5,
       "invocations_known": 5
     },
-    "11th": {
+    {
+      "level": 11,
       "features": [
         { "key": "mystic_arcanum", "name": "Mystic Arcanum (6th Level)" }
       ],
@@ -159,7 +172,8 @@
       "slot_level": 5,
       "invocations_known": 5
     },
-    "12th": {
+    {
+      "level": 12,
       "features": [
         { "key": "ability_score" }
       ],
@@ -169,7 +183,8 @@
       "slot_level": 5,
       "invocations_known": 6
     },
-    "13th": {
+    {
+      "level": 13,
       "features": [
         { "key": "mystic_arcanum", "name": "Mystic Arcanum (7th Level)" }
       ],
@@ -179,7 +194,8 @@
       "slot_level": 5,
       "invocations_known": 6
     },
-    "14th": {
+    {
+      "level": 14,
       "features": [
         { "key": "otherworldly_patron", "name": "Otherworldly Patron Feature" }
       ],
@@ -189,7 +205,8 @@
       "slot_level": 5,
       "invocations_known": 6
     },
-    "15th": {
+    {
+      "level": 15,
       "features": [
         { "key": "mystic_arcanum", "name": "Mystic Arcanum (8th Level)" }
       ],
@@ -199,7 +216,8 @@
       "slot_level": 5,
       "invocations_known": 7
     },
-    "16th": {
+    {
+      "level": 16,
       "features": [
         { "key": "ability_score" }
       ],
@@ -209,7 +227,8 @@
       "slot_level": 5,
       "invocations_known": 7
     },
-    "17th": {
+    {
+      "level": 17,
       "features": [
         { "key": "mystic_arcanum", "name": "Mystic Arcanum (9th Level)" }
       ],
@@ -219,7 +238,8 @@
       "slot_level": 5,
       "invocations_known": 7
     },
-    "18th": {
+    {
+      "level": 18,
       "features": [],
       "cantrips_known": 4,
       "spells_known": 14,
@@ -227,7 +247,8 @@
       "slot_level": 5,
       "invocations_known": 8
     },
-    "19th": {
+    {
+      "level": 19,
       "features": [
         { "key": "ability_score" }
       ],
@@ -237,7 +258,8 @@
       "slot_level": 5,
       "invocations_known": 8
     },
-    "20th": {
+    {
+      "level": 20,
       "features": [
         { "key": "eldritch_master" }
       ],
@@ -247,8 +269,8 @@
       "slot_level": 5,
       "invocations_known": 8
     }
-  },
-  "class_features": {
+  ],
+  "features": {
     "ability_score": {
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
@@ -275,3 +297,4 @@
     }
   }
 }
+"#;

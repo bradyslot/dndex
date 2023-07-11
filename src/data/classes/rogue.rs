@@ -1,10 +1,12 @@
+#![allow(unused)]
+pub const ROGUE_DATA: &str = r#"
 {
-  "class_hit_points": {
+  "hit_points": {
     "hit_dice": 8,
     "static_option": 5,
     "desc": "**Hit Dice:** 1d8 per Rogue level\n**Hit Points at 1st Level:** 8 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d8 (or 5) + your Constitution modifier per rogue level after 1st"
   },
-  "class_proficiencies": {
+  "proficiencies": {
     "armor": [
       { "category": "Light" }
     ],
@@ -24,7 +26,7 @@
     "skills": { "choices": 4, "options": [ "acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "performance", "persuasion", "sleight_of_hand", "stealth" ] },
     "desc": "**Armor:** Light armor\n**Weapons:** Simple weapons, hand crossbows, longswords, rapiers, shortswords\n**Tools:** Thieves' tools\n**Saving Throws:** Dexterity, Intelligence\n**Skills:** Choose four from Acrobatics, Athletics, Deception, Insight, Intimidation, Investigation, Perception, Performance, Persuasion, Sleight of Hand, and Stealth"
   },
-  "class_equipment": {
+  "equipment": {
     "choice_1": [
       [
         { "source": "open5e", "location": "weapons", "key": "rapier" }
@@ -61,9 +63,10 @@
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a rapier or *(b)* a shortsword\n- *(a)* a shortbow and quiver of 20 arrows or *(b)* a shortsword\n- *(a)* a burglar's pack, *(b)* a dungeoneer's pack, or *(c)* an explorer's pack\n- *(a)* Leather armor, two daggers, and thieves' tools"
   },
-  "class_spellcasting": {},
-  "class_levels": {
-    "1st": {
+  "spellcasting": {},
+  "levels": [
+    {
+      "level": 1,
       "features": [
         { "key": "rogue_expertise" },
         { "key": "sneak_attack" },
@@ -71,122 +74,141 @@
       ],
       "sneak_attack": 2
     },
-    "2nd": {
+    {
+      "level": 2,
       "features": [
         { "key": "cunning_action" }
       ],
       "sneak_attack": 2
     },
-    "3rd": {
+    {
+      "level": 3,
       "features": [
         { "key": "roguish_archetype" }
       ],
       "sneak_attack": 3
     },
-    "4th": {
+    {
+      "level": 4,
       "features": [
         { "key": "ability_score" }
       ],
       "sneak_attack": 3
     },
-    "5th": {
+    {
+      "level": 5,
       "features": [
         { "key": "uncanny_dodge" }
       ],
       "sneak_attack": 4
     },
-    "6th": {
+    {
+      "level": 6,
       "features": [
         { "key": "rogue_expertise" }
       ],
       "sneak_attack": 4
     },
-    "7th": {
+    {
+      "level": 7,
       "features": [
         { "key": "rogue_evasion" }
       ],
       "sneak_attack": 4
     },
-    "8th": {
+    {
+      "level": 8,
       "features": [
         { "key": "ability_score" }
       ],
       "sneak_attack": 4
     },
-    "9th": {
+    {
+      "level": 9,
       "features": [
         { "key": "roguish_archetype", "name": "Roguish Archetype Feature" }
       ],
       "sneak_attack": 4
     },
-    "10th": {
+    {
+      "level": 10,
       "features": [
         { "key": "ability_score" }
       ],
       "sneak_attack": 4
     },
-    "11th": {
+    {
+      "level": 11,
       "features": [
         { "key": "reliable_talent" }
       ],
       "sneak_attack": 4
     },
-    "12th": {
+    {
+      "level": 12,
       "features": [
         { "key": "ability_score" }
       ],
       "sneak_attack": 5
     },
-    "13th": {
+    {
+      "level": 13,
       "features": [
         { "key": "roguish_archetype", "name": "Roguish Archetype Feature" }
       ],
       "sneak_attack": 5
     },
-    "14th": {
+    {
+      "level": 14,
       "features": [
         { "key": "blindsense" }
       ],
       "sneak_attack": 5
     },
-    "15th": {
+    {
+      "level": 15,
       "features": [
         { "key": "slippery_mind" }
       ],
       "sneak_attack": 5
     },
-    "16th": {
+    {
+      "level": 16,
       "features": [
         { "key": "ability_score" }
       ],
       "sneak_attack": 5
     },
-    "17th": {
+    {
+      "level": 17,
       "features": [
         { "key": "roguish_archetype", "name": "Roguish Archetype Feature" }
       ],
       "sneak_attack": 5
     },
-    "18th": {
+    {
+      "level": 18,
       "features": [
         { "key": "elusive" }
       ],
       "sneak_attack": 5
     },
-    "19th": {
+    {
+      "level": 19,
       "features": [
         { "key": "ability_score" }
       ],
       "sneak_attack": 5
     },
-    "20th": {
+    {
+      "level": 20,
       "features": [
         { "key": "stroke_of_luck" }
       ],
       "sneak_attack": 0
     }
-  },
-  "class_features": {
+  ],
+  "features": {
     "ability_score": {
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
@@ -241,3 +263,4 @@
     }
   }
 }
+"#;

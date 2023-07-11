@@ -1,7 +1,7 @@
 use stylist::css;
 use yew::prelude::*;
 use gloo_net::http::Request;
-use log::info;
+// use log::info;
 use super::super::models::models::*;
 use super::shared::utils::*;
 use super::super::components::spell_card::*;
@@ -70,7 +70,7 @@ pub fn spells(props: &Character) -> Html {
             <LabeledDivider text={"Spell Cards"}/>
             <div class={format!("spell-card-{}", s)}>
             { for props.spells.iter().enumerate().map(|(index, _)| {
-                info!("Spell: {:?}", spell_card_data.get(index));
+                // info!("Spell: {:?}", spell_card_data.get(index));
                 if let Some(spell) = spell_card_data.get(index) {
                     html! (<SpellCard
                             slug={spell.slug.clone()}

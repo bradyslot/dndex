@@ -1,11 +1,12 @@
+#![allow(unused)]
 pub const BARBARIAN_DATA: &str = r#"
 {
-  "class_hit_points": {
+  "hit_points": {
     "hit_dice": 12,
     "static_option": 7,
     "desc": "**Hit Dice:** 1d12 per barbarian level\n**Hit Points at 1st Level:** 12 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d12 (or 7) + your Constitution modifier per barbarian level after 1st"
   },
-  "class_proficiencies": {
+  "proficiencies": {
     "armor": [
       { "category": "Light" },
       { "category": "Medium" },
@@ -20,7 +21,7 @@ pub const BARBARIAN_DATA: &str = r#"
     "skills": { "choices": 2, "options": [ "animal_handling", "athletics", "intimidation", "nature", "perception", "survival" ] },
     "desc": "**Armor:** Light armor, medium armor, shields\n**Weapons:** Simple weapons, martial weapons\n**Tools:** None\n**Saving Throws:** Strength, Constitution\n**Skills:** Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
   },
-  "class_equipment": {
+  "equipment": {
     "choice_1": [
       [
         { "source": "open5e", "location": "weapons", "key": "greataxe" }
@@ -45,8 +46,8 @@ pub const BARBARIAN_DATA: &str = r#"
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a greataxe or *(b)* any martial melee weapon \n- *(a)* two handaxes or *(b)* any simple weapon\nAn explorer's pack and four javelins"
   },
-  "class_spellcasting": {},
-  "class_levels": [
+  "spellcasting": {},
+  "levels": [
     {
       "level": 1,
       "features": [
@@ -211,7 +212,7 @@ pub const BARBARIAN_DATA: &str = r#"
       "rage_damage": 4
     }
   ],
-  "class_features": {
+  "features": {
     "ability_score": {
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."

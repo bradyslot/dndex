@@ -6,7 +6,7 @@ use super::shared::utils::*;
 use super::shared::icons::*;
 use comrak::{markdown_to_html, ComrakOptions};
 use minijinja::render;
-use log::info;
+// use log::info;
 
 #[function_component(SpellCard)]
 pub fn spell_card(props: &Open5eSpell) -> Html {
@@ -166,7 +166,7 @@ pub fn spell_card(props: &Open5eSpell) -> Html {
     let base_url = "https://open5e.com";
     let desc = render!(&props.desc.clone(), base_url);
     let higher_level = render!(&props.higher_level.clone(), base_url);
-    info!("desc: {}", desc);
+    // info!("desc: {}", desc);
 
     let desc_string = markdown_to_html(&desc, &options).into();
     let desc_html = Html::from_html_unchecked(desc_string);

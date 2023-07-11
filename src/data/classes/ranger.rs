@@ -1,10 +1,12 @@
+#![allow(unused)]
+pub const RANGER_DATA: &str = r#"
 {
-  "class_hit_points": {
+  "hit_points": {
     "hit_dice": 10,
     "static_option": 6,
     "desc": "**Hit Dice:** 1d10 per Ranger level\n**Hit Points at 1st Level:** 10 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d10 (or 6) + your Constitution modifier per ranger level after 1st"
   },
-  "class_proficiencies": {
+  "proficiencies": {
     "armor": [
       { "category": "Light" },
       { "category": "Medium" },
@@ -19,7 +21,7 @@
     "skills": { "choices": 3, "options": [ "animal_handling", "athletics", "insight", "investigation", "nature", "perception", "stealth", "survival" ] },
     "desc": "**Armor:** Light armor, medium armor, shields\n**Weapons:** Simple weapons, martial weapons\n**Tools:** None\n**Saving Throws:** Strength, Dexterity\n**Skills:** Choose three from Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, and Survival"
   },
-  "class_equipment": {
+  "equipment": {
     "choice_1": [
       [
         { "source": "open5e", "location": "armor", "key": "scale-mail" }
@@ -51,12 +53,13 @@
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* scale mail or *(b)* leather armor\n- *(a)* two shortswords or *(b)* two simple melee weapons\n- *(a)* a dungeoneer's pack or *(b)* an explorer's pack\n- A longbow and a quiver of 20 arrows"
   },
-  "class_spellcasting": {
+  "spellcasting": {
     "ability": "wisdom",
     "desc": "By the time you reach 2nd level, you have learned to use the magical essence of nature to cast spells, much as a druid does. See chapter 10 for the general rules of spellcasting and chapter 11 for the ranger spell list.\n## Spell Slots\nThe Ranger table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\nFor example, if you know the 1st-level spell *animal friendship* and have a 1st-level and a 2nd-level spell slot available, you can cast *animal friendship* using either slot.\n## Spells Known of 1st Level and Higher\nYou know two 1st-level spells of your choice from the ranger spell list.\nThe Spells Known column of the Ranger table shows when you learn more ranger spells of your choice. Each of these spells must be of a level for which you have spell slots. For instance, when you reach 5th level in this class, you can learn one new spell of 1st or 2nd level.\nAdditionally, when you gain a level in this class, you can choose one of the ranger spells you know and replace it with another spell from the ranger spell list, which also must be of a level for which you have spell slots.\n## Spellcasting Ability\nWisdom is your spellcasting ability for your ranger spells, since your magic draws on your attunement to nature. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a ranger spell you cast and when making an attack roll with one.\n**Spell save DC** = 8 + your proficiency bonus + your Wisdom modifier\n**Spell attack modifier** = your proficiency bonus + your Wisdom modifier"
   },
-  "class_levels": {
-    "1st": {
+  "levels": [
+    {
+      "level": 1,
       "features": [
         { "key": "favored_enemy" },
         { "key": "natural_explorer" }
@@ -64,7 +67,8 @@
       "spells_known": 4,
       "spell_slots": [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "2nd": {
+    {
+      "level": 2,
       "features": [
         { "key": "ranger_fighting_style" },
         { "key": "spellcasting" }
@@ -72,7 +76,8 @@
       "spells_known": 2,
       "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "3rd": {
+    {
+      "level": 3,
       "features": [
         { "key": "ranger_archetype" },
         { "key": "primeval_awareness" }
@@ -80,21 +85,24 @@
       "spells_known": 3,
       "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "4th": {
+    {
+      "level": 4,
       "features": [
         { "key": "ability_score" }
       ],
       "spells_known": 3,
       "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "5th": {
+    {
+      "level": 5,
       "features": [
         { "key": "ranger_extra_attack" }
       ],
       "spells_known": 4,
       "spell_slots": [ 4, 2, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "6th": {
+    {
+      "level": 6,
       "features": [
         { "key": "favored_enemy", "name": "Favored Enemy Improvement" },
         { "key": "natural_explorer", "name": "Natural Explorer Improvment" }
@@ -102,14 +110,16 @@
       "spells_known": 4,
       "spell_slots": [ 4, 2, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "7th": {
+    {
+      "level": 7,
       "features": [
         { "key": "ranger_archetype", "name": "Ranger Archetype Feature" }
       ],
       "spells_known": 5,
       "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "8th": {
+    {
+      "level": 8,
       "features": [
         { "key": "ability_score" },
         { "key": "lands_stride" }
@@ -117,12 +127,14 @@
       "spells_known": 5,
       "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "9th": {
+    {
+      "level": 9,
       "features": [],
       "spells_known": 6,
       "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
     },
-    "10th": {
+    {
+      "level": 10,
       "features": [
         { "key": "natural_explorer", "name": "Natural Explorer Improvement" },
         { "key": "hide_in_plain_sight" }
@@ -130,26 +142,30 @@
       "spells_known": 6,
       "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
     },
-    "11th": {
+    {
+      "level": 11,
       "features": [
         { "key": "ranger_archetype", "name": "Ranger Archetype Feature" }
       ],
       "spells_known": 7,
       "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
     },
-    "12th": {
+    {
+      "level": 12,
       "features": [
         { "key": "ability_score" }
       ],
       "spells_known": 7,
       "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
     },
-    "13th": {
+    {
+      "level": 13,
       "features": [],
       "spells_known": 8,
       "spell_slots": [ 4, 3, 3, 1, 0, 0, 0, 0, 0 ]
     },
-    "14th": {
+    {
+      "level": 14,
       "features": [
         { "key": "favored_enemy", "name": "Favored Enemy Improvement" },
         { "key": "vanish" }
@@ -157,48 +173,54 @@
       "spells_known": 8,
       "spell_slots": [ 4, 3, 3, 1, 0, 0, 0, 0, 0 ]
     },
-    "15th": {
+    {
+      "level": 15,
       "features": [
         { "key": "ranger_archetype", "name": "Ranger Archetype Feature" }
       ],
       "spells_known": 9,
       "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
     },
-    "16th": {
+    {
+      "level": 16,
       "features": [
         { "key": "ability_score" }
       ],
       "spells_known": 9,
       "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
     },
-    "17th": {
+    {
+      "level": 17,
       "features": [],
       "spells_known": 10,
       "spell_slots": [ 4, 3, 3, 3, 1, 0, 0, 0, 0 ]
     },
-    "18th": {
+    {
+      "level": 18,
       "features": [
         { "key": "feral_senses" }
       ],
       "spells_known": 10,
       "spell_slots": [ 4, 3, 3, 3, 1, 0, 0, 0, 0 ]
     },
-    "19th": {
+    {
+      "level": 19,
       "features": [
         { "key": "ability_score" }
       ],
       "spells_known": 11,
       "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
     },
-    "20th": {
+    {
+      "level": 20,
       "features": [
         { "key": "foe_slayer" }
       ],
       "spells_known": 11,
       "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
     }
-  },
-  "class_features": {
+  ],
+  "features": {
     "ability_score": {
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
@@ -249,3 +271,4 @@
     }
   }
 }
+"#;

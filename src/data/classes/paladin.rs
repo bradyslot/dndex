@@ -1,10 +1,12 @@
+#![allow(unused)]
+pub const PALADIN_DATA: &str = r#"
 {
-  "class_hit_points": {
+  "hit_points": {
     "hit_dice": 10,
     "static_option": 6,
     "desc": "**Hit Dice:** 1d10 per Paladin level\n**Hit Points at 1st Level:** 10 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d10 (or 6) + your Constitution modifier per paladin level after 1st"
   },
-  "class_proficiencies": {
+  "proficiencies": {
     "armor": [
       { "category": "Armor" },
       { "category": "Shield" }
@@ -18,7 +20,7 @@
     "skills": { "choices": 2, "options": [ "athletics", "insight", "intimidation", "medicine", "persuasion", "religion" ] },
     "desc": "**Armor:** All armor, shields\n**Weapons:** Simple weapons, martial weapons\n**Tools:** None\n**Saving Throws:** Wisdom, Charisma\n**Skills:** Choose two from Athletics, Insight, Intimidation, Medicine, Persuasion, and Religion"
   },
-  "class_equipment": {
+  "equipment": {
     "choice_1": [
       [
         { "source": "open5e", "location": "weapons", "category": "Martial" },
@@ -52,12 +54,13 @@
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a martial weapon and a shield or *(b)* two martial weapons\n- *(a)* five javelins or *(b)* any simple melee weapon\n- *(a)* a priest's pack or *(b)* an explorer's pack\n- Chain mail and a holy symbol"
   },
-  "class_spellcasting": {
+  "spellcasting": {
     "ability": "charisma",
     "desc": "By 2nd level, you have learned to draw on divine magic through meditation and prayer to cast spells as a cleric does.\n## Preparing and Casting Spells The Paladin table shows how many spell slots you have to cast your spells. To cast one of your paladin spells of 1st level or higher, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\nYou prepare the list of paladin spells that are available for you to cast, choosing from the paladin spell list. When you do so, choose a number of paladin spells equal to your Charisma modifier + half your paladin level, rounded down (minimum of one spell). The spells must be of a level for which you have spell slots.\nFor example, if you are a 5th-level paladin, you have four 1st-level and two 2nd-level spell slots. With a Charisma of 14, your list of prepared spells can include four spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell cure wounds, you can cast it using a 1st-level or a 2nd- level slot. Casting the spell doesn't remove it from your list of prepared spells.\nYou can change your list of prepared spells when you finish a long rest. Preparing a new list of paladin spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.\n## Spellcasting Ability\nCharisma is your spellcasting ability for your paladin spells, since their power derives from the strength of your convictions. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a paladin spell you cast and when making an attack roll with one.\n**Spell save DC** = 8 + your proficiency bonus + your Charisma modifier\n**Spell attack modifier** = your proficiency bonus + your Charisma modifier\n## Spellcasting Focus\nYou can use a holy symbol as a spellcasting focus for your paladin spells."
   },
-  "class_levels": {
-    "1st": {
+  "levels": [
+    {
+      "level": 1,
       "features": [
         { "key": "divine_sense" },
         { "key": "lay_on_hands" }
@@ -65,7 +68,8 @@
       "spells_known": 4,
       "spell_slots": [ 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "2nd": {
+    {
+      "level": 2,
       "features": [
         { "key": "paladin_fighting_style" },
         { "key": "spellcasting" },
@@ -74,7 +78,8 @@
       "spells_known": 2,
       "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "3rd": {
+    {
+      "level": 3,
       "features": [
         { "key": "divine_health" },
         { "key": "sacred_oath" }
@@ -82,99 +87,114 @@
       "spells_known": 3,
       "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "4th": {
+    {
+      "level": 4,
       "features": [
         { "key": "ability_score" }
       ],
       "spells_known": 3,
       "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "5th": {
+    {
+      "level": 5,
       "features": [
         { "key": "paladin_extra_attack" }
       ],
       "spells_known": 4,
       "spell_slots": [ 4, 2, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "6th": {
+    {
+      "level": 6,
       "features": [
         { "key": "aura_of_protection" }
       ],
       "spells_known": 4,
       "spell_slots": [ 4, 2, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "7th": {
+    {
+      "level": 7,
       "features": [
         { "key": "sacred_oath", "name": "Sacred Oath Feature" }
       ],
       "spells_known": 5,
       "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "8th": {
+    {
+      "level": 8,
       "features": [
         { "key": "ability_score" }
       ],
       "spells_known": 5,
       "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "9th": {
+    {
+      "level": 9,
       "features": [],
       "spells_known": 6,
       "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
     },
-    "10th": {
+    {
+      "level": 10,
       "features": [
         { "key": "aura_of_courage" }
       ],
       "spells_known": 6,
       "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
     },
-    "11th": {
+    {
+      "level": 11,
       "features": [
         { "key": "divine_smite", "name": "Improved Divine Smite" }
       ],
       "spells_known": 7,
       "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
     },
-    "12th": {
+    {
+      "level": 12,
       "features": [
         { "key": "ability_score" }
       ],
       "spells_known": 7,
       "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
     },
-    "13th": {
+    {
+      "level": 13,
       "features": [],
       "spells_known": 8,
       "spell_slots": [ 4, 3, 3, 1, 0, 0, 0, 0, 0 ]
     },
-    "14th": {
+    {
+      "level": 14,
       "features": [
         { "key": "cleansing_touch" }
       ],
       "spells_known": 8,
       "spell_slots": [ 4, 3, 3, 1, 0, 0, 0, 0, 0 ]
     },
-    "15th": {
+    {
+      "level": 15,
       "features": [
         { "key": "sacred_oath", "name": "Sacred Oath Feature" }
       ],
       "spells_known": 9,
       "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
     },
-    "16th": {
+    {
+      "level": 16,
       "features": [
         { "key": "ability_score" }
       ],
       "spells_known": 9,
       "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
     },
-    "17th": {
+    {
+      "level": 17,
       "features": [],
       "spells_known": 10,
       "spell_slots": [ 4, 3, 3, 3, 1, 0, 0, 0, 0 ]
     },
-    "18th": {
+    {
+      "level": 18,
       "features": [
         { "key": "aura_of_protection", "name": "Improved Aura of Protection" },
         { "key": "aura_of_courage", "name": "Improved Aura of Courage" }
@@ -182,22 +202,24 @@
       "spells_known": 10,
       "spell_slots": [ 4, 3, 3, 3, 1, 0, 0, 0, 0 ]
     },
-    "19th": {
+    {
+      "level": 19,
       "features": [
         { "key": "ability_score" }
       ],
       "spells_known": 11,
       "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
     },
-    "20th": {
+    {
+      "level": 20,
       "features": [
         { "key": "sacred_oath", "name": "Sacred Oath Feature" }
       ],
       "spells_known": 11,
       "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
     }
-  },
-  "class_features": {
+  ],
+  "features": {
     "ability_score": {
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
@@ -232,3 +254,4 @@
     }
   }
 }
+"#;

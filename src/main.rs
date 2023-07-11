@@ -6,6 +6,17 @@ use serde_json;
 
 mod data;
 use data::classes::barbarian::*;
+// use data::classes::bard::*;
+// use data::classes::cleric::*;
+// use data::classes::druid::*;
+// use data::classes::fighter::*;
+// use data::classes::monk::*;
+// use data::classes::paladin::*;
+// use data::classes::ranger::*;
+// use data::classes::rogue::*;
+// use data::classes::sorcerer::*;
+// use data::classes::warlock::*;
+// use data::classes::wizard::*;
 
 mod models;
 use models::models::*;
@@ -123,8 +134,32 @@ fn App() -> Html {
         flex-direction: column;
     );
 
-    let barbarian_json: DnDClass = serde_json::from_str(BARBARIAN_DATA).unwrap();
-    info!("{:?}", barbarian_json);
+    let barbarian: DnDClass = serde_json::from_str(BARBARIAN_DATA).unwrap();
+    // let bard_json: DnDClass = serde_json::from_str(BARD_DATA).unwrap();
+    // let cleric_json: DnDClass = serde_json::from_str(CLERIC_DATA).unwrap();
+    // let druid_json: DnDClass = serde_json::from_str(DRUID_DATA).unwrap();
+    // let fighter_json: DnDClass = serde_json::from_str(FIGHTER_DATA).unwrap();
+    // let monk_json: DnDClass = serde_json::from_str(MONK_DATA).unwrap();
+    // let paladin_json: DnDClass = serde_json::from_str(PALADIN_DATA).unwrap();
+    // let ranger_json: DnDClass = serde_json::from_str(RANGER_DATA).unwrap();
+    // let rogue_json: DnDClass = serde_json::from_str(ROGUE_DATA).unwrap();
+    // let sorcerer_json: DnDClass = serde_json::from_str(SORCERER_DATA).unwrap();
+    // let warlock_json: DnDClass = serde_json::from_str(WARLOCK_DATA).unwrap();
+    // let wizard_json: DnDClass = serde_json::from_str(WIZARD_DATA).unwrap();
+
+    info!("{:?}", barbarian);
+    // info!("{:?}", bard_json);
+    // info!("{:?}", cleric_json);
+    // info!("{:?}", druid_json);
+    // info!("{:?}", fighter_json);
+    // info!("{:?}", monk_json);
+    // info!("{:?}", paladin_json);
+    // info!("{:?}", ranger_json);
+    // info!("{:?}", rogue_json);
+    // info!("{:?}", sorcerer_json);
+    // info!("{:?}", warlock_json);
+    // info!("{:?}", wizard_json);
+
 
     html! {
         <div class={style}>

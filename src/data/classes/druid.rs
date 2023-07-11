@@ -1,10 +1,12 @@
+#![allow(unused)]
+pub const DRUID_DATA: &str = r#"
 {
-  "class_hit_points": {
+  "hit_points": {
     "hit_dice": 8,
     "static_option": 5,
     "desc": "**Hit Dice:** 1d8 per druid level\n**Hit Points at 1st Level:** 8 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d8 (or 5) + your Constitution modifier per druid level after 1st"
   },
-  "class_proficiencies": {
+  "proficiencies": {
     "armor": [
       { "category": "Light" },
       { "category": "Medium" },
@@ -31,7 +33,7 @@
     "skills": { "choices": 2, "options": [ "arcana", "animal_handling", "insight", "medicine", "nature", "perception", "religion", "survival" ] },
     "desc": "**Armor:** Light armor, medium armor, shields (druids will not wear armor or use shields made of metal)\n**Weapons:** Clubs, daggers, darts, javelins, maces, quarterstaffs, scimitars, sickles, slings, spears\n**Tools:** Herbalism kit\n**Saving Throws:** Intelligence, Wisdom\n**Skills:** Choose two from Arcana, Animal Handling, Insight, Medicine, Nature, Perception, Religion, and Survival"
   },
-  "class_equipment": {
+  "equipment": {
     "choice_1": [
       [
         { "source": "open5e", "location": "armor", "key": "shield" }
@@ -57,12 +59,13 @@
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a wooden shield or *(b)* any simple weapon\n- *(a)* a scimitar or *(b)* any simple melee weapon\n- Leather armor, an explorer's pack, and a druidic focus"
   },
-  "class_spellcasting": {
+  "spellcasting": {
     "ability": "wisdom",
     "desc": "Drawing on the divine essence of nature itself, you can cast spells to shape that essence to your will.\n## Cantrips At 1st level, you know two cantrips of your choice from the druid spell list. You learn additional druid cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Druid table.\n## Preparing and Casting Spells The Druid table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these druid spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\nYou prepare the list of druid spells that are available for you to cast, choosing from the druid spell list. When you do so, choose a number of druid spells equal to your Wisdom modifier + your druid level (minimum of one spell). The spells must be of a level for which you have spell slots.\nFor example, if you are a 3rd-level druid, you have four 1st-level and two 2nd-level spell slots. With a Wisdom of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination. If you prepare the 1st-level spell *cure wounds*, you can cast it using a 1st-level or 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.\nYou can also change your list of prepared spells when you finish a long rest. Preparing a new list of druid spells requires time spent in prayer and meditation: at least 1 minute per spell level for each spell on your list.\n## Spellcasting Ability Wisdom is your spellcasting ability for your druid spells, since your magic draws upon your devotion and attunement to nature. You use your Wisdom whenever a spell refers to your spellcasting ability. In addition, you use your Wisdom modifier when setting the saving throw DC for a druid spell you cast and when making an attack roll with one.\n**Spell save DC** = 8 + your proficiency bonus + your Wisdom modifier\n**Spell attack modifier** = your proficiency bonus + your Wisdom modifier\n## Ritual Casting You can cast a druid spell as a ritual if that spell has the ritual tag and you have the spell prepared.\n## Spellcasting Focus You can use a druidic focus (see [Adventuring Gear]({{ base_url }}/equipment/adventuring-gear)) as a spellcasting focus for your druid spells."
   },
-  "class_table": {
-    "1st": {
+  "levels": [
+    {
+      "level": 1,
       "features": [
         { "key": "druidic" },
         { "key": "spellcasting" }
@@ -70,7 +73,8 @@
       "cantrips_known": 3,
       "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "2nd": {
+    {
+      "level": 2,
       "features": [
         { "key": "wild_shape" },
         { "key": "druid_circle" }
@@ -78,12 +82,14 @@
       "cantrips_known": 3,
       "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "3rd": {
+    {
+      "level": 3,
       "features": [],
       "cantrips_known": 3,
       "spell_slots": [ 4, 2, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "4th": {
+    {
+      "level": 4,
       "features": [
         { "key": "wild_shape", "name": "Wild Shape Improvement" },
         { "key": "ability_score" }
@@ -91,24 +97,28 @@
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "5th": {
+    {
+      "level": 5,
       "features": [],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
     },
-    "6th": {
+    {
+      "level": 6,
       "features": [
         { "key": "druid_circle", "name": "Druid Circle Feature" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
     },
-    "7th": {
+    {
+      "level": 7,
       "features": [],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 1, 0, 0, 0, 0, 0 ]
     },
-    "8th": {
+    {
+      "level": 8,
       "features": [
         { "key": "wild_shape", "name": "Wild Shape Improvement" },
         { "key": "ability_score" }
@@ -116,60 +126,70 @@
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
     },
-    "9th": {
+    {
+      "level": 9,
       "features": [],
       "cantrips_known": 3,
       "spell_slots": [ 4, 3, 3, 3, 1, 0, 0, 0, 0 ]
     },
-    "10th": {
+    {
+      "level": 10,
       "features": [
         { "key": "druid_circle", "name": "Druid Circle Feature" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
     },
-    "11th": {
+    {
+      "level": 11,
       "features": [],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
     },
-    "12th": {
+    {
+      "level": 12,
       "features": [
         { "key": "ability_score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
     },
-    "13th": {
+    {
+      "level": 13,
       "features": [ ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
     },
-    "14th": {
+    {
+      "level": 14,
       "features": [
         { "key": "druid_circle", "name": "Druid Circle Feature" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
     },
-    "15th": {
+    {
+      "level": 15,
       "features": [],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
     },
-    "16th": {
+    {
+      "level": 16,
       "features": [
         { "key": "ability_score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
     },
-    "17th": {
+    {
+      "level": 17,
       "features": [],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 1 ]
     },
-    "18th": {
+    {
+      "level": 18,
       "features": [
         { "key": "druid_timeless_body" },
         { "key": "beast_spells" }
@@ -177,22 +197,24 @@
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 1, 1, 1, 1 ]
     },
-    "19th": {
+    {
+      "level": 19,
       "features": [
         { "key": "ability_score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 1, 1, 1 ]
     },
-    "20th": {
+    {
+      "level": 20,
       "features": [
         { "key": "archdruid" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 2, 1, 1 ]
     }
-  },
-  "class_features": {
+  ],
+  "features": {
     "ability_score": {
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
@@ -223,3 +245,4 @@
     }
   }
 }
+"#;

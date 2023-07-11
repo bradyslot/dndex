@@ -1,10 +1,12 @@
+#![allow(unused)]
+pub const MONK_DATA: &str = r#"
 {
-  "class_hit_points": {
+  "hit_points": {
     "hit_dice": 8,
     "static_option": 5,
     "desc": "**Hit Dice:** 1d8 per Monk level\n**Hit Points at 1st Level:** 8 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d8 (or 5) + your Constitution modifier per monk level after 1st"
   },
-  "class_proficiencies": {
+  "proficiencies": {
     "armor": [],
     "weapons": [
       { "category": "Simple" },
@@ -22,7 +24,7 @@
     "skills": { "choices": 2, "options": [ "acrobatics", "athletics", "history", "insight", "religion", "stealth" ] },
     "desc": "**Armor:** None\n**Weapons:** Simple weapons, shortswords\n**Tools:** Choose one type of artisan's tools or one musical instrument\n**Saving Throws:** Strength, Dexterity\n**Skills:** Choose two from Acrobatics, Athletics, History, Insight, Religion, and Stealth"
   },
-  "class_equipment": {
+  "equipment": {
     "choice_1": [
       [
         { "source": "open5e", "location": "weapons", "key": "shortsword" }
@@ -46,9 +48,10 @@
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a shortsword or *(b)* any simple weapon\n- *(a)* a dungeoneer's pack or *(b)* an explorer’s pack\n- 10 darts"
   },
-  "class_spellcasting": {},
-  "class_levels": {
-    "1st": {
+  "spellcasting": {},
+  "levels": [
+    {
+      "level": 1,
       "features": [
         { "key": "unarmored_defence" },
         { "key": "martial_arts" }
@@ -57,7 +60,8 @@
       "ki_points": 0,
       "unarmored_movement": 0
     },
-    "2nd": {
+    {
+      "level": 2,
       "features": [
         { "key": "ki" },
         { "key": "unarmored_movement" }
@@ -66,7 +70,8 @@
       "ki_points": 2,
       "unarmored_movement": 10
     },
-    "3rd": {
+    {
+      "level": 3,
       "features": [
         { "key": "monastic_traditions" },
         { "key": "deflect_missiles" }
@@ -75,7 +80,8 @@
       "ki_points": 3,
       "unarmored_movement": 10
     },
-    "4th": {
+    {
+      "level": 4,
       "features": [
         { "key": "ability_score" },
         { "key": "slow_fall" }
@@ -84,7 +90,8 @@
       "ki_points": 4,
       "unarmored_movement": 10
     },
-    "5th": {
+    {
+      "level": 5,
       "features": [
         { "key": "monk_extra_attack" },
         { "key": "stunning_strike" }
@@ -93,7 +100,8 @@
       "ki_points": 5,
       "unarmored_movement": 10
     },
-    "6th": {
+    {
+      "level": 6,
       "features": [
         { "key": "ki_empowered_strikes" },
         { "key": "monastic_traditions", "name": "Monastic Tradition Feature" }
@@ -102,7 +110,8 @@
       "ki_points": 6,
       "unarmored_movement": 15
     },
-    "7th": {
+    {
+      "level": 7,
       "features": [
         { "key": "monk_evasion" },
         { "key": "stillness_of_mind" }
@@ -111,7 +120,8 @@
       "ki_points": 7,
       "unarmored_movement": 15
     },
-    "8th": {
+    {
+      "level": 8,
       "features": [
         { "key": "ability_score" }
       ],
@@ -119,7 +129,8 @@
       "ki_points": 8,
       "unarmored_movement": 15
     },
-    "9th": {
+    {
+      "level": 9,
       "features": [
         { "key": "unarmored_movement", "name": "Unarmored Movement Improvement" }
       ],
@@ -127,7 +138,8 @@
       "ki_points": 9,
       "unarmored_movement": 15
     },
-    "10th": {
+    {
+      "level": 10,
       "features": [
         { "key": "purity_of_body" }
       ],
@@ -135,7 +147,8 @@
       "ki_points": 10,
       "unarmored_movement": 20
     },
-    "11th": {
+    {
+      "level": 11,
       "features": [
         { "key": "monastic_traditions", "name": "Monastic Tradition Feature" }
       ],
@@ -143,7 +156,8 @@
       "ki_points": 11,
       "unarmored_movement": 20
     },
-    "12th": {
+    {
+      "level": 12,
       "features": [
         { "key": "ability_score" }
       ],
@@ -151,7 +165,8 @@
       "ki_points": 12,
       "unarmored_movement": 20
     },
-    "13th": {
+    {
+      "level": 13,
       "features": [
         { "key": "tongue_of_the_sun_and_moon" }
       ],
@@ -159,7 +174,8 @@
       "ki_points": 13,
       "unarmored_movement": 20
     },
-    "14th": {
+    {
+      "level": 14,
       "features": [
         { "key": "diamond_soul" }
       ],
@@ -167,7 +183,8 @@
       "ki_points": 14,
       "unarmored_movement": 25
     },
-    "15th": {
+    {
+      "level": 15,
       "features": [
         { "key": "monk_timeless_body" }
       ],
@@ -175,7 +192,8 @@
       "ki_points": 15,
       "unarmored_movement": 25
     },
-    "16th": {
+    {
+      "level": 16,
       "features": [
         { "key": "ability_score" }
       ],
@@ -183,7 +201,8 @@
       "ki_points": 16,
       "unarmored_movement": 25
     },
-    "17th": {
+    {
+      "level": 17,
       "features": [
         { "key": "monastic_traditions", "name": "Monastic Tradition Feature" }
       ],
@@ -191,7 +210,8 @@
       "ki_points": 17,
       "unarmored_movement": 25
     },
-    "18th": {
+    {
+      "level": 18,
       "features": [
         { "key": "empty_body" }
       ],
@@ -199,7 +219,8 @@
       "ki_points": 18,
       "unarmored_movement": 30
     },
-    "19th": {
+    {
+      "level": 19,
       "features": [
         { "key": "ability_score" }
       ],
@@ -207,7 +228,8 @@
       "ki_points": 19,
       "unarmored_movement": 30
     },
-    "20th": {
+    {
+      "level": 20,
       "features": [
         { "key": "perfect_self" }
       ],
@@ -215,8 +237,8 @@
       "ki_points": 20,
       "unarmored_movement": 30
     }
-  },
-  "class_features": {
+  ],
+  "features": {
     "ability_score": {
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
@@ -295,3 +317,4 @@
     }
   }
 }
+"#;

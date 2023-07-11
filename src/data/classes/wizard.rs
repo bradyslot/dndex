@@ -1,10 +1,12 @@
+#![allow(unused)]
+pub const WIZARD_DATA: &str = r#"
 {
-  "class_hit_points": {
+  "hit_points": {
     "hit_dice": 6,
     "static_option": 4,
     "desc": "**Hit Dice:** 1d6 per Wizard level\n**Hit Points at 1st Level:** 6 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d6 (or 4) + your Constitution modifier per wizard level after 1st"
   },
-  "class_proficiencies": {
+  "proficiencies": {
     "armor": [],
     "weapons": [
       { "key": "dagger" },
@@ -18,7 +20,7 @@
     "skills": { "choices": 3, "options": [ "arcana", "history", "insight", "investigation", "medicine", "religion" ] },
     "desc": "**Armor:** None\n**Weapons:** Daggers, darts, slings, quarterstaffs, light crossbows\n**Tools:** None\n**Saving Throws:** Intelligence, Wisdom\n**Skills:** Choose two from Arcana, History, Insight, Investigation, Medicine, and Religion"
   },
-  "class_equipment": {
+  "equipment": {
     "choice_1": [
       [
         { "source": "open5e", "location": "weapons", "key": "quarterstaff" }
@@ -49,12 +51,13 @@
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a quarterstaff or *(b)* a dagger\n- *(a)* a component pouch or *(b)* an arcane focus\n- *(a)* a scholar's pack or *(b)* an explorer's pack\n- A spellbook"
   },
-  "class_spellcasting": {
+  "spellcasting": {
     "ability": "intelligence",
     "desc": "As a student of arcane magic, you have a spellbook containing spells that show the first glimmerings of your true power.\n## Cantrips\nAt 1st level, you know three cantrips of your choice from the wizard spell list. You learn additional wizard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Wizard table.\n## Spellbook\nAt 1st level, you have a spellbook containing six 1st- level wizard spells of your choice. Your spellbook is the repository of the wizard spells you know, except your cantrips, which are fixed in your mind.\n\n>## Your Spellbook\n>The spells that you add to your spellbook as you gain levels reflect the arcane research you conduct on your own, as well as intellectual breakthroughs you have had about the nature of the multiverse. You might find other spells during your adventures. You could discover a spell recorded on a scroll in an evil wizard's chest, for example, or in a dusty tome in an ancient library.\n>**Copying a Spell into the Book.** When you find a wizard spell of 1st level or higher, you can add it to your spellbook if it is of a spell level you can prepare and if you can spare the time to decipher and copy it.\n>Copying that spell into your spellbook involves reproducing the basic form of the spell, then deciphering the unique system of notation used by the wizard who wrote it. You must practice the spell until you understand the sounds or gestures required, then transcribe it into your spellbook using your own notation.\n>For each level of the spell, the process takes 2 hours and costs 50 gp. The cost represents material components you expend as you experiment with the spell to master it, as well as the fine inks you need to record it. Once you have spent this time and money, you can prepare the spell just like your other spells.\n>**Replacing the Book.** You can copy a spell from your own spellbook into another book-for example, if you want to make a backup copy of your spellbook. This is just like copying a new spell into your spellbook, but faster and easier, since you understand your own notation and already know how to cast the spell. You need spend only 1 hour and 10 gp for each level of the copied spell.\n>If you lose your spellbook, you can use the same procedure to transcribe the spells that you have prepared into a new spellbook. Filling out the remainder of your spellbook requires you to find new spells to do so, as normal. For this reason, many wizards keep backup spellbooks in a safe place.\n>**The Book's Appearance.** Your spellbook is a unique compilation of spells, with its own decorative flourishes and margin notes. It might be a plain, functional leather volume that you received as a gift from your master, a finely bound gilt-edged tome you found in an ancient library, or even a loose collection of notes scrounged together after you lost your previous spellbook in a mishap.\n\n## Preparing and Casting Spells\nThe Wizard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\nYou prepare the list of wizard spells that are available for you to cast. To do so, choose a number of wizard spells from your spellbook equal to your Intelligence modifier + your wizard level (minimum of one spell). The spells must be of a level for which you have spell slots.\nFor example, if you're a 3rd-level wizard, you have four 1st-level and two 2nd-level spell slots. With an Intelligence of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination, chosen from your spellbook. If you prepare the 1st-level spell magic missile, you can cast it using a 1st-level or a 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells.\nYou can change your list of prepared spells when you finish a long rest. Preparing a new list of wizard spells requires time spent studying your spellbook and memorizing the incantations and gestures you must make to cast the spell: at least 1 minute per spell level for each spell on your list.\n## Spellcasting Ability\nIntelligence is your spellcasting ability for your wizard spells, since you learn your spells through dedicated study and memorization. You use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a wizard spell you cast and when making an attack roll with one.\n**Spell save DC** = 8 + your proficiency bonus + your Intelligence modifier\n**Spell attack modifier** = your proficiency bonus + your Intelligence modifier\n## Ritual Casting\nYou can cast a wizard spell as a ritual if that spell has the ritual tag and you have the spell in your spellbook. You don't need to have the spell prepared.\n## Spellcasting Focus\nYou can use an arcane focus as a spellcasting focus for your wizard spells.\n## Learning Spells of 1st Level and Higher\nEach time you gain a wizard level, you can add two wizard spells of your choice to your spellbook for free. Each of these spells must be of a level for which you have spell slots, as shown on the Wizard table. On your adventures, you might find other spells that you can add to your spellbook (see the “Your Spellbook” sidebar)."
   },
-  "class_levels": {
-    "1st": {
+  "levels": [
+    {
+      "level": 1,
       "features": [
         { "key": "spellcasting" },
         { "key": "arcane_recovery" }
@@ -62,125 +65,144 @@
       "cantrips_known": 3,
       "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "2nd": {
+    {
+      "level": 2,
       "features": [
         { "key": "arcane_tradition" }
       ],
       "cantrips_known": 3,
       "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "3rd": {
+    {
+      "level": 3,
       "features": [],
       "cantrips_known": 3,
       "spell_slots": [ 4, 2, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "4th": {
+    {
+      "level": 4,
       "features": [
         { "key": "ability_score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "5th": {
+    {
+      "level": 5,
       "features": [],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
     },
-    "6th": {
+    {
+      "level": 6,
       "features": [
         { "key": "arcane_tradition", "name": "Arcane Tradition Feature" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
     },
-    "7th": {
+    {
+      "level": 7,
       "features": [],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 1, 0, 0, 0, 0, 0 ]
     },
-    "8th": {
+    {
+      "level": 8,
       "features": [
         { "key": "ability_score" }
       ],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
     },
-    "9th": {
+    {
+      "level": 9,
       "features": [],
       "cantrips_known": 4,
       "spell_slots": [ 4, 3, 3, 3, 1, 0, 0, 0, 0 ]
     },
-    "10th": {
+    {
+      "level": 10,
       "features": [
         { "key": "arcane_tradition", "name": "Arcane Tradition Feature" }
       ],
       "cantrips_known": 5,
       "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
     },
-    "11th": {
+    {
+      "level": 11,
       "features": [],
       "cantrips_known": 5,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
     },
-    "12th": {
+    {
+      "level": 12,
       "features": [
         { "key": "ability_score" }
       ],
       "cantrips_known": 5,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
     },
-    "13th": {
+    {
+      "level": 13,
       "features": [],
       "cantrips_known": 5,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
     },
-    "14th": {
+    {
+      "level": 14,
       "features": [
         { "key": "arcane_tradition", "name": "Arcane Tradition Feature" }
       ],
       "cantrips_known": 5,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
     },
-    "15th": {
+    {
+      "level": 15,
       "features": [],
       "cantrips_known": 5,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
     },
-    "16th": {
+    {
+      "level": 16,
       "features": [
         { "key": "ability_score" }
       ],
       "cantrips_known": 5,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
     },
-    "17th": {
+    {
+      "level": 17,
       "features": [],
       "cantrips_known": 5,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 1 ]
     },
-    "18th": {
+    {
+      "level": 18,
       "features": [
         { "key": "spell_mastery" }
       ],
       "cantrips_known": 5,
       "spell_slots": [ 4, 3, 3, 3, 3, 1, 1, 1, 1 ]
     },
-    "19th": {
+    {
+      "level": 19,
       "features": [
         { "key": "ability_score" }
       ],
       "cantrips_known": 5,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 1, 1, 1 ]
     },
-    "20th": {
+    {
+      "level": 20,
       "features": [
         { "key": "signature_spells" }
       ],
       "cantrips_known": 5,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 2, 1, 1 ]
     }
-  },
-  "class_features": {
+  ],
+  "features": {
     "ability_score": {
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
@@ -203,3 +225,4 @@
     }
   }
 }
+"#;

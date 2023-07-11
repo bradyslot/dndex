@@ -1,10 +1,12 @@
+#![allow(unused)]
+pub const SORCERER_DATA: &str = r#"
 {
-  "class_hit_points": {
+  "hit_points": {
     "hit_dice": 6,
     "static_option": 4,
     "desc": "**Hit Dice:** 1d6 per Sorcerer level\n**Hit Points at 1st Level:** 6 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d6 (or 4) + your Constitution modifier per sorcerer level after 1st"
   },
-  "class_proficiencies": {
+  "proficiencies": {
     "armor": [],
     "weapons": [
       { "key": "dagger" },
@@ -18,7 +20,7 @@
     "skills": { "choices": 2, "options": [ "arcana", "deception", "insight", "intimidation", "persuasion", "religion" ] },
     "desc": "**Armor:** None\n**Weapons:** Daggers, darts, slings, quarterstaffs, light crossbows\n**Tools:** None\n**Saving Throws:** Constitution, Charisma\n**Skills:** Choose two from Arcana, Deception, Insight, Intimidation, Persuasion, and Religion"
   },
-  "class_equipment": {
+  "equipment": {
     "choice_1": [
       [
         { "source": "open5e", "location": "weapons", "key": "crossbow-light" },
@@ -50,12 +52,13 @@
     ],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a light crossbow and 20 bolts or *(b)* any simple weapon\n- *(a)* a component pouch or *(b)* an arcane focus\n- *(a)* a dungeoneer's pack or *(b)* an explorer's pack\n- Two daggers"
   },
-  "class_spellcasting": {
+  "spellcasting": {
     "ability": "charisma",
     "desc": "An event in your past, or in the life of a parent or ancestor, left an indelible mark on you, infusing you with arcane magic. This font of magic, whatever its origin, fuels your spells.\n## Cantrips\nAt 1st level, you know four cantrips of your choice from the sorcerer spell list. You learn additional sorcerer cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Sorcerer table.\n## Spell Slots\nThe Sorcerer table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these sorcerer spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\nFor example, if you know the 1st-level spell *burning hands* and have a 1st-level and a 2nd-level spell slot available, you can cast *burning hands* using either slot.\n## Spells Known of 1st Level and Higher\nYou know two 1st-level spells of your choice from the sorcerer spell list.\nThe Spells Known column of the Sorcerer table shows when you learn more sorcerer spells of your choice. Each of these spells must be of a level for which you have spell slots. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.\nAdditionally, when you gain a level in this class, you can choose one of the sorcerer spells you know and replace it with another spell from the sorcerer spell list, which also must be of a level for which you have spell slots.\n## Spellcasting Ability\nCharisma is your spellcasting ability for your sorcerer spells, since the power of your magic relies on your ability to project your will into the world. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a sorcerer spell you cast and when making an attack roll with one.\n**Spell save DC** = 8 + your proficiency bonus + your Charisma modifier\n**Spell attack modifier** = your proficiency bonus + your Charisma modifier\n## Spellcasting Focus\nYou can use an arcane focus as a spellcasting focus for your sorcerer spells."
   },
-  "class_levels": {
-    "1st": {
+  "levels": [
+    {
+      "level": 1,
       "features": [
         { "key": "spellcasting" },
         { "key": "sorcerous_origin" }
@@ -65,7 +68,8 @@
       "spells_known": 2,
       "spell_slots": [ 2, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "2nd": {
+    {
+      "level": 2,
       "features": [
         { "key": "font_of_magic" }
       ],
@@ -74,7 +78,8 @@
       "spells_known": 3,
       "spell_slots": [ 3, 0, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "3rd": {
+    {
+      "level": 3,
       "features": [
         { "key": "metamagic" }
       ],
@@ -83,7 +88,8 @@
       "spells_known": 4,
       "spell_slots": [ 4, 2, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "4th": {
+    {
+      "level": 4,
       "features": [
         { "key": "ability_score" }
       ],
@@ -92,14 +98,16 @@
       "spells_known": 5,
       "spell_slots": [ 4, 3, 0, 0, 0, 0, 0, 0, 0 ]
     },
-    "5th": {
+    {
+      "level": 5,
       "features": [],
       "sorcery_points": 5,
       "cantrips_known": 5,
       "spells_known": 6,
       "spell_slots": [ 4, 3, 2, 0, 0, 0, 0, 0, 0 ]
     },
-    "6th": {
+    {
+      "level": 6,
       "features": [
         { "key": "sorcerous_origin", "name": "Sorcerous Origin Feature" }
       ],
@@ -108,14 +116,16 @@
       "spells_known": 7,
       "spell_slots": [ 4, 3, 3, 0, 0, 0, 0, 0, 0 ]
     },
-    "7th": {
+    {
+      "level": 7,
       "features": [],
       "sorcery_points": 7,
       "cantrips_known": 5,
       "spells_known": 8,
       "spell_slots": [ 4, 3, 3, 1, 0, 0, 0, 0, 0 ]
     },
-    "8th": {
+    {
+      "level": 8,
       "features": [
         { "key": "ability_score" }
       ],
@@ -124,14 +134,16 @@
       "spells_known": 9,
       "spell_slots": [ 4, 3, 3, 2, 0, 0, 0, 0, 0 ]
     },
-    "9th": {
+    {
+      "level": 9,
       "features": [],
       "sorcery_points": 9,
       "cantrips_known": 5,
       "spells_known": 10,
       "spell_slots": [ 4, 3, 3, 3, 1, 0, 0, 0, 0 ]
     },
-    "10th": {
+    {
+      "level": 10,
       "features": [
         { "key": "metamagic", "name": "Metamagic Option" }
       ],
@@ -140,14 +152,16 @@
       "spells_known": 11,
       "spell_slots": [ 4, 3, 3, 3, 2, 0, 0, 0, 0 ]
     },
-    "11th": {
+    {
+      "level": 11,
       "features": [],
       "sorcery_points": 11,
       "cantrips_known": 6,
       "spells_known": 12,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
     },
-    "12th": {
+    {
+      "level": 12,
       "features": [
         { "key": "ability_score" }
       ],
@@ -156,14 +170,16 @@
       "spells_known": 12,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 0, 0, 0 ]
     },
-    "13th": {
+    {
+      "level": 13,
       "features": [],
       "sorcery_points": 13,
       "cantrips_known": 6,
       "spells_known": 13,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
     },
-    "14th": {
+    {
+      "level": 14,
       "features": [
         { "key": "sorcerous_origin", "name": "Sorcerous Origin Feature" }
       ],
@@ -172,14 +188,16 @@
       "spells_known": 13,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 0, 0 ]
     },
-    "15th": {
+    {
+      "level": 15,
       "features": [],
       "sorcery_points": 15,
       "cantrips_known": 6,
       "spells_known": 14,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
     },
-    "16th": {
+    {
+      "level": 16,
       "features": [
         { "key": "ability_score" }
       ],
@@ -188,7 +206,8 @@
       "spells_known": 14,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 0 ]
     },
-    "17th": {
+    {
+      "level": 17,
       "features": [
         { "key": "metamagic", "name": "Metamagic Option" }
       ],
@@ -197,7 +216,8 @@
       "spells_known": 15,
       "spell_slots": [ 4, 3, 3, 3, 2, 1, 1, 1, 1 ]
     },
-    "18th": {
+    {
+      "level": 18,
       "features": [
         { "key": "sorcerous_origin", "name": "Sorcerous Origin Feature" }
       ],
@@ -206,7 +226,8 @@
       "spells_known": 15,
       "spell_slots": [ 4, 3, 3, 3, 3, 1, 1, 1, 1 ]
     },
-    "19th": {
+    {
+      "level": 19,
       "features": [
         { "key": "ability_score" }
       ],
@@ -215,7 +236,8 @@
       "spells_known": 15,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 1, 1, 1 ]
     },
-    "20th": {
+    {
+      "level": 20,
       "features": [
         { "key": "sorcerous_restoration" }
       ],
@@ -224,8 +246,8 @@
       "spells_known": 15,
       "spell_slots": [ 4, 3, 3, 3, 3, 2, 2, 1, 1 ]
     }
-  },
-  "class_features": {
+  ],
+  "features": {
     "ability_score": {
       "name": "Ability Score Improvement",
       "desc": "When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
@@ -260,3 +282,4 @@
     }
   }
 }
+"#;

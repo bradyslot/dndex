@@ -1,10 +1,12 @@
+#![allow(unused)]
+pub const FIGHTER_DATA: &str = r#"
 {
-  "class_hit_points": {
+  "hit_points": {
     "hit_dice": 10,
     "static_option": 6,
     "desc": "**Hit Dice:** 1d10 per Fighter level\n**Hit Points at 1st Level:** 10 + your Constitution modifier\n**Hit Points at Higher Levels:** 1d10 (or 6) + your Constitution modifier per fighter level after 1st"
   },
-  "class_proficiencies": {
+  "proficiencies": {
     "armor": [
       { "category": "Armor" }
     ],
@@ -17,7 +19,7 @@
     "skills": { "choices": 2, "options": [ "acrobatics", "animal_handling", "athletics", "history", "insight", "intimidation", "perception", "survival" ] },
     "desc": "**Armor:** All armor, shields\n**Weapons:** Simple weapons, martial weapons\n**Tools:** None\n**Saving Throws:** Strength, Constitution\n**Skills:** Choose two skills from Acrobatics, Animal, Handling, Athletics, History, Insight, Intimidation, Perception, and Survival"
   },
-  "class_equipment": {
+  "equipment": {
     "choice_1": [
       [
         { "source": "open5e", "location": "armor", "key": "chain-mail" }
@@ -57,112 +59,132 @@
     "defaults": [],
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* chain mail or *(b)* leather armor, longbow, and 20 arrows\n- *(a)* a martial weapon and a shield or *(b)* two martial weapons\n- *(a)* a light crossbow and 20 bolts or *(b)* two handaxes\n- *(a)* a dungeoneer's pack or *(b)* an explorer's pack"
   },
-  "class_spellcasting": {},
-  "class_levels": {
-    "1st": {
+  "spellcasting": {},
+  "levels": [
+    {
+      "level": 1,
       "features": [
         { "key": "fighter_fighting_style" },
         { "key": "second_wind" }
       ]
     },
-    "2nd": {
+    {
+      "level": 2,
       "features": [
         { "key": "action_surge", "name": "Action Surge (1 use)" }
       ]
     },
-    "3rd": {
+    {
+      "level": 3,
       "features": [
         { "key": "martial_archetype" }
       ]
     },
-    "4th": {
+    {
+      "level": 4,
       "features": [
         { "key": "fighter_ability_score" }
       ]
     },
-    "5th": {
+    {
+      "level": 5,
       "features": [
         { "key": "fighter_extra_attack" }
       ]
     },
-    "6th": {
+    {
+      "level": 6,
       "features": [
         { "key": "fighter_ability_score" }
       ]
     },
-    "7th": {
+    {
+      "level": 7,
       "features": [
         { "key": "martial_archetype", "name": "Martial Archetype Feature" }
       ]
     },
-    "8th": {
+    {
+      "level": 8,
       "features": [
         { "key": "fighter_ability_score" }
       ]
     },
-    "9th": {
+    {
+      "level": 9,
       "features": [
         { "key": "indomitable", "name": "Indomitable (1 use)" }
       ]
     },
-    "10th": {
+    {
+      "level": 10,
       "features": [
         { "key": "martial_archetype", "name": "Martial Archetype Feature" }
       ]
     },
-    "11th": {
+    {
+      "level": 11,
       "features": [
         { "key": "fighter_extra_attack", "name": "Extra Attack (2)" }
       ]
     },
-    "12th": {
+    {
+      "level": 12,
       "features": [
         { "key": "fighter_ability_score" }
       ]
     },
-    "13th": {
+    {
+      "level": 13,
       "features": [
         { "key": "indomitable", "name": "Indomitable (2 uses)" }
       ]
     },
-    "14th": {
+    {
+      "level": 14,
       "features": [
         { "key": "fighter_ability_score" }
       ]
     },
-    "15th": {
+    {
+      "level": 15,
       "features": [
         { "key": "martial_archetype", "name": "Martial Archetype Feature" }
       ]
     },
-    "16th": {
+    {
+      "level": 16,
       "features": [
         { "key": "fighter_ability_score" }
       ]
     },
-    "17th": {
+    {
+      "level": 17,
       "features": [
         { "key": "action_surge", "name": "Action Surge (2 uses)" },
         { "key": "indomitable", "name": "Indomitable (3 uses)" }
       ]
     },
-    "18th": {
+    {
+      "level": 18,
       "features": [
         { "key": "martial_archetype", "name": "Martial Archetype Feature" }
       ]
     },
-    "19th": {
+    {
+      "level": 19,
       "features": [
         { "key": "fighter_ability_score" }
       ]
     },
-    "20th": {
+    {
+      "level": 20,
       "features": [
         { "key": "extra_attack", "name": "Extra Attack (3)" }
       ]
     }
-  },
-  "class_features": {
+  ],
+  "features": {
     "fighter_fighting_style": {
       "name": "Fighting Style",
       "desc": "You adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again.\n## Archery You gain a +2 bonus to attack rolls you make with ranged weapons.\n## Defense While you are wearing armor, you gain a +1 bonus to AC.\n## Dueling When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon.\n## Great Weapon Fighting When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. The weapon must have the two_handed or versatile property for you to gain this benefit.\n## Protection When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield.\n## Two_Weapon Fighting When you engage in two_weapon fighting, you can add your ability modifier to the damage of the second attack. "
@@ -193,3 +215,4 @@
     }
   }
 }
+"#;
