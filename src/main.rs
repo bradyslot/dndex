@@ -1,9 +1,15 @@
 use stylist::{css, global_style};
 use yew::prelude::*;
 use yew::props;
+use log::info;
+use serde_json;
+
+mod data;
+use data::classes::barbarian::*;
 
 mod models;
 use models::models::*;
+use models::classes::*;
 
 mod components;
 use components::shared::utils::*;
@@ -116,6 +122,9 @@ fn App() -> Html {
         display: flex;
         flex-direction: column;
     );
+
+    let barbarian_json: DnDClass = serde_json::from_str(BARBARIAN_DATA).unwrap();
+    info!("{:?}", barbarian_json);
 
     html! {
         <div class={style}>

@@ -61,7 +61,7 @@
       ],
       "cantrips_known": 2,
       "spells_known": 2,
-      "spell_slots": 1,
+      "available_spell_slots": 1,
       "slot_level": 1,
       "invocations_known": 0
     },
@@ -71,7 +71,7 @@
       ],
       "cantrips_known": 2,
       "spells_known": 3,
-      "spell_slots": 2,
+      "available_spell_slots": 2,
       "slot_level": 1,
       "invocations_known": 2
     },
@@ -81,7 +81,7 @@
       ],
       "cantrips_known": 2,
       "spells_known": 4,
-      "spell_slots": 2,
+      "available_spell_slots": 2,
       "slot_level": 2,
       "invocations_known": 2
     },
@@ -91,7 +91,7 @@
       ],
       "cantrips_known": 3,
       "spells_known": 5,
-      "spell_slots": 2,
+      "available_spell_slots": 2,
       "slot_level": 2,
       "invocations_known": 2
     },
@@ -99,7 +99,7 @@
       "features": [],
       "cantrips_known": 3,
       "spells_known": 6,
-      "spell_slots": 2,
+      "available_spell_slots": 2,
       "slot_level": 3,
       "invocations_known": 3
     },
@@ -109,7 +109,7 @@
       ],
       "cantrips_known": 3,
       "spells_known": 8,
-      "spell_slots": 2,
+      "available_spell_slots": 2,
       "slot_level": 3,
       "invocations_known": 3
     },
@@ -117,7 +117,7 @@
       "features": [],
       "cantrips_known": 3,
       "spells_known": 8,
-      "spell_slots": 2,
+      "available_spell_slots": 2,
       "slot_level": 4,
       "invocations_known": 4
     },
@@ -127,7 +127,7 @@
       ],
       "cantrips_known": 3,
       "spells_known": 9,
-      "spell_slots": 2,
+      "available_spell_slots": 2,
       "slot_level": 4,
       "invocations_known": 4
     },
@@ -135,7 +135,7 @@
       "features": [],
       "cantrips_known": 3,
       "spells_known": 10,
-      "spell_slots": 2,
+      "available_spell_slots": 2,
       "slot_level": 5,
       "invocations_known": 5
     },
@@ -145,7 +145,7 @@
       ],
       "cantrips_known": 4,
       "spells_known": 10,
-      "spell_slots": 2,
+      "available_spell_slots": 2,
       "slot_level": 5,
       "invocations_known": 5
     },
@@ -155,7 +155,7 @@
       ],
       "cantrips_known": 4,
       "spells_known": 11,
-      "spell_slots": 3,
+      "available_spell_slots": 3,
       "slot_level": 5,
       "invocations_known": 5
     },
@@ -165,7 +165,7 @@
       ],
       "cantrips_known": 4,
       "spells_known": 11,
-      "spell_slots": 3,
+      "available_spell_slots": 3,
       "slot_level": 5,
       "invocations_known": 6
     },
@@ -175,7 +175,7 @@
       ],
       "cantrips_known": 4,
       "spells_known": 12,
-      "spell_slots": 3,
+      "available_spell_slots": 3,
       "slot_level": 5,
       "invocations_known": 6
     },
@@ -185,7 +185,7 @@
       ],
       "cantrips_known": 4,
       "spells_known": 12,
-      "spell_slots": 3,
+      "available_spell_slots": 3,
       "slot_level": 5,
       "invocations_known": 6
     },
@@ -195,7 +195,7 @@
       ],
       "cantrips_known": 4,
       "spells_known": 13,
-      "spell_slots": 3,
+      "available_spell_slots": 3,
       "slot_level": 5,
       "invocations_known": 7
     },
@@ -205,7 +205,7 @@
       ],
       "cantrips_known": 4,
       "spells_known": 13,
-      "spell_slots": 3,
+      "available_spell_slots": 3,
       "slot_level": 5,
       "invocations_known": 7
     },
@@ -215,7 +215,7 @@
       ],
       "cantrips_known": 4,
       "spells_known": 14,
-      "spell_slots": 4,
+      "available_spell_slots": 4,
       "slot_level": 5,
       "invocations_known": 7
     },
@@ -223,7 +223,7 @@
       "features": [],
       "cantrips_known": 4,
       "spells_known": 14,
-      "spell_slots": 4,
+      "available_spell_slots": 4,
       "slot_level": 5,
       "invocations_known": 8
     },
@@ -233,7 +233,7 @@
       ],
       "cantrips_known": 4,
       "spells_known": 15,
-      "spell_slots": 4,
+      "available_spell_slots": 4,
       "slot_level": 5,
       "invocations_known": 8
     },
@@ -243,7 +243,7 @@
       ],
       "cantrips_known": 4,
       "spells_known": 15,
-      "spell_slots": 4,
+      "available_spell_slots": 4,
       "slot_level": 5,
       "invocations_known": 8
     }

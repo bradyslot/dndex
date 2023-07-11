@@ -1,3 +1,4 @@
+pub const BARBARIAN_DATA: &str = r#"
 {
   "class_hit_points": {
     "hit_dice": 12,
@@ -45,8 +46,9 @@
     "desc": "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a greataxe or *(b)* any martial melee weapon \n- *(a)* two handaxes or *(b)* any simple weapon\nAn explorer's pack and four javelins"
   },
   "class_spellcasting": {},
-  "class_levels": {
-    "1st": {
+  "class_levels": [
+    {
+      "level": 1,
       "features": [
         { "key": "rage" },
         { "key": "unarmored_defense" }
@@ -54,7 +56,8 @@
       "rages": 2,
       "rage_damage": 2
     },
-    "2nd": {
+    {
+      "level": 2,
       "features": [
         { "key": "reckless_attack" },
         { "key": "danger_sense" }
@@ -62,21 +65,24 @@
       "rages": 2,
       "rage_damage": 2
     },
-    "3rd": {
+    {
+      "level": 3,
       "features": [
         { "key": "primal_path" }
       ],
       "rages": 3,
       "rage_damage": 2
     },
-    "4th": {
+    {
+      "level": 4,
       "features": [
         { "key": "ability_score" }
       ],
       "rages": 3,
       "rage_damage": 2
     },
-    "5th": {
+    {
+      "level": 5,
       "features": [
         { "key": "extra_attack" },
         { "key": "fast_movement" }
@@ -84,112 +90,127 @@
       "rages": 4,
       "rage_damage": 2
     },
-    "6th": {
+    {
+      "level": 6,
       "features": [
         { "key": "primal_path", "name": "Path Feature" }
       ],
       "rages": 4,
       "rage_damage": 2
     },
-    "7th": {
+    {
+      "level": 7,
       "features": [
         { "key": "feral_instinct" }
       ],
       "rages": 4,
       "rage_damage": 2
     },
-    "8th": {
+    {
+      "level": 8,
       "features": [
         { "key": "ability_score" }
       ],
       "rages": 4,
       "rage_damage": 2
     },
-    "9th": {
+    {
+      "level": 9,
       "features": [
         { "key": "brutal_critical", "name": "Brutal Critical (1 die)" }
       ],
       "rages": 4,
       "rage_damage": 3
     },
-    "10th": {
+    {
+      "level": 10,
       "features": [
         { "key": "primal_path", "name": "Path Feature" }
       ],
       "rages": 4,
       "rage_damage": 3
     },
-    "11th": {
+    {
+      "level": 11,
       "features": [
         { "key": "relentless_rage" }
       ],
       "rages": 4,
       "rage_damage": 3
     },
-    "12th": {
+    {
+      "level": 12,
       "features": [
         { "key": "ability_score" }
       ],
       "rages": 5,
       "rage_damage": 3
     },
-    "13th": {
+    {
+      "level": 13,
       "features": [
         { "key": "brutal_critical", "name": "Brutal Critical (2 dice)" }
       ],
       "rages": 5,
       "rage_damage": 3
     },
-    "14th": {
+    {
+      "level": 14,
       "features": [
         { "key": "primal_path", "name": "Path Feature" }
       ],
       "rages": 5,
       "rage_damage": 3
     },
-    "15th": {
+    {
+      "level": 15,
       "features": [
         { "key": "persistent_rage" }
       ],
       "rages": 5,
       "rage_damage": 3
     },
-    "16th": {
+    {
+      "level": 16,
       "features": [
         { "key": "ability_score" }
       ],
       "rages": 5,
       "rage_damage": 4
     },
-    "17th": {
+    {
+      "level": 17,
       "features": [
         { "key": "brutal_critical", "name": "Brutal Critical (3 dice)" }
       ],
       "rages": 5,
       "rage_damage": 4
     },
-    "18th": {
+    {
+      "level": 18,
       "features": [
         { "key": "indomitable_might" }
       ],
       "rages": 5,
       "rage_damage": 4
     },
-    "19th": {
+    {
+      "level": 19,
       "features": [
         { "key": "ability_score" }
       ],
       "rages": 5,
       "rage_damage": 4
     },
-    "20th": {
+    {
+      "level": 20,
       "features": [
         { "key": "primal_champion" }
       ],
       "rages": 0,
       "rage_damage": 4
     }
-  },
+  ],
   "class_features": {
     "ability_score": {
       "name": "Ability Score Improvement",
@@ -249,3 +270,4 @@
     }
   }
 }
+"#;

@@ -1,26 +1,26 @@
 #![allow(non_snake_case, non_camel_case_types, clippy::similar_names)]
 use yew::prelude::*;
 use serde::Deserialize;
-// use std::collections::HashMap;
+use std::collections::HashMap;
 
-#[derive(Deserialize, Clone, Properties, PartialEq)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct DnDClass {
     class_hit_points: ClassHitPoints,
     class_proficiencies: ClassProficiencies,
     class_equipment: ClassEquipment,
     class_spellcasting: ClassSpellcasting,
-    class_levels: ClassLevels,
-    class_features: ClassFeatures,
+    class_levels: Vec<ClassLevelAttributes>,
+    class_features: HashMap<String, ClassFeatures>,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassHitPoints {
     hit_dice: u8,
     static_option: u8,
     desc: String,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassProficiencies {
     armor: Vec<ClassEquipmentItem>,
     weapons: Vec<ClassEquipmentItem>,
@@ -30,13 +30,13 @@ pub struct ClassProficiencies {
     desc: String,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassSkillChoices {
     choices: u8,
     options: Vec<String>,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassEquipmentItem {
     name: Option<String>,
     source: Option<String>,
@@ -46,7 +46,7 @@ pub struct ClassEquipmentItem {
     qty: Option<u8>,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassEquipment {
     choice_1: Vec<Vec<ClassEquipmentItem>>,
     choice_2: Vec<Vec<ClassEquipmentItem>>,
@@ -56,123 +56,37 @@ pub struct ClassEquipment {
     desc: String,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassSpellcasting {
-    ability: String,
-    desc: String,
+    ability: Option<String>,
+    desc: Option<String>,
 }
 
-#[derive(Deserialize, Clone, PartialEq)]
-pub enum ClassLevels {
-    Barbarian(BarbarianLevel),
-    Bard(BardLevel),
-    Cleric(ClericLevel),
-    Druid(DruidLevel),
-    Fighter(FighterLevel),
-    Monk(MonkLevel),
-    Paladin(PaladinLevel),
-    Ranger(RangerLevel),
-    Rogue(RogueLevel),
-    Sorcerer(SorcererLevel),
-    Warlock(WarlockLevel),
-    Wizard(WizardLevel),
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassLevelFeature {
     key: String,
     name: Option<String>, // if present, overrides the name of the feature
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq)]
-pub struct BarbarianLevel {
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+pub struct ClassLevelAttributes {
+    level: u8,
     features: Vec<ClassLevelFeature>,
-    rages: u8,
-    rage_damage: u8,
+    rages: Option<u8>,
+    rage_damage: Option<u8>,
+    cantrips_known: Option<u8>,
+    spells_known: Option<u8>,
+    spell_slots: Option<Vec<u8>>,
+    martial_arts: Option<u8>,
+    ki_points: Option<u8>,
+    unarmored_movement: Option<u8>,
+    sneak_attack: Option<u8>,
+    available_spell_slots: Option<u8>,
+    slot_level: Option<u8>,
+    invocations_known: Option<u8>,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq)]
-pub struct BardLevel {
-    features: Vec<ClassLevelFeature>,
-    cantrips_known: u8,
-    spells_known: u8,
-    spell_slots: Vec<u8>,
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq)]
-pub struct ClericLevel {
-    features: Vec<ClassLevelFeature>,
-    cantrips_known: u8,
-    spell_slots: Vec<u8>,
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq)]
-pub struct DruidLevel {
-    features: Vec<ClassLevelFeature>,
-    cantrips_known: u8,
-    spell_slots: Vec<u8>,
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq)]
-pub struct FighterLevel {
-    features: Vec<ClassLevelFeature>,
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq)]
-pub struct MonkLevel {
-    features: Vec<ClassLevelFeature>,
-    martial_arts: u8,
-    ki_points: u8,
-    unarmored_movement: u8,
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq)]
-pub struct PaladinLevel {
-    features: Vec<ClassLevelFeature>,
-    spells_known: u8,
-    spell_slots: Vec<u8>,
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq)]
-pub struct RangerLevel {
-    features: Vec<ClassLevelFeature>,
-    spells_known: u8,
-    spell_slots: Vec<u8>,
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq)]
-pub struct RogueLevel {
-    features: Vec<ClassLevelFeature>,
-    sneak_attack: u8,
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq)]
-pub struct SorcererLevel {
-    features: Vec<ClassLevelFeature>,
-    sorcery_points: u8,
-    cantrips_known: u8,
-    spells_known: u8,
-    spell_slots: Vec<u8>,
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq)]
-pub struct WarlockLevel {
-    features: Vec<ClassLevelFeature>,
-    cantrips_known: u8,
-    spells_known: u8,
-    spell_slots: u8,
-    slot_level: u8,
-    invocations_known: u8,
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq)]
-pub struct WizardLevel {
-    features: Vec<ClassLevelFeature>,
-    cantrips_known: u8,
-    spell_slots: Vec<u8>,
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassFeatures {
     name: String,
     desc: String,
