@@ -1,5 +1,5 @@
 #![allow(non_snake_case, non_camel_case_types, clippy::similar_names)]
-use yew::prelude::*;
+use yew::prelude::Properties;
 use serde::Deserialize;
 use std::collections::HashMap;
 

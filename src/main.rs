@@ -8,11 +8,13 @@ use serde_json;
 mod data;
 use data::classes::*;
 use data::equipment::*;
+use data::mechanics::*;
 
 mod models;
 use models::models::*;
 use models::classes::*;
 use models::equipment::*;
+use models::mechanics::*;
 
 mod components;
 use components::shared::utils::*;
@@ -148,22 +150,13 @@ fn App() -> Html {
         tools: serde_json::from_str(tools::TOOLS_DATA).unwrap(),
     };
 
+    let mechanics = SRDMechanics {
+        advancement: serde_json::from_str(advancement::ADVANCEMENT_DATA).unwrap(),
+    };
+
+    info!("{:?}", classes);
     info!("{:?}", equipment);
-    // info!("{:?}", bard_json);
-    // info!("{:?}", cleric_json);
-    // info!("{:?}", druid_json);
-    // info!("{:?}", fighter_json);
-    // info!("{:?}", monk_json);
-    // info!("{:?}", paladin_json);
-    // info!("{:?}", ranger_json);
-    // info!("{:?}", rogue_json);
-    // info!("{:?}", sorcerer_json);
-    // info!("{:?}", warlock_json);
-    // info!("{:?}", wizard_json);
-
-    // info!("{:?}", adventuring_gear);
-    // info!("{:?}", equipment.equipment_packs.get("burglars_pack").unwrap().contents);
-
+    info!("{:?}", mechanics);
 
     html! {
         <div class={style}>
