@@ -1,3 +1,5 @@
+#![allow(unused)]
+pub const EQUIPMENT_PACKS_DATA: &str = r#"
 {
   "burglars_pack": {
     "name": "Burglar's Pack",
@@ -122,3 +124,4 @@
     ]
   }
 }
+"#;

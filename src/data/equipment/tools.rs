@@ -1,10 +1,12 @@
+#![allow(unused)]
+pub const TOOLS_DATA: &str = r#"
 {
   "desc": "A tool helps you to do something you couldn't otherwise do, such as craft or repair an item, forge a document, or pick a lock. Your race, class, background, or feats give you proficiency with certain tools. Proficiency with a tool allows you to add your proficiency bonus to any ability check you make using that tool. Tool use is not tied to a single ability, since proficiency with a tool represents broader knowledge of its use. For example, the GM might ask you to make a Dexterity check to carve a fine detail with your woodcarver's tools, or a Strength check to make something out of particularly hard wood.",
   "table": "| Item | Cost | Weight |\n|_|-|-|\n| Artisan's tools | | |\n| - Alchemist's supplies | 50 gp | 8 lb. |\n| - Brewer's supplies | 20 gp | 9 lb. |\n| - Calligrapher's supplies | 10 gp | 5 lb. |\n| - Carpenter's tools | 8 gp | 6 lb. |\n| - Cartographer's tools | 15 gp | 6 lb. |\n| - Cobbler's tools | 5 gp | 5 lb. |\n| - Cook's utensils | 1 gp | 8 lb. |\n| - Glassblower's tools | 30 gp | 5 lb. |\n| - Jeweler's tools | 25 gp | 2 lb. |\n| - Leatherworker's tools | 5 gp | 5 lb. |\n| - Mason's tools | 10 gp | 8 lb. |\n| - Painter's supplies | 10 gp | 5 lb. |\n| - Potter's tools | 10 gp | 3 lb. |\n| - Smith's tools | 20 gp | 8 lb. |\n| - Tinker's tools | 50 gp | 10 lb. |\n| - Weaver's tools | 1 gp | 5 lb. |\n| - Woodcarver's tools | 1 gp | 5 lb. |\n| Disguise kit | 25 gp | 3 lb. |\n| Forgery kit | 15 gp | 5 lb. |\n| Gaming set | | |\n| - Dice set | 1 sp | |\n| - Playing card set | 5 sp | |\n| Herbalism kit | 5 gp | 3 lb. |\n| Musical instrument | | |\n| - Bagpipes | 30 gp | 6 lb. |\n| - Drum | 6 gp | 3 lb. |\n| - Dulcimer | 25 gp | 10 lb. |\n| - Flute | 2 gp | 1 lb. |\n| - Lute | 35 gp | 2 lb. |\n| - Lyre | 30 gp | 2 lb. |\n| - Horn | 3 gp | 2 lb. |\n| - Pan flute | 12 gp | 2 lb. |\n| - Shawm | 2 gp | 1 lb. |\n| - Viol | 30 gp | 1 lb. |\n| Navigator's tools | 25 gp | 2 lb. |\n| Poisoner's kit | 50 gp | 2 lb. |\n| Thieves' tools | 25 gp | 1 lb. |\n",
-  "groups": {
-    "artisans_tools": {
-      "name": "Atisan's Tools",
-      "desc": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency.",
+  "artisans_tools": {
+    "name": "Atisan's Tools",
+    "desc": "These special tools include the items needed to pursue a craft or trade. The table shows examples of the most common types of tools, each providing items related to a single craft. Proficiency with a set of artisan's tools lets you add your proficiency bonus to any ability checks you make using the tools in your craft. Each type of artisan's tools requires a separate proficiency.",
+    "subtypes": {
       "alchemists_supplies": {
         "name": "Alchemist's Supplies",
         "value": 50,
@@ -107,10 +109,12 @@
         "denom": "gp",
         "weight": 5
       }
-    },
-    "gaming_set": {
-      "name": "Gaming Set",
-      "desc": "This item encompasses a wide range of game pieces, including dice and decks of cards (for games such as Three_Dragon Ante). A few common examples appear on the Tools table, but other kinds of gaming sets exist. If you are proficient with a gaming set, you can add your proficiency bonus to ability checks you make to play a game with that set. Each type of gaming set requires a separate proficiency.",
+    }
+  },
+  "gaming_sets": {
+    "name": "Gaming Set",
+    "desc": "This item encompasses a wide range of game pieces, including dice and decks of cards (for games such as Three_Dragon Ante). A few common examples appear on the Tools table, but other kinds of gaming sets exist. If you are proficient with a gaming set, you can add your proficiency bonus to ability checks you make to play a game with that set. Each type of gaming set requires a separate proficiency.",
+    "subtypes": {
       "dice_set": {
         "name": "Dice Set",
         "value": 1,
@@ -123,10 +127,12 @@
         "denom": "sp",
         "weight": 0
       }
-    },
-    "musical_instrument": {
-      "name": "Musical Instrument",
-      "desc": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency.",
+    }
+  },
+  "musical_instruments": {
+    "name": "Musical Instrument",
+    "desc": "Several of the most common types of musical instruments are shown on the table as examples. If you have proficiency with a given musical instrument, you can add your proficiency bonus to any ability checks you make to play music with the instrument. A bard can use a musical instrument as a spellcasting focus. Each type of musical instrument requires a separate proficiency.",
+    "subtypes": {
       "bagpipes": {
         "name": "Bagpipes",
         "value": 30,
@@ -234,3 +240,4 @@
     }
   }
 }
+"#;

@@ -1,3 +1,4 @@
+#![allow(unused)]
 use stylist::{css, global_style};
 use yew::prelude::*;
 use yew::props;
@@ -5,22 +6,13 @@ use log::info;
 use serde_json;
 
 mod data;
-use data::classes::barbarian::*;
-// use data::classes::bard::*;
-// use data::classes::cleric::*;
-// use data::classes::druid::*;
-// use data::classes::fighter::*;
-// use data::classes::monk::*;
-// use data::classes::paladin::*;
-// use data::classes::ranger::*;
-// use data::classes::rogue::*;
-// use data::classes::sorcerer::*;
-// use data::classes::warlock::*;
-// use data::classes::wizard::*;
+use data::classes::*;
+use data::equipment::*;
 
 mod models;
 use models::models::*;
 use models::classes::*;
+use models::equipment::*;
 
 mod components;
 use components::shared::utils::*;
@@ -134,20 +126,29 @@ fn App() -> Html {
         flex-direction: column;
     );
 
-    let barbarian: DnDClass = serde_json::from_str(BARBARIAN_DATA).unwrap();
-    // let bard_json: DnDClass = serde_json::from_str(BARD_DATA).unwrap();
-    // let cleric_json: DnDClass = serde_json::from_str(CLERIC_DATA).unwrap();
-    // let druid_json: DnDClass = serde_json::from_str(DRUID_DATA).unwrap();
-    // let fighter_json: DnDClass = serde_json::from_str(FIGHTER_DATA).unwrap();
-    // let monk_json: DnDClass = serde_json::from_str(MONK_DATA).unwrap();
-    // let paladin_json: DnDClass = serde_json::from_str(PALADIN_DATA).unwrap();
-    // let ranger_json: DnDClass = serde_json::from_str(RANGER_DATA).unwrap();
-    // let rogue_json: DnDClass = serde_json::from_str(ROGUE_DATA).unwrap();
-    // let sorcerer_json: DnDClass = serde_json::from_str(SORCERER_DATA).unwrap();
-    // let warlock_json: DnDClass = serde_json::from_str(WARLOCK_DATA).unwrap();
-    // let wizard_json: DnDClass = serde_json::from_str(WIZARD_DATA).unwrap();
+    let classes = SRDClasses {
+        barbarian: serde_json::from_str(barbarian::BARBARIAN_DATA).unwrap(),
+        bard: serde_json::from_str(bard::BARD_DATA).unwrap(),
+        cleric: serde_json::from_str(cleric::CLERIC_DATA).unwrap(),
+        druid: serde_json::from_str(druid::DRUID_DATA).unwrap(),
+        fighter: serde_json::from_str(fighter::FIGHTER_DATA).unwrap(),
+        monk: serde_json::from_str(monk::MONK_DATA).unwrap(),
+        paladin: serde_json::from_str(paladin::PALADIN_DATA).unwrap(),
+        ranger: serde_json::from_str(ranger::RANGER_DATA).unwrap(),
+        rogue: serde_json::from_str(rogue::ROGUE_DATA).unwrap(),
+        sorcerer: serde_json::from_str(sorcerer::SORCERER_DATA).unwrap(),
+        warlock: serde_json::from_str(warlock::WARLOCK_DATA).unwrap(),
+        wizard: serde_json::from_str(wizard::WIZARD_DATA).unwrap(),
+    };
 
-    info!("{:?}", barbarian);
+    let equipment = SRDEquipment {
+        adventuring_gear: serde_json::from_str(adventuring_gear::ADVENTURING_GEAR_DATA).unwrap(),
+        equipment_packs: serde_json::from_str(equipment_packs::EQUIPMENT_PACKS_DATA).unwrap(),
+        mounts_and_vehicles: serde_json::from_str(mounts_and_vehicles::MOUNTS_AND_VEHICLES_DATA).unwrap(),
+        tools: serde_json::from_str(tools::TOOLS_DATA).unwrap(),
+    };
+
+    info!("{:?}", equipment);
     // info!("{:?}", bard_json);
     // info!("{:?}", cleric_json);
     // info!("{:?}", druid_json);
@@ -159,6 +160,9 @@ fn App() -> Html {
     // info!("{:?}", sorcerer_json);
     // info!("{:?}", warlock_json);
     // info!("{:?}", wizard_json);
+
+    // info!("{:?}", adventuring_gear);
+    // info!("{:?}", equipment.equipment_packs.get("burglars_pack").unwrap().contents);
 
 
     html! {

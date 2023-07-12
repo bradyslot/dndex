@@ -1,3 +1,5 @@
+#![allow(unused)]
+pub const ADVENTURING_GEAR_DATA: &str = r#"
 {
   "acid": {
     "name": "Acid",
@@ -76,3 +78,4 @@
     "desc": "A holy symbol is a representation of a god or pantheon. It might be an amulet depicting a symbol representing a deity, the same symbol carefully engraved or inlaid as an emblem on a shield, or a tiny box holding a fragment of a sacred relic."
   }
 }
+"#;

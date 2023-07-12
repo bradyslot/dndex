@@ -3,8 +3,25 @@ use yew::prelude::*;
 use serde::Deserialize;
 use std::collections::HashMap;
 
+
+#[derive(Clone, Properties, PartialEq, Debug)]
+pub struct SRDClasses {
+    pub barbarian: SRDClass,
+    pub bard: SRDClass,
+    pub cleric: SRDClass,
+    pub druid: SRDClass,
+    pub fighter: SRDClass,
+    pub monk: SRDClass,
+    pub paladin: SRDClass,
+    pub ranger: SRDClass,
+    pub rogue: SRDClass,
+    pub sorcerer: SRDClass,
+    pub warlock: SRDClass,
+    pub wizard: SRDClass,
+}
+
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct DnDClass {
+pub struct SRDClass {
     pub hit_points: ClassHitPoints,
     pub proficiencies: ClassProficiencies,
     pub equipment: ClassEquipment,
