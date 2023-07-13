@@ -20,7 +20,7 @@ pub struct AdventuringGear {
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct EquipmentPack {
     pub name: String,
-    pub value: u8,
+    pub value: i32,
     pub denom: String,
     pub desc: String,
     pub contents: Vec<PackItem>,
@@ -30,7 +30,7 @@ pub struct EquipmentPack {
 pub struct PackItem {
     pub name: Option<String>,
     pub key: Option<String>,
-    pub qty: Option<u16>,
+    pub qty: Option<i32>,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
@@ -46,32 +46,32 @@ pub struct MountsAndVehicles {
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Mount {
     pub name: String,
-    pub cost: u16,
+    pub cost: i32,
     pub denom: String,
-    pub speed: u8,
-    pub capacity: u16,
+    pub speed: i32,
+    pub capacity: i32,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Tack {
     pub name: String,
-    pub cost: u16,
+    pub cost: i32,
     pub denom: String,
-    pub weight: u8,
+    pub weight: i32,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct DrawnVehicles {
     pub name: String,
-    pub cost: u16,
+    pub cost: i32,
     pub denom: String,
-    pub weight: u16,
+    pub weight: i32,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct WaterborneVehicles {
     pub name: String,
-    pub cost: u16,
+    pub cost: i32,
     pub denom: String,
     pub speed: f32,
     pub speed_unit: String,
@@ -97,16 +97,16 @@ pub struct ToolSets {
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ToolSubtypes {
     pub name: String,
-    pub value: u8,
+    pub value: i32,
     pub denom: String,
-    pub weight: u8,
+    pub weight: i32,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Kits {
     pub name: String,
-    pub value: u8,
+    pub value: i32,
     pub denom: String,
-    pub weight: u8,
+    pub weight: i32,
     pub desc: String,
 }

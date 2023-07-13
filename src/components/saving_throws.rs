@@ -37,7 +37,7 @@ pub fn saving_throws(props: &Character) -> Html {
     );
 
     let proficiency_bonus = calc_proficiency_bonus(props.level);
-    let modifier = |ability: &Ability| -> i8 {
+    let modifier = |ability: &Ability| -> i32 {
         let base_modifier = calc_base_modifier(ability.value);
         if !props.class.saves.contains(ability) {
             return base_modifier;

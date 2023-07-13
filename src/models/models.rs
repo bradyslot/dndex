@@ -10,9 +10,9 @@ pub struct Character {
     pub class: Class,
     pub deathsaves: DeathSaves,
     pub hp: Health,
-    pub initiative: i8,
+    pub initiative: i32,
     pub inspiration: bool,
-    pub level: u8,
+    pub level: i32,
     pub name: AttrValue,
     pub passives: Vec<Passive>,
     pub skills: Vec<Skill>,
@@ -22,8 +22,8 @@ pub struct Character {
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct AC {
-    pub base: u8,
-    pub modifier: i8,
+    pub base: i32,
+    pub modifier: i32,
 }
 
 #[derive(Clone, Properties, PartialEq)]
@@ -39,20 +39,20 @@ pub struct Class {
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct Dice {
-    pub count: u8,
-    pub sides: u8,
+    pub count: i32,
+    pub sides: i32,
 }
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct Passive {
     pub name: String,
-    pub value: i8,
+    pub value: i32,
 }
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct Movement {
-    pub base: u8,
-    pub modifier: i8,
+    pub base: i32,
+    pub modifier: i32,
 }
 
 #[derive(Clone, Properties, PartialEq)]
@@ -63,15 +63,15 @@ pub struct DeathSaves {
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct Health {
-    pub current: i8,
-    pub max: i8,
-    pub temp: i8,
+    pub current: i32,
+    pub max: i32,
+    pub temp: i32,
 }
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct Ability {
     pub name: AttrValue,
-    pub value: u8,
+    pub value: i32,
 }
 
 #[derive(Clone, Properties, PartialEq)]
@@ -96,20 +96,20 @@ pub struct Label {
 #[derive(Clone, Properties, PartialEq)]
 pub struct LabeledValueProps {
     pub label: AttrValue,
-    pub value: i8,
+    pub value: i32,
 }
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct LabeledValueCheckboxProps {
     pub label: AttrValue,
-    pub value: i8,
+    pub value: i32,
     pub checked: bool,
 }
 
 #[derive(Clone, Properties, PartialEq)]
 pub struct LabeledValueModiferBoxProps {
     pub label: AttrValue,
-    pub value: Option<u8>,
+    pub value: Option<i32>,
     pub text: Option<AttrValue>,
-    pub modifier: i8,
+    pub modifier: i32,
 }

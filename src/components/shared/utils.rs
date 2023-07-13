@@ -1,11 +1,11 @@
 use fastrand::Rng;
 
-pub fn calc_proficiency_bonus(level: u8) -> i8 {
-    2 + (level as i8 - 1) / 4
+pub fn calc_proficiency_bonus(level: i32) -> i32 {
+    2 + (level - 1) / 4
 }
 
-pub fn calc_base_modifier(ability: u8) -> i8 {
-    (ability as i8 - 10) / 2
+pub fn calc_base_modifier(ability: i32) -> i32 {
+    (ability - 10) / 2
 }
 
 pub fn is_yes_or_no(value: String) -> bool {

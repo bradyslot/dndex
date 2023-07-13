@@ -22,7 +22,7 @@ pub fn skills(props: &Character) -> Html {
     );
 
     let proficiency_bonus = calc_proficiency_bonus(props.level);
-    let modifier = |skill: Skill| -> i8 {
+    let modifier = |skill: Skill| -> i32 {
         let base_modifier = calc_base_modifier(skill.primary.value);
         if !skill.proficiency {
             return base_modifier;
