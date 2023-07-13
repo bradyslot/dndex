@@ -158,7 +158,7 @@ fn App() -> Html {
     };
 
 
-    let races = fetch_races();
+    // let races = fetch_races();
     // store_locally("races", &races);
 
     // let races: LocalStorage = fetch_races(());

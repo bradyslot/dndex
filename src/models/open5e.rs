@@ -23,8 +23,24 @@ pub struct Open5eDocument {
     pub url: String,
 }
 
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
+pub struct Open5eBackground {
+    pub name: String,
+    pub desc: String,
+    pub slug: String,
+    pub skill_proficiencies: String,
+    pub tool_proficiencies: Option<String>,
+    pub languages: String,
+    pub equipment: String,
+    pub feature: String,
+    pub feature_desc: String,
+    pub suggested_characteristics: String,
+    #[serde(flatten)]
+    pub document: Open5eDocument,
+}
+
 #[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct Open5eFeats {
+pub struct Open5eFeat {
     pub slug: String,
     pub name: String,
     pub desc: String,
