@@ -1,6 +1,7 @@
 use stylist::css;
 use yew::prelude::*;
 use wasm_bindgen_futures::spawn_local;
+// use log::info;
 
 use crate::components::shared::utils::*;
 use crate::components::labeled_divider::*;
@@ -41,13 +42,20 @@ pub fn spells(props: &Character) -> Html {
         }
     );
 
+    let placeholder_document = Open5eDocument {
+        slug: "".into(),
+        title: "".into(),
+        license_url: "".into(),
+        url: "".into(),
+    };
+
     // TODO: add materials
     html! {
         <div class={style}>
             <LabeledDivider text={"Spell Cards"}/>
             <div class={format!("spell-card-{}", s)}>
             { for props.spells.iter().enumerate().map(|(index, _)| {
-                // info!("Spell: {:?}", spell_card_data.get(index));
+                // info!("Spell: {:?}", spell_cards.get(index));
                 if let Some(spell) = spell_cards.get(index) {
                     html! (<SpellCard
                             slug={spell.slug.clone()}
@@ -76,6 +84,7 @@ pub fn spells(props: &Character) -> Html {
                             spell_lists={spell.spell_lists.clone()}
                             archetype={spell.archetype.clone()}
                             circles={spell.circles.clone()}
+                            document={spell.document.clone()}
                         />)
                 } else {
                     html! (<SpellCard
@@ -105,6 +114,7 @@ pub fn spells(props: &Character) -> Html {
                             spell_lists={vec![]}
                             archetype={"Loading..."}
                             circles={"Loading..."}
+                            document={placeholder_document.clone()}
                         />)
                 }
             })}

@@ -1,13 +1,13 @@
 use stylist::css;
 use yew::prelude::*;
-use yew::Html;
-use super::super::models::models::*;
-use super::super::models::open5e::*;
-use super::shared::utils::*;
-use super::shared::icons::*;
 use comrak::{markdown_to_html, ComrakOptions};
 use minijinja::render;
 // use log::info;
+
+use crate::models::models::*;
+use crate::models::open5e::*;
+use crate::components::shared::utils::*;
+use crate::components::shared::icons::*;
 
 #[function_component(SpellCard)]
 pub fn spell_card(props: &Open5eSpell) -> Html {

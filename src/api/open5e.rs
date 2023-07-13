@@ -1,5 +1,5 @@
-use super::super::models::open5e::*;
-use super::super::constants::*;
+use crate::models::open5e::*;
+use crate::constants::*;
 use log::info;
 use gloo_net::http::Request;
 
@@ -9,16 +9,38 @@ pub async fn fetch_races() -> Vec<Open5eRace> {
         .send()
         .await;
     match result {
-        Ok(response) => match response.json::<Open5eRaceList>().await {
+        Ok(response) => match response.json::<Open5eEndpoint<Open5eRace>>().await {
             Ok(api) => api.results,
             Err(e) => {
-                info!("Error deserializing Open5eRaceList");
+                info!("Error deserializing Open5eEndpoint");
                 info!("{}", e);
                 vec![]
             }
         },
         Err(e) => {
             info!("Error fetching race data from API");
+            info!("{}", e);
+            vec![]
+        }
+    }
+}
+
+pub async fn fetch_classes() -> Vec<Open5eClass> {
+    let url = format!("{}/classes/", API_URL);
+    let result = Request::get(&url)
+        .send()
+        .await;
+    match result {
+        Ok(response) => match response.json::<Open5eEndpoint<Open5eClass>>().await {
+            Ok(api) => api.results,
+            Err(e) => {
+                info!("Error deserializing Open5eEndpoint");
+                info!("{}", e);
+                vec![]
+            }
+        },
+        Err(e) => {
+            info!("Error fetching class data from API");
             info!("{}", e);
             vec![]
         }

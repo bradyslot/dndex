@@ -1,23 +1,44 @@
 #![allow(non_snake_case, non_camel_case_types, clippy::similar_names)]
 use yew::prelude::*;
 use serde::{Serialize, Deserialize};
-use std::collections::HashMap;
-use serde_json::Value;
+
+#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+pub struct Open5eEndpoint<T: PartialEq> {
+    pub count: i32,
+    // don't care how many pages of results there are
+    // pub next: Option<i32>,
+    // pub previous: Option<i32>,
+    pub results: Vec<T>,
+}
+
+#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
+pub struct Open5eDocument {
+    #[serde(rename = "document__slug")]
+    pub slug: String,
+    #[serde(rename = "document__title")]
+    pub title: String,
+    #[serde(rename = "document__license_url")]
+    pub license_url: String,
+    #[serde(rename = "document__url")]
+    pub url: String,
+}
 
 #[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eFeats {
     pub slug: String,
     pub name: String,
     pub desc: String,
-    pub prerequisite: Option<String>, // possibly null
+    pub prerequisite: Option<String>,
     pub effects_desc: Vec<String>,
+    #[serde(flatten)]
+    pub document: Open5eDocument,
 }
 
 #[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eClass {
     pub name: String,
     pub slug: String,
-    pub desc: String, // Markdown
+    pub desc: String,
     pub hit_dice: String,
     pub hp_at_1st_level: String,
     pub hp_at_higher_levels: String,
@@ -26,11 +47,13 @@ pub struct Open5eClass {
     pub prof_tools: String,
     pub prof_saving_throws: String,
     pub prof_skills: String,
-    pub equipment: String, // Markdown
-    pub table: String, // Markdown
+    pub equipment: String,
+    pub table: String,
     pub spellcasting_ability: String,
     pub subtypes_name: String,
     pub archetypes: Vec<Open5eArchetype>,
+    #[serde(flatten)]
+    pub document: Open5eDocument,
 }
 
 #[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
@@ -38,6 +61,8 @@ pub struct Open5eArchetype {
     pub name: String,
     pub slug: String,
     pub desc: String,
+    #[serde(flatten)]
+    pub document: Open5eDocument,
 }
 
 #[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
@@ -48,7 +73,7 @@ pub struct Open5eASI {
 
 #[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eSpeed {
-    pub speed: HashMap<String, u8>,
+    pub walk: i32
 }
 
 #[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
@@ -57,42 +82,36 @@ pub struct Open5eSubrace {
     pub slug: String,
     pub desc: String,
     pub asi: Vec<Open5eASI>,
-    pub traits: String, // Markdown
-    pub asi_desc: String, // Markdown
-}
-
-#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct Open5eRaceList {
-    pub count: i32,
-    pub next: Value,
-    pub previous: Value,
-    pub results: Vec<Open5eRace>,
+    pub traits: String,
+    pub asi_desc: String,
 }
 
 #[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eRace {
     pub name: String,
     pub slug: String,
-    pub desc: String, // Markdown
-    pub asi_desc: String, // Markdown
+    pub desc: String,
+    pub asi_desc: String,
     pub asi: Vec<Open5eASI>,
-    pub age: String, // Markdown
-    pub alignment: String, // Markdown
-    pub size: String, // Markdown
+    pub age: String,
+    pub alignment: String,
+    pub size: String,
     pub speed: Open5eSpeed,
-    pub speed_desc: String, // Markdown
-    pub languages: String, // Markdown
-    pub vision: String, // Markdown
-    pub traits: String, // Markdown
+    pub speed_desc: String,
+    pub languages: String,
+    pub vision: String,
+    pub traits: String,
     pub subraces: Vec<Open5eSubrace>,
+    #[serde(flatten)]
+    pub document: Open5eDocument,
 }
 
 #[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eSpell {
     pub slug: String,
     pub name: String,
-    pub desc: String, // Markdown
-    pub higher_level: String, // Markdown
+    pub desc: String,
+    pub higher_level: String,
     pub page: String,
     pub range: String,
     pub target_range_sort: u8,
@@ -115,4 +134,6 @@ pub struct Open5eSpell {
     pub spell_lists: Vec<String>,
     pub archetype: String,
     pub circles: String,
+    #[serde(flatten)]
+    pub document: Open5eDocument,
 }
