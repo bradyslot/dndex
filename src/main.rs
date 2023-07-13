@@ -5,6 +5,9 @@ use yew::props;
 use log::info;
 use serde_json;
 
+mod api;
+use api::open5e::*;
+
 mod data;
 use data::classes::*;
 use data::equipment::*;
@@ -154,9 +157,16 @@ fn App() -> Html {
         advancement: serde_json::from_str(advancement::ADVANCEMENT_DATA).unwrap(),
     };
 
-    info!("{:?}", classes);
-    info!("{:?}", equipment);
-    info!("{:?}", mechanics);
+
+    let races = fetch_races();
+    // store_locally("races", &races);
+
+    // let races: LocalStorage = fetch_races(());
+
+    // info!("{:?}", classes);
+    // info!("{:?}", equipment);
+    // info!("{:?}", mechanics);
+    // info!("{:?}", races);
 
     html! {
         <div class={style}>

@@ -32,8 +32,8 @@ pub struct SRDClass {
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassHitPoints {
-    pub hit_dice: u8,
-    pub static_option: u8,
+    pub hit_dice: i32,
+    pub static_option: i32,
     pub desc: String,
 }
 
@@ -49,7 +49,7 @@ pub struct ClassProficiencies {
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassSkillChoices {
-    pub choices: u8,
+    pub choices: i32,
     pub options: Vec<String>,
 }
 
@@ -87,20 +87,20 @@ pub struct ClassLevelFeature {
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct ClassLevelAttributes {
-    pub level: u8,
+    pub level: i32,
     pub features: Vec<ClassLevelFeature>,
-    pub rages: Option<u8>,
-    pub rage_damage: Option<u8>,
-    pub cantrips_known: Option<u8>,
-    pub spells_known: Option<u8>,
-    pub spell_slots: Option<Vec<u8>>,
-    pub martial_arts: Option<u8>,
-    pub ki_points: Option<u8>,
-    pub unarmored_movement: Option<u8>,
-    pub sneak_attack: Option<u8>,
-    pub available_spell_slots: Option<u8>,
-    pub slot_level: Option<u8>,
-    pub invocations_known: Option<u8>,
+    pub rages: Option<i32>,
+    pub rage_damage: Option<i32>,
+    pub cantrips_known: Option<i32>,
+    pub spells_known: Option<i32>,
+    pub spell_slots: Option<Vec<i32>>,
+    pub martial_arts: Option<i32>,
+    pub ki_points: Option<i32>,
+    pub unarmored_movement: Option<i32>,
+    pub sneak_attack: Option<i32>,
+    pub available_spell_slots: Option<i32>,
+    pub slot_level: Option<i32>,
+    pub invocations_known: Option<i32>,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]

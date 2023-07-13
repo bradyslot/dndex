@@ -1,55 +1,32 @@
 use stylist::css;
 use yew::prelude::*;
-use gloo_net::http::Request;
-// use log::info;
-use super::super::models::models::*;
-use super::shared::utils::*;
-use super::super::components::spell_card::*;
-use super::labeled_divider::*;
-use super::super::constants::*;
+use wasm_bindgen_futures::spawn_local;
 
-// use anyhow::Error;
-use std::cell::RefCell;
-use std::rc::Rc;
+use crate::components::shared::utils::*;
+use crate::components::labeled_divider::*;
+use crate::components::spell_card::*;
+use crate::models::models::*;
+use crate::models::open5e::*;
+use crate::constants::*;
+use crate::api::open5e::*;
 
 #[function_component(Spells)]
 pub fn spells(props: &Character) -> Html {
+
+    let spell_cards = use_state(|| vec![]);
     let spells = props.spells.clone();
-    let spell_card_data = use_state(|| vec![]);
-    let spell_card_data_clone = spell_card_data.clone();
-
-    use_effect_with_deps(
-        move |_| {
-            async fn fetch_spell_data(url: String) -> Result<Open5eSpell, anyhow::Error> {
-                let response = Request::get(&url)
-                    .send()
-                    .await
-                    .expect("could not send request")
-                    .json::<Open5eSpell>()
-                    .await
-                    .expect("could not parse json response");
-                Ok(response)
-            }
-
-            async fn fetch_spells(spells: Vec<String>, spell_card_data: Rc<RefCell<Vec<Open5eSpell>>>) {
-                for spell in spells {
-                    let url = format!("{}/spells/{}", API_URL, spell);
-                    let fetched_spell_card = fetch_spell_data(url).await.expect("could not fetch spell");
-                    spell_card_data.borrow_mut().push(fetched_spell_card);
-                }
-            }
-
-            let spell_card_data_clone = spell_card_data_clone.clone();
-            // serde_wasm_bindgen::spawn_local(async move {
-            wasm_bindgen_futures::spawn_local(async move {
-                let spell_card_data = Rc::new(RefCell::new(vec![]));
-                fetch_spells(spells, spell_card_data.clone()).await;
-
-                spell_card_data_clone.set(spell_card_data.borrow().clone());
-            });
-        },
-        props.spells.clone(),
-    );
+    {
+        let spell_cards = spell_cards.clone();
+        use_effect_with_deps(move |_| {
+                let spell_cards = spell_cards.clone();
+                spawn_local(async move {
+                    let fetched_spells = fetch_spells(spells).await;
+                    spell_cards.set(fetched_spells);
+                });
+            },
+            props.spells.clone(),
+        );
+    }
 
     let s = random_alpha_string(8);
     let style = css!(
@@ -71,7 +48,7 @@ pub fn spells(props: &Character) -> Html {
             <div class={format!("spell-card-{}", s)}>
             { for props.spells.iter().enumerate().map(|(index, _)| {
                 // info!("Spell: {:?}", spell_card_data.get(index));
-                if let Some(spell) = spell_card_data.get(index) {
+                if let Some(spell) = spell_cards.get(index) {
                     html! (<SpellCard
                             slug={spell.slug.clone()}
                             name={spell.name.clone()}

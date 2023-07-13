@@ -2,6 +2,7 @@ use stylist::css;
 use yew::prelude::*;
 use yew::Html;
 use super::super::models::models::*;
+use super::super::models::open5e::*;
 use super::shared::utils::*;
 use super::shared::icons::*;
 use comrak::{markdown_to_html, ComrakOptions};
