@@ -1,108 +1,73 @@
 #![allow(non_snake_case, non_camel_case_types, clippy::similar_names)]
 use yew::prelude::Properties;
-use serde::Deserialize;
 use std::collections::HashMap;
 
-// #[derive(Clone, Properties, PartialEq, Debug)]
-// pub struct SRDClasses {
-//     pub barbarian: SRDClass,
-//     pub bard: SRDClass,
-//     pub cleric: SRDClass,
-//     pub druid: SRDClass,
-//     pub fighter: SRDClass,
-//     pub monk: SRDClass,
-//     pub paladin: SRDClass,
-//     pub ranger: SRDClass,
-//     pub rogue: SRDClass,
-//     pub sorcerer: SRDClass,
-//     pub warlock: SRDClass,
-//     pub wizard: SRDClass,
-// }
-
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Properties, PartialEq, Clone)]
 pub struct SRDClass<T: PartialEq> {
     pub hit_points: SRDClassHitPoints,
     pub proficiencies: SRDClassProficiencies,
     pub equipment: SRDClassStartingEquipment,
     pub spellcasting: Option<SRDClassSpellcasting>,
     pub levels: SRDClassLevels<T>,
-    pub features: HashMap<String, SRDClassFeatures>,
+    pub features: HashMap<&'static str, SRDClassFeatures>,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Properties, PartialEq, Clone)]
 pub struct SRDClassHitPoints {
     pub hit_dice: i32,
     pub static_option: i32,
-    pub desc: String,
+    pub desc: &'static str,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Properties, PartialEq, Clone)]
 pub struct SRDClassProficiencies {
     pub armor: Vec<SRDClassEquipmentItem>,
     pub weapons: Vec<SRDClassEquipmentItem>,
     pub tools: Vec<Vec<SRDClassEquipmentItem>>,
-    pub saving_throws: Vec<String>,
+    pub saving_throws: Vec<&'static str>,
     pub skills: SRDClassSkills,
-    pub desc: String,
+    pub desc: &'static str,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Properties, PartialEq, Clone)]
 pub struct SRDClassSkills {
     pub choices: i32,
-    pub options: Vec<String>,
+    pub options: Vec<&'static str>,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Properties, PartialEq, Clone)]
 pub struct SRDClassEquipmentItem {
-    pub name: Option<String>,
-    pub source: Option<String>,
-    pub location: Option<String>,
-    pub key: Option<String>,
-    pub category: Option<String>,
+    pub name: Option<&'static str>,
+    pub source: Option<&'static str>,
+    pub location: Option<&'static str>,
+    pub key: Option<&'static str>,
+    pub category: Option<&'static str>,
     pub qty: Option<u8>,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Properties, PartialEq, Clone)]
 pub struct SRDClassStartingEquipment {
     pub choice_1: Vec<Vec<SRDClassEquipmentItem>>,
     pub choice_2: Vec<Vec<SRDClassEquipmentItem>>,
     pub choice_3: Vec<Vec<SRDClassEquipmentItem>>,
     pub choice_4: Vec<Vec<SRDClassEquipmentItem>>,
     pub defaults: Vec<SRDClassEquipmentItem>,
-    pub desc: String,
+    pub desc: &'static str,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Properties, PartialEq, Clone)]
 pub struct SRDClassSpellcasting {
-    pub ability: String,
-    pub desc: String,
+    pub ability: &'static str,
+    pub desc: &'static str,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Properties, PartialEq, Clone)]
 pub struct SRDClassLevelFeature {
-    pub key: String,
-    pub name: Option<String>, // if present, overrides the name of the feature
+    pub key: &'static str,
+    pub name: Option<&'static str>, // if present, overrides the name of the feature
 }
 
-// #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
-// pub struct ClassLevelAttributes {
-//     pub level: i32,
-//     pub features: Vec<ClassLevelFeature>,
-//     pub rages: Option<i32>,
-//     pub rage_damage: Option<i32>,
-//     pub cantrips_known: Option<i32>,
-//     pub spells_known: Option<i32>,
-//     pub spell_slots: Option<Vec<i32>>,
-//     pub martial_arts: Option<i32>,
-//     pub ki_points: Option<i32>,
-//     pub unarmored_movement: Option<i32>,
-//     pub sneak_attack: Option<i32>,
-//     pub available_spell_slots: Option<i32>,
-//     pub slot_level: Option<i32>,
-//     pub invocations_known: Option<i32>,
-// }
-
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Properties, PartialEq, Clone)]
 pub struct SRDBarbarianAttributes {
     pub level: i32,
     pub features: Vec<SRDClassLevelFeature>,
@@ -110,7 +75,7 @@ pub struct SRDBarbarianAttributes {
     pub rage_damage: i32,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Properties, PartialEq, Clone)]
 pub struct SRDBardAttributes {
     pub level: i32,
     pub features: Vec<SRDClassLevelFeature>,
@@ -119,7 +84,7 @@ pub struct SRDBardAttributes {
     pub spell_slots: [i32; 9],
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Properties, PartialEq, Clone)]
 pub struct SRDClassLevels<T: PartialEq> {
     pub level_1: T,
     pub level_2: T,
@@ -143,8 +108,8 @@ pub struct SRDClassLevels<T: PartialEq> {
     pub level_20: T,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Properties, PartialEq, Clone)]
 pub struct SRDClassFeatures {
-    pub name: String,
-    pub desc: String,
+    pub name: &'static str,
+    pub desc: &'static str,
 }
