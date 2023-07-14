@@ -133,7 +133,7 @@ fn App() -> Html {
         flex-direction: column;
     );
 
-    info!("{:?}", barbarian.equipment.defaults);
+    info!("{:?}", barbarian.features.get("rage").expect("key not found").desc);
 
     html! {
         <div class={style}>

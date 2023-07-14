@@ -111,6 +111,15 @@ pub struct SRDBarbarianAttributes {
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+pub struct SRDBardAttributes {
+    pub level: i32,
+    pub features: Vec<SRDClassLevelFeature>,
+    pub cantrips_known: i32,
+    pub spells_known: i32,
+    pub spell_slots: [i32; 9],
+}
+
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct SRDClassLevels<T: PartialEq> {
     pub level_1: T,
     pub level_2: T,
