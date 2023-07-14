@@ -12,7 +12,7 @@ async fn fetch_endpoint<T: DeserializeOwned + PartialEq>(endpoint: &str) -> Vec<
         .send()
         .await;
     match result {
-        Ok(response) => match response.json::<Open5eEndpoint<T>>().await {
+        Ok(response) => match response.json::<Open5eResults<T>>().await {
             Ok(api) => api.results,
             Err(e) => {
                 info!("Error deserializing <{}>", type_name::<T>());

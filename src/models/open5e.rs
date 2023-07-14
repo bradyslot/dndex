@@ -3,11 +3,7 @@ use yew::prelude::*;
 use serde::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct Open5eEndpoint<T: PartialEq> {
-    pub count: i32,
-    // don't care how many pages of results there are
-    // pub next: Option<i32>,
-    // pub previous: Option<i32>,
+pub struct Open5eResults<T: PartialEq> {
     pub results: Vec<T>,
 }
 
