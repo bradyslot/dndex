@@ -14,6 +14,7 @@ use data::equipment::*;
 use data::mechanics::*;
 
 use data::classes::barbarian::*;
+use data::classes::bard::*;
 
 mod models;
 use models::models::*;
@@ -134,6 +135,7 @@ fn App() -> Html {
     );
 
     info!("{:?}", barbarian.features.get("rage").expect("key not found").desc);
+    info!("{:?}", bard.features.get("bardic_inspiration").expect("key not found").desc);
 
     html! {
         <div class={style}>

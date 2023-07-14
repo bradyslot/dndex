@@ -55,7 +55,7 @@ lazy_static! {
       desc: "**Armor:** Light armor\n**Weapons:** Simple weapons, hand crossbows, longswords, rapiers, shortswords\n**Tools:** Three musical instruments of your choice\n**Saving Throws:** Dexterity, Charisma\n**Skills:** Choose any three"
     },
     equipment: SRDClassStartingEquipment {
-      choice_1: vec![
+      choice_1: Some(vec![
         vec![
           SRDClassEquipmentItem {
             source: Some("open5e"), location: Some("weapons"), key: Some("rapier"),
@@ -74,8 +74,8 @@ lazy_static! {
             name: None, key: None, qty: None
           }
         ]
-      ],
-      choice_2: vec![
+      ]),
+      choice_2: Some(vec![
         vec![
           SRDClassEquipmentItem {
             source: Some("data"), location: Some("equipment_packs"), key: Some("diplomats_pack"),
@@ -88,8 +88,8 @@ lazy_static! {
             name: None, category: None, qty: None
           }
         ]
-      ],
-      choice_3: vec![
+      ]),
+      choice_3: Some(vec![
         vec![
           SRDClassEquipmentItem {
             source: Some("data"), location: Some("tools"), key: Some("lute"),
@@ -102,8 +102,8 @@ lazy_static! {
             name: None, category: None, qty: None
           }
         ]
-      ],
-      choice_4: vec![],
+      ]),
+      choice_4: None,
       defaults: vec![
         SRDClassEquipmentItem {
           source: Some("open5e"), location: Some("weapons"), key: Some("dagger"),

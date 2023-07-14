@@ -13,26 +13,26 @@ lazy_static! {
     proficiencies: SRDClassProficiencies {
       armor: vec![
         SRDClassEquipmentItem {
-          category: Some("Light"),
-          name: None, source: None, location: None, key: None, qty: None
+          category: Some("Light"), source: Some("open5e"), location: Some("armor"),
+          name: None, key: None, qty: None
         },
         SRDClassEquipmentItem {
-          category: Some("Medium"),
-          name: None, source: None, location: None, key: None, qty: None
+          category: Some("Medium"), source: Some("open5e"), location: Some("armor"),
+          name: None, key: None, qty: None
         },
         SRDClassEquipmentItem {
-          category: Some("Shield"),
-          name: None, source: None, location: None, key:None, qty: None
+          category: Some("Shield"), source: Some("open5e"), location: Some("armor"),
+          name: None, key:None, qty: None
         }
       ],
       weapons: vec![
         SRDClassEquipmentItem {
-          category: Some("Simple"),
-          name: None, source: None, location: None, key: None, qty: None
+          category: Some("Simple"), source: Some("open5e"), location: Some("weapons"),
+          name: None, key: None, qty: None
         },
         SRDClassEquipmentItem {
-          category: Some("Martial"),
-          name: None, source: None, location: None, key: None, qty: None
+          category: Some("Martial"), source: Some("open5e"), location: Some("weapons"),
+          name: None, key: None, qty: None
         }
       ],
       tools: vec![],
@@ -44,7 +44,7 @@ lazy_static! {
       desc: "**Armor:** Light armor, medium armor, shields\n**Weapons:** Simple weapons, martial weapons\n**Tools:** None\n**Saving Throws:** Strength, Constitution\n**Skills:** Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
     },
     equipment: SRDClassStartingEquipment {
-      choice_1: vec![
+      choice_1: Some(vec![
         vec![
           SRDClassEquipmentItem {
             source: Some("open5e"), location: Some("weapons"), key: Some("greataxe"),
@@ -57,8 +57,8 @@ lazy_static! {
             name: None, key: None, qty: None
           }
         ]
-      ],
-      choice_2: vec![
+      ]),
+      choice_2: Some(vec![
         vec![
           SRDClassEquipmentItem {
             source: Some("open5e"), location: Some("weapons"), key: Some("handaxe"), qty: Some(2),
@@ -71,9 +71,9 @@ lazy_static! {
             name: None, key: None, qty: None
           }
         ]
-      ],
-      choice_3: vec![],
-      choice_4: vec![],
+      ]),
+      choice_3: None,
+      choice_4: None,
       defaults: vec![
         SRDClassEquipmentItem {
           source: Some("data"), location: Some("equipment_packs"), key: Some("explorers_pack"),
