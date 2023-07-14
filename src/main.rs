@@ -13,6 +13,8 @@ use data::classes::*;
 use data::equipment::*;
 use data::mechanics::*;
 
+use data::classes::barbarian::*;
+
 mod models;
 use models::models::*;
 use models::classes::*;
@@ -131,42 +133,7 @@ fn App() -> Html {
         flex-direction: column;
     );
 
-    let classes = SRDClasses {
-        barbarian: serde_json::from_str(barbarian::BARBARIAN_DATA).unwrap(),
-        bard: serde_json::from_str(bard::BARD_DATA).unwrap(),
-        cleric: serde_json::from_str(cleric::CLERIC_DATA).unwrap(),
-        druid: serde_json::from_str(druid::DRUID_DATA).unwrap(),
-        fighter: serde_json::from_str(fighter::FIGHTER_DATA).unwrap(),
-        monk: serde_json::from_str(monk::MONK_DATA).unwrap(),
-        paladin: serde_json::from_str(paladin::PALADIN_DATA).unwrap(),
-        ranger: serde_json::from_str(ranger::RANGER_DATA).unwrap(),
-        rogue: serde_json::from_str(rogue::ROGUE_DATA).unwrap(),
-        sorcerer: serde_json::from_str(sorcerer::SORCERER_DATA).unwrap(),
-        warlock: serde_json::from_str(warlock::WARLOCK_DATA).unwrap(),
-        wizard: serde_json::from_str(wizard::WIZARD_DATA).unwrap(),
-    };
-
-    let equipment = SRDEquipment {
-        adventuring_gear: serde_json::from_str(adventuring_gear::ADVENTURING_GEAR_DATA).unwrap(),
-        equipment_packs: serde_json::from_str(equipment_packs::EQUIPMENT_PACKS_DATA).unwrap(),
-        mounts_and_vehicles: serde_json::from_str(mounts_and_vehicles::MOUNTS_AND_VEHICLES_DATA).unwrap(),
-        tools: serde_json::from_str(tools::TOOLS_DATA).unwrap(),
-    };
-
-    let mechanics = SRDMechanics {
-        advancement: serde_json::from_str(advancement::ADVANCEMENT_DATA).unwrap(),
-    };
-
-
-    // let races = fetch_races();
-    // store_locally("races", &races);
-
-    // let races: LocalStorage = fetch_races(());
-
-    // info!("{:?}", classes);
-    // info!("{:?}", equipment);
-    // info!("{:?}", mechanics);
-    // info!("{:?}", races);
+    info!("{:?}", barbarian.equipment.defaults);
 
     html! {
         <div class={style}>
