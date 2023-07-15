@@ -29,24 +29,24 @@ lazy_static! {
       desc: "**Armor:** Light armor, medium armor, shields\n**Weapons:** Simple weapons, martial weapons\n**Tools:** None\n**Saving Throws:** Strength, Constitution\n**Skills:** Choose two from Animal Handling, Athletics, Intimidation, Nature, Perception, and Survival"
     },
     equipment: SRDClassStartingEquipment {
-      choice_1: Some(vec![
+      choice_1: vec![
         vec![
           SRDEquipment::Open5eItem(SRDItem { key: "greataxe", source: "weapons", qty: 1 })
         ],
         vec![
           SRDEquipment::Open5eCategory(SRDItem { key: "Martial Melee", source: "weapons", qty: 1 }),
         ]
-      ]),
-      choice_2: Some(vec![
+      ],
+      choice_2: vec![
         vec![
           SRDEquipment::Open5eItem(SRDItem { key: "handaxe", source: "weapons", qty: 2 })
         ],
         vec![
           SRDEquipment::Open5eCategory(SRDItem { key: "Simple Melee", source: "weapons", qty: 1 }),
         ]
-      ]),
-      choice_3: None,
-      choice_4: None,
+      ],
+      choice_3: vec![],
+      choice_4: vec![],
       defaults: vec![
         SRDEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 }),
         SRDEquipment::Open5eCategory(SRDItem { key: "javelin", source: "weapons", qty: 4 }),

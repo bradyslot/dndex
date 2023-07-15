@@ -4,6 +4,7 @@ use yew::prelude::*;
 use yew::props;
 use log::info;
 use serde_json;
+use std::any::type_name;
 
 mod api;
 use api::open5e::*;
@@ -134,6 +135,7 @@ fn App() -> Html {
         flex-direction: column;
     );
 
+    info!("{:?}", barbarian.equipment.choice_1[0][0]);
     info!("{:?}", barbarian.features.get("rage").expect("key not found").desc);
     info!("{:?}", bard.features.get("bardic_inspiration").expect("key not found").desc);
 

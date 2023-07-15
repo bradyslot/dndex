@@ -34,7 +34,7 @@ lazy_static! {
       desc: "**Armor:** Light armor\n**Weapons:** Simple weapons, hand crossbows, longswords, rapiers, shortswords\n**Tools:** Three musical instruments of your choice\n**Saving Throws:** Dexterity, Charisma\n**Skills:** Choose any three"
     },
     equipment: SRDClassStartingEquipment {
-      choice_1: Some(vec![
+      choice_1: vec![
         vec![
           SRDEquipment::Open5eItem(SRDItem { key: "rapier", source: "weapons", qty: 1 }),
         ],
@@ -44,24 +44,24 @@ lazy_static! {
         vec![
           SRDEquipment::Open5eCategory(SRDItem { key: "Simple Melee", source: "weapons", qty: 1 }),
         ]
-      ]),
-      choice_2: Some(vec![
+      ],
+      choice_2: vec![
         vec![
           SRDEquipment::DnDexItem(SRDItem { key: "diplomats_pack", source: "equipment_packs", qty: 1 })
         ],
         vec![
           SRDEquipment::DnDexItem(SRDItem { key: "entertainers_pack", source: "equipment_packs", qty: 1 })
         ]
-      ]),
-      choice_3: Some(vec![
+      ],
+      choice_3: vec![
         vec![
           SRDEquipment::DnDexItem(SRDItem { key: "lute", source: "tools", qty: 1 })
         ],
         vec![
           SRDEquipment::DnDexCategory(SRDItem { key: "musical_instrument", source: "tools", qty: 1 })
         ]
-      ]),
-      choice_4: None,
+      ],
+      choice_4: vec![],
       defaults: vec![
         SRDEquipment::DnDexItem(SRDItem { key: "dagger", source: "weapons", qty: 1 }),
         SRDEquipment::DnDexItem(SRDItem { key: "leather", source: "armor", qty: 1 })
