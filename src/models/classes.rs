@@ -1,6 +1,8 @@
 #![allow(non_snake_case, non_camel_case_types, clippy::similar_names)]
 use std::collections::HashMap;
 use crate::api::open5e::*;
+use crate::models::open5e::*;
+use wasm_bindgen_futures::spawn_local;
 
 #[derive(PartialEq, Debug)]
 pub struct SRDClass<T: PartialEq> {
@@ -37,20 +39,30 @@ pub enum SRDEquipment {
     DnDexCategory(SRDItem),
 }
 
+#[derive(PartialEq, Debug)]
+pub enum FetchResult {
+    Weapon(Vec<Open5eWeapon>),
+    Armor(Vec<Open5eArmor>),
+}
+
 impl SRDEquipment {
-    pub fn retrieve_contents(&self) -> &SRDItem {
+    pub async fn fetch_contents(&self) -> FetchResult {
         match self {
             SRDEquipment::Open5eItem(item) => {
-                item
+                match item.source {
+                    "weapons" => FetchResult::Weapon(fetch_weapons(vec![item.key.into()]).await),
+                    "armor" => FetchResult::Armor(fetch_armor(vec![item.key.into()]).await),
+                    _ => unimplemented!(),
+                }
             }
             SRDEquipment::Open5eCategory(item) => {
-                item
+                unimplemented!()
             }
             SRDEquipment::DnDexItem(item) => {
-                item
+                unimplemented!()
             }
             SRDEquipment::DnDexCategory(item) => {
-                item
+                unimplemented!()
             }
         }
     }

@@ -19,6 +19,40 @@ pub struct Open5eDocument {
     pub url: String,
 }
 
+#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+pub struct Open5eArmor {
+    name: String,
+    slug: String,
+    category: String,
+    #[serde(flatten)]
+    document: Open5eDocument,
+    base_ac: i32,
+    plus_dex_mod: bool,
+    plus_con_mod: bool,
+    plus_wis_mod: bool,
+    plus_flat_mod: i32,
+    plus_max: i32,
+    ac_string: String,
+    strength_requirement: Option<i32>,
+    cost: String,
+    weight: String,
+    stealth_disadvantage: bool,
+}
+
+#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+pub struct Open5eWeapon {
+    pub name: String,
+    pub slug: String,
+    pub category: String,
+    #[serde(flatten)]
+    pub document: Open5eDocument,
+    pub cost: String,
+    pub damage_dice: String,
+    pub damage_type: String,
+    pub weight: String,
+    pub properties: Vec<String>
+}
+
 #[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
 pub struct Open5eBackground {
     pub name: String,

@@ -86,13 +86,13 @@ pub async fn fetch_classes(classes: Vec<String>) -> Vec<Open5eClass> {
 //    fetch_slugs::<Open5eMagicItem>("magicitems", magicitems).await
 // }
 
-// pub async fn fetch_weapons(weapons: Vec<String>) -> Vec<Open5eWeapon> {
-//    fetch_slugs::<Open5eWeapon>("weapons", weapons).await
-// }
+pub async fn fetch_weapons(weapons: Vec<String>) -> Vec<Open5eWeapon> {
+   fetch_slugs::<Open5eWeapon>("weapons", weapons).await
+}
 
-// pub async fn fetch_armor(armor: Vec<String>) -> Vec<Open5eArmor> {
-//   fetch_slugs::<Open5eArmor>("armor", armor).await
-// }
+pub async fn fetch_armor(armor: Vec<String>) -> Vec<Open5eArmor> {
+  fetch_slugs::<Open5eArmor>("armor", armor).await
+}
 
 // FETCH ENTIRE ENDPOINTS
 

@@ -42,7 +42,7 @@ fn App() -> Html {
         qty: 1,
     });
 
-    info!("{:?}", test.retrieve_contents());
+    test.fetch_contents();
 
 
     let character_abilities = vec![
