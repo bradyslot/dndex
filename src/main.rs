@@ -3,8 +3,6 @@ use stylist::{css, global_style};
 use yew::prelude::*;
 use yew::props;
 use log::info;
-use serde_json;
-use std::any::type_name;
 
 mod api;
 use api::open5e::*;
@@ -20,7 +18,7 @@ use data::classes::bard::*;
 mod models;
 use models::models::*;
 use models::classes::*;
-use models::equipment::*;
+// use models::equipment::*;
 use models::mechanics::*;
 
 mod components;
@@ -37,6 +35,16 @@ use constants::*;
 
 #[function_component]
 fn App() -> Html {
+
+    let test = SRDEquipment::Open5eItem(SRDItem {
+        key: "greataxe",
+        source: "weapons",
+        qty: 1,
+    });
+
+    info!("{:?}", test.retrieve_contents());
+
+
     let character_abilities = vec![
         Ability { name: "Strength".into(),     value: 8  },
         Ability { name: "Dexterity".into(),    value: 13 },
@@ -134,10 +142,6 @@ fn App() -> Html {
         display: flex;
         flex-direction: column;
     );
-
-    info!("{:?}", barbarian.equipment.choice_1[0][0]);
-    info!("{:?}", barbarian.features.get("rage").expect("key not found").desc);
-    info!("{:?}", bard.features.get("bardic_inspiration").expect("key not found").desc);
 
     html! {
         <div class={style}>

@@ -1,5 +1,6 @@
 #![allow(non_snake_case, non_camel_case_types, clippy::similar_names)]
 use std::collections::HashMap;
+use crate::api::open5e::*;
 
 #[derive(PartialEq, Debug)]
 pub struct SRDClass<T: PartialEq> {
@@ -34,6 +35,25 @@ pub enum SRDEquipment {
     Open5eCategory(SRDItem),
     DnDexItem(SRDItem),
     DnDexCategory(SRDItem),
+}
+
+impl SRDEquipment {
+    pub fn retrieve_contents(&self) -> &SRDItem {
+        match self {
+            SRDEquipment::Open5eItem(item) => {
+                item
+            }
+            SRDEquipment::Open5eCategory(item) => {
+                item
+            }
+            SRDEquipment::DnDexItem(item) => {
+                item
+            }
+            SRDEquipment::DnDexCategory(item) => {
+                item
+            }
+        }
+    }
 }
 
 #[derive(PartialEq, Debug)]
