@@ -1,8 +1,7 @@
 #![allow(non_snake_case, non_camel_case_types, clippy::similar_names)]
-use yew::prelude::Properties;
 use std::collections::HashMap;
 
-#[derive(Properties, PartialEq)]
+#[derive(PartialEq)]
 pub struct SRDClass<T: PartialEq> {
     pub hit_points: SRDClassHitPoints,
     pub proficiencies: SRDClassProficiencies,
@@ -12,30 +11,45 @@ pub struct SRDClass<T: PartialEq> {
     pub features: HashMap<&'static str, SRDClassFeatures>,
 }
 
-#[derive(Properties, PartialEq)]
+#[derive(PartialEq)]
 pub struct SRDClassHitPoints {
     pub hit_dice: i32,
     pub static_option: i32,
     pub desc: &'static str,
 }
 
-#[derive(Properties, PartialEq)]
+#[derive(PartialEq)]
 pub struct SRDClassProficiencies {
-    pub armor: Vec<SRDClassEquipmentItem>,
-    pub weapons: Vec<SRDClassEquipmentItem>,
-    pub tools: Vec<Vec<SRDClassEquipmentItem>>,
+    pub armor: Vec<SRDEquipment>,
+    pub weapons: Vec<SRDEquipment>,
+    pub tools: Vec<Vec<SRDEquipment>>,
     pub saving_throws: Vec<&'static str>,
     pub skills: SRDClassSkills,
     pub desc: &'static str,
 }
 
-#[derive(Properties, PartialEq)]
+#[derive(PartialEq)]
+pub enum SRDEquipment {
+    Open5eItem(SRDItem),
+    Open5eCategory(SRDItem),
+    DnDexItem(SRDItem),
+    DnDexCategory(SRDItem),
+}
+
+#[derive(PartialEq)]
+pub struct SRDItem {
+    pub key: &'static str,
+    pub source: &'static str,
+    pub qty: i32,
+}
+
+#[derive(PartialEq)]
 pub struct SRDClassSkills {
     pub choices: i32,
     pub options: Vec<&'static str>,
 }
 
-#[derive(Properties, PartialEq)]
+#[derive(PartialEq)]
 pub struct SRDClassEquipmentItem {
     pub name: Option<&'static str>,
     pub source: Option<&'static str>,
@@ -45,29 +59,29 @@ pub struct SRDClassEquipmentItem {
     pub qty: Option<u8>,
 }
 
-#[derive(Properties, PartialEq)]
+#[derive(PartialEq)]
 pub struct SRDClassStartingEquipment {
-    pub choice_1: Option<Vec<Vec<SRDClassEquipmentItem>>>,
-    pub choice_2: Option<Vec<Vec<SRDClassEquipmentItem>>>,
-    pub choice_3: Option<Vec<Vec<SRDClassEquipmentItem>>>,
-    pub choice_4: Option<Vec<Vec<SRDClassEquipmentItem>>>,
-    pub defaults: Vec<SRDClassEquipmentItem>,
+    pub choice_1: Option<Vec<Vec<SRDEquipment>>>,
+    pub choice_2: Option<Vec<Vec<SRDEquipment>>>,
+    pub choice_3: Option<Vec<Vec<SRDEquipment>>>,
+    pub choice_4: Option<Vec<Vec<SRDEquipment>>>,
+    pub defaults: Vec<SRDEquipment>,
     pub desc: &'static str,
 }
 
-#[derive(Properties, PartialEq)]
+#[derive(PartialEq)]
 pub struct SRDClassSpellcasting {
     pub ability: &'static str,
     pub desc: &'static str,
 }
 
-#[derive(Properties, PartialEq)]
+#[derive(PartialEq)]
 pub struct SRDClassLevelFeature {
     pub key: &'static str,
     pub name: Option<&'static str>, // if present, overrides the name of the feature
 }
 
-#[derive(Properties, PartialEq)]
+#[derive(PartialEq)]
 pub struct SRDBarbarianAttributes {
     pub level: i32,
     pub features: Vec<SRDClassLevelFeature>,
@@ -75,7 +89,7 @@ pub struct SRDBarbarianAttributes {
     pub rage_damage: i32,
 }
 
-#[derive(Properties, PartialEq)]
+#[derive(PartialEq)]
 pub struct SRDBardAttributes {
     pub level: i32,
     pub features: Vec<SRDClassLevelFeature>,
@@ -84,7 +98,7 @@ pub struct SRDBardAttributes {
     pub spell_slots: [i32; 9],
 }
 
-#[derive(Properties, PartialEq)]
+#[derive(PartialEq)]
 pub struct SRDClassLevels<T: PartialEq> {
     pub level_1: T,
     pub level_2: T,
@@ -108,7 +122,7 @@ pub struct SRDClassLevels<T: PartialEq> {
     pub level_20: T,
 }
 
-#[derive(Properties, PartialEq)]
+#[derive(PartialEq)]
 pub struct SRDClassFeatures {
     pub name: &'static str,
     pub desc: &'static str,

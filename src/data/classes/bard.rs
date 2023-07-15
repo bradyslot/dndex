@@ -1,6 +1,6 @@
 #![allow(unused, non_upper_case_globals)]
 use crate::models::classes::*;
-use std::collections::HashMap; 
+use std::collections::HashMap;
 use lazy_static::lazy_static;
 
 lazy_static! {
@@ -12,39 +12,18 @@ lazy_static! {
     },
     proficiencies: SRDClassProficiencies {
       armor: vec![
-        SRDClassEquipmentItem {
-          category: Some("Light"), source: Some("open5e"), location: Some("armor"),
-          name: None, key: None, qty: None
-        }
+        SRDEquipment::Open5eCategory(SRDItem { key: "Light", source: "armor", qty: 1 })
       ],
       weapons: vec![
-        SRDClassEquipmentItem {
-          category: Some("Simple"), source: Some("open5e"), location: Some("weapons"),
-          name: None, key: None, qty: None
-        },
-        SRDClassEquipmentItem {
-          key: Some("crossbow-hand"), source: Some("open5e"), location: Some("weapons"),
-          name: None, category: None, qty: None
-        },
-        SRDClassEquipmentItem {
-          key: Some("longsword"), source: Some("open5e"), location: Some("weapons"),
-          name: None, category: None, qty: None
-        },
-        SRDClassEquipmentItem {
-          key: Some("rapier"), source: Some("open5e"), location: Some("weapons"),
-          name: None, category: None, qty: None
-        },
-        SRDClassEquipmentItem {
-          key: Some("shortsword"), source: Some("open5e"), location: Some("weapons"),
-          name: None, category: None, qty: None
-        },
+        SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 1 }),
+        SRDEquipment::Open5eItem(SRDItem { key: "crossbow-hand", source: "weapons", qty: 1 }),
+        SRDEquipment::Open5eItem(SRDItem { key: "longsword", source: "weapons", qty: 1 }),
+        SRDEquipment::Open5eItem(SRDItem { key: "rapier", source: "weapons", qty: 1 }),
+        SRDEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 1 })
       ],
       tools: vec![
         vec![
-          SRDClassEquipmentItem {
-            key: Some("musical_instrument"), source: Some("data"), location: Some("tools"),
-            name: None, category: None, qty: None
-          },
+          SRDEquipment::DnDexItem(SRDItem { key: "musical_instrument", source: "tools", qty: 1 })
         ]
       ],
       saving_throws: vec![ "dexterity", "charisma" ],
@@ -57,62 +36,35 @@ lazy_static! {
     equipment: SRDClassStartingEquipment {
       choice_1: Some(vec![
         vec![
-          SRDClassEquipmentItem {
-            source: Some("open5e"), location: Some("weapons"), key: Some("rapier"),
-            name: None, category: None, qty: None
-          }
+          SRDEquipment::Open5eItem(SRDItem { key: "rapier", source: "weapons", qty: 1 }),
         ],
         vec![
-          SRDClassEquipmentItem {
-            source: Some("open5e"), location: Some("weapons"), key: Some("longsword"),
-            name: None, category: None, qty: None
-          }
+          SRDEquipment::Open5eItem(SRDItem { key: "longsword", source: "weapons", qty: 1 }),
         ],
         vec![
-          SRDClassEquipmentItem {
-            source: Some("open5e"), location: Some("weapons"), category: Some("Simple Melee"),
-            name: None, key: None, qty: None
-          }
+          SRDEquipment::Open5eCategory(SRDItem { key: "Simple Melee", source: "weapons", qty: 1 }),
         ]
       ]),
       choice_2: Some(vec![
         vec![
-          SRDClassEquipmentItem {
-            source: Some("data"), location: Some("equipment_packs"), key: Some("diplomats_pack"),
-            name: None, category: None, qty: None
-          }
+          SRDEquipment::DnDexItem(SRDItem { key: "diplomats_pack", source: "equipment_packs", qty: 1 })
         ],
         vec![
-          SRDClassEquipmentItem {
-            source: Some("data"), location: Some("equipment_packs"), key: Some("entertainers_pack"),
-            name: None, category: None, qty: None
-          }
+          SRDEquipment::DnDexItem(SRDItem { key: "entertainers_pack", source: "equipment_packs", qty: 1 })
         ]
       ]),
       choice_3: Some(vec![
         vec![
-          SRDClassEquipmentItem {
-            source: Some("data"), location: Some("tools"), key: Some("lute"),
-            name: None, category: None, qty: None
-          }
+          SRDEquipment::DnDexItem(SRDItem { key: "lute", source: "tools", qty: 1 })
         ],
         vec![
-          SRDClassEquipmentItem {
-            source: Some("data"), location: Some("tools"), key: Some("musical_instrument"),
-            name: None, category: None, qty: None
-          }
+          SRDEquipment::DnDexCategory(SRDItem { key: "musical_instrument", source: "tools", qty: 1 })
         ]
       ]),
       choice_4: None,
       defaults: vec![
-        SRDClassEquipmentItem {
-          source: Some("open5e"), location: Some("weapons"), key: Some("dagger"),
-          name: None, category: None, qty: None
-        },
-        SRDClassEquipmentItem {
-          source: Some("open5e"), location: Some("weapons"), key: Some("leather"),
-          name: None, category: None, qty: None
-        },
+        SRDEquipment::DnDexItem(SRDItem { key: "dagger", source: "weapons", qty: 1 }),
+        SRDEquipment::DnDexItem(SRDItem { key: "leather", source: "armor", qty: 1 })
       ],
       desc: "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a rapier, *(b)* a longsword, or *(c)* any simple weapon\n- *(a)* a diplomat's pack or *(b)* an entertainer's pack\n- *(a)* a lute or *(b)* any other musical instrument\n- Leather armor and a dagger"
     },

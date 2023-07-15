@@ -1,6 +1,6 @@
 #![allow(unused, non_upper_case_globals)]
 use crate::models::classes::*;
-use std::collections::HashMap; 
+use std::collections::HashMap;
 use lazy_static::lazy_static;
 
 lazy_static! {
@@ -12,28 +12,13 @@ lazy_static! {
     },
     proficiencies: SRDClassProficiencies {
       armor: vec![
-        SRDClassEquipmentItem {
-          category: Some("Light"), source: Some("open5e"), location: Some("armor"),
-          name: None, key: None, qty: None
-        },
-        SRDClassEquipmentItem {
-          category: Some("Medium"), source: Some("open5e"), location: Some("armor"),
-          name: None, key: None, qty: None
-        },
-        SRDClassEquipmentItem {
-          category: Some("Shield"), source: Some("open5e"), location: Some("armor"),
-          name: None, key:None, qty: None
-        }
+        SRDEquipment::Open5eCategory(SRDItem { key: "Light", source: "armor", qty: 1 }),
+        SRDEquipment::Open5eCategory(SRDItem { key: "Medium", source: "armor", qty: 1 }),
+        SRDEquipment::Open5eCategory(SRDItem { key: "Shield", source: "armor", qty: 1 })
       ],
       weapons: vec![
-        SRDClassEquipmentItem {
-          category: Some("Simple"), source: Some("open5e"), location: Some("weapons"),
-          name: None, key: None, qty: None
-        },
-        SRDClassEquipmentItem {
-          category: Some("Martial"), source: Some("open5e"), location: Some("weapons"),
-          name: None, key: None, qty: None
-        }
+        SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 1 }),
+        SRDEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 1 })
       ],
       tools: vec![],
       saving_throws: vec![ "strength", "constitution" ],
@@ -46,43 +31,25 @@ lazy_static! {
     equipment: SRDClassStartingEquipment {
       choice_1: Some(vec![
         vec![
-          SRDClassEquipmentItem {
-            source: Some("open5e"), location: Some("weapons"), key: Some("greataxe"),
-            name: None, category: None, qty: None
-          }
+          SRDEquipment::Open5eItem(SRDItem { key: "greataxe", source: "weapons", qty: 1 })
         ],
         vec![
-          SRDClassEquipmentItem {
-            source: Some("open5e"), location: Some("weapons"), category: Some("Martial Melee"),
-            name: None, key: None, qty: None
-          }
+          SRDEquipment::Open5eCategory(SRDItem { key: "Martial Melee", source: "weapons", qty: 1 }),
         ]
       ]),
       choice_2: Some(vec![
         vec![
-          SRDClassEquipmentItem {
-            source: Some("open5e"), location: Some("weapons"), key: Some("handaxe"), qty: Some(2),
-            name: None, category: None
-          }
+          SRDEquipment::Open5eItem(SRDItem { key: "handaxe", source: "weapons", qty: 2 })
         ],
         vec![
-          SRDClassEquipmentItem {
-            source: Some("open5e"), location: Some("weapons"), category: Some("Simple Melee"),
-            name: None, key: None, qty: None
-          }
+          SRDEquipment::Open5eCategory(SRDItem { key: "Simple Melee", source: "weapons", qty: 1 }),
         ]
       ]),
       choice_3: None,
       choice_4: None,
       defaults: vec![
-        SRDClassEquipmentItem {
-          source: Some("data"), location: Some("equipment_packs"), key: Some("explorers_pack"),
-          name: None, category: None, qty: None
-        },
-        SRDClassEquipmentItem {
-          source: Some("open5e"), location: Some("weapons"), key: Some("javelin"), qty: Some(4),
-          name: None, category: None
-        }
+        SRDEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 }),
+        SRDEquipment::Open5eCategory(SRDItem { key: "javelin", source: "weapons", qty: 4 }),
       ],
       desc: "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a greataxe or *(b)* any martial melee weapon \n- *(a)* two handaxes or *(b)* any simple weapon\nAn explorer's pack and four javelins"
     },
@@ -338,7 +305,7 @@ lazy_static! {
         }
       ),
       (
-        "indomitable_might", 
+        "indomitable_might",
         SRDClassFeatures {
           name: "Indomitable Might",
           desc: "Beginning at 18th level, if your total for a Strength check is less than your Strength score, you can use that score in place of the total."
