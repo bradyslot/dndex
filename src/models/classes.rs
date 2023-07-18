@@ -8,10 +8,10 @@ use wasm_bindgen_futures::spawn_local;
 pub struct SRDClass<T: PartialEq> {
     pub hit_points: SRDClassHitPoints,
     pub proficiencies: SRDClassProficiencies,
-    pub equipment: SRDClassStartingEquipment,
+    pub starting_equipment: SRDClassStartingEquipment,
     pub spellcasting: Option<SRDClassSpellcasting>,
     pub levels: SRDClassLevels<T>,
-    pub features: HashMap<&'static str, SRDClassFeatures>,
+    pub features: HashMap<&'static str, SRDClassFeature>,
 }
 
 #[derive(PartialEq, Debug)]
@@ -37,6 +37,7 @@ pub enum SRDEquipment {
     Open5eCategory(SRDItem),
     DnDexItem(SRDItem),
     DnDexCategory(SRDItem),
+    CustomItem(SRDCustomItem),
 }
 
 #[derive(PartialEq, Debug)]
@@ -64,8 +65,17 @@ impl SRDEquipment {
             SRDEquipment::DnDexCategory(item) => {
                 unimplemented!()
             }
+            SRDEquipment::CustomItem(item) => {
+                unimplemented!()
+            }
         }
     }
+}
+
+#[derive(PartialEq, Debug)]
+pub struct SRDCustomItem {
+    pub name: &'static str,
+    pub qty: i32,
 }
 
 #[derive(PartialEq, Debug)]
@@ -121,6 +131,14 @@ pub struct SRDBardAttributes {
 }
 
 #[derive(PartialEq, Debug)]
+pub struct SRDClericAttributes {
+    pub level: i32,
+    pub features: Vec<SRDClassLevelFeature>,
+    pub cantrips_known: i32,
+    pub spell_slots: [i32; 9],
+}
+
+#[derive(PartialEq, Debug)]
 pub struct SRDClassLevels<T: PartialEq> {
     pub level_1: T,
     pub level_2: T,
@@ -145,7 +163,7 @@ pub struct SRDClassLevels<T: PartialEq> {
 }
 
 #[derive(PartialEq, Debug)]
-pub struct SRDClassFeatures {
+pub struct SRDClassFeature {
     pub name: &'static str,
     pub desc: &'static str,
 }
