@@ -61,7 +61,7 @@ lazy_static! {
       choice_4: vec![],
       defaults: vec![
         SRDEquipment::Open5eItem(SRDItem { key: "leather", source: "armor", qty: 1 }),
-        SRDEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "explorers_packs", qty: 1 }),
+        SRDEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 }),
         SRDEquipment::DnDexItem(SRDItem { key: "druidic_focus", source: "adventuring_gear", qty: 1 }),
       ],
       desc: "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a wooden shield or *(b)* any simple weapon\n- *(a)* a scimitar or *(b)* any simple melee weapon\n- Leather armor, an explorer's pack, and a druidic focus"

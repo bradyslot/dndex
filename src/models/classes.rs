@@ -147,6 +147,12 @@ pub struct SRDDruidAttributes {
 }
 
 #[derive(PartialEq, Debug)]
+pub struct SRDFighterAttributes {
+    pub level: i32,
+    pub features: Vec<SRDClassLevelFeature>,
+}
+
+#[derive(PartialEq, Debug)]
 pub struct SRDClassLevels<T: PartialEq> {
     pub level_1: T,
     pub level_2: T,
