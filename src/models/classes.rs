@@ -186,6 +186,16 @@ pub struct SRDRogueAttributes {
 }
 
 #[derive(PartialEq, Debug)]
+pub struct SRDSorcererAttributes {
+    pub level: i32,
+    pub features: Vec<SRDClassLevelFeature>,
+    pub sorcery_points: i32,
+    pub cantrips_known: i32,
+    pub spells_known: i32,
+    pub spell_slots: [i32; 9],
+}
+
+#[derive(PartialEq, Debug)]
 pub struct SRDClassLevels<T: PartialEq> {
     pub level_1: T,
     pub level_2: T,
