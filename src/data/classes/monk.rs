@@ -4,7 +4,7 @@ use std::collections::HashMap;
 use lazy_static::lazy_static;
 
 lazy_static! {
-  pub static ref cleric: SRDClass<SRDMonkAttributes> = SRDClass::<SRDMonkAttributes> {
+  pub static ref monk: SRDClass<SRDMonkAttributes> = SRDClass::<SRDMonkAttributes> {
     hit_points: SRDClassHitPoints {
       hit_dice: 8,
       static_option: 5,
