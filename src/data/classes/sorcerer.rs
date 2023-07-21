@@ -42,7 +42,7 @@ lazy_static! {
           SRDEquipment::DnDexItem(SRDItem { key: "component_pouch", source: "adventuring_gear", qty: 1 }),
         ],
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "component_pouch", source: "arcane_focus", qty: 1 }),
+          SRDEquipment::DnDexItem(SRDItem { key: "arcane_focus", source: "adventuring_gear", qty: 1 }),
         ]
       ],
       choice_3: vec![
@@ -60,6 +60,7 @@ lazy_static! {
       desc: "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a light crossbow and 20 bolts or *(b)* any simple weapon\n- *(a)* a component pouch or *(b)* an arcane focus\n- *(a)* a dungeoneer's pack or *(b)* an explorer's pack\n- Two daggers"
     },
     spellcasting: Some(SRDClassSpellcasting {
+      name: "Spellcasting",
       ability: "charisma",
       desc: "An event in your past, or in the life of a parent or ancestor, left an indelible mark on you, infusing you with arcane magic. This font of magic, whatever its origin, fuels your spells.\n## Cantrips\nAt 1st level, you know four cantrips of your choice from the sorcerer spell list. You learn additional sorcerer cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Sorcerer table.\n## Spell Slots\nThe Sorcerer table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these sorcerer spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest.\nFor example, if you know the 1st-level spell *burning hands* and have a 1st-level and a 2nd-level spell slot available, you can cast *burning hands* using either slot.\n## Spells Known of 1st Level and Higher\nYou know two 1st-level spells of your choice from the sorcerer spell list.\nThe Spells Known column of the Sorcerer table shows when you learn more sorcerer spells of your choice. Each of these spells must be of a level for which you have spell slots. For instance, when you reach 3rd level in this class, you can learn one new spell of 1st or 2nd level.\nAdditionally, when you gain a level in this class, you can choose one of the sorcerer spells you know and replace it with another spell from the sorcerer spell list, which also must be of a level for which you have spell slots.\n## Spellcasting Ability\nCharisma is your spellcasting ability for your sorcerer spells, since the power of your magic relies on your ability to project your will into the world. You use your Charisma whenever a spell refers to your spellcasting ability. In addition, you use your Charisma modifier when setting the saving throw DC for a sorcerer spell you cast and when making an attack roll with one.\n**Spell save DC** = 8 + your proficiency bonus + your Charisma modifier\n**Spell attack modifier** = your proficiency bonus + your Charisma modifier\n## Spellcasting Focus\nYou can use an arcane focus as a spellcasting focus for your sorcerer spells.",
       at_level: 1

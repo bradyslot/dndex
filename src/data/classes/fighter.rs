@@ -47,7 +47,7 @@ lazy_static! {
       ],
       choice_3: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "crossbow_light", source: "weapons", qty: 1 }),
+          SRDEquipment::Open5eItem(SRDItem { key: "crossbow-light", source: "weapons", qty: 1 }),
           SRDEquipment::CustomItem(SRDCustomItem { name: "Bolts", qty: 20 })
         ],
         vec![

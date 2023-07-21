@@ -103,6 +103,7 @@ pub struct SRDClassStartingEquipment {
 
 #[derive(PartialEq, Debug)]
 pub struct SRDClassSpellcasting {
+    pub name: &'static str,
     pub ability: &'static str,
     pub desc: &'static str,
     pub at_level: i32,
@@ -193,6 +194,17 @@ pub struct SRDSorcererAttributes {
     pub cantrips_known: i32,
     pub spells_known: i32,
     pub spell_slots: [i32; 9],
+}
+
+#[derive(PartialEq, Debug)]
+pub struct SRDWarlockAttributes {
+    pub level: i32,
+    pub features: Vec<SRDClassLevelFeature>,
+    pub cantrips_known: i32,
+    pub spells_known: i32,
+    pub available_spell_slots: i32,
+    pub slot_level: i32,
+    pub invocations_known: i32,
 }
 
 #[derive(PartialEq, Debug)]
