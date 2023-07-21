@@ -20,7 +20,7 @@ lazy_static! {
       ],
       tools: vec![],
       saving_throws: vec![ "strength", "constitution" ],
-      skills: SRDClassSkills {
+      skills: SRDClassProficientSkills {
         choices: 2,
         options: vec![ "acrobatics", "animal_handling", "athletics", "history", "insight", "intimidation", "perception", "survival" ] },
       desc: "**Armor:** All armor, shields\n**Weapons:** Simple weapons, martial weapons\n**Tools:** None\n**Saving Throws:** Strength, Constitution\n**Skills:** Choose two skills from Acrobatics, Animal, Handling, Athletics, History, Insight, Intimidation, Perception, and Survival"

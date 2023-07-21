@@ -22,7 +22,7 @@ lazy_static! {
       ],
       tools: vec![],
       saving_throws: vec![ "strength", "constitution" ],
-      skills: SRDClassSkills {
+      skills: SRDClassProficientSkills {
         choices: 2,
         options: vec![ "animal_handling", "athletics", "intimidation", "nature", "perception", "survival" ]
       },

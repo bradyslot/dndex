@@ -27,7 +27,7 @@ pub struct SRDClassProficiencies {
     pub weapons: Vec<SRDEquipment>,
     pub tools: Vec<Vec<SRDEquipment>>,
     pub saving_throws: Vec<&'static str>,
-    pub skills: SRDClassSkills,
+    pub skills: SRDClassProficientSkills,
     pub desc: &'static str,
 }
 
@@ -86,7 +86,7 @@ pub struct SRDItem {
 }
 
 #[derive(PartialEq, Debug)]
-pub struct SRDClassSkills {
+pub struct SRDClassProficientSkills {
     pub choices: i32,
     pub options: Vec<&'static str>,
 }
@@ -105,6 +105,7 @@ pub struct SRDClassStartingEquipment {
 pub struct SRDClassSpellcasting {
     pub ability: &'static str,
     pub desc: &'static str,
+    pub at_level: i32,
 }
 
 #[derive(PartialEq, Debug)]
@@ -150,6 +151,23 @@ pub struct SRDDruidAttributes {
 pub struct SRDFighterAttributes {
     pub level: i32,
     pub features: Vec<SRDClassLevelFeature>,
+}
+
+#[derive(PartialEq, Debug)]
+pub struct SRDMonkAttributes {
+    pub level: i32,
+    pub features: Vec<SRDClassLevelFeature>,
+    pub martial_arts: i32,
+    pub ki_points: i32,
+    pub unarmored_movement: i32,
+}
+
+#[derive(PartialEq, Debug)]
+pub struct SRDPaladinAttributes {
+    pub level: i32,
+    pub features: Vec<SRDClassLevelFeature>,
+    pub spells_known: i32,
+    pub spell_slots: [i32; 9],
 }
 
 #[derive(PartialEq, Debug)]
