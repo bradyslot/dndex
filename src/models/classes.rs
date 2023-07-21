@@ -208,6 +208,14 @@ pub struct SRDWarlockAttributes {
 }
 
 #[derive(PartialEq, Debug)]
+pub struct SRDWizardAttributes {
+    pub level: i32,
+    pub features: Vec<SRDClassLevelFeature>,
+    pub cantrips_known: i32,
+    pub spell_slots: [i32; 9],
+}
+
+#[derive(PartialEq, Debug)]
 pub struct SRDClassLevels<T: PartialEq> {
     pub level_1: T,
     pub level_2: T,
