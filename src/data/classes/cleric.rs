@@ -12,12 +12,12 @@ lazy_static! {
     },
     proficiencies: SRDClassProficiencies {
       armor: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Light", source: "armor", qty: 1 }),
-        SRDEquipment::Open5eCategory(SRDItem { key: "Medium", source: "armor", qty: 1 }),
-        SRDEquipment::Open5eCategory(SRDItem { key: "Shield", source: "armor", qty: 1 }),
+        SRDEquipment::Open5eCategory(SRDItem { key: "Light", source: "armor", qty: 0 }),
+        SRDEquipment::Open5eCategory(SRDItem { key: "Medium", source: "armor", qty: 0 }),
+        SRDEquipment::Open5eCategory(SRDItem { key: "Shield", source: "armor", qty: 0 }),
       ],
       weapons: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 1 }),
+        SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 }),
       ],
       tools: vec![],
       saving_throws: vec![ "wisdom", "charisma" ],

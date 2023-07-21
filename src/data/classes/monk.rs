@@ -13,15 +13,15 @@ lazy_static! {
     proficiencies: SRDClassProficiencies {
       armor: vec![],
       weapons: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 1 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 1 })
+        SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 }),
+        SRDEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 0 })
       ],
       tools: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "artisans_tools", source: "tools", qty: 1 })
+          SRDEquipment::DnDexItem(SRDItem { key: "artisans_tools", source: "tools", qty: 0 })
         ],
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "musical_instrument", source: "tools", qty: 1 })
+          SRDEquipment::DnDexItem(SRDItem { key: "musical_instrument", source: "tools", qty: 0 })
         ]
       ],
       saving_throws: vec![ "strength", "dexterity" ],

@@ -12,18 +12,18 @@ lazy_static! {
     },
     proficiencies: SRDClassProficiencies {
       armor: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Light", source: "armor", qty: 1 })
+        SRDEquipment::Open5eCategory(SRDItem { key: "Light", source: "armor", qty: 0 })
       ],
       weapons: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 1 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "crossbow-hand", source: "weapons", qty: 1 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "longsword", source: "weapons", qty: 1 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "rapier", source: "weapons", qty: 1 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 1 })
+        SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 }),
+        SRDEquipment::Open5eItem(SRDItem { key: "crossbow-hand", source: "weapons", qty: 0 }),
+        SRDEquipment::Open5eItem(SRDItem { key: "longsword", source: "weapons", qty: 0 }),
+        SRDEquipment::Open5eItem(SRDItem { key: "rapier", source: "weapons", qty: 0 }),
+        SRDEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 0 })
       ],
       tools: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "musical_instrument", source: "tools", qty: 1 })
+          SRDEquipment::DnDexItem(SRDItem { key: "musical_instrument", source: "tools", qty: 0 })
         ]
       ],
       saving_throws: vec![ "dexterity", "charisma" ],
