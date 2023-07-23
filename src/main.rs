@@ -36,14 +36,13 @@ use constants::*;
 #[function_component]
 fn App() -> Html {
 
-    let test = SRDEquipment::Open5eItem(SRDItem {
-        key: "greataxe",
-        source: "weapons",
-        qty: 1,
-    });
+    // let test = SRDEquipment::Open5eItem(SRDItem {
+    //     key: "greataxe",
+    //     source: "weapons",
+    //     qty: 1,
+    // });
 
-    test.fetch_contents();
-
+    // test.fetch_contents();
 
     let character_abilities = vec![
         Ability { name: "Strength".into(),     value: 8  },
@@ -97,18 +96,18 @@ fn App() -> Html {
         saves: vec![ character_abilities[CON].clone(), character_abilities[INT].clone() ]
     };
     let character_spells = vec![
-        // "awaken-object".into(),
-        // "booster-shot".into(),
-        // "chaotic-vitality".into(),
-        // "curse-of-incompetence".into(),
-        // "dragon-breath".into(),
-        // "fluctuating-alignment".into(),
-        // "lovesick".into(),
-        // "prismatic-ray".into(),
-        // "snow-boulder".into(),
-        // "time-vortex".into(),
-        // "timely-distraction".into(),
-        // "uncontrollable-transformation".into(),
+        "awaken-object".into(),
+        "booster-shot".into(),
+        "chaotic-vitality".into(),
+        "curse-of-incompetence".into(),
+        "dragon-breath".into(),
+        "fluctuating-alignment".into(),
+        "lovesick".into(),
+        "prismatic-ray".into(),
+        "snow-boulder".into(),
+        "time-vortex".into(),
+        "timely-distraction".into(),
+        "uncontrollable-transformation".into(),
         "conjure-greater-spectral-dead".into(),
         "frenzied-bolt".into(),
     ];

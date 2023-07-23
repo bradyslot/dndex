@@ -40,69 +40,123 @@ pub async fn fetch_slugs<T: DeserializeOwned + PartialEq>(endpoint: &str, slugs:
     results
 }
 
-// FETCH INDIVIDUAL ITEMS
+// FETCH SINGLE
 
-pub async fn fetch_spells(spells: Vec<String>) -> Vec<Open5eSpell> {
+pub async fn fetch_spell(spell: String) -> Vec<Open5eSpell> {
+    fetch_slugs::<Open5eSpell>("spells", vec![spell]).await
+}
+
+pub async fn fetch_monster(monster: String) -> Vec<Open5eMonster> {
+    fetch_slugs::<Open5eMonster>("monsters", vec![monster]).await
+}
+
+// pub async fn fetch_document(document: String) -> Vec<Open5eDocument> {
+//     fetch_slugs::<Open5eDocument>("documents", vec![document]).await
+// }
+
+pub async fn fetch_background(background: String) -> Vec<Open5eBackground> {
+    fetch_slugs::<Open5eBackground>("backgrounds", vec![background]).await
+}
+
+// pub async fn fetch_plane(plane: String) -> Vec<Open5ePlane> {
+//     fetch_slugs::<Open5ePlane>("planes", vec![plane]).await
+// }
+
+// pub async fn fetch_section(section: String) -> Vec<Open5eSection> {
+//     fetch_slugs::<Open5eSection>("sections", vec![section]).await
+// }
+
+pub async fn fetch_feat(feat: String) -> Vec<Open5eFeat> {
+    fetch_slugs::<Open5eFeat>("feats", vec![feat]).await
+}
+
+// pub async fn fetch_condition(condition: String) -> Vec<Open5eCondition> {
+//     fetch_slugs::<Open5eCondition>("conditions", vec![condition]).await
+// }
+
+pub async fn fetch_race(race: String) -> Vec<Open5eRace> {
+    fetch_slugs::<Open5eRace>("races", vec![race]).await
+}
+
+pub async fn fetch_class(class: String) -> Vec<Open5eClass> {
+    fetch_slugs::<Open5eClass>("classes", vec![class]).await
+}
+
+// pub async fn fetch_magicitem(magicitem: String) -> Vec<Open5eMagicItem> {
+//    fetch_slugs::<Open5eMagicItem>("magicitems", vec![magicitem]).await
+// }
+
+pub async fn fetch_weapon(weapon: String) -> Vec<Open5eWeapon> {
+   fetch_slugs::<Open5eWeapon>("weapons", vec![weapon]).await
+}
+
+pub async fn fetch_armor(armor: String) -> Vec<Open5eArmor> {
+  fetch_slugs::<Open5eArmor>("armor", vec![armor]).await
+}
+
+// FETCH VEC
+
+pub async fn fetch_vec_spells(spells: Vec<String>) -> Vec<Open5eSpell> {
     fetch_slugs::<Open5eSpell>("spells", spells).await
 }
 
-// pub async fn fetch_monsters(monsters: Vec<String>) -> Vec<Open5eMonster> {
-//     fetch_slugs::<Open5eMonster>("monsters", monsters).await
-// }
+pub async fn fetch_vec_monsters(monsters: Vec<String>) -> Vec<Open5eMonster> {
+    fetch_slugs::<Open5eMonster>("monsters", monsters).await
+}
 
-// pub async fn fetch_documents(document: Vec<String>) -> Vec<Open5eDocument> {
+// pub async fn fetch_vec_documents(document: Vec<String>) -> Vec<Open5eDocument> {
 //     fetch_slugs::<Open5eDocument>("documents", documents).await
 // }
 
-pub async fn fetch_backgrounds(backgrounds: Vec<String>) -> Vec<Open5eBackground> {
+pub async fn fetch_vec_backgrounds(backgrounds: Vec<String>) -> Vec<Open5eBackground> {
     fetch_slugs::<Open5eBackground>("backgrounds", backgrounds).await
 }
 
-// pub async fn fetch_planes(planes: Vec<String>) -> Vec<Open5ePlane> {
+// pub async fn fetch_vec_planes(planes: Vec<String>) -> Vec<Open5ePlane> {
 //     fetch_slugs::<Open5ePlane>("planes", planes).await
 // }
 
-// pub async fn fetch_sections(sections: Vec<String>) -> Vec<Open5eSection> {
+// pub async fn fetch_vec_sections(sections: Vec<String>) -> Vec<Open5eSection> {
 //     fetch_slugs::<Open5eSection>("sections", sections).await
 // }
 
-pub async fn fetch_feats(feats: Vec<String>) -> Vec<Open5eFeat> {
+pub async fn fetch_vec_feats(feats: Vec<String>) -> Vec<Open5eFeat> {
     fetch_slugs::<Open5eFeat>("feats", feats).await
 }
 
-// pub async fn fetch_conditions(conditions: String) -> Vec<Open5eCondition> {
+// pub async fn fetch_vec_conditions(conditions: String) -> Vec<Open5eCondition> {
 //     fetch_slugs::<Open5eCondition>("conditions", conditions).await
 // }
 
-pub async fn fetch_races(races: Vec<String>) -> Vec<Open5eRace> {
+pub async fn fetch_vec_races(races: Vec<String>) -> Vec<Open5eRace> {
     fetch_slugs::<Open5eRace>("races", races).await
 }
 
-pub async fn fetch_classes(classes: Vec<String>) -> Vec<Open5eClass> {
+pub async fn fetch_vec_classes(classes: Vec<String>) -> Vec<Open5eClass> {
     fetch_slugs::<Open5eClass>("classes", classes).await
 }
 
-// pub async fn fetch_magicitems(magicitems: Vec<String>) -> Vec<Open5eMagicItem> {
+// pub async fn fetch_vec_magicitems(magicitems: Vec<String>) -> Vec<Open5eMagicItem> {
 //    fetch_slugs::<Open5eMagicItem>("magicitems", magicitems).await
 // }
 
-pub async fn fetch_weapons(weapons: Vec<String>) -> Vec<Open5eWeapon> {
+pub async fn fetch_vec_weapons(weapons: Vec<String>) -> Vec<Open5eWeapon> {
    fetch_slugs::<Open5eWeapon>("weapons", weapons).await
 }
 
-pub async fn fetch_armor(armor: Vec<String>) -> Vec<Open5eArmor> {
+pub async fn fetch_vec_armor(armor: Vec<String>) -> Vec<Open5eArmor> {
   fetch_slugs::<Open5eArmor>("armor", armor).await
 }
 
-// FETCH ENTIRE ENDPOINTS
+// FETCH ALL
 
 pub async fn fetch_all_spells() -> Vec<Open5eSpell> {
     fetch_endpoint::<Open5eSpell>("spells").await
 }
 
-// pub async fn fetch_all_monsters() -> Vec<Open5eMonster> {
-//     fetch_endpoint::<Open5eMonster>("monsters").await
-// }
+pub async fn fetch_all_monsters() -> Vec<Open5eMonster> {
+    fetch_endpoint::<Open5eMonster>("monsters").await
+}
 
 // pub async fn fetch_all_documents() -> Vec<Open5eDocument> {
 //     fetch_endpoint::<Open5eDocument>("documents").await

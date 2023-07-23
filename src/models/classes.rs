@@ -51,8 +51,8 @@ impl SRDEquipment {
         match self {
             SRDEquipment::Open5eItem(item) => {
                 match item.source {
-                    "weapons" => FetchResult::Weapon(fetch_weapons(vec![item.key.into()]).await),
-                    "armor" => FetchResult::Armor(fetch_armor(vec![item.key.into()]).await),
+                    "weapons" => FetchResult::Weapon(fetch_weapon(item.key.into()).await),
+                    "armor" => FetchResult::Armor(fetch_armor(item.key.into()).await),
                     _ => unimplemented!(),
                 }
             }

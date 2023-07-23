@@ -21,7 +21,7 @@ pub fn spells(props: &Character) -> Html {
         use_effect_with_deps(move |_| {
                 let spell_cards = spell_cards.clone();
                 spawn_local(async move {
-                    let fetched_spells = fetch_spells(spells).await;
+                    let fetched_spells = fetch_vec_spells(spells).await;
                     spell_cards.set(fetched_spells);
                 });
             },

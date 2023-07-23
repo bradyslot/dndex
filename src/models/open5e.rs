@@ -1,4 +1,5 @@
 #![allow(non_snake_case, non_camel_case_types, clippy::similar_names)]
+use std::collections::HashMap;
 use yew::prelude::*;
 use serde::{Serialize, Deserialize};
 
@@ -17,6 +18,72 @@ pub struct Open5eDocument {
     pub license_url: String,
     #[serde(rename = "document__url")]
     pub url: String,
+}
+
+#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+pub struct Open5eMonster {
+    slug: String,
+    desc: String,
+    name: String,
+    size: String,
+    #[serde(rename = "type")] // "type" is a reserved keyword in Rust
+    mtype: String,
+    subtype: String,
+    group: Option<String>,
+    alignment: String,
+    armor_class: i32,
+    armor_desc: Option<String>,
+    hit_points: i32,
+    hit_dice: String,
+    speed: HashMap<String, i32>,
+    strength: i32,
+    dexterity: i32,
+    constitution: i32,
+    intelligence: i32,
+    wisdom: i32,
+    charisma: i32,
+    strength_save: Option<i32>,
+    dexterity_save: Option<i32>,
+    constitution_save: Option<i32>,
+    intelligence_save: Option<i32>,
+    wisdom_save: Option<i32>,
+    charisma_save: Option<i32>,
+    perception: Option<i32>,
+    skills: HashMap<String, i32>,
+    damage_vulnerabilities: String,
+    damage_resistances: String,
+    damage_immunities: String,
+    condition_immunities: String,
+    senses: String,
+    languages: String,
+    challenge_rating: String,
+    cr: f32,
+    actions: Vec<Open5eAction>,
+    reactions: Vec<Open5eAction>,
+    legendary_desc: String,
+    legendary_actions: Vec<Open5eAction>,
+    special_abilities: Vec<Open5eSpecialAbility>,
+    spell_list: Vec<String>,
+    page_no: i32,
+    environments: Vec<String>,
+    img_main: Option<String>,
+    #[serde(flatten)]
+    document: Open5eDocument,
+}
+
+#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+pub struct Open5eSpecialAbility {
+    name: String,
+    desc: String,
+}
+
+#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+pub struct Open5eAction {
+    name: String,
+    desc: String,
+    attack_bonus: Option<i32>,
+    damage_dice: Option<String>,
+    damage_bonus: Option<i32>,
 }
 
 #[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
