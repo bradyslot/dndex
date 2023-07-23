@@ -3,110 +3,116 @@ use yew::prelude::Properties;
 use serde::Deserialize;
 use std::collections::HashMap;
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct SRDEquipment {
-    pub adventuring_gear: HashMap<String, AdventuringGear>,
-    pub equipment_packs: HashMap<String, EquipmentPack>,
-    pub mounts_and_vehicles: MountsAndVehicles,
-    pub tools: Tools,
+#[derive(PartialEq, Debug)]
+pub struct SRDAdventuringGearItem {
+    pub name: &'static str,
+    pub desc: &'static str,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct AdventuringGear {
-    pub name: String,
-    pub desc: String,
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct EquipmentPack {
-    pub name: String,
+#[derive(PartialEq, Debug)]
+pub struct SRDEquipmentPack {
+    pub name: &'static str,
     pub value: i32,
-    pub denom: String,
-    pub desc: String,
-    pub contents: Vec<PackItem>,
+    pub denom: &'static str,
+    pub desc: &'static str,
+    pub contents: Vec<SRDPackItem>,
+}
+
+#[derive(PartialEq, Debug)]
+pub enum SRDPackItem {
+    Gear(SRDKey),
+    Tool(SRDKey),
+    Custom(SRDCustom),
+}
+
+#[derive(PartialEq, Debug)]
+pub struct SRDKey {
+    pub key: &'static str,
+    pub qty: i32,
+}
+
+#[derive(PartialEq, Debug)]
+pub struct SRDCustom {
+    pub name: &'static str,
+    pub qty: i32,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct PackItem {
-    pub name: Option<String>,
-    pub key: Option<String>,
-    pub qty: Option<i32>,
+pub struct SRDTools {
+    pub desc: &'static str,
+    pub table: &'static str,
+    pub artisans_tools: SRDToolSet,
+    pub gaming_sets: SRDToolSet,
+    pub musical_instruments: SRDToolSet,
+    pub kits: HashMap<&'static str, SRDToolKit>,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct MountsAndVehicles {
-    pub desc: String,
-    pub table: String,
-    pub mounts: HashMap<String, Mount>,
-    pub tack: HashMap<String, Tack>,
-    pub drawn_vehicles: HashMap<String, DrawnVehicles>,
-    pub waterborne_vehicles: HashMap<String, WaterborneVehicles>,
+pub struct SRDToolSet {
+    pub name: &'static str,
+    pub desc: &'static str,
+    pub subtypes: HashMap<&'static str, SRDToolSubtype>,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct Mount {
-    pub name: String,
+pub struct SRDToolSubtype {
+    pub name: &'static str,
+    pub value: i32,
+    pub denom: &'static str,
+    pub weight: i32,
+}
+
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+pub struct SRDToolKit {
+    pub name: &'static str,
+    pub value: i32,
+    pub denom: &'static str,
+    pub weight: i32,
+    pub desc: &'static str,
+}
+
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+pub struct SRDMountsAndVehicles {
+    pub desc: &'static str,
+    pub table: &'static str,
+    pub mounts: HashMap<&'static str, SRDMount>,
+    pub tack: HashMap<&'static str, SRDTack>,
+    pub drawn_vehicles: HashMap<&'static str, SRDDrawnVehicle>,
+    pub waterborne_vehicles: HashMap<&'static str, SRDWaterborneVehicle>,
+}
+
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+pub struct SRDMount {
+    pub name: &'static str,
     pub cost: i32,
-    pub denom: String,
+    pub denom: &'static str,
     pub speed: i32,
+    pub speed_unit: &'static str,
     pub capacity: i32,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct Tack {
-    pub name: String,
+pub struct SRDTack {
+    pub name: &'static str,
     pub cost: i32,
-    pub denom: String,
+    pub denom: &'static str,
     pub weight: i32,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct DrawnVehicles {
-    pub name: String,
+pub struct SRDDrawnVehicle {
+    pub name: &'static str,
     pub cost: i32,
-    pub denom: String,
+    pub denom: &'static str,
     pub weight: i32,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct WaterborneVehicles {
-    pub name: String,
+pub struct SRDWaterborneVehicle {
+    pub name: &'static str,
     pub cost: i32,
-    pub denom: String,
+    pub denom: &'static str,
     pub speed: f32,
-    pub speed_unit: String,
+    pub speed_unit: &'static str,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct Tools {
-    pub desc: String,
-    pub table: String,
-    pub artisans_tools: ToolSets,
-    pub gaming_sets: ToolSets,
-    pub musical_instruments: ToolSets,
-    pub kits: HashMap<String, Kits>,
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct ToolSets {
-    pub name: String,
-    pub desc: String,
-    pub subtypes: HashMap<String, ToolSubtypes>,
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct ToolSubtypes {
-    pub name: String,
-    pub value: i32,
-    pub denom: String,
-    pub weight: i32,
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct Kits {
-    pub name: String,
-    pub value: i32,
-    pub denom: String,
-    pub weight: i32,
-    pub desc: String,
-}
