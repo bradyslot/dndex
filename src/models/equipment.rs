@@ -37,7 +37,7 @@ pub struct SRDCustom {
     pub qty: i32,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(PartialEq, Debug)]
 pub struct SRDTools {
     pub desc: &'static str,
     pub table: &'static str,
@@ -47,14 +47,14 @@ pub struct SRDTools {
     pub kits: HashMap<&'static str, SRDToolKit>,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(PartialEq, Debug)]
 pub struct SRDToolSet {
     pub name: &'static str,
     pub desc: &'static str,
     pub subtypes: HashMap<&'static str, SRDToolSubtype>,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(PartialEq, Debug)]
 pub struct SRDToolSubtype {
     pub name: &'static str,
     pub value: i32,
@@ -62,7 +62,7 @@ pub struct SRDToolSubtype {
     pub weight: i32,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(PartialEq, Debug)]
 pub struct SRDToolKit {
     pub name: &'static str,
     pub value: i32,
@@ -71,7 +71,7 @@ pub struct SRDToolKit {
     pub desc: &'static str,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(PartialEq, Debug)]
 pub struct SRDMountsAndVehicles {
     pub desc: &'static str,
     pub table: &'static str,
@@ -81,7 +81,7 @@ pub struct SRDMountsAndVehicles {
     pub waterborne_vehicles: HashMap<&'static str, SRDWaterborneVehicle>,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(PartialEq, Debug)]
 pub struct SRDMount {
     pub name: &'static str,
     pub cost: i32,
@@ -91,7 +91,7 @@ pub struct SRDMount {
     pub capacity: i32,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(PartialEq, Debug)]
 pub struct SRDTack {
     pub name: &'static str,
     pub cost: i32,
@@ -99,7 +99,7 @@ pub struct SRDTack {
     pub weight: i32,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(PartialEq, Debug)]
 pub struct SRDDrawnVehicle {
     pub name: &'static str,
     pub cost: i32,
@@ -107,7 +107,7 @@ pub struct SRDDrawnVehicle {
     pub weight: i32,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(PartialEq, Debug)]
 pub struct SRDWaterborneVehicle {
     pub name: &'static str,
     pub cost: i32,
