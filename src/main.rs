@@ -33,6 +33,9 @@ use components::spell_slots::*;
 mod constants;
 use constants::*;
 
+mod tests;
+use tests::api_tests::*;
+
 #[function_component]
 fn App() -> Html {
 

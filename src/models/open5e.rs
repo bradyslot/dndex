@@ -1,14 +1,19 @@
 #![allow(non_snake_case, non_camel_case_types, clippy::similar_names)]
 use std::collections::HashMap;
 use yew::prelude::*;
-use serde::{Serialize, Deserialize};
+use serde::{Deserialize, Deserializer};
+use serde::de::IntoDeserializer;
+// use serde_with::serde_as;
+// use serde_with::TryFromInto;
+use std::any::type_name;
+use wasm_bindgen_test::*;
 
-#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eResults<T: PartialEq> {
     pub results: Vec<T>,
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
+#[derive(Deserialize, Clone, PartialEq, Debug)]
 pub struct Open5eDocument {
     #[serde(rename = "document__slug")]
     pub slug: String,
@@ -20,65 +25,81 @@ pub struct Open5eDocument {
     pub url: String,
 }
 
-#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+// #[serde_as]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eMonster {
-    slug: String,
-    desc: String,
-    name: String,
-    size: String,
+    pub slug: String,
+    pub desc: String,
+    pub name: String,
+    pub size: String,
     #[serde(rename = "type")] // "type" is a reserved keyword in Rust
-    mtype: String,
-    subtype: String,
-    group: Option<String>,
-    alignment: String,
-    armor_class: i32,
-    armor_desc: Option<String>,
-    hit_points: i32,
-    hit_dice: String,
-    speed: HashMap<String, i32>,
-    strength: i32,
-    dexterity: i32,
-    constitution: i32,
-    intelligence: i32,
-    wisdom: i32,
-    charisma: i32,
-    strength_save: Option<i32>,
-    dexterity_save: Option<i32>,
-    constitution_save: Option<i32>,
-    intelligence_save: Option<i32>,
-    wisdom_save: Option<i32>,
-    charisma_save: Option<i32>,
-    perception: Option<i32>,
-    skills: HashMap<String, i32>,
-    damage_vulnerabilities: String,
-    damage_resistances: String,
-    damage_immunities: String,
-    condition_immunities: String,
-    senses: String,
-    languages: String,
-    challenge_rating: String,
-    cr: f32,
-    actions: Vec<Open5eAction>,
-    reactions: Vec<Open5eAction>,
-    legendary_desc: String,
-    legendary_actions: Vec<Open5eAction>,
-    special_abilities: Vec<Open5eSpecialAbility>,
-    spell_list: Vec<String>,
-    page_no: i32,
-    environments: Vec<String>,
-    img_main: Option<String>,
+    pub mtype: String,
+    pub subtype: String,
+    pub group: Option<String>,
+    pub alignment: String,
+    pub armor_class: i32,
+    pub armor_desc: Option<String>,
+    pub hit_points: i32,
+    pub hit_dice: String,
+    pub speed: HashMap<String, i32>,
+    pub strength: i32,
+    pub dexterity: i32,
+    pub constitution: i32,
+    pub intelligence: i32,
+    pub wisdom: i32,
+    pub charisma: i32,
+    pub strength_save: Option<i32>,
+    pub dexterity_save: Option<i32>,
+    pub constitution_save: Option<i32>,
+    pub intelligence_save: Option<i32>,
+    pub wisdom_save: Option<i32>,
+    pub charisma_save: Option<i32>,
+    pub perception: Option<i32>,
+    pub skills: HashMap<String, i32>,
+    pub damage_vulnerabilities: String,
+    pub damage_resistances: String,
+    pub damage_immunities: String,
+    pub condition_immunities: String,
+    pub senses: String,
+    pub languages: String,
+    pub challenge_rating: String,
+    pub cr: f32,
+    pub actions: Vec<Open5eMonsterAction>,
+    #[serde(deserialize_with = "empty_string_as_none")]
+    pub reactions: Option<Vec<Open5eMonsterAction>>,
+    pub legendary_desc: String,
+    pub legendary_actions: Vec<Open5eMonsterAction>,
+    pub special_abilities: Vec<Open5eMonsterSpecialAbility>,
+    pub spell_list: Vec<String>,
+    pub page_no: i32,
+    pub environments: Vec<String>,
+    pub img_main: Option<String>,
     #[serde(flatten)]
-    document: Open5eDocument,
+    pub document: Open5eDocument,
 }
 
-#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct Open5eSpecialAbility {
+fn empty_string_as_none<'de, D, T>(de: D) -> Result<Option<T>, D::Error>
+where
+    D: serde::Deserializer<'de>,
+    T: serde::Deserialize<'de>,
+{
+    let opt = Option::<T>::deserialize(de)?;
+    // type_name::<T>
+    console_log!("type_name::<T>(): {:?}", type_name::<T>());
+    // if type_name::<T>() == "std::string::String" {
+    //     return Ok(None);
+    // }
+    Ok(opt)
+}
+
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+pub struct Open5eMonsterSpecialAbility {
     name: String,
     desc: String,
 }
 
-#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct Open5eAction {
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+pub struct Open5eMonsterAction {
     name: String,
     desc: String,
     attack_bonus: Option<i32>,
@@ -86,7 +107,7 @@ pub struct Open5eAction {
     damage_bonus: Option<i32>,
 }
 
-#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eArmor {
     name: String,
     slug: String,
@@ -106,7 +127,7 @@ pub struct Open5eArmor {
     stealth_disadvantage: bool,
 }
 
-#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eWeapon {
     pub name: String,
     pub slug: String,
@@ -120,7 +141,7 @@ pub struct Open5eWeapon {
     pub properties: Vec<String>
 }
 
-#[derive(Serialize, Deserialize, Clone, PartialEq, Debug)]
+#[derive(Deserialize, Clone, PartialEq, Debug)]
 pub struct Open5eBackground {
     pub name: String,
     pub desc: String,
@@ -136,7 +157,7 @@ pub struct Open5eBackground {
     pub document: Open5eDocument,
 }
 
-#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eFeat {
     pub slug: String,
     pub name: String,
@@ -147,7 +168,7 @@ pub struct Open5eFeat {
     pub document: Open5eDocument,
 }
 
-#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eClass {
     pub name: String,
     pub slug: String,
@@ -169,7 +190,7 @@ pub struct Open5eClass {
     pub document: Open5eDocument,
 }
 
-#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eArchetype {
     pub name: String,
     pub slug: String,
@@ -178,18 +199,18 @@ pub struct Open5eArchetype {
     pub document: Open5eDocument,
 }
 
-#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eASI {
     pub attributes: Vec<String>,
     pub value: u8,
 }
 
-#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eSpeed {
     pub walk: i32
 }
 
-#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eSubrace {
     pub name: String,
     pub slug: String,
@@ -199,7 +220,7 @@ pub struct Open5eSubrace {
     pub asi_desc: String,
 }
 
-#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eRace {
     pub name: String,
     pub slug: String,
@@ -219,7 +240,7 @@ pub struct Open5eRace {
     pub document: Open5eDocument,
 }
 
-#[derive(Serialize, Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eSpell {
     pub slug: String,
     pub name: String,

@@ -2,27 +2,31 @@ use gloo_net::http::Request;
 use log::info;
 use serde::de::DeserializeOwned;
 use std::any::type_name;
+use wasm_bindgen_test::*;
 
 use crate::models::open5e::*;
 use crate::constants::*;
 
-async fn fetch_endpoint<T: DeserializeOwned + PartialEq>(endpoint: &str) -> Vec<T> {
+pub async fn fetch_endpoint<T: DeserializeOwned + PartialEq>(endpoint: &str) -> Vec<T> {
     let url = format!("{}/{}", API_URL, endpoint);
     let result = Request::get(&url)
         .send()
         .await;
     match result {
         Ok(response) => match response.json::<Open5eResults<T>>().await {
-            Ok(api) => api.results,
             Err(e) => {
                 info!("Error deserializing <{}>", type_name::<T>());
                 info!("{}", e);
+                console_log!("Error deserializing: {}", e);
+                console_log!("response: {:?}", response);
                 vec![]
-            }
+            },
+            Ok(api) => api.results
         },
         Err(e) => {
             info!("Error fetching {} data from API", type_name::<T>());
             info!("{}", e);
+            console_log!("Error fetching: {}", e);
             vec![]
         }
     }
@@ -40,14 +44,39 @@ pub async fn fetch_slugs<T: DeserializeOwned + PartialEq>(endpoint: &str, slugs:
     results
 }
 
-// FETCH SINGLE
-
-pub async fn fetch_spell(spell: String) -> Vec<Open5eSpell> {
-    fetch_slugs::<Open5eSpell>("spells", vec![spell]).await
+pub async fn fetch_slug<T: DeserializeOwned + PartialEq + Clone>(endpoint: &str, slug: String) -> T {
+    let url = format!("{}/{}/?slug={}", API_URL, endpoint, slug);
+    let result = Request::get(&url)
+        .send()
+        .await;
+    match result {
+        Ok(response) => match response.json::<Open5eResults<T>>().await {
+            Err(e) => {
+                info!("Error deserializing <{}>", type_name::<T>());
+                info!("{}", e);
+                console_log!("Error deserializing: {}", e);
+                console_log!("response: {:?}", response);
+                panic!()
+            },
+            Ok(api) => api.results[0].clone()
+        },
+        Err(e) => {
+            info!("Error fetching {} data from API", type_name::<T>());
+            info!("{}", e);
+            console_log!("Error fetching: {}", e);
+            panic!()
+        }
+    }
 }
 
-pub async fn fetch_monster(monster: String) -> Vec<Open5eMonster> {
-    fetch_slugs::<Open5eMonster>("monsters", vec![monster]).await
+// FETCH SINGLE
+
+pub async fn fetch_spell(spell: String) -> Open5eSpell {
+    fetch_slug::<Open5eSpell>("spells", spell).await
+}
+
+pub async fn fetch_monster(monster: String) -> Open5eMonster {
+    fetch_slug::<Open5eMonster>("monsters", monster).await
 }
 
 // pub async fn fetch_document(document: String) -> Vec<Open5eDocument> {
