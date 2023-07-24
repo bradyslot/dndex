@@ -202,3 +202,17 @@ pub async fn fetch_all_weapons() -> Vec<Open5eWeapon> {
 pub async fn fetch_all_armor() -> Vec<Open5eArmor> {
     fetch_endpoint::<Open5eArmor>("armor").await
 }
+
+// FETCH BY CATEGORY
+// these calls are expensive because they fetch all items and then filter them
+// open5e-api v1 provides no way to filter by category
+
+pub async fn fetch_armor_category(category: String) -> Vec<Open5eArmor> {
+    let mut all_armor = fetch_all_armor().await;
+    all_armor.iter().filter(|item| item.category.contains(&category)).cloned().collect()
+}
+
+pub async fn fetch_weapon_category(category: String) -> Vec<Open5eWeapon> {
+    let mut all_weapons = fetch_all_weapons().await;
+    all_weapons.iter().filter(|item| item.category.contains(&category)).cloned().collect()
+}

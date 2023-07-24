@@ -5,6 +5,18 @@ use crate::models::open5e::*;
 wasm_bindgen_test_configure!(run_in_browser);
 
 #[wasm_bindgen_test]
+async fn test_armor_category() {
+    let light_armor = fetch_armor_category("Light".into()).await;
+    assert!(light_armor.len() > 0);
+}
+
+#[wasm_bindgen_test]
+async fn test_weapon_category() {
+    let martial_ranged = fetch_weapon_category("Martial Ranged".into()).await;
+    assert!(martial_ranged.len() > 0);
+}
+
+#[wasm_bindgen_test]
 async fn test_spells() {
     let spell = fetch_spell("fire-bolt".into()).await;
     let vec_spells = fetch_vec_spells(vec!["fire-bolt".into(), "cure-wounds".into()]).await;
