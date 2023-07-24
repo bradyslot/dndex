@@ -12,13 +12,13 @@ pub struct Open5eResults<T: PartialEq> {
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eDocument {
     #[serde(rename = "document__slug")]
-    pub slug: String,
+    pub slug: Option<String>,
     #[serde(rename = "document__title")]
-    pub title: String,
+    pub title: Option<String>,
     #[serde(rename = "document__license_url")]
-    pub license_url: String,
+    pub license_url: Option<String>,
     #[serde(rename = "document__url")]
-    pub url: String,
+    pub url: Option<String>,
 }
 
 #[serde_as]
@@ -37,7 +37,8 @@ pub struct Open5eMonster {
     pub armor_desc: Option<String>,
     pub hit_points: i32,
     pub hit_dice: String,
-    pub speed: HashMap<String, i32>,
+    #[serde_as(as = "DefaultOnError")]
+    pub speed: HashMap<String, i32>, // potentially bool
     pub strength: i32,
     pub dexterity: i32,
     pub constitution: i32,
@@ -79,39 +80,76 @@ pub struct Open5eMonster {
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eMonsterSpecialAbility {
-    name: String,
-    desc: String,
+    pub name: String,
+    pub desc: String,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eMonsterAction {
-    name: String,
-    desc: String,
-    attack_bonus: Option<i32>,
-    damage_dice: Option<String>,
-    damage_bonus: Option<i32>,
+    pub name: String,
+    pub desc: String,
+    pub attack_bonus: Option<i32>,
+    pub damage_dice: Option<String>,
+    pub damage_bonus: Option<i32>,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
-pub struct Open5eArmor {
-    name: String,
-    slug: String,
-    category: String,
+pub struct Open5eCondition {
+    pub name: String,
+    pub slug: String,
+    pub desc: String,
     #[serde(flatten)]
-    document: Open5eDocument,
-    base_ac: i32,
-    plus_dex_mod: bool,
-    plus_con_mod: bool,
-    plus_wis_mod: bool,
-    plus_flat_mod: i32,
-    plus_max: i32,
-    ac_string: String,
-    strength_requirement: Option<i32>,
-    cost: String,
-    weight: String,
-    stealth_disadvantage: bool,
+    pub document: Open5eDocument,
 }
 
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
+pub struct Open5eMagicItem {
+    pub name: String,
+    pub slug: String,
+    pub desc: String,
+    pub rarity: String,
+    pub requires_attunement: String,
+    #[serde(flatten)]
+    pub document: Open5eDocument,
+}
+
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
+pub struct Open5eSourceDocument {
+    pub title: String,
+    pub slug: String,
+    pub url: String,
+    pub license: String,
+    pub desc: String,
+    pub author: String,
+    pub organization: String,
+    pub version: String,
+    pub created_at: String,
+    pub copyright: String,
+    pub license_url: String,
+}
+
+
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
+pub struct Open5eArmor {
+    pub name: String,
+    pub slug: String,
+    pub category: String,
+    #[serde(flatten)]
+    pub document: Open5eDocument,
+    pub base_ac: i32,
+    pub plus_dex_mod: bool,
+    pub plus_con_mod: bool,
+    pub plus_wis_mod: bool,
+    pub plus_flat_mod: i32,
+    pub plus_max: i32,
+    pub ac_string: String,
+    pub strength_requirement: Option<i32>,
+    pub cost: String,
+    pub weight: String,
+    pub stealth_disadvantage: bool,
+}
+
+#[serde_as]
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eWeapon {
     pub name: String,
@@ -123,6 +161,7 @@ pub struct Open5eWeapon {
     pub damage_dice: String,
     pub damage_type: String,
     pub weight: String,
+    #[serde_as(as = "DefaultOnError")]
     pub properties: Vec<String>
 }
 
@@ -133,7 +172,7 @@ pub struct Open5eBackground {
     pub slug: String,
     pub skill_proficiencies: String,
     pub tool_proficiencies: Option<String>,
-    pub languages: String,
+    pub languages: Option<String>,
     pub equipment: String,
     pub feature: String,
     pub feature_desc: String,
@@ -187,7 +226,7 @@ pub struct Open5eArchetype {
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eASI {
     pub attributes: Vec<String>,
-    pub value: u8,
+    pub value: i32,
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
@@ -228,7 +267,7 @@ pub struct Open5eSpell {
     pub higher_level: String,
     pub page: String,
     pub range: String,
-    pub target_range_sort: u8,
+    pub target_range_sort: i32,
     pub components: String,
     pub requires_verbal_components: bool,
     pub requires_somatic_components: bool,
@@ -241,8 +280,8 @@ pub struct Open5eSpell {
     pub requires_concentration: bool,
     pub casting_time: String,
     pub level: String,
-    pub level_int: u8,
-    pub spell_level: u8,
+    pub level_int: i32,
+    pub spell_level: i32,
     pub school: String,
     pub dnd_class: String,
     pub spell_lists: Vec<String>,

@@ -42,8 +42,8 @@ pub enum SRDEquipment {
 
 #[derive(PartialEq, Debug)]
 pub enum FetchResult {
-    Weapon(Vec<Open5eWeapon>),
-    Armor(Vec<Open5eArmor>),
+    Weapon(Open5eWeapon),
+    Armor(Open5eArmor),
 }
 
 impl SRDEquipment {
