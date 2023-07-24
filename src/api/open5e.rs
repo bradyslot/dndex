@@ -15,18 +15,19 @@ pub async fn fetch_endpoint<T: DeserializeOwned + PartialEq>(endpoint: &str) -> 
     match result {
         Ok(response) => match response.json::<Open5eResults<T>>().await {
             Err(e) => {
-                info!("Error deserializing <{}>", type_name::<T>());
+                info!("Error deserializing: <{}>", type_name::<T>());
                 info!("{}", e);
-                console_log!("Error deserializing: {}", e);
-                console_log!("response: {:?}", response);
+                console_log!("Error deserializing: <{}>", type_name::<T>());
+                console_log!("{}", e);
                 vec![]
             },
             Ok(api) => api.results
         },
         Err(e) => {
-            info!("Error fetching {} data from API", type_name::<T>());
+            info!("Error fetching {} data from API endpoint {}", type_name::<T>(), endpoint);
             info!("{}", e);
-            console_log!("Error fetching: {}", e);
+            console_log!("Error fetching {} data from API endpoint {}", type_name::<T>(), endpoint);
+            console_log!("{}", e);
             vec![]
         }
     }
@@ -44,7 +45,7 @@ pub async fn fetch_slugs<T: DeserializeOwned + PartialEq>(endpoint: &str, slugs:
     results
 }
 
-pub async fn fetch_slug<T: DeserializeOwned + PartialEq + Clone>(endpoint: &str, slug: String) -> T {
+pub async fn fetch_slug<T: DeserializeOwned + PartialEq + Clone + Default>(endpoint: &str, slug: String) -> T {
     let url = format!("{}/{}/{}/", API_URL, endpoint, slug);
     let result = Request::get(&url)
         .send()
@@ -52,19 +53,22 @@ pub async fn fetch_slug<T: DeserializeOwned + PartialEq + Clone>(endpoint: &str,
     match result {
         Ok(response) => match response.json::<T>().await {
             Err(e) => {
-                info!("Error deserializing <{}>", type_name::<T>());
+                info!("Error deserializing: {}<{}>", slug, type_name::<T>());
                 info!("{}", e);
-                console_log!("Error deserializing: {}", e);
-                console_log!("response: {:?}", response);
-                panic!("Deserializing {}", slug)
+                console_log!("Error deserializing: {}<{}>", slug, type_name::<T>());
+                console_log!("{}", e);
+                // panic!("Deserializing {}<{}>", slug, type_name::<T>())
+                T::default()
             },
             Ok(api) => api
         },
         Err(e) => {
-            info!("Error fetching {} data from API", type_name::<T>());
+            info!("Error fetching {}<{}> data from API", slug, type_name::<T>());
             info!("{}", e);
-            console_log!("Error fetching: {}", e);
-            panic!("Fetching {}", slug)
+            console_log!("Error fetching: {}<{}>", slug, type_name::<T>());
+            console_log!("{}", e);
+            // panic!("Fetching {}<{}>", slug, type_name::<T>())
+            T::default()
         }
     }
 }

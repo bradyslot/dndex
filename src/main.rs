@@ -99,6 +99,7 @@ fn App() -> Html {
         saves: vec![ character_abilities[CON].clone(), character_abilities[INT].clone() ]
     };
     let character_spells = vec![
+        "example".into(),
         "awaken-object".into(),
         "booster-shot".into(),
         "chaotic-vitality".into(),

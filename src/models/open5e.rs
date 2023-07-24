@@ -2,7 +2,6 @@
 use std::collections::HashMap;
 use yew::prelude::*;
 use serde::{Deserialize, Deserializer};
-use wasm_bindgen_test::*;
 use serde_with::{serde_as, DefaultOnError};
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
@@ -10,7 +9,7 @@ pub struct Open5eResults<T: PartialEq> {
     pub results: Vec<T>,
 }
 
-#[derive(Deserialize, Clone, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eDocument {
     #[serde(rename = "document__slug")]
     pub slug: String,
@@ -23,7 +22,7 @@ pub struct Open5eDocument {
 }
 
 #[serde_as]
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eMonster {
     pub slug: String,
     pub desc: String,
@@ -78,13 +77,13 @@ pub struct Open5eMonster {
     pub document: Open5eDocument,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eMonsterSpecialAbility {
     name: String,
     desc: String,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eMonsterAction {
     name: String,
     desc: String,
@@ -93,7 +92,7 @@ pub struct Open5eMonsterAction {
     damage_bonus: Option<i32>,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eArmor {
     name: String,
     slug: String,
@@ -113,7 +112,7 @@ pub struct Open5eArmor {
     stealth_disadvantage: bool,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eWeapon {
     pub name: String,
     pub slug: String,
@@ -127,7 +126,7 @@ pub struct Open5eWeapon {
     pub properties: Vec<String>
 }
 
-#[derive(Deserialize, Clone, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eBackground {
     pub name: String,
     pub desc: String,
@@ -143,7 +142,7 @@ pub struct Open5eBackground {
     pub document: Open5eDocument,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eFeat {
     pub slug: String,
     pub name: String,
@@ -154,7 +153,7 @@ pub struct Open5eFeat {
     pub document: Open5eDocument,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eClass {
     pub name: String,
     pub slug: String,
@@ -185,18 +184,13 @@ pub struct Open5eArchetype {
     pub document: Open5eDocument,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eASI {
     pub attributes: Vec<String>,
     pub value: u8,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
-pub struct Open5eSpeed {
-    pub walk: i32
-}
-
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eSubrace {
     pub name: String,
     pub slug: String,
@@ -206,7 +200,7 @@ pub struct Open5eSubrace {
     pub asi_desc: String,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eRace {
     pub name: String,
     pub slug: String,
@@ -216,7 +210,7 @@ pub struct Open5eRace {
     pub age: String,
     pub alignment: String,
     pub size: String,
-    pub speed: Open5eSpeed,
+    pub speed: HashMap<String, i32>,
     pub speed_desc: String,
     pub languages: String,
     pub vision: String,
@@ -226,7 +220,7 @@ pub struct Open5eRace {
     pub document: Open5eDocument,
 }
 
-#[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eSpell {
     pub slug: String,
     pub name: String,
