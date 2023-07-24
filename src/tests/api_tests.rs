@@ -5,6 +5,42 @@ use crate::models::open5e::*;
 wasm_bindgen_test_configure!(run_in_browser);
 
 #[wasm_bindgen_test]
+async fn test_search_spells() {
+    let results = search_spells("".into(), Some(5), Some(1), Some(vec!["document__slug=wotc-srd".into()])).await;
+    assert_eq!(results.len(), 5);
+}
+
+#[wasm_bindgen_test]
+async fn test_search_monsters() {
+    let results = search_monsters("".into(), Some(5), Some(1), Some(vec!["document__slug=wotc-srd".into()])).await;
+    assert_eq!(results.len(), 5);
+}
+
+#[wasm_bindgen_test]
+async fn test_search_backgrounds() {
+    let results = search_backgrounds("".into(), Some(5), Some(1), None).await;
+    assert_eq!(results.len(), 5);
+}
+
+#[wasm_bindgen_test]
+async fn test_search_magicitems() {
+    let results = search_magicitems("".into(), Some(5), Some(1), Some(vec!["document__slug=wotc-srd".into()])).await;
+    assert_eq!(results.len(), 5);
+}
+
+#[wasm_bindgen_test]
+async fn test_search_weapons() {
+    let results = search_weapons("".into(), Some(5), Some(1), Some(vec!["document__slug=wotc-srd".into()])).await;
+    assert_eq!(results.len(), 5);
+}
+
+#[wasm_bindgen_test]
+async fn test_search_armor() {
+    let results = search_weapons("".into(), Some(5), Some(1), Some(vec!["document__slug=wotc-srd".into()])).await;
+    assert_eq!(results.len(), 5);
+}
+
+#[wasm_bindgen_test]
 async fn test_armor_category() {
     let light_armor = fetch_armor_category("Light".into()).await;
     assert!(light_armor.len() > 0);
