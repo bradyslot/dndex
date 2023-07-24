@@ -2,11 +2,8 @@
 use std::collections::HashMap;
 use yew::prelude::*;
 use serde::{Deserialize, Deserializer};
-use serde::de::IntoDeserializer;
-// use serde_with::serde_as;
-// use serde_with::TryFromInto;
-use std::any::type_name;
 use wasm_bindgen_test::*;
+use serde_with::{serde_as, DefaultOnError};
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eResults<T: PartialEq> {
@@ -25,7 +22,7 @@ pub struct Open5eDocument {
     pub url: String,
 }
 
-// #[serde_as]
+#[serde_as]
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]
 pub struct Open5eMonster {
     pub slug: String,
@@ -64,11 +61,14 @@ pub struct Open5eMonster {
     pub languages: String,
     pub challenge_rating: String,
     pub cr: f32,
+    #[serde_as(as = "DefaultOnError")]
     pub actions: Vec<Open5eMonsterAction>,
-    #[serde(deserialize_with = "empty_string_as_none")]
-    pub reactions: Option<Vec<Open5eMonsterAction>>,
+    #[serde_as(as = "DefaultOnError")]
+    pub reactions: Vec<Open5eMonsterAction>,
     pub legendary_desc: String,
+    #[serde_as(as = "DefaultOnError")]
     pub legendary_actions: Vec<Open5eMonsterAction>,
+    #[serde_as(as = "DefaultOnError")]
     pub special_abilities: Vec<Open5eMonsterSpecialAbility>,
     pub spell_list: Vec<String>,
     pub page_no: i32,
@@ -76,20 +76,6 @@ pub struct Open5eMonster {
     pub img_main: Option<String>,
     #[serde(flatten)]
     pub document: Open5eDocument,
-}
-
-fn empty_string_as_none<'de, D, T>(de: D) -> Result<Option<T>, D::Error>
-where
-    D: serde::Deserializer<'de>,
-    T: serde::Deserialize<'de>,
-{
-    let opt = Option::<T>::deserialize(de)?;
-    // type_name::<T>
-    console_log!("type_name::<T>(): {:?}", type_name::<T>());
-    // if type_name::<T>() == "std::string::String" {
-    //     return Ok(None);
-    // }
-    Ok(opt)
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug)]

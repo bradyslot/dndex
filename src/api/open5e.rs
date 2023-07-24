@@ -45,26 +45,26 @@ pub async fn fetch_slugs<T: DeserializeOwned + PartialEq>(endpoint: &str, slugs:
 }
 
 pub async fn fetch_slug<T: DeserializeOwned + PartialEq + Clone>(endpoint: &str, slug: String) -> T {
-    let url = format!("{}/{}/?slug={}", API_URL, endpoint, slug);
+    let url = format!("{}/{}/{}/", API_URL, endpoint, slug);
     let result = Request::get(&url)
         .send()
         .await;
     match result {
-        Ok(response) => match response.json::<Open5eResults<T>>().await {
+        Ok(response) => match response.json::<T>().await {
             Err(e) => {
                 info!("Error deserializing <{}>", type_name::<T>());
                 info!("{}", e);
                 console_log!("Error deserializing: {}", e);
                 console_log!("response: {:?}", response);
-                panic!()
+                panic!("Deserializing {}", slug)
             },
-            Ok(api) => api.results[0].clone()
+            Ok(api) => api
         },
         Err(e) => {
             info!("Error fetching {} data from API", type_name::<T>());
             info!("{}", e);
             console_log!("Error fetching: {}", e);
-            panic!()
+            panic!("Fetching {}", slug)
         }
     }
 }

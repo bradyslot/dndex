@@ -12,8 +12,15 @@ async fn test_spell() {
 }
 
 #[wasm_bindgen_test]
-async fn test_monster() {
+async fn test_monster_with_string_actions() {
     let result = fetch_monster("aboleth".into()).await;
     console_log!("monster: {:?}", result);
     assert_eq!(result.name, "Aboleth");
+}
+
+#[wasm_bindgen_test]
+async fn test_monster_with_array_actions() {
+    let result = fetch_monster("bandit-captain".into()).await;
+    console_log!("monster: {:?}", result);
+    assert_eq!(result.name, "Bandit Captain");
 }
