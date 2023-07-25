@@ -24,7 +24,7 @@ lazy_static! {
       ],
       tools: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "thieves_tools", source: "tools", qty: 0 }),
+          SRDEquipment::DnDexItem(SRDItem { key: "thieves_tools", source: "kits", qty: 0 }),
         ]
       ],
       saving_throws: vec![ "dexterity", "intelligence" ],
@@ -65,9 +65,9 @@ lazy_static! {
       ],
       choice_4: vec![],
       defaults: vec![
-        SRDEquipment::Open5eItem(SRDItem { key: "leather", source: "amor", qty: 1 }),
+        SRDEquipment::Open5eItem(SRDItem { key: "leather", source: "armor", qty: 1 }),
         SRDEquipment::Open5eItem(SRDItem { key: "dagger", source: "weapons", qty: 2 }),
-        SRDEquipment::DnDexItem(SRDItem { key: "thieves_tools", source: "tools", qty: 1 }),
+        SRDEquipment::DnDexItem(SRDItem { key: "thieves_tools", source: "kits", qty: 1 }),
       ],
       desc: "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a rapier or *(b)* a shortsword\n- *(a)* a shortbow and quiver of 20 arrows or *(b)* a shortsword\n- *(a)* a burglar's pack, *(b)* a dungeoneer's pack, or *(c)* an explorer's pack\n- *(a)* Leather armor, two daggers, and thieves' tools"
     },

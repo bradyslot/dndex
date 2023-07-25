@@ -19,10 +19,10 @@ lazy_static! {
       ],
       tools: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "artisans_tools", source: "tools", qty: 0 })
+          SRDEquipment::DnDexCategory(SRDCategory { category: "artisans_tools", qty: 0 })
         ],
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "musical_instrument", source: "tools", qty: 0 })
+          SRDEquipment::DnDexCategory(SRDCategory { category: "musical_instruments", qty: 0 })
         ]
       ],
       saving_throws: vec![ "strength", "dexterity" ],

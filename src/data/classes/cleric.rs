@@ -48,13 +48,13 @@ lazy_static! {
       ],
       choice_3: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "scale-mail", source: "amor", qty: 1 }),
+          SRDEquipment::Open5eItem(SRDItem { key: "scale-mail", source: "armor", qty: 1 }),
         ],
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "leather", source: "amor", qty: 1 }),
+          SRDEquipment::Open5eItem(SRDItem { key: "leather", source: "armor", qty: 1 }),
         ],
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "chain-mail", source: "amor", qty: 1 }),
+          SRDEquipment::Open5eItem(SRDItem { key: "chain-mail", source: "armor", qty: 1 }),
         ]
       ],
       choice_4: vec![
@@ -66,7 +66,7 @@ lazy_static! {
         ]
       ],
       defaults: vec![
-        SRDEquipment::Open5eItem(SRDItem { key: "shield", source: "amor", qty: 1 }),
+        SRDEquipment::Open5eItem(SRDItem { key: "shield", source: "armor", qty: 1 }),
         SRDEquipment::DnDexItem(SRDItem { key: "holy_symbol", source: "adventuring_gear", qty: 1 }),
       ],
       desc: "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a mace or *(b)* a warhammer (if proficient)\n- *(a)* scale mail, *(b)* leather armor, or (c) chain mail (if proficient)\n- *(a)* a light crossbow and 20 bolts or *(b)* any simple weapon\n- *(a)* a priest's pack or *(b)* an explorer's pack\nA shield and a holy symbol"

@@ -32,10 +32,10 @@ lazy_static! {
     starting_equipment: SRDClassStartingEquipment {
       choice_1: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "scale-mail", source: "amor", qty: 1 }),
+          SRDEquipment::Open5eItem(SRDItem { key: "scale-mail", source: "armor", qty: 1 }),
         ],
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "leather", source: "amor", qty: 1 }),
+          SRDEquipment::Open5eItem(SRDItem { key: "leather", source: "armor", qty: 1 }),
         ]
       ],
       choice_2: vec![

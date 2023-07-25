@@ -2,6 +2,7 @@
 use yew::prelude::Properties;
 use serde::Deserialize;
 use std::collections::HashMap;
+
 use crate::models::open5e::*;
 use crate::api::open5e::*;
 use crate::data::equipment::adventuring_gear::*;
@@ -9,12 +10,13 @@ use crate::data::equipment::equipment_packs::*;
 use crate::data::equipment::tools::*;
 use crate::data::equipment::mounts_and_vehicles::*;
 
+
 #[derive(PartialEq, Debug)]
 pub enum SRDEquipment {
     Open5eItem(SRDItem),
     Open5eCategory(SRDItem),
     DnDexItem(SRDItem),
-    DnDexCategory(SRDItem),
+    DnDexCategory(SRDCategory),
     CustomItem(SRDCustomItem),
 }
 
@@ -26,14 +28,18 @@ pub enum FetchResult {
     ArmorCategory(Vec<Open5eArmor>),
     AdventuringGear(Option<&'static SRDAdventuringGearItem>),
     EquipmentPack(Option<&'static SRDEquipmentPack>),
-    ToolKit(Option<&'static SRDToolKit>),
+    ArtisansTools(Option<&'static SRDToolSubtype>),
     MusicalInstrument(Option<&'static SRDToolSubtype>),
     GamingSet(Option<&'static SRDToolSubtype>),
+    ToolKit(Option<&'static SRDToolKit>),
     Mount(Option<&'static SRDMount>),
     Tack(Option<&'static SRDTack>),
     DrawnVehicle(Option<&'static SRDDrawnVehicle>),
     WaterborneVehicle(Option<&'static SRDWaterborneVehicle>),
-    Empty(),
+    MusicalInstrumentCategory(HashMap<&'static str, SRDToolSubtype>),
+    ArtisansToolsCategory(HashMap<&'static str, SRDToolSubtype>),
+    Custom(SRDCustomItem),
+    Empty,
 }
 
 impl SRDEquipment {
@@ -43,44 +49,52 @@ impl SRDEquipment {
                 match item.source {
                     "weapons" => FetchResult::Weapon(fetch_weapon(item.key.into()).await),
                     "armor" => FetchResult::Armor(fetch_armor(item.key.into()).await),
-                    _ => FetchResult::Empty(),
+                    _ => FetchResult::Empty,
                 }
             }
             SRDEquipment::Open5eCategory(item) => {
                 match item.source {
                     "weapons" => FetchResult::WeaponCategory(fetch_weapon_category(item.key.into()).await),
                     "armor" => FetchResult::ArmorCategory(fetch_armor_category(item.key.into()).await),
-                    _ => FetchResult::Empty(),
+                    _ => FetchResult::Empty,
                 }
             }
             SRDEquipment::DnDexItem(item) => {
                 match item.source {
                     "adventuring_gear" => FetchResult::AdventuringGear(adventuring_gear.get(item.key.into())),
                     "equipment_packs" => FetchResult::EquipmentPack(equipment_packs.get(item.key.into())),
-                    "kits" => FetchResult::ToolKit(tools.kits.get(item.key.into())),
+                    "artisans_tools" => FetchResult::ArtisansTools(tools.artisans_tools.subtypes.get(item.key.into())),
                     "musical_instruments" => FetchResult::MusicalInstrument(tools.musical_instruments.subtypes.get(item.key.into())),
                     "gaming_sets" => FetchResult::GamingSet(tools.gaming_sets.subtypes.get(item.key.into())),
+                    "kits" => FetchResult::ToolKit(tools.kits.get(item.key.into())),
                     "mount" => FetchResult::Mount(mounts_and_vehicles.mounts.get(item.key.into())),
                     "tack" => FetchResult::Tack(mounts_and_vehicles.tack.get(item.key.into())),
                     "drawn_vehicles" => FetchResult::DrawnVehicle(mounts_and_vehicles.drawn_vehicles.get(item.key.into())),
                     "waterborne_vehicles" => FetchResult::WaterborneVehicle(mounts_and_vehicles.waterborne_vehicles.get(item.key.into())),
-                    _ => FetchResult::Empty(),
+                    _ => FetchResult::Empty,
                 }
             }
             SRDEquipment::DnDexCategory(item) => {
-                match item.source {
-                    // "musical_instruments" => FetchResult::MusicalInstrument(tools.musical_instruments.subtypes.iter().map(instrument).collect()),
-                    _ => FetchResult::Empty(),
+                match item.category {
+                    "artisans_tools" => FetchResult::ArtisansToolsCategory(tools.artisans_tools.subtypes.clone()),
+                    "musical_instruments" => FetchResult::MusicalInstrumentCategory(tools.musical_instruments.subtypes.clone()),
+                    _ => FetchResult::Empty,
                 }
             }
             SRDEquipment::CustomItem(item) => {
-                unimplemented!()
+                FetchResult::Custom(item.clone())
             }
         }
     }
 }
 
 #[derive(PartialEq, Debug)]
+pub struct SRDCategory {
+    pub category: &'static str,
+    pub qty: i32,
+}
+
+#[derive(PartialEq, Debug, Clone)]
 pub struct SRDCustomItem {
     pub name: &'static str,
     pub qty: i32,
@@ -125,7 +139,7 @@ pub struct SRDToolSet {
     pub subtypes: HashMap<&'static str, SRDToolSubtype>,
 }
 
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct SRDToolSubtype {
     pub name: &'static str,
     pub value: i32,

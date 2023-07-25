@@ -54,7 +54,7 @@ lazy_static! {
       ],
       choice_4: vec![],
       defaults: vec![
-        SRDEquipment::Open5eItem(SRDItem { key: "leather", source: "amor", qty: 1 }),
+        SRDEquipment::Open5eItem(SRDItem { key: "leather", source: "armor", qty: 1 }),
         SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 1 }),
         SRDEquipment::Open5eItem(SRDItem { key: "dagger", source: "weapons", qty: 2 }),
       ],

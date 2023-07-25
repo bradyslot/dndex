@@ -24,7 +24,7 @@ lazy_static! {
       ],
       tools: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "musical_instrument", source: "tools", qty: 0 })
+          SRDEquipment::DnDexCategory(SRDCategory { category: "musical_instruments", qty: 0 })
         ]
       ],
       saving_throws: vec![ "dexterity", "charisma" ],
@@ -59,7 +59,7 @@ lazy_static! {
           SRDEquipment::DnDexItem(SRDItem { key: "lute", source: "musical_instruments", qty: 1 })
         ],
         vec![
-          SRDEquipment::DnDexCategory(SRDItem { key: "", source: "musical_instruments", qty: 1 })
+          SRDEquipment::DnDexCategory(SRDCategory { category: "musical_instruments", qty: 1 })
         ]
       ],
       choice_4: vec![],

@@ -31,7 +31,7 @@ lazy_static! {
       ],
       tools: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "herbalism_kit", source: "tools", qty: 0 }),
+          SRDEquipment::DnDexItem(SRDItem { key: "herbalism_kit", source: "kits", qty: 0 }),
         ]
       ],
       saving_throws: vec![ "intelligence", "wisdom" ],
