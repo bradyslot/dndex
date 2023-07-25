@@ -2,6 +2,7 @@
 use std::collections::HashMap;
 use crate::api::open5e::*;
 use crate::models::open5e::*;
+use crate::models::equipment::*;
 use wasm_bindgen_futures::spawn_local;
 
 #[derive(PartialEq, Debug)]
@@ -29,67 +30,6 @@ pub struct SRDClassProficiencies {
     pub saving_throws: Vec<&'static str>,
     pub skills: SRDClassProficientSkills,
     pub desc: &'static str,
-}
-
-#[derive(PartialEq, Debug)]
-pub enum SRDEquipment {
-    Open5eItem(SRDItem),
-    Open5eCategory(SRDItem),
-    DnDexItem(SRDItem),
-    DnDexCategory(SRDItem),
-    CustomItem(SRDCustomItem),
-}
-
-#[derive(PartialEq, Debug)]
-pub enum FetchResult {
-    Weapon(Open5eWeapon),
-    Armor(Open5eArmor),
-    WeaponCategory(Vec<Open5eWeapon>),
-    ArmorCategory(Vec<Open5eArmor>),
-    Empty(),
-}
-
-impl SRDEquipment {
-    pub async fn fetch_contents(&self) -> FetchResult {
-        match self {
-            SRDEquipment::Open5eItem(item) => {
-                match item.source {
-                    "weapons" => FetchResult::Weapon(fetch_weapon(item.key.into()).await),
-                    "armor" => FetchResult::Armor(fetch_armor(item.key.into()).await),
-                    _ => FetchResult::Empty(),
-                }
-            }
-            SRDEquipment::Open5eCategory(item) => {
-                match item.source {
-                    "weapons" => FetchResult::WeaponCategory(fetch_weapon_category(item.key.into()).await),
-                    "armor" => FetchResult::ArmorCategory(fetch_armor_category(item.key.into()).await),
-                    _ => FetchResult::Empty(),
-                }
-            }
-            SRDEquipment::DnDexItem(item) => {
-                unimplemented!()
-            }
-            SRDEquipment::DnDexCategory(item) => {
-                unimplemented!()
-            }
-            SRDEquipment::CustomItem(item) => {
-                unimplemented!()
-            }
-        }
-    }
-}
-
-#[derive(PartialEq, Debug)]
-pub struct SRDCustomItem {
-    pub name: &'static str,
-    pub qty: i32,
-}
-
-#[derive(PartialEq, Debug)]
-pub struct SRDItem {
-    pub key: &'static str,
-    pub source: &'static str,
-    pub qty: i32,
 }
 
 #[derive(PartialEq, Debug)]

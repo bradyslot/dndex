@@ -1,5 +1,6 @@
 #![allow(unused, non_upper_case_globals)]
 use crate::models::classes::*;
+use crate::models::equipment::*;
 use std::collections::HashMap;
 use lazy_static::lazy_static;
 

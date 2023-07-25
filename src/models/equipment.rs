@@ -2,6 +2,95 @@
 use yew::prelude::Properties;
 use serde::Deserialize;
 use std::collections::HashMap;
+use crate::models::open5e::*;
+use crate::api::open5e::*;
+
+#[derive(PartialEq, Debug)]
+pub enum SRDEquipment {
+    Open5eItem(SRDItem),
+    Open5eCategory(SRDItem),
+    DnDexItem(SRDItem),
+    DnDexCategory(SRDItem),
+    AdventuringGear(SRDItem),
+    Tool(SRDItem),
+    CustomItem(SRDCustomItem),
+}
+
+#[derive(PartialEq, Debug)]
+pub enum FetchResult {
+    Weapon(Open5eWeapon),
+    Armor(Open5eArmor),
+    WeaponCategory(Vec<Open5eWeapon>),
+    ArmorCategory(Vec<Open5eArmor>),
+    Empty(),
+}
+
+impl SRDEquipment {
+    pub async fn fetch_contents(&self) -> FetchResult {
+        match self {
+            SRDEquipment::Open5eItem(item) => {
+                match item.source {
+                    "weapons" => FetchResult::Weapon(fetch_weapon(item.key.into()).await),
+                    "armor" => FetchResult::Armor(fetch_armor(item.key.into()).await),
+                    _ => FetchResult::Empty(),
+                }
+            }
+            SRDEquipment::Open5eCategory(item) => {
+                match item.source {
+                    "weapons" => FetchResult::WeaponCategory(fetch_weapon_category(item.key.into()).await),
+                    "armor" => FetchResult::ArmorCategory(fetch_armor_category(item.key.into()).await),
+                    _ => FetchResult::Empty(),
+                }
+            }
+            SRDEquipment::DnDexItem(item) => {
+                match item.source {
+                    "adventuring_gear" => FetchResult::Empty(),
+                    "equipment_packs" => FetchResult::Empty(),
+                    "tools" => FetchResult::Empty(),
+                    "mounts_and_vehicles" => FetchResult::Empty(),
+                    _ => FetchResult::Empty(),
+                }
+            }
+            SRDEquipment::DnDexCategory(item) => {
+                match item.source {
+                    "adventuring_gear" => FetchResult::Empty(),
+                    "equipment_packs" => FetchResult::Empty(),
+                    "tools" => FetchResult::Empty(),
+                    "mounts_and_vehicles" => FetchResult::Empty(),
+                    _ => FetchResult::Empty(),
+                }
+            }
+            SRDEquipment::AdventuringGear(item) => {
+                match item.source {
+                    "adventuring_gear" => FetchResult::Empty(),
+                    _ => FetchResult::Empty(),
+                }
+            }
+            SRDEquipment::Tool(item) => {
+                match item.source {
+                    "tools" => FetchResult::Empty(),
+                    _ => FetchResult::Empty(),
+                }
+            }
+            SRDEquipment::CustomItem(item) => {
+                unimplemented!()
+            }
+        }
+    }
+}
+
+#[derive(PartialEq, Debug)]
+pub struct SRDCustomItem {
+    pub name: &'static str,
+    pub qty: i32,
+}
+
+#[derive(PartialEq, Debug)]
+pub struct SRDItem {
+    pub key: &'static str,
+    pub source: &'static str,
+    pub qty: i32,
+}
 
 #[derive(PartialEq, Debug)]
 pub struct SRDAdventuringGearItem {
@@ -15,26 +104,7 @@ pub struct SRDEquipmentPack {
     pub value: i32,
     pub denom: &'static str,
     pub desc: &'static str,
-    pub contents: Vec<SRDPackItem>,
-}
-
-#[derive(PartialEq, Debug)]
-pub enum SRDPackItem {
-    Gear(SRDKey),
-    Tool(SRDKey),
-    Custom(SRDCustom),
-}
-
-#[derive(PartialEq, Debug)]
-pub struct SRDKey {
-    pub key: &'static str,
-    pub qty: i32,
-}
-
-#[derive(PartialEq, Debug)]
-pub struct SRDCustom {
-    pub name: &'static str,
-    pub qty: i32,
+    pub contents: Vec<SRDEquipment>,
 }
 
 #[derive(PartialEq, Debug)]
