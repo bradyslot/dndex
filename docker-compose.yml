@@ -1,20 +1,28 @@
 version: '3'
 services:
-  server:
+  api:
     image: 'eepmoody/open5e-api:staging'
-    build: .
-    environment:
-      - OPEN5E_DEBUG=false
-      - SERVER_NAME=dndex
-      - SECRET_KEY=secret
+    hostname: open5e-api
+    container_name: open5e-api
     ports:
       - '8888:8888'
+    entrypoint: [
+      "/bin/sh", "-c",
+      "SECRET_KEY=${SECRET_KEY} pipenv run gunicorn -b :8888 -w `python -c 'import os; print(os.cpu_count() * 2)'` --threads `python -c 'import os; print(os.cpu_count())'` server.wsgi:application"
+    ]
+  database:
+    image: 'surrealdb/surrealdb:latest'
+    hostname: surrealdb
+    container_name: surrealdb
+    command: "start -b 0.0.0.0:9999 -u ${DB_USER} -p ${DB_PASS}"
+    ports:
+      - '9999:9999'
+  import:
+    image: 'surrealdb/surrealdb:latest'
+    container_name: surrealdb-import
     volumes:
-      - .:/usr/src/open5e-api/
+      - ./data:/data
     depends_on:
-      - watchtower
-  watchtower:
-    image: v2tec/watchtower
-    volumes:
-      - '/var/run/docker.sock:/var/run/docker.sock'
-    command: '--interval 600 --cleanup'
+      - database
+    restart: "no"
+    command: "import -c http://surrealdb:9999 -u ${DB_USER} -p ${DB_PASS} --ns dndex --db dndex /data/import.surql"
