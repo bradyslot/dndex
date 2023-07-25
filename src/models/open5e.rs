@@ -10,6 +10,19 @@ pub struct Open5eResults<T: PartialEq> {
 }
 
 #[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
+pub struct Open5eSearch {
+    // only these fields are relevant for presentation to the user
+    // there are other fields, but they vary by result type
+    pub document_slug: String,
+    pub document_title: String,
+    pub text: String,
+    pub name: String,
+    pub route: String,
+    pub slug: String,
+    pub highlighted: String,
+}
+
+#[derive(Deserialize, Clone, Properties, PartialEq, Debug, Default)]
 pub struct Open5eDocument {
     #[serde(rename = "document__slug")]
     pub slug: Option<String>,

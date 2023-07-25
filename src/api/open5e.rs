@@ -16,16 +16,16 @@ pub async fn fetch_results<T: DeserializeOwned + PartialEq>(
 ) -> Vec<T> {
     let url = format!("{}/{}/", API_URL, endpoint);
     let mut query = String::new();
+    match search {
+        Some(search) => query.push_str(&format!("&search={}", search)),
+        None => {}
+    }
     match limit {
         Some(limit) => query.push_str(&format!("&limit={}", limit)),
         None => {}
     }
     match page {
         Some(page) => query.push_str(&format!("&page={}", page)),
-        None => {}
-    }
-    match search {
-        Some(search) => query.push_str(&format!("&search={}", search)),
         None => {}
     }
     match filters {
@@ -101,8 +101,23 @@ pub async fn fetch_slug<T: DeserializeOwned + PartialEq + Clone + Default>(endpo
     }
 }
 
+// GENERAL SEARCH
+// searches everything using full terms
+
+// example of alternative to endpoint searching by specifying route filter
+// filters: vec![
+//     "route=spells".to_string(),
+//     "document_slug=wotc-srd".to_string(),
+// ]
+// this is likely more useful than endpoint searching
+pub async fn search_general(search: String, limit: Option<u32>, page: Option<u32>, filters: Option<Vec<String>>) -> Vec<Open5eSearch> {
+    fetch_results::<Open5eSearch>("search", Some(search), limit, page, filters).await
+}
+
 // SEARCH ENDPOINT
 // only these endpoints implement the search feature at this time
+// spells, monsters, backgrounds, magicitems, weapons, armor
+// case insensitive and partial matches are supported
 
 pub async fn search_spells(search: String, limit: Option<u32>, page: Option<u32>, filters: Option<Vec<String>>) -> Vec<Open5eSpell> {
     fetch_results::<Open5eSpell>("spells", Some(search), limit, page, filters).await

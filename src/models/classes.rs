@@ -44,6 +44,9 @@ pub enum SRDEquipment {
 pub enum FetchResult {
     Weapon(Open5eWeapon),
     Armor(Open5eArmor),
+    WeaponCategory(Vec<Open5eWeapon>),
+    ArmorCategory(Vec<Open5eArmor>),
+    Empty(),
 }
 
 impl SRDEquipment {
@@ -53,11 +56,15 @@ impl SRDEquipment {
                 match item.source {
                     "weapons" => FetchResult::Weapon(fetch_weapon(item.key.into()).await),
                     "armor" => FetchResult::Armor(fetch_armor(item.key.into()).await),
-                    _ => unimplemented!(),
+                    _ => FetchResult::Empty(),
                 }
             }
             SRDEquipment::Open5eCategory(item) => {
-                unimplemented!()
+                match item.source {
+                    "weapons" => FetchResult::WeaponCategory(fetch_weapon_category(item.key.into()).await),
+                    "armor" => FetchResult::ArmorCategory(fetch_armor_category(item.key.into()).await),
+                    _ => FetchResult::Empty(),
+                }
             }
             SRDEquipment::DnDexItem(item) => {
                 unimplemented!()

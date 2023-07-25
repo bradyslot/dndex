@@ -5,6 +5,16 @@ use crate::models::open5e::*;
 wasm_bindgen_test_configure!(run_in_browser);
 
 #[wasm_bindgen_test]
+async fn test_general_search() {
+    let results = search_general("fire".into(), Some(5), Some(1),
+        Some(vec![
+            "document__slug=wotc-srd".into(),
+            "route=spells".into()
+        ])).await;
+    assert_eq!(results.len(), 5);
+}
+
+#[wasm_bindgen_test]
 async fn test_search_spells() {
     let results = search_spells("".into(), Some(5), Some(1), Some(vec!["document__slug=wotc-srd".into()])).await;
     assert_eq!(results.len(), 5);
