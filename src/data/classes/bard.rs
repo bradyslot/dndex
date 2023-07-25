@@ -56,10 +56,10 @@ lazy_static! {
       ],
       choice_3: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "lute", source: "tools", qty: 1 })
+          SRDEquipment::DnDexItem(SRDItem { key: "lute", source: "musical_instruments", qty: 1 })
         ],
         vec![
-          SRDEquipment::DnDexCategory(SRDItem { key: "musical_instrument", source: "tools", qty: 1 })
+          SRDEquipment::DnDexCategory(SRDItem { key: "", source: "musical_instruments", qty: 1 })
         ]
       ],
       choice_4: vec![],

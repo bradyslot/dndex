@@ -4,6 +4,10 @@ use serde::Deserialize;
 use std::collections::HashMap;
 use crate::models::open5e::*;
 use crate::api::open5e::*;
+use crate::data::equipment::adventuring_gear::*;
+use crate::data::equipment::equipment_packs::*;
+use crate::data::equipment::tools::*;
+use crate::data::equipment::mounts_and_vehicles::*;
 
 #[derive(PartialEq, Debug)]
 pub enum SRDEquipment {
@@ -20,6 +24,15 @@ pub enum FetchResult {
     Armor(Open5eArmor),
     WeaponCategory(Vec<Open5eWeapon>),
     ArmorCategory(Vec<Open5eArmor>),
+    AdventuringGear(Option<&'static SRDAdventuringGearItem>),
+    EquipmentPack(Option<&'static SRDEquipmentPack>),
+    ToolKit(Option<&'static SRDToolKit>),
+    MusicalInstrument(Option<&'static SRDToolSubtype>),
+    GamingSet(Option<&'static SRDToolSubtype>),
+    Mount(Option<&'static SRDMount>),
+    Tack(Option<&'static SRDTack>),
+    DrawnVehicle(Option<&'static SRDDrawnVehicle>),
+    WaterborneVehicle(Option<&'static SRDWaterborneVehicle>),
     Empty(),
 }
 
@@ -42,19 +55,21 @@ impl SRDEquipment {
             }
             SRDEquipment::DnDexItem(item) => {
                 match item.source {
-                    "adventuring_gear" => FetchResult::Empty(),
-                    "equipment_packs" => FetchResult::Empty(),
-                    "tools" => FetchResult::Empty(),
-                    "mounts_and_vehicles" => FetchResult::Empty(),
+                    "adventuring_gear" => FetchResult::AdventuringGear(adventuring_gear.get(item.key.into())),
+                    "equipment_packs" => FetchResult::EquipmentPack(equipment_packs.get(item.key.into())),
+                    "kits" => FetchResult::ToolKit(tools.kits.get(item.key.into())),
+                    "musical_instruments" => FetchResult::MusicalInstrument(tools.musical_instruments.subtypes.get(item.key.into())),
+                    "gaming_sets" => FetchResult::GamingSet(tools.gaming_sets.subtypes.get(item.key.into())),
+                    "mount" => FetchResult::Mount(mounts_and_vehicles.mounts.get(item.key.into())),
+                    "tack" => FetchResult::Tack(mounts_and_vehicles.tack.get(item.key.into())),
+                    "drawn_vehicles" => FetchResult::DrawnVehicle(mounts_and_vehicles.drawn_vehicles.get(item.key.into())),
+                    "waterborne_vehicles" => FetchResult::WaterborneVehicle(mounts_and_vehicles.waterborne_vehicles.get(item.key.into())),
                     _ => FetchResult::Empty(),
                 }
             }
             SRDEquipment::DnDexCategory(item) => {
                 match item.source {
-                    "adventuring_gear" => FetchResult::Empty(),
-                    "equipment_packs" => FetchResult::Empty(),
-                    "tools" => FetchResult::Empty(),
-                    "mounts_and_vehicles" => FetchResult::Empty(),
+                    // "musical_instruments" => FetchResult::MusicalInstrument(tools.musical_instruments.subtypes.iter().map(instrument).collect()),
                     _ => FetchResult::Empty(),
                 }
             }

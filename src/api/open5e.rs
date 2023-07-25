@@ -65,8 +65,8 @@ pub async fn fetch_vec_slugs<T: DeserializeOwned + PartialEq>(endpoint: &str, sl
     let mut results = vec![];
 
     for slug in slugs {
-        let endpoint = format!("{}/?slug={}", endpoint, slug);
-        let fetched_data = fetch_results::<T>(&endpoint, None, None, None, None).await;
+        let filter = format!("slug={}", slug);
+        let fetched_data = fetch_results::<T>(&endpoint, None, None, None, Some(vec![filter])).await;
         results.extend(fetched_data);
     }
 

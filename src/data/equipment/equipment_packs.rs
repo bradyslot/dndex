@@ -87,7 +87,7 @@ lazy_static! {
             SRDEquipment::DnDexItem(SRDItem { key: "candle", source: "adventuring_gear", qty: 5, }),
             SRDEquipment::CustomItem(SRDCustomItem { name: "Days of rations", qty: 5, }),
             SRDEquipment::CustomItem(SRDCustomItem { name: "Waterskin", qty: 1, }),
-            SRDEquipment::DnDexItem(SRDItem { key: "disguise_kit", source: "tools", qty: 1, }),
+            SRDEquipment::DnDexItem(SRDItem { key: "disguise_kit", source: "kits", qty: 1, }),
           ]
         },
       ),
