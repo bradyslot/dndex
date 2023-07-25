@@ -14,11 +14,11 @@ lazy_static! {
     proficiencies: SRDClassProficiencies {
       armor: vec![],
       weapons: vec![
-        SRDEquipment::Open5eItem(SRDItem { key: "dagger", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "dart", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "sling", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "quarterstaff", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "crossbow-light", source: "weapons", qty: 0 }),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "dagger", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "dart", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "sling", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "quarterstaff", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "crossbow-light", source: "weapons", qty: 0 })),
       ],
       tools: vec![],
       saving_throws: vec![ "constitution", "charisma" ],
@@ -31,32 +31,32 @@ lazy_static! {
     starting_equipment: SRDClassStartingEquipment {
       choice_1: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "crossbow-light", source: "weapons", qty: 1 }),
-          SRDEquipment::CustomItem(SRDCustomItem { name: "Bolts", qty: 20 })
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "crossbow-light", source: "weapons", qty: 1 })),
+          Equipment::DnDex(DnDexEquipment::CustomItem(SRDCustomItem { name: "Bolts", qty: 20 }))
         ],
         vec![
-          SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 1 }),
+          Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 1 })),
         ]
       ],
       choice_2: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "component_pouch", source: "adventuring_gear", qty: 1 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "component_pouch", source: "adventuring_gear", qty: 1 })),
         ],
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "arcane_focus", source: "adventuring_gear", qty: 1 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "arcane_focus", source: "adventuring_gear", qty: 1 })),
         ]
       ],
       choice_3: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "dungeoneers_pack", source: "equipment_packs", qty: 1 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "dungeoneers_pack", source: "equipment_packs", qty: 1 })),
         ],
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 })),
         ]
       ],
       choice_4: vec![],
       defaults: vec![
-        SRDEquipment::Open5eItem(SRDItem { key: "dagger", source: "weapons", qty: 2 }),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "dagger", source: "weapons", qty: 2 })),
       ],
       desc: "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a light crossbow and 20 bolts or *(b)* any simple weapon\n- *(a)* a component pouch or *(b)* an arcane focus\n- *(a)* a dungeoneer's pack or *(b)* an explorer's pack\n- Two daggers"
     },

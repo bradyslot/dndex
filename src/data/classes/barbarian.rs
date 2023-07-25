@@ -13,13 +13,13 @@ lazy_static! {
     },
     proficiencies: SRDClassProficiencies {
       armor: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Light", source: "armor", qty: 0 }),
-        SRDEquipment::Open5eCategory(SRDItem { key: "Medium", source: "armor", qty: 0 }),
-        SRDEquipment::Open5eCategory(SRDItem { key: "Shield", source: "armor", qty: 0 })
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Light", source: "armor", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Medium", source: "armor", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Shield", source: "armor", qty: 0 }))
       ],
       weapons: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 0 })
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 0 }))
       ],
       tools: vec![],
       saving_throws: vec![ "strength", "constitution" ],
@@ -32,25 +32,25 @@ lazy_static! {
     starting_equipment: SRDClassStartingEquipment {
       choice_1: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "greataxe", source: "weapons", qty: 1 })
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "greataxe", source: "weapons", qty: 1 }))
         ],
         vec![
-          SRDEquipment::Open5eCategory(SRDItem { key: "Martial Melee", source: "weapons", qty: 1 }),
+          Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Martial Melee", source: "weapons", qty: 1 })),
         ]
       ],
       choice_2: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "handaxe", source: "weapons", qty: 2 })
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "handaxe", source: "weapons", qty: 2 }))
         ],
         vec![
-          SRDEquipment::Open5eCategory(SRDItem { key: "Simple Melee", source: "weapons", qty: 1 }),
+          Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Simple Melee", source: "weapons", qty: 1 })),
         ]
       ],
       choice_3: vec![],
       choice_4: vec![],
       defaults: vec![
-        SRDEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 }),
-        SRDEquipment::Open5eCategory(SRDItem { key: "javelin", source: "weapons", qty: 4 }),
+        Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 })),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "javelin", source: "weapons", qty: 4 })),
       ],
       desc: "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a greataxe or *(b)* any martial melee weapon \n- *(a)* two handaxes or *(b)* any simple weapon\nAn explorer's pack and four javelins"
     },

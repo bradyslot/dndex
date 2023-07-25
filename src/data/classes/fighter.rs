@@ -13,11 +13,11 @@ lazy_static! {
     },
     proficiencies: SRDClassProficiencies {
       armor: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Armor", source: "armor", qty: 0 }),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Armor", source: "armor", qty: 0 })),
       ],
       weapons: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 0 }),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 0 })),
       ],
       tools: vec![],
       saving_throws: vec![ "strength", "constitution" ],
@@ -29,38 +29,38 @@ lazy_static! {
     starting_equipment: SRDClassStartingEquipment {
       choice_1: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "chain-mail", source: "armor", qty: 1 }),
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "chain-mail", source: "armor", qty: 1 })),
         ],
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "leather", source: "armor", qty: 1 }),
-          SRDEquipment::Open5eItem(SRDItem { key: "longbow", source: "weapons", qty: 1 }),
-          SRDEquipment::CustomItem(SRDCustomItem { name: "Arrows", qty: 20 })
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "leather", source: "armor", qty: 1 })),
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "longbow", source: "weapons", qty: 1 })),
+          Equipment::DnDex(DnDexEquipment::CustomItem(SRDCustomItem { name: "Arrows", qty: 20 }))
         ]
       ],
       choice_2: vec![
         vec![
-          SRDEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 1 }),
-          SRDEquipment::Open5eItem(SRDItem { key: "shield", source: "armor", qty: 1 })
+          Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 1 })),
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "shield", source: "armor", qty: 1 }))
         ],
         vec![
-          SRDEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 2 }),
+          Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 2 })),
         ]
       ],
       choice_3: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "crossbow-light", source: "weapons", qty: 1 }),
-          SRDEquipment::CustomItem(SRDCustomItem { name: "Bolts", qty: 20 })
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "crossbow-light", source: "weapons", qty: 1 })),
+          Equipment::DnDex(DnDexEquipment::CustomItem(SRDCustomItem { name: "Bolts", qty: 20 }))
         ],
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "handaxe", source: "weapons", qty: 2 }),
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "handaxe", source: "weapons", qty: 2 })),
         ]
       ],
       choice_4: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "dungeoneers_pack", source: "equipment_packs", qty: 1 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "dungeoneers_pack", source: "equipment_packs", qty: 1 })),
         ],
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 })),
         ]
       ],
       defaults: vec![],

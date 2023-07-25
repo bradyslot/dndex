@@ -13,13 +13,13 @@ lazy_static! {
     },
     proficiencies: SRDClassProficiencies {
       armor: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Light", source: "armor", qty: 0 }),
-        SRDEquipment::Open5eCategory(SRDItem { key: "Medium", source: "armor", qty: 0 }),
-        SRDEquipment::Open5eCategory(SRDItem { key: "Shield", source: "armor", qty: 0 }),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Light", source: "armor", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Medium", source: "armor", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Shield", source: "armor", qty: 0 })),
       ],
       weapons: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 0 }),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 0 })),
       ],
       tools: vec![],
       saving_throws: vec![ "strength", "dexterity" ],
@@ -32,32 +32,32 @@ lazy_static! {
     starting_equipment: SRDClassStartingEquipment {
       choice_1: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "scale-mail", source: "armor", qty: 1 }),
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "scale-mail", source: "armor", qty: 1 })),
         ],
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "leather", source: "armor", qty: 1 }),
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "leather", source: "armor", qty: 1 })),
         ]
       ],
       choice_2: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 2 }),
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 2 })),
         ],
         vec![
-          SRDEquipment::Open5eCategory(SRDItem { key: "Simple Melee", source: "weapons", qty: 2 }),
+          Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Simple Melee", source: "weapons", qty: 2 })),
         ]
       ],
       choice_3: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "dungeoneers_pack", source: "equipment_packs", qty: 1 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "dungeoneers_pack", source: "equipment_packs", qty: 1 })),
         ],
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 })),
         ]
       ],
       choice_4: vec![],
       defaults: vec![
-        SRDEquipment::Open5eItem(SRDItem { key: "longbow", source: "weapons", qty: 1 }),
-        SRDEquipment::CustomItem(SRDCustomItem { name: "Arrows", qty: 20 })
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "longbow", source: "weapons", qty: 1 })),
+        Equipment::DnDex(DnDexEquipment::CustomItem(SRDCustomItem { name: "Arrows", qty: 20 }))
       ],
       desc: "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* scale mail or *(b)* leather armor\n- *(a)* two shortswords or *(b)* two simple melee weapons\n- *(a)* a dungeoneer's pack or *(b)* an explorer's pack\n- A longbow and a quiver of 20 arrows"
     },

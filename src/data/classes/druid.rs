@@ -13,25 +13,25 @@ lazy_static! {
     },
     proficiencies: SRDClassProficiencies {
       armor: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Light", source: "armor", qty: 0 }),
-        SRDEquipment::Open5eCategory(SRDItem { key: "Medium", source: "armor", qty: 0 }),
-        SRDEquipment::Open5eCategory(SRDItem { key: "Shield", source: "armor", qty: 0 }),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Light", source: "armor", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Medium", source: "armor", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Shield", source: "armor", qty: 0 })),
       ],
       weapons: vec![
-        SRDEquipment::Open5eItem(SRDItem { key: "club", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "dagger", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "dart", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "javelin", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "mace", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "quarterstaff", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "scimitar", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "sickle", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "sling", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "spear", source: "weapons", qty: 0 }),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "club", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "dagger", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "dart", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "javelin", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "mace", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "quarterstaff", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "scimitar", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "sickle", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "sling", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "spear", source: "weapons", qty: 0 })),
       ],
       tools: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "herbalism_kit", source: "kits", qty: 0 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "herbalism_kit", source: "kits", qty: 0 })),
         ]
       ],
       saving_throws: vec![ "intelligence", "wisdom" ],
@@ -44,26 +44,26 @@ lazy_static! {
     starting_equipment: SRDClassStartingEquipment {
       choice_1: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "shield", source: "armor", qty: 1 })
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "shield", source: "armor", qty: 1 }))
         ],
         vec![
-          SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 1 })
+          Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 1 }))
         ]
       ],
       choice_2: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "scimitar", source: "weapons", qty: 1 })
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "scimitar", source: "weapons", qty: 1 }))
         ],
         vec![
-          SRDEquipment::Open5eCategory(SRDItem { key: "Simple Melee", source: "weapons", qty: 1 })
+          Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Simple Melee", source: "weapons", qty: 1 }))
         ]
       ],
       choice_3: vec![],
       choice_4: vec![],
       defaults: vec![
-        SRDEquipment::Open5eItem(SRDItem { key: "leather", source: "armor", qty: 1 }),
-        SRDEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 }),
-        SRDEquipment::DnDexItem(SRDItem { key: "druidic_focus", source: "adventuring_gear", qty: 1 }),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "leather", source: "armor", qty: 1 })),
+        Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 })),
+        Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "druidic_focus", source: "adventuring_gear", qty: 1 })),
       ],
       desc: "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a wooden shield or *(b)* any simple weapon\n- *(a)* a scimitar or *(b)* any simple melee weapon\n- Leather armor, an explorer's pack, and a druidic focus"
     },

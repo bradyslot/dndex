@@ -24,9 +24,9 @@ pub struct SRDClassHitPoints {
 
 #[derive(PartialEq, Debug)]
 pub struct SRDClassProficiencies {
-    pub armor: Vec<SRDEquipment>,
-    pub weapons: Vec<SRDEquipment>,
-    pub tools: Vec<Vec<SRDEquipment>>,
+    pub armor: Vec<Equipment>,
+    pub weapons: Vec<Equipment>,
+    pub tools: Vec<Vec<Equipment>>,
     pub saving_throws: Vec<&'static str>,
     pub skills: SRDClassProficientSkills,
     pub desc: &'static str,
@@ -40,11 +40,11 @@ pub struct SRDClassProficientSkills {
 
 #[derive(PartialEq, Debug)]
 pub struct SRDClassStartingEquipment {
-    pub choice_1: Vec<Vec<SRDEquipment>>,
-    pub choice_2: Vec<Vec<SRDEquipment>>,
-    pub choice_3: Vec<Vec<SRDEquipment>>,
-    pub choice_4: Vec<Vec<SRDEquipment>>,
-    pub defaults: Vec<SRDEquipment>,
+    pub choice_1: Vec<Vec<Equipment>>,
+    pub choice_2: Vec<Vec<Equipment>>,
+    pub choice_3: Vec<Vec<Equipment>>,
+    pub choice_4: Vec<Vec<Equipment>>,
+    pub defaults: Vec<Equipment>,
     pub desc: &'static str,
 }
 

@@ -13,12 +13,12 @@ lazy_static! {
     },
     proficiencies: SRDClassProficiencies {
       armor: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Armor", source: "armor", qty: 0 }),
-        SRDEquipment::Open5eCategory(SRDItem { key: "Shield", source: "armor", qty: 0 }),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Armor", source: "armor", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Shield", source: "armor", qty: 0 })),
       ],
       weapons: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 0 }),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 0 })),
       ],
       tools: vec![],
       saving_throws: vec![ "wisdom", "charisma" ],
@@ -31,33 +31,33 @@ lazy_static! {
     starting_equipment: SRDClassStartingEquipment {
       choice_1: vec![
         vec![
-          SRDEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 1 }),
-          SRDEquipment::Open5eItem(SRDItem { key: "shield", source: "armor", qty: 1 }),
+          Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 1 })),
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "shield", source: "armor", qty: 1 })),
         ],
         vec![
-          SRDEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 2 }),
+          Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Martial", source: "weapons", qty: 2 })),
         ]
       ],
       choice_2: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "javelin", source: "weapons", qty: 5 })
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "javelin", source: "weapons", qty: 5 }))
         ],
         vec![
-          SRDEquipment::Open5eCategory(SRDItem { key: "Simple Melee", source: "weapons", qty: 1 }),
+          Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Simple Melee", source: "weapons", qty: 1 })),
         ]
       ],
       choice_3: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "priests_pack", source: "equipment_packs", qty: 1 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "priests_pack", source: "equipment_packs", qty: 1 })),
         ],
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 })),
         ]
       ],
       choice_4: vec![],
       defaults: vec![
-        SRDEquipment::Open5eItem(SRDItem { key: "chain-mail", source: "armor", qty: 1 }),
-        SRDEquipment::DnDexItem(SRDItem { key: "holy_symbol", source: "adventuring_gear", qty: 1 }),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "chain-mail", source: "armor", qty: 1 })),
+        Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "holy_symbol", source: "adventuring_gear", qty: 1 })),
       ],
       desc: "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a martial weapon and a shield or *(b)* two martial weapons\n- *(a)* five javelins or *(b)* any simple melee weapon\n- *(a)* a priest's pack or *(b)* an explorer's pack\n- Chain mail and a holy symbol"
     },

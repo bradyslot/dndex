@@ -14,15 +14,15 @@ lazy_static! {
     proficiencies: SRDClassProficiencies {
       armor: vec![],
       weapons: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 0 })
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 0 }))
       ],
       tools: vec![
         vec![
-          SRDEquipment::DnDexCategory(SRDCategory { category: "artisans_tools", qty: 0 })
+          Equipment::DnDex(DnDexEquipment::DnDexCategory(SRDCategory { category: "artisans_tools", qty: 0 }))
         ],
         vec![
-          SRDEquipment::DnDexCategory(SRDCategory { category: "musical_instruments", qty: 0 })
+          Equipment::DnDex(DnDexEquipment::DnDexCategory(SRDCategory { category: "musical_instruments", qty: 0 }))
         ]
       ],
       saving_throws: vec![ "strength", "dexterity" ],
@@ -35,24 +35,24 @@ lazy_static! {
     starting_equipment: SRDClassStartingEquipment {
       choice_1: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 1 })
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 1 }))
         ],
         vec![
-          SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 1 })
+          Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 1 }))
         ]
       ],
       choice_2: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "dungeoneers_pack", source: "equipment_packs", qty: 1 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "dungeoneers_pack", source: "equipment_packs", qty: 1 })),
         ],
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 })),
         ]
       ],
       choice_3: vec![],
       choice_4: vec![],
       defaults: vec![
-        SRDEquipment::Open5eItem(SRDItem { key: "dart", source: "weapons", qty: 10 })
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "dart", source: "weapons", qty: 10 }))
       ],
       desc: "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a shortsword or *(b)* any simple weapon\n- *(a)* a dungeoneer's pack or *(b)* an explorer’s pack\n- 10 darts"
     },

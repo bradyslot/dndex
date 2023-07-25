@@ -13,18 +13,18 @@ lazy_static! {
     },
     proficiencies: SRDClassProficiencies {
       armor: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Light", source: "armor", qty: 0 })
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Light", source: "armor", qty: 0 }))
       ],
       weapons: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "crossbow-hand", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "longsword", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "rapier", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 0 })
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "crossbow-hand", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "longsword", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "rapier", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 0 }))
       ],
       tools: vec![
         vec![
-          SRDEquipment::DnDexCategory(SRDCategory { category: "musical_instruments", qty: 0 })
+          Equipment::DnDex(DnDexEquipment::DnDexCategory(SRDCategory { category: "musical_instruments", qty: 0 }))
         ]
       ],
       saving_throws: vec![ "dexterity", "charisma" ],
@@ -37,35 +37,35 @@ lazy_static! {
     starting_equipment: SRDClassStartingEquipment {
       choice_1: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "rapier", source: "weapons", qty: 1 }),
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "rapier", source: "weapons", qty: 1 })),
         ],
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "longsword", source: "weapons", qty: 1 }),
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "longsword", source: "weapons", qty: 1 })),
         ],
         vec![
-          SRDEquipment::Open5eCategory(SRDItem { key: "Simple Melee", source: "weapons", qty: 1 }),
+          Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Simple Melee", source: "weapons", qty: 1 })),
         ]
       ],
       choice_2: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "diplomats_pack", source: "equipment_packs", qty: 1 })
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "diplomats_pack", source: "equipment_packs", qty: 1 }))
         ],
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "entertainers_pack", source: "equipment_packs", qty: 1 })
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "entertainers_pack", source: "equipment_packs", qty: 1 }))
         ]
       ],
       choice_3: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "lute", source: "musical_instruments", qty: 1 })
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "lute", source: "musical_instruments", qty: 1 }))
         ],
         vec![
-          SRDEquipment::DnDexCategory(SRDCategory { category: "musical_instruments", qty: 1 })
+          Equipment::DnDex(DnDexEquipment::DnDexCategory(SRDCategory { category: "musical_instruments", qty: 1 }))
         ]
       ],
       choice_4: vec![],
       defaults: vec![
-        SRDEquipment::DnDexItem(SRDItem { key: "dagger", source: "weapons", qty: 1 }),
-        SRDEquipment::DnDexItem(SRDItem { key: "leather", source: "armor", qty: 1 })
+        Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "dagger", source: "weapons", qty: 1 })),
+        Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "leather", source: "armor", qty: 1 }))
       ],
       desc: "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a rapier, *(b)* a longsword, or *(c)* any simple weapon\n- *(a)* a diplomat's pack or *(b)* an entertainer's pack\n- *(a)* a lute or *(b)* any other musical instrument\n- Leather armor and a dagger"
     },

@@ -13,18 +13,18 @@ lazy_static! {
     },
     proficiencies: SRDClassProficiencies {
       armor: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Light", source: "armor", qty: 0 }),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Light", source: "armor", qty: 0 })),
       ],
       weapons: vec![
-        SRDEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "crossbow-hand", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "longsword", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "rapier", source: "weapons", qty: 0 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 0 }),
+        Equipment::Open5e(Open5eEquipment::Open5eCategory(SRDItem { key: "Simple", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "crossbow-hand", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "longsword", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "rapier", source: "weapons", qty: 0 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 0 })),
       ],
       tools: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "thieves_tools", source: "kits", qty: 0 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "thieves_tools", source: "kits", qty: 0 })),
         ]
       ],
       saving_throws: vec![ "dexterity", "intelligence" ],
@@ -37,37 +37,37 @@ lazy_static! {
     starting_equipment: SRDClassStartingEquipment {
       choice_1: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "rapier", source: "weapons", qty: 1 }),
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "rapier", source: "weapons", qty: 1 })),
         ],
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 1 }),
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 1 })),
         ]
       ],
       choice_2: vec![
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "shortbow", source: "weapons", qty: 1 }),
-          SRDEquipment::CustomItem(SRDCustomItem { name: "Arrows", qty: 20 })
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "shortbow", source: "weapons", qty: 1 })),
+          Equipment::DnDex(DnDexEquipment::CustomItem(SRDCustomItem { name: "Arrows", qty: 20 }))
         ],
         vec![
-          SRDEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 1 }),
+          Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "shortsword", source: "weapons", qty: 1 })),
         ]
       ],
       choice_3: vec![
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "burglars_pack", source: "equipment_packs", qty: 1 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "burglars_pack", source: "equipment_packs", qty: 1 })),
         ],
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "dungeoneers_pack", source: "equipment_packs", qty: 1 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "dungeoneers_pack", source: "equipment_packs", qty: 1 })),
         ],
         vec![
-          SRDEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 }),
+          Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "explorers_pack", source: "equipment_packs", qty: 1 })),
         ]
       ],
       choice_4: vec![],
       defaults: vec![
-        SRDEquipment::Open5eItem(SRDItem { key: "leather", source: "armor", qty: 1 }),
-        SRDEquipment::Open5eItem(SRDItem { key: "dagger", source: "weapons", qty: 2 }),
-        SRDEquipment::DnDexItem(SRDItem { key: "thieves_tools", source: "kits", qty: 1 }),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "leather", source: "armor", qty: 1 })),
+        Equipment::Open5e(Open5eEquipment::Open5eItem(SRDItem { key: "dagger", source: "weapons", qty: 2 })),
+        Equipment::DnDex(DnDexEquipment::DnDexItem(SRDItem { key: "thieves_tools", source: "kits", qty: 1 })),
       ],
       desc: "You start with the following equipment, in addition to the equipment granted by your background:\n- *(a)* a rapier or *(b)* a shortsword\n- *(a)* a shortbow and quiver of 20 arrows or *(b)* a shortsword\n- *(a)* a burglar's pack, *(b)* a dungeoneer's pack, or *(c)* an explorer's pack\n- *(a)* Leather armor, two daggers, and thieves' tools"
     },
