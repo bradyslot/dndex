@@ -11,8 +11,6 @@ pub enum SRDEquipment {
     Open5eCategory(SRDItem),
     DnDexItem(SRDItem),
     DnDexCategory(SRDItem),
-    AdventuringGear(SRDItem),
-    Tool(SRDItem),
     CustomItem(SRDCustomItem),
 }
 
@@ -57,18 +55,6 @@ impl SRDEquipment {
                     "equipment_packs" => FetchResult::Empty(),
                     "tools" => FetchResult::Empty(),
                     "mounts_and_vehicles" => FetchResult::Empty(),
-                    _ => FetchResult::Empty(),
-                }
-            }
-            SRDEquipment::AdventuringGear(item) => {
-                match item.source {
-                    "adventuring_gear" => FetchResult::Empty(),
-                    _ => FetchResult::Empty(),
-                }
-            }
-            SRDEquipment::Tool(item) => {
-                match item.source {
-                    "tools" => FetchResult::Empty(),
                     _ => FetchResult::Empty(),
                 }
             }
