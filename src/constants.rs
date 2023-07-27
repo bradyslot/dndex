@@ -11,3 +11,4 @@ pub const WIS: usize = 4;
 pub const CHA: usize = 5;
 
 pub const API_URL: &str = "http://localhost:8888";
+pub const DB_URL: &str = "http://localhost:9999";

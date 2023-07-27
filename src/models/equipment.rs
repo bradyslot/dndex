@@ -5,10 +5,10 @@ use std::collections::HashMap;
 
 use crate::models::open5e::*;
 use crate::api::open5e::*;
-use crate::data::equipment::adventuring_gear::*;
-use crate::data::equipment::equipment_packs::*;
-use crate::data::equipment::tools::*;
-use crate::data::equipment::mounts_and_vehicles::*;
+// use crate::data::equipment::adventuring_gear::*;
+// use crate::data::equipment::equipment_packs::*;
+// use crate::data::equipment::tools::*;
+// use crate::data::equipment::mounts_and_vehicles::*;
 
 
 #[derive(PartialEq, Debug)]

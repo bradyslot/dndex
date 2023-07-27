@@ -12,14 +12,11 @@ use data::classes::*;
 use data::equipment::*;
 use data::mechanics::*;
 
-use data::classes::barbarian::*;
-use data::classes::bard::*;
-
 mod models;
 use models::models::*;
-use models::classes::*;
+// use models::classes::*;
 // use models::equipment::*;
-use models::mechanics::*;
+// use models::mechanics::*;
 
 mod components;
 use components::shared::utils::*;
@@ -38,15 +35,6 @@ use tests::api_tests::*;
 
 #[function_component]
 fn App() -> Html {
-
-    // let test = SRDEquipment::Open5eItem(SRDItem {
-    //     key: "greataxe",
-    //     source: "weapons",
-    //     qty: 1,
-    // });
-
-    // test.fetch_contents();
-
     let character_abilities = vec![
         Ability { name: "Strength".into(),     value: 8  },
         Ability { name: "Dexterity".into(),    value: 13 },
